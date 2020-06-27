@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Modelagem de dados</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Modelagem de dados</h1>
+
+</div>
+
+
+<div id="escolha-do-software" class="section level2">
+<h2>Escolha do software</h2>
+<p>Existem vários softwares que podem oferecer soluções de ferramentas estatísticas às nossas questões de pesquisa. A escolha do software depende da disponibilidade de recursos financeiros, técnicos e operacionais, mas também da necessidade. Os programas editores de planilhas eletrônicas, como o <em>Microsoft Office Excel</em> ou o <em>Apache OpenOffice Calc</em> permitem realizar o tratamento de frequências descritivas (contagem de ocorrências, frequência, média, mediana, desvio padrão, etc.) e também possibilitam a visualização de resultados, com opções de gráficos.</p>
+<blockquote>
+<p>Não é necessário utilizar VARBRUL ou versões para computar ocorrências e calcular frequências!</p>
+</blockquote>
+<p>Mas, para realizar alguns testes inferenciais, como o qui-quadrado, são necessários mais passos e um pouco de conhecimento da linguagem de programação das fórmulas, o que pode se tornar complicado para usuários iniciantes e que não tem familiaridade com estatística.</p>
+<p>Para essa demanda, existem softwares estatísticos específicos. O mais famoso para a área de humanas é o <em>Statistical Package for the Social Sciences</em>, mais conhecido por sua sigla <strong>SPSS</strong>. Este é um software proprietário, ou seja, é preciso pagar para usar. E não é barato, apesar dos descontos para a versão de estudantes, ainda assim o custo é alto.</p>
+<p>Nas instituições públicas, em consonância às políticas de governança digital instituídas pelo Decreto nº 8.638/2016, o estímulo e a priorização de uso de software livre são estimulados e difundidos, motivo pelo qual neste curso nossa opção será pela adoção de ferramentas de software livre. No entanto, o foco do curso é a modelagem de dados, a ferramenta a ser usada pode ser qualquer uma, inclusive SPSS. O foco do curso não é explicar o funcionamento do software, mas o raciocínio subjacente à escolha do modelo estatístico.</p>
+<p>A plataforma <strong>R</strong> (não é um software) é uma excelente opção para análise de dados, um verdadeiro canivete suíço. Nem em uma vida inteira uma pessoa vai conseguir explorar todas as possibilidades que o <strong>R</strong> oferece.</p>
+<div id="preparando-para-usar" class="section level3">
+<h3>Preparando para usar</h3>
+<p>O R não morde, e há interfaces amigáveis. Primeiro, instale o R base: <a href="https://cran-r.c3sl.ufpr.br" class="uri">https://cran-r.c3sl.ufpr.br</a> escolha a versão compatível com seu sistema operacional.</p>
+<ul>
+<li>Caso tenha dificuldades:
+<ul>
+<li>tutorial em pdf <a href="https://edisciplinas.usp.br/pluginfile.php/2996937/mod_resource/content/1/Tutorial.pdf" class="uri">https://edisciplinas.usp.br/pluginfile.php/2996937/mod_resource/content/1/Tutorial.pdf</a></li>
+<li>tutorial em video <a href="https://www.youtube.com/watch?v=1WXgaa2Spp0" class="uri">https://www.youtube.com/watch?v=1WXgaa2Spp0</a></li>
+</ul></li>
+</ul>
+<p>Depois de instalar o R base, instale o RStudio, uma ferramenta de interface para o R, mais amigável. Procure a versão gratuita para o seu sistema operacional <a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a> e faça a instalação.</p>
+<p>Se a instalação foi bem sucedida, você irá encontrar dois atalhos: <img src="https://community.rstudio.com/uploads/default/original/2X/9/95d95f5512a943c89520544e0a47d9c641b7333f.png" alt="Ícones do R e do RStudio" /></p>
+<p>Estes são os atalhos, respectivamente, do R e do RStudio (na imagem acima, da esqueda para a direita). Familiarize-se com o software.</p>
+<blockquote>
+<p>Este é um tutorial introdutório ao funcionamento RStudio <a href="https://www.curso-r.com/material/rstudio/" class="uri">https://www.curso-r.com/material/rstudio/</a>. Observe a terminologia para as telas que o programa organiza em janelas: <strong>editor</strong>, <strong>console</strong> e <strong>plot</strong>. Nos próximos tutoriais, estes termos serão utilizados.</p>
+</blockquote>
+</div>
+<div id="o-que-o-r-pode-fazer" class="section level3">
+<h3>O que o R pode fazer?</h3>
+<p>Quase tudo! Estes tutoriais e materiais do curso, por exemplo, estão sendo feitos via <em>R Markdown</em> (e quem quiser conhecer uma funcionalidade <a href="http://www.leg.ufpr.br/~fernandomayer/palestra/useR-2015/Rmarkdown-rautu.html" class="uri">http://www.leg.ufpr.br/~fernandomayer/palestra/useR-2015/Rmarkdown-rautu.html</a>). Além da estatística descritiva e inferencial, o R possibilita os mais avançados recursos de visualização de dados, assim como permite realizar tratamento quantitativo a dados de natureza textual.</p>
+<p>Existem também interfaces amigáveis com alguns recursos do R, como o <strong>JASP</strong>, <strong>JAMOVI</strong> e o <strong>Iramuteq</strong>.</p>
+<div id="jasp" class="section level5">
+<h5>JASP</h5>
+<p>O JASP é um pacote estatístico gratuito e com interface amigável, que pode ser instalado a partir de <a href="https://jasp-stats.org/download/" class="uri">https://jasp-stats.org/download/</a> (escolha a versão compatível com seu sistema operacional).</p>
+<blockquote>
+<p>Aqui você pode assistir a um tutorial de instalação e demonstração do JASP: <a href="https://youtu.be/7uZC7Vvb6wk" class="uri">https://youtu.be/7uZC7Vvb6wk</a></p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Vantagens</th>
+<th>Desvantagens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fácil de usar</td>
+<td>Limitado a certos tipos de análise</td>
+</tr>
+<tr class="even">
+<td>Exporta tabelas em formato APA</td>
+<td>Visualização gráfica ruim</td>
+</tr>
+<tr class="odd">
+<td>Integrado ao OSF</td>
+<td>Opera melhor com variáveis contínuas/ordinais</td>
+</tr>
+</tbody>
+</table>
+<p>Então, se você precisa de tabelas e está armazenando os dados no OSF, o JASP é uma excelente ferramenta!</p>
+<blockquote>
+<p>OSJ é Open Science Framework, um repositório para compartilhamento de conjuntos de dados e outros materiais. O meu é esse: <a href="https://osf.io/j4hgb/" class="uri">https://osf.io/j4hgb/</a> Faça o seu perfil também!</p>
+</blockquote>
+</div>
+<div id="jamovi" class="section level5">
+<h5>JAMOVI</h5>
+<p>O JAMOVI também é um pacote estatístico gratuito e com interface amigável, que pode ser instalado a partir de <a href="https://www.jamovi.org" class="uri">https://www.jamovi.org</a> (escolha a versão compatível com seu sistema operacional).</p>
+<blockquote>
+<p>Aqui você pode assistir a um tutorial de instalação e demonstração do JAMOVI: <a href="https://youtu.be/3amJB6YuSOI" class="uri">https://youtu.be/3amJB6YuSOI</a></p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Vantagens</th>
+<th>Desvantagens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fácil de usar</td>
+<td>Limitado a certos tipos de análise</td>
+</tr>
+<tr class="even">
+<td>Boa visualização gráfica</td>
+<td>Limitado para tabelas</td>
+</tr>
+<tr class="odd">
+<td>Implementa pacotes do R</td>
+<td>Requer conhecimento da sintaxe do R</td>
+</tr>
+</tbody>
+</table>
+<p>Se você precisa de visualização gráfica dos dados e entende um pouco da sintaxe do R, o JAMOVI é uma excelente ferramenta!</p>
+</div>
+</div>
+</div>
+<div id="depois-de-instalados-os-softwares" class="section level2">
+<h2>Depois de instalados os softwares</h2>
+<p>Comece a explorá-los! Se você tem um conjunto de dados, explore as funcionalidades de estatística descritiva que JASP e JAMOVI oferecem.</p>
+<p>Se você ainda não tem um conjunto de dados para chamar de seu, não se preocupe! Na próxima postagem vou compartilhar um conjunto de dados modelo, para trabalharmos nas próximas aulas.</p>
+<div id="o-r" class="section level3">
+<h3>O R…</h3>
+<p>Se você quer explorar o R, lembre-se que o império romano não foi construído em um único dia. Comece aos poucos, e aproveite os vários cursos introdutórios disponíveis online. Vá se familiarizando aos poucos e praticando todo dia um pouquinho.</p>
+<p>Alguns cursos gratuitos e em português:</p>
+<ul>
+<li><p>Bem inicial e passo a passo online: <a href="https://www.datacamp.com/community/open-courses/introducao-a-r" class="uri">https://www.datacamp.com/community/open-courses/introducao-a-r</a></p></li>
+<li><p>Em vídeo: <a href="https://youtu.be/28G51yu4zAA" class="uri">https://youtu.be/28G51yu4zAA</a></p></li>
+<li><p>Curso do básico ao avançado, para fazer off-line: <a href="https://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf" class="uri">https://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf</a> <a href="http://www.uft.edu.br/engambiental/prof/catalunha/arquivos/r/r_bruno.pdf" class="uri">http://www.uft.edu.br/engambiental/prof/catalunha/arquivos/r/r_bruno.pdf</a></p></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+name: "Raquel Freitag"                                # CHANGE HERE 
+output_dir: "."
+navbar:
+  title: "Raquel Freitag"                             # CHANGE HERE 
+  type: inverse
+  left:
+    - text: "Início"
+      icon: fa-home
+      href: index.html
+    - text: "Melhores Práticas"
+      icon: fa-user
+      href: cv.html
+    - text: "Ciência Aberta"
+      icon: fa-recycle
+      href: aberta.html
+    - text: "Cursos e tutoriais"
+      icon: fa-gear
+      menu:
+        - text: "Modelagem de dados"
+        - text: "Organização do conjunto de dados"
+          icon: fa-rocket
+          href: Organizacao.html
+        - text: "A escolha do software"
+          icon: fa-rocket
+          href: Software.html
+        - text: "Teste de hipóteses"
+          icon: fa-rocket
+          href: Pvalor.html
+        - text: "Redução de variáveis"
+          icon: fa-rocket
+          href: reducao.html
+        - text: "Variáveis categóricas"
+          icon: fa-rocket
+          href: Categorica.html
+        - text: "Variáveis contínuas"
+          icon: fa-rocket
+          href: Continuas.html
+        - text: "Introdução à regresão - parte 1"
+          icon: fa-rocket
+          href: regressao.html
+        - text: "---------"
+        - text: "Tutoriais"
+        - text: "Como fazer uma meta-análise com estudos sociolinguísticos?"
+          icon: fa-gear
+          href: meta.html
+        - text: "Como submeter um projeto na Plataforma Brasil? "
+          icon: fa-gear
+          href: etica.html
+  right:
+    - text: "Contato"
+      icon: fa-envelope-o
+      href: mailto:rkofreitag@uol.com.br                    # CHANGE HERE 
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate

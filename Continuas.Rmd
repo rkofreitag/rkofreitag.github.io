@@ -1,0 +1,420 @@
+---
+title: "Variáveis contínuas"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  echo = TRUE
+)
+```
+> Crie um novo projeto no RStudio e coloque na pasta os arquivos `corpus.csv`e `dados.csv`. Crie um `script` do Rstudio para registrar a sua análise. Com esse procedimento, não será necessário ficar mudando de diretório. E você pode voltar os passos caso tenha dificuldade com um comando.
+Este símbolo `#` significa que o `script` não irá ler o que está na sequência; utilize para inserir comentários sobre sua análise.
+
+<a href="corpus.csv#" class="download" title="Baixe o arquivo de dados corpus">Arquivo corpus</a>	
+<a href="dados.csv#" class="download" title="Baixe o arquivo de dados dados">Arquivo dados</a>	
+
+Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo **Palavras-tabu e efeitos de gênero na leitura** (Pinheiro, Menezes & Freitag, 2020), que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.
+
+A organização de um conjunto de dados depende da pergunta que será feita a eles. Por isso, é importante ter clareza das perguntas a serem feitas antes de iniciar a coleta, para não trabalhar à toa. Existem duas formas de organizar os dados, e elas podem ser manipuladas com os recursos do pacote `dplyr`. Os dados podem ser *pareados* ou *alinhados*.
+
+## Importar os dados 
+
+Este arquivo apresenta as variáveis pareadas. Vamos importar da tabela em formato `*.csv` para o formato de *dataframe* do R:
+```{r importacaodados0}
+dados <- read.table("dados.csv", sep = ";", header = T) 
+```
+
+Observe a estrutura do conjunto de dados importado:
+```{r importacaodados1}
+str(dados) 
+```
+
+Observe que são dois tipos de variáveis: *factor* e *num*. Estas são as seis primeiras ocorrências do conjunto de dados:
+```{r importacaodados2}
+head(dados) 
+```
+
+E estas são as cinco últimas ocorrências:
+```{r importacaodados3}
+tail(dados) 
+```
+
+*factor* é uma variável qualitativa e *num* é uma variável quantitativa.
+Este comando apresenta um resumo das variáveis:
+```{r importacaodados4}
+summary(dados)
+```
+
+Agora, vamos ver outro arranjo para os mesmos dados. Vamos importar este arquivo, que apresenta as variáveis alinhadas.
+```{r importacaocorpus0}
+corpus <- read.table("corpus.csv", sep = ";", header = T)
+```
+
+Faça o mesmo que fez com o arquivo anterior. 
+```{r importacaocorpus1}
+summary(corpus)
+```
+
+Compare o resumo de variáveis dos dois conjuntos de dados: qual a diferença entre eles? 
+Observe que a forma como organizamos nosso conjunto de dados pode interferir nos tipos de resposta que precisamos. Dito de outra forma: o modo como organizamos o conjunto de dados deve favorecer o tipo de respostas que precisamos dos dados.
+Por isso, vale a pena repetir: **antes de sair coletando dados, é preciso ter clareza das perguntas que serão feitas aos dados!**
+
+## Inspecionar os dados
+
+Primeiro, é preciso carregar os pacotes para manipulação dos dados. Instale antes. Cada um executará uma função específica e tutoriais para seu uso podem ser encontrados facilmente. Recomendo que estudem os pacotes e vejam as possibilidade de maniputação.
+```{r carregar}
+library(dplyr)
+library(report)
+library(ggplot2)
+library(ggsignif)
+library(forcats)
+library(ggpubr)
+library(rstatix)
+```
+
+Uma pergunta que precisamos fazer aos dados é se **existe diferença no tempo de leitura entre os textos** e se **essa diferença é significativa**.
+
+A primeira pergunta pode ser respondida com a função `summary()`. Para dizer se essa diferença é signficativa, precisamos realizar um teste estatístico de significância para a diferença. Antes de decidir pelo teste, precisamos conhecer os dados.
+
+  **A distribuição é normal?**
+
+Por inspeção visual, podemos ver se há normalidade. Para isso, fazemos um histograma da distribuição dos tempos de leitura, para cada um dos textos (`data.frame` `corpus`)
+```{r inspecao0}
+hist(corpus$texto.1, main = "Histograma para normalidade dos dados \ texto 1")
+```
+
+Visualmente, conseguimos ver uma curva normal nos dados. Vamos fazer um teste Shapiro. A hipótese nula do teste de Shapiro-Wilk é que a população tem distribuição normal. 
+Portanto, um valor de p < 0.05 indica que a hipótese nula é rejeitada, ou seja, os dados não apresentam distribuição normal.
+```{r inspecao1}
+shapiro.test(corpus$texto.1)
+```
+
+Os dados têm distribuição normal. A dispersão pode ser visualizada:
+```{r inspecao2}
+ggqqplot(corpus$texto.1)
+```
+
+Agora faça o mesmo para o texto 2; a distribuição é normal? 
+```{r inspecao3, echo=FALSE}
+hist(corpus$texto.2, main = "Histograma para normalidade dos dados \ texto 2")
+ggqqplot(corpus$texto.2)
+shapiro.test(corpus$texto.2)
+```
+
+A amostra é muito pequena (20 participantes); certamente, a ampliação da amostra resolveria o problema... 
+
+**A variância é homogênea?**
+
+Vamos testar a homogeneidade da variância entre os grupos. Aplicaremos o teste Bartlett, que : hipótese nula é que não há diferença na variância entre grupos.
+Para isso, será preciso testar o efeito de cada grupo (variável independente nominal, no caso, *sexo do participante* e *sexo do entrevistador*) em cada texto:
+```{r inspecao4}
+bartlett.test(texto.1 ~ entrevistador, data = corpus)
+bartlett.test(texto.2 ~ entrevistador, data = corpus)
+
+bartlett.test(texto.1 ~ sexo, data = corpus)
+bartlett.test(texto.2 ~ sexo, data = corpus)
+```
+
+Observe os resultados e diga qual é o grupo que está inteferindo na variância?
+
+**Há correlação entre as variáveis?**
+**Há correlação entre as variáveis?**
+
+A próxima inspeção é saber se correlação entre os dados, ou seja, se há interferência de uma variável na outra. Nos termos do objetivo do estudo em questão, precisamos saber se o tempo de leitura do texto 1 interfere no texto de leitura do texto 2.
+
+Para isso, vamos calcular o coeficiente de correlação, que mede se e o quanto duas variáveis quantitativas tendem a mudar juntas. Existem três testes, cada um com sua especificidade de variáveis: O coeficiente de correlação de Pearson (r) mede o grau da correlação linear entre duas variáveis quantitativas numéricas. Quando as variáveis são ordinais, podem ser considerados os coeficientes de correlação de Spearman ρ (rhô) ou de Kendall τ (tau); a estatística do teste Kendall é mais robusta, porém, é sensível a amostras restritas. 
+O coeficiente de correlação pode variar de -1 a +1, quanto maior for o valor absoluto do coeficiente, mais forte é a relação entre as variáveis. 
+Um valor absoluto de 1 indica uma relação perfeita, e um valor zero indica ausência de relação. Para realizar o teste, utilizamos a função `cor.test` e especificamos o método: 
+```{r inspecao6, echo=TRUE, comment = "#>"}
+cor.test(corpus$texto.1, corpus$texto.2, 
+                method = "spearman")
+```
+
+O resultado do teste nos permite dizer que, embora o tempo de leitura seja diferente entre os textos, não há correlação entre eles.
+
+Vamos fazer a inspeção visual do resultado; se a hipótese de pesquisa considerasse a correlação, esta figura poderia ser incluída na análise.
+```{r inspecao7}
+ggscatter(corpus, y = "texto.1", x = "texto.2", 
+          add = "reg.line", conf.int = FALSE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          ylab = "Tempo de leitura texto 1", xlab = "Tempo de leitura texto 2")
+```
+
+Já testamos a normalidade da distribuição e a correlação entre as variáveis. A partir disso, podemos escolher que teste estatístico aplicaremos para  explicar a diferença na comparação entre as médias de tempo de leitura em cada um dos textos. 
+
+### Comparação de médias
+
+Para comparar médias, podemos utilizar um conjunto de testes, a depender da quantidade de grupos e do tipo de distribuição dos dados. Neste tutorial, vamos conhecer os usos dos testes: T, Wilcoxon, ANOVA e Kruskal-Wallis.
+
+Para selecionar o teste, precisamos saber o que queremos fazer:
+
+- **Comparar a média de uma amostra com uma média já conhecida**?
+- **Comparar as médias de dois grupos independentes**?
+- **Comparar as médias de dois grupos pareados**?
+- **Comparar as médias de mais de dois grupos**?
+
+Vamos trabalhar neste tutorial os três primeiros casos.
+
+## Comparar a média de uma amostra com uma média já conhecida
+
+Sejam `corpus` e `dados` resultados de dois estudos distintos. A média do tempo de leitura de `dados` pode ser calculada da seguinte forma:
+
+```{r media1, echo=TRUE, comment = "#>"}
+mean(dados$tempo.de.leitura)
+```
+
+Queremos saber qual a relação entre o tempo de leitura de `dados` e o tempo leitura de  `texto.1` em `corpus`. 
+
+Primeiro, precisamos testar a normalidade dos dados. Teste a normalidade da distribuição de `texto.1` em `corpus`:
+```{r quiz100}
+shapiro.test(corpus$texto.1)
+```
+
+Como a distribuição é normal, podemos realizar um *teste-t para uma amostra*. Este é um teste paramétrico, que pressupõe a condição de normalidade dos dados. 
+Temos a média, calculada por `mean(dados$tempo.de.leitura)`. Podemos querer saber se a média do tempo de leitura em `corpus$texto.1` é igual, menor ou maior do que um valor conhecido assumido como padrão de referência (no caso, `dados$tempo.de.leitura`). 
+
+Vamos fazer o teste assumindo a hipótese de que a média de `corpus$texto.1` será igual à média teórica/já conhecida (`mu`), assumindo um nível de alfa = 0.05:
+```{r media10, echo=TRUE, comment = "#>"}
+t.test(corpus$texto.1, mu = 0.846, alternative = "two.side")
+```
+
+Agora vamos fazer o mesmo procedimento de comparação da média de `dados$tempo.de.leitura` com `texto.2`. Precisamos saber se a amostra satisfaz as condições de normalidade.
+```{r normalidade, echo=TRUE, comment = "#>"}
+shapiro.test(corpus$texto.2)
+```
+
+Como a distribuição não atende às condições de normalidade, precisamos utilizar um teste equivalente não-paramétrico, o teste Wilcoxon para uma amostra. Este teste permite determinar se a mediana de uma amostra é igual, maior ou menor do que um valor conhecido assumido como padrão de referência.
+
+*Média e mediana* são **medidas de tendência central** e só se aplicam a variáveis quantitativas.
+
+  - **Média**: somatório de todos os elementos da série dividido pelo número de elementos.
+  - **Mediana**: metade do valor central (ordenação crescente dos elementos dividida em duas partes).
+
+Vamos calcular a mediana de `texto.2`:
+```{r normalidade2, echo=TRUE, comment = "#>"}
+median(corpus$texto.2)
+```
+
+Agora que sabemos a mediana, o procedimento é o mesmo do teste-t, só que com a função `wilcox.test()`. Vamos testar a hipótese de que são iguais:
+```{r normalidade4, echo=TRUE, comment = "#>"}
+wilcox.test(corpus$texto.2, mu = 0.735, alternative = "two.side")
+```
+
+Em resumo, quando temos uma amostra e queremos comparar com um valor já conhecido, primeiro testamos a normalidade dos dados. Se os dados apresentam distribuição normal, escolhemos o teste-T para uma amostra, um teste paramétrico; se as condições de normalidade não são atendidas, escolhemos o teste Wilcoxon para uma amostra, um teste não paramétrico.
+
+## Comparar as médias de dois grupos independentes
+
+Queremos saber se o tempo de leitura de participantes homens é diferente do tempo de leitura de participantes mulheres no `texto.1`. Temos dois grupos independentes entre si, e esta identificação é importante para os procedimentos de seleção dos testes estatísticos. 
+
+Já sabemos que os dados de `texto.1` têm distribuição normal; vamos ver se a normalidade se conserva dentro dos grupos:
+```{r normalidade3, echo=TRUE, comment = "#>"}
+# teste Shapiro para normalidade com dados de participantes homens
+with(corpus, shapiro.test(texto.1[sexo == "masculino"])) 
+
+# teste Shapiro para normalidade com dados de participantes mulheres
+with(corpus, shapiro.test(texto.1[sexo == "feminino"])) 
+```
+
+Como os grupos da amostra atendem às condições de normalidade e homogeneidade, podemos empregar um teste paramétrico, o teste-t para amostras independentes para saber se a média entre os grupos é igual, maior ou menor. Vamos testar se as médias são iguais (`alternative = "two.side"'). 
+
+```{r independente, echo=TRUE, comment = "#>"}
+t.test(texto.1 ~ sexo, data = corpus, var.equal = TRUE, alternative = "two.side")
+```
+
+A última linha do teste informa a média de cada grupo. Vamos fazer a mesma pergunta sobre o efeito dos participantes ao `texto.2`: existe diferença no tempo de leitura de participantes homnes e participantes mulheres?
+Em não sendo satisfeita a condição de normalidade entre os grupos, utilizamos um teste não paramétrico, o teste de Wilcoxon para amostras independentes. A sintaxe do teste é a mesma do teste-t. 
+Vamos testar a hipótese de que a mediana do tempo de leitura de participantes mulheres será maior do que a de participantes homens:
+```{r independente2, echo=TRUE, comment = "#>"}
+wilcox.test(texto.2 ~ sexo, data = corpus, 
+            exact = FALSE, alternative = "greater")
+```
+
+## Comparar as médias de dois grupos pareados
+
+Agora chegamos ao objetivo do estudo em questão: um mesmo participante, leu dois textos diferentes. Temos a mesma medida para cada participante, é o que chamamos de amostras dependentes ou pareadas. Os testes a serem realizados são os mesmos apresentados anteriormente, teste-t para amostras pareadas, se a condição de normalidade é atendida, ou teste Wilcoxon para amostras pareadas se a condição de normalidade não é atendida.
+
+Já sabemos que em `dados$tempo.de.leitura` a distribuição não é normal.
+```{r nor, echo=TRUE, comment = "#>"}
+shapiro.test(dados$tempo.de.leitura)
+```
+
+Porém, todos os trabalhos com leitura sempre sinalizam para a normalidade das distribuições. Uma explicação para essa amostra seria o tamanho; se ampliássemos o número de participantes, a normalidade tenderia a se regularizar. Outra possibilidade é erro no cômputo de algum dado, um zero a mais ou a menos, uma mudança de ordem de algarismo na hora da digitação. Por isso é importante realizar a inspeção dos dados; sempre que algo sair do que é esperado a partir das evidências de outros estudos, deve-se checar a possível interferência.
+
+Um primeiro procedimento a ser feito é o de inspeção de *outliers*, distribuições fora dos parâmetros.
+```{r pareada1, echo=TRUE, comment = "#>"}
+dados %>%
+  group_by(tipo.de.texto, sexo, entrevistador) %>% 
+identify_outliers(tempo.de.leitura)
+```
+
+As duas últimas colunas do resultado informam se há valores *outlier* (`is.outlier`) e se estes são extremos (`is.extreme`). Como podemos ver, há três valores extremos (*TRUE*).
+Podemoes excluir estes dados para tentar normalizar a análise (mas perderemos 3 participantes). 
+```{r pareada2, echo=TRUE, comment = "#>"}
+dados %>%
+  filter((tipo.de.texto != "Texto-controle" & participante != "vanessa") & (tipo.de.texto != "Texto-controle" & participante != "hugo") | (tipo.de.texto != "Texto-alvo" & participante != "joao")) %>% 
+  identify_outliers(tempo.de.leitura)
+```
+ 
+```{r pareada3, echo=TRUE, comment = "#>"}
+dados %>%
+  filter((tipo.de.texto != "Texto-controle" & participante != "vanessa") & (tipo.de.texto != "Texto-controle" & participante != "hugo") | (tipo.de.texto != "Texto-alvo" & participante != "joao")) %>% 
+  shapiro_test(tempo.de.leitura)
+```
+
+Para fins didáticos, vamos realizar as análises considerando o *teste-t* e o *teste Wilcoxon*. Na prática, as diferenças são poucas. Apenas o procedimento de cálculo muda em função das pressuposições, assim como o modo de reportar os resultados.
+
+Vamos retomar as estatísticas sumárias, com a função `get_summary_stats()` do pacote `rstatixc`:
+```{r sumarias, echo=TRUE, comment = "#>"}
+dados %>%
+  group_by(tipo.de.texto, sexo, entrevistador) %>%
+get_summary_stats(tempo.de.leitura)
+```
+
+Além da média (`mean`) e da mediana (`median`), que já conhecemos, as estatísticas sumárias incluem outras informações, como:
+
+- *Valor mínimo* (`min`)  e *valor máximo* (`max`): o menor e o maior valor da série.
+- *Desvio padrão* (`sd`), uma *medida de dispersão*: medida do grau de dispersão em relação à média.
+- *Erro padrão* (`se`): uma medida de estimativa do desvio padrão.
+- *Intervalo de confiança* (`ci`): estimativa do intervalo considerando o desvio e o erro padrão.
+
+Agora vamos visualizar graficamente essa diferença. 
+
+Queremos saber se a diferença de leitura entre os textos é estatisticamente significativa. O texto sem palavras-tabu é o **Texto-controle**, e o texto com palavras-tabu é o **Texto-alvo**. Vamos representar graficamente a diferença entre as médias do tempo de leitura, já com o resultado do teste estatístico. Para gerar o gráfico, usamos o pacote `ggplot2` e para inserir o teste no gráfico, o pacote `ggsignif`.
+
+Vamos visualizar o resultado primeiramente com o teste-t:
+```{r analise0, echo=TRUE, comment = "#>"}
+ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_boxplot(outlier.shape = NA) + 
+  scale_fill_grey(start = 0.8, end = 0.6) +
+  geom_jitter(width = .05,
+              height = 0,
+              alpha = 0.4) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  ggtitle("Comparação entre os tempo de leitura dos textos") +
+  xlab("Textos lidos") + ylab("Tempo de leitura (em minutos)") +
+  stat_compare_means(method = "t.test", paired = TRUE) ### Informamos que queremos um teste-t, pareado
+```
+
+Somente o cálculo do teste:
+```{r teste,echo=TRUE, comment = "#>"}
+t.test(dados$tempo.de.leitura ~ dados$tipo.de.texto, paired = TRUE)
+```
+
+Vamos gerar o mesmo gráfico, mas agora com o teste Wilcoxon:
+```{r analise0a, echo=TRUE, comment = "#>"}
+ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_boxplot(outlier.shape = NA) + 
+  scale_fill_grey(start = 0.8, end = 0.6) +
+  geom_jitter(width = .05,
+              height = 0,
+              alpha = 0.4) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  ggtitle("Comparação entre os tempo de leitura dos textos") +
+  xlab("Textos lidos") + ylab("Tempo de leitura (em minutos)") +
+  stat_compare_means(method = "wilcox.test", paired = TRUE)
+```
+
+```{r teste2, echo=TRUE, comment = "#>"}
+wilcox.test(dados$tempo.de.leitura ~ dados$tipo.de.texto, paired = TRUE)
+```
+
+Como podemos perceber, ambos os testes permitem rejeitar a hipótese nula de que não há diferença, e nos permite lançar a hipótese alternativa de que existe uma diferença entre o tempo de leitura do texto-controle e o texto-alvo.
+
+Agora vamos verificar se existe efeito do sexo do participante no tempo da leitura. Primeiro, precisamos organizar os fatores, para aparecerem no gráfico.
+```{r analise5, echo=TRUE, comment = "#>"}
+dados$sexo <- dados$sexo %>% 
+  fct_recode("Mulher" = "feminino", "Homem" = "masculino")
+dados$sexo <- factor(dados$sexo, levels = c("Homem", "Mulher")) 
+```
+
+E vamos gerar o gráfico:
+```{r analise7, echo=TRUE, comment = "#>"}
+  ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~sexo) +
+    theme_minimal() +
+    theme(legend.position = "none") +
+    ggtitle("Efeito do sexo do participante no tempo de leitura dos textos") +
+    xlab("Textos lidos") + ylab("Tempo de leitura (em minutos)") +
+    stat_compare_means(method = "t.test", paired = TRUE)
+```
+
+Vamos incorporar ao gráfico uma linha com a média do tempo de leitura:
+```{r analise7a, echo=TRUE, comment = "#>"}
+  ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_hline(yintercept = mean(dados$tempo.de.leitura), linetype = 2) +  ### média geral do tempo de leitura
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~sexo) +
+    theme_minimal() +
+    theme(legend.position = "none") +
+    ggtitle("Efeito do sexo do participante no tempo de leitura dos textos") +
+    xlab("Textos lidos") + ylab("Tempo de leitura (em minutos)") +
+    stat_compare_means(method = "t.test", paired = TRUE)
+```
+
+Agora o resultado fica mais claro.
+
+Nossa próxima pergunta é se o sexo do entrevistador interfere no tempo de leitura.
+Os procedimentos são os mesmos: organizar os fatores, calcular as medidas de centralidade e dispersão, gerar o gráfico, organizar os dados para o teste e realizar o teste para reportar os resultados.
+
+*organizar fatores*:
+```{r analise10, echo=TRUE, comment = "#>"}
+dados$entrevistador <- dados$entrevistador %>%
+  fct_recode("Homem" = "homem", "Mulher" = "mulher")
+```
+
+*gerar gráfico*:
+```{r analise12, echo=TRUE, comment = "#>"}
+ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~ entrevistador) +
+    theme_minimal() +
+    theme(legend.position = "none") +
+    scale_color_manual(labels = c("Texto-controle", "Texto-alvo")) +
+    ggtitle("Efeito do sexo do entrevistador no tempo de leitura dos textos pelos participantes") +
+    xlab("Textos lidos") + ylab("Tempo de leitura (em minutos)") +
+    stat_compare_means(method = "t.test", paired = TRUE)
+```    
+
+## Reportar os resultados
+
+Testes paramétricos comparam médias; testes não paramétricos comparam medianas. 
+Para reportar no corpo do texto os resultados, precisamos das estatísticas sumárias e dos resultados dos testes.
+```{r report, echo=TRUE, comment = "#>"}
+dados %>%
+  group_by(tipo.de.texto) %>% 
+get_summary_stats(tempo.de.leitura)
+```
+
+As estatísticas sumárias são as mesmas. O resultado para o teste-t é
+
+```{r report2, echo=TRUE, comment = "#>"}
+t.test(tempo.de.leitura ~ tipo.de.texto, data = dados,  paired = TRUE)
+```
+
+As médias do tempo de leitura do texto-alvo e do texto-controle foram, respectivamente, 0.73 e 0.96 segundos. Um teste-t de amostras pareadas mostra que há um efeito significativo do tipo de texto (t = -2.3611, df = 19, p-valor = 0.029).
+
+```{r report3, echo=TRUE, comment = "#>"}
+wilcox.test(tempo.de.leitura ~ tipo.de.texto, data = dados, paired = TRUE)
+```
+
+As medianas do tempo de leitura do texto-alvo e do texto-controle foram, respectivamente, 0.74 e 0.98 segundos. Um teste Wilcoxon de amostras pareadas mostra que há um efeito significativo do tipo de texto (V = 48, p-valor = 0.032).
+
+Neste tutorial, vimos o funcionamento de variáveis quantitativas em uma situação pareada e vimos a importância de saber a pergunta que será feita aos dados para poder organizar o conjunto de dados da maneira mais otimizada para as respostas.
+Aproveite o conhecimento para aplicar em outros estudos! E aprimore seus conhecimentos em `dplyr` e `ggplot2`.

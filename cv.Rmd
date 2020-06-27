@@ -1,0 +1,26 @@
+---
+title: "Melhores práticas"
+---
+Está é minha <a href="CV.pdf#" class="download" title="Download CV as PDF">Súmula curricular</a> . Mas como nem tudo cabe no [Lattes](http://lattes.cnpq.br/2582841591375626), eu relato a seguir minhas melhores práticas que contribuem para o desenvolvimento científico, tecnológico e educacional. 
+
+## Tecnologias sociais para formalização e ressignificação de práticas culturais em Aracaju/SE
+
+A participação no projeto *Tecnologias sociais para formalização e ressignificação de práticas culturais em Aracaju/SE*, financiado pelo edital CAPES/FAPITEC/SE 05/2014, Programa de Integração da Ciência, Tecnologia e Inovação com a Educação Básica – Núcleos de CTI-EB, foi uma das experiências mais desafiadoras que enfrentei. 
+
+Na perspectiva da pedagogia culturalmente sensível (Erickson, 1987), segundo a qual a escola deve partir dos valores socioculturais da comunidade onde está localizada, buscamos investigar um arranjo produtivo local ainda não sistematizado, as comidas tradicionais. 
+ 
+A partir da identificação de valores, práticas e produções culturais no entorno de três comunidades escolares, fomentamos o desenvolvimento de tecnologias sociais relacionadas à produção de alimentos e o seu comércio informal. Desenvolvemos uma proposta de abordagem para identificar os alimentos tradicionais e típicos sergipanos, a partir do que é consumido diariamente, na forma do curso *Em busca da comida mais sergipana*. Foram realizadas oficinas para instrumentalizar os alunos a registrarem seus hábitos alimentares e da sua família, envolvendo conteúdos de Língua Portuguesa e Matemática no processo de identificação e sistematização das receitas. 
+ 
+Do desenvolvimento deste projeto resultam os seguintes produtos: 
+
+- Curso [**Em busca da comida mais sergipana**](http://ri.ufs.br/jspui/handle/riufs/13465), disponível no Repositório Institucional da Universidade Federal de Sergipe, que pode ser replicado em outras escolas ou adaptado para outras realidades.
+
+- Inicialmente pensado como manual para a orientação da equipe, o livro [**Documentação Sociolinguística, coleta de dados e ética em pesquisa**](http://www.livraria.ufs.br/produto/documentacao-sociolinguistica-coleta-de-dados-e-etica-em-pesquisa/), publicado pela Editora da Universidade Federal de Sergipe e disponível gratuitamente para *download*, em que são apresentados as diretrizes de documentação sociolinguística em espaço escolar, bem como orientações para atendimento aos preceitos de ética em pesquisa científica. 
+
+- Capítulo [**Processos fonológicos que passam da fala para a leitura**](http://www.livraria.ufs.br/produto/leitura-escrita-e-literatura-intersecoes-e-convergencias/), do livro organizado por Isabel Azevedo e Alberto Roiphe publicado pela Editora da Universidade Federal de Sergipe e disponível gratuitamente para *download*, em que são analisados processos fonológicos variáveis na fala e na leitura dos estudantes das escolas envolvidas no projeto que participaram da ação de documentação linguística. Estes resultados subsidiaram a proposta de controle de fluência em leitura e diagnóstico de perfil de leitor.
+
+- Artigo [**Pistas dos processos de decodificação que levam à compreensão da leitura**](), publicado na revisa Letras de Hoje, em coautoria com minha orientanda de doutorado [Alessandra Pereira Gomes Machado](http://lattes.cnpq.br/2820872438732446), em que apresentamos uma proposta de diagnóstico de perfil de leitor, considerando as pistas de processos de automaticidade na decodificação que levam à compreensão da leitura, com a participação de estudantes da educação básica das escolas envolvidas no projeto.
+
+- Artigo [**Enem: motivações e expectativas de estudantes da rede pública estadual de Sergipe**](https://www.scientiaplena.org.br/sp/article/view/3466), resultado de um trabalho selecionado para apresentação no Encontro Nacional Ciência e Habilidades Socioemocionais (CHA-SE),em 2016, e posteriormente publicado na revista Scientia Plena, e que foi desenvolvido junto com os bolsistas de Iniciação Científica vinculados ao projeto em duas das escolas, Colégio Estadual Atheneu Sergipense e Colégio Estadual Ministro Petrônio Portela, avaliando expectativas prévias e posteriores à realização do Enem. Os resultados evidenciam as diferenças entre as escolas.
+
+Além destes produtos, a formação de recursos humanos foi um diferencial: [Alessandra Machado](http://ri.ufs.br/jspui/handle/riufs/10982) e [Andréa Matos](http://ri.ufs.br/jspui/handle/riufs/9199) desenvolveram suas teses de doutorado, [Rosângela Barros](http://ri.ufs.br/jspui/handle/riufs/5701) desenvolveu sua dissertação de mestrado, e três bolsistas de Iniciação Científica do projeto atualmente são mestrandos: [Paloma Batista Cardoso](http://lattes.cnpq.br/5477985767644106), [Victor Renê Andrade Souza](http://lattes.cnpq.br/6402436577817417) e [Lucas Santos Silva](http://lattes.cnpq.br/1099393463964639), que foi agraciado em [2018](https://fapitec.se.gov.br/static/files/73/X%20PRÊMIO%20JOÃO%20RIBEIRO%20-%20RESULTADO%20FINAL.pdf) e em [2017](https://fapitec.se.gov.br/encerrados/129/EDITAL%2004.2017%20PREMIO) com o Prêmio João Ribeiro de Divulgação Científica na categoria Jovem Cientista, com produtos derivados deste projeto.

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Organização do conjunto de dados</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Modelagem.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Organização do conjunto de dados</h1>
+
+</div>
+
+
+<div id="apresentação" class="section level2">
+<h2>Apresentação</h2>
+<p>Modelagem de dados é a combinação de procedimentos de:</p>
+<ul>
+<li><strong>Análise de dados</strong>, para coletar, organizar e sumarizar</li>
+<li><strong>Estatística</strong>, para chegar a conclusões a partir de um conjunto de dados usando conhecimentos de probabilidade</li>
+</ul>
+<p>A modelagem de dados só faz sentido se houver uma pergunta a ser feita aos dados. A pergunta pode ter motivação empírica ou teórica; a partir da pergunta, são construídas hipóteses e são organizados os dados para a testagem destas hipóteses.</p>
+<p>Por isso, precisamos ter clareza do problema de pesquisa (saber que pergunta será feita aos dados), e saber selecionar a ferramenta estatística adequada, para extrair significado dos dados.</p>
+<p>Estatística lida com probabilidades, razões de chance de ocorrer; e o que fazemos é quantificar a nossa incerteza: eu tenho 95% de confiança de que, após este curso, entre 83% e 87% de vocês, alunos, serão capazes de realizar um teste de qui-quadrado.</p>
+<p>Como eu cheguei a esses números? Ou melhor, o que significam esses números? Estas são algumas das respostas que este curso pode oferecer.</p>
+</div>
+<div id="os-10-mandamentos" class="section level2">
+<h2>Os 10 mandamentos</h2>
+<p>Para podermos fazer as perguntas ao conjunto de dados, a organização é essencial. Utilize um programa de planilhas eletrônicas para construir o seu conjunto de dados, há várias opções (<em>Microsoft Office Excel</em>, <em>Open Office Calc </em>, <em>Planilhas Google</em>, etc.). Siga os 10 mandamentos e as suas perguntas serão mais facilmente respondidas:</p>
+<p><strong>1. Todos os seus dados devem ser armazenados em uma única planilha</strong></p>
+<ul>
+<li>Não salve o seu banco de dados em vários arquivos separados</li>
+<li>Não faça codificações paralelas, faça sempre no mesmo arquivo</li>
+</ul>
+<p><strong>2. A planilha deve seguir a ordem de formatação</strong></p>
+<ul>
+<li>Comece pela primeira linha e coluna, não deixe linhas ou colunas em branco</li>
+</ul>
+<p><strong>3. Uma linha = uma ocorrência</strong></p>
+<ul>
+<li>Não sobreponha ocorrências</li>
+</ul>
+<p><strong>4. Uma coluna = uma variável</strong></p>
+<ul>
+<li>Não sobreponha variáveis</li>
+</ul>
+<p><strong>5. Não codifique todas as variáveis qualitativas</strong></p>
+<ul>
+<li>Não precisa considerar todas as variáveis qualitativas tais como aparecem em respostas, utilize alguma estratégia de generalização</li>
+</ul>
+<p><strong>6. O banco de dados deve conter apenas dados</strong></p>
+<ul>
+<li>Formação, comentários e balões não são processados</li>
+</ul>
+<p><strong>7. A codificação deve ser homogênea</strong></p>
+<ul>
+<li>Letra maiúscula e letra minúscula fazem diferença, assim como espaço em branco</li>
+</ul>
+<p><strong>8. Respeite as variáveis numéricas</strong></p>
+<ul>
+<li>Colunas de variáveis numéricas devem ter apenas números</li>
+</ul>
+<p><strong>9. Garanta o anonimato das fontes</strong></p>
+<ul>
+<li>Remova informações que podem identificar participantes</li>
+</ul>
+<p><strong>10. O banco de dados precisa ser legível para humanos</strong></p>
+<ul>
+<li>Utilize códigos e siglas icônicos, que permitam acessar o conteúdo rapidamente</li>
+</ul>
+<p><strong>Relembrando:</strong></p>
+<ul>
+<li>Não use várias tabelas dentro de uma planilha|</li>
+<li>Evite espalhar dados por múltiplas abas</li>
+<li>Registre zeros como zeros</li>
+<li>Use um valor nulo apropriado para registrar dados ausentes</li>
+<li>Não utilize a formatação para codificar informações ou para tornar a sua planilha bonita</li>
+<li>Coloque comentários em uma coluna separada</li>
+<li>Registre unidades nos cabeçalhos das colunas</li>
+<li>Inclua apenas uma informação em uma célula</li>
+<li>Evite espaços, números e caracteres especiais nos cabeçalhos das colunas</li>
+<li>Evite caracteres especiais nos seus dados</li>
+<li>Registre os metadados em um arquivo de texto simples separado</li>
+</ul>
+<p>Estes cuidados vão facilitar a sua vida na análise e permitir o compartilhamento e reuso de dados, um dos princípios de Ciência Aberta.</p>
+<p><strong>Formato do arquivo:</strong> Os dados armazenados em formatos comuns de planilha eletrônica (*.xls, etc.) muitas vezes não serão lidos corretamente no software de análise de dados, levando a erros em seus dados. A exportação de dados de planilhas para formatos como CSV ou TSV permite o uso consistente pela maioria dos programas.</p>
+<p>Se você quiser saber mais sobre organização de conjuntos de dados, leia estes artigos:</p>
+<ul>
+<li><a href="https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989"><em>Data Organization in Spreadsheets</em></a></li>
+<li><a href="https://esajournals.onlinelibrary.wiley.com/doi/epdf/10.1890/0012-9623-90.2.205"><em>Some simple guidelines for effective data management</em></a></li>
+</ul>
+</div>
+<div id="tipos-de-variáveis" class="section level2">
+<h2>Tipos de variáveis</h2>
+<p><strong>Já tenho meu conjunto de dados, e agora?</strong> Vamos iniciar a exploração dos dados:</p>
+<ul>
+<li>Olhar sempre primeiro para a distribuição dos dados brutos</li>
+<li>Inspecionar as variáveis uma a uma</li>
+<li>Verificar as relações entre as variáveis</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>Nunca faça um teste estatístico antes das etapas prévias de exploração!!!!</strong></li>
+</ul>
+</blockquote>
+<p>A primeira inspeção que fazemos em um conjunto de dados é quanto ao tipo de dados, na forma de variáveis. As variáveis são as representações das colunas, as ocorrências são as representações das linhas.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variável</th>
+<th>Variável</th>
+<th>Variável</th>
+<th>Variável</th>
+<th>Variável</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+</tr>
+<tr class="even">
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+</tr>
+<tr class="odd">
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+</tr>
+<tr class="even">
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+<td>Ocorrência</td>
+</tr>
+</tbody>
+</table>
+<p>Os tipos de variáveis que compõe um conjunto de dados podem ser:</p>
+<ul>
+<li><strong>Numéricas</strong>: observações que podem ser tomadas por um valor no conjunto dos números reais. Podem ser manipuladas, ou seja, podemos somá-la, dividi-las, calcular sua média, etc.
+<ul>
+<li><em>Discretas</em>: valores numéricos em intervalos. Um número finito (por exemplo: quantos alunos estudam em uma classe? Quantos cigarros uma pessoa fuma por dia?)</li>
+<li><em>Contínuas</em>: valores numéricos medidos em uma escala (por exemplo: qual foi a nota que cada estudante obteve em um teste? Quanto custou um cigarro?)</li>
+</ul></li>
+<li><strong>Categóricas</strong>: observações que podem ser agrupadas em categorias. Ao contrário de variáveis numéricas, não podem ser manipuladas: não podemos somar categorias, dividir categorias nem calcular média de categorias.
+<ul>
+<li><em>Nominais</em>: uma ou mais categorias, sem ordenação entre elas (por exemplo: gênero)</li>
+<li><em>Ordinais</em>: ordenação entre os níveis (por exemplo: grau de escolarização)</li>
+</ul></li>
+</ul>
+<p>Vamos observar dados reais em um conjunto de dados. Vamos importar um conjunto de dados nativo da plataforma R, o <code>iris</code>. Para inspecioná-lo, digite <code>str(iris)</code> no console do R e rode o código.</p>
+<pre class="r"><code>str(iris)
+#&gt; &#39;data.frame&#39;:    150 obs. of  5 variables:
+#&gt;  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+#&gt;  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+#&gt;  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+#&gt;  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+#&gt;  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>A função <code>str()</code> sumariza a estrutura de um conjunto de dados. No caso do conjunto <code>iris</code>, temos um <code>data.frame</code>, um tipo de arranjo em que cada observação corresponde a uma linha e cada coluna a uma variável. Este é o formato normalmente importado das planilhas.</p>
+<p>Neste conjunto de dados, temos <strong>150</strong> ocorrências e <strong>5</strong> variáveis.</p>
+<p>Vamos agora inspecionar os tipos de variáveis neste conjunto de dados. Utilize a função <code>head()</code> no conjunto de dados <code>iris</code> e rode o código.</p>
+<pre class="r"><code>head(iris)
+#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#&gt; 1          5.1         3.5          1.4         0.2  setosa
+#&gt; 2          4.9         3.0          1.4         0.2  setosa
+#&gt; 3          4.7         3.2          1.3         0.2  setosa
+#&gt; 4          4.6         3.1          1.5         0.2  setosa
+#&gt; 5          5.0         3.6          1.4         0.2  setosa
+#&gt; 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>A função <code>head()</code> lista as seis primeiras ocorrências do <code>data.frame</code>.</p>
+<p>Vamos inspecionar outro conjunto de dados, <code>airquality</code>. Utilize as funções <code>str()</code> e <code>head()</code> para inspeção:</p>
+<pre class="r"><code>str(airquality)
+#&gt; &#39;data.frame&#39;:    153 obs. of  6 variables:
+#&gt;  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+#&gt;  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+#&gt;  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+#&gt;  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+#&gt;  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+#&gt;  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
+head(airquality)
+#&gt;   Ozone Solar.R Wind Temp Month Day
+#&gt; 1    41     190  7.4   67     5   1
+#&gt; 2    36     118  8.0   72     5   2
+#&gt; 3    12     149 12.6   74     5   3
+#&gt; 4    18     313 11.5   62     5   4
+#&gt; 5    NA      NA 14.3   56     5   5
+#&gt; 6    28      NA 14.9   66     5   6</code></pre>
+<p>Vamos agora identificar as variáveis. Todas as variáveis apresentam números, mas nem todos os números são variáveis numéricas! <em>Dia</em> e <em>mês</em> são unidades de ordenação e não de medida. Por isso é importante conhecer o conjunto de dados e sua organização.</p>
+<blockquote>
+<p>Se você quiser conhecer mais conjuntos de dados, utilize a função <code>data()</code> no console da plataforma R e veja as formas de apresentação e distribuição de variáveis.</p>
+</blockquote>
+</div>
+<div id="variáveis-de-interesse" class="section level2">
+<h2>Variáveis de interesse</h2>
+<p>Um conjunto de dados provê respostas a uma pergunta de pesquisa. Por isso, é importante saber a natureza da pesquisa e identificar as variáveis de interesse.</p>
+<p>As pesquisas podem ser classificadas em <strong>observacionais</strong>, quando o pesquisador estuda um problema, mas não interfere no seu desfecho, ou <strong>experimentais</strong>, quando o pesquisador interfere no problema para então observar o que acontece. Pesquisas experimentais podem ser controladas, naturais ou de campo. Pesquisas observacionais podem ser seccionais, transversais ou longitudinais.</p>
+<p>Saber se há ou não interferência do pesquisador no resultado é importante para delinear as <strong>variáveis de interesse</strong>, aquelas que são medidas ou observadas, também chamadas de variáveis de resposta ou dependentes, e saber quais são as variáveis que afetam a resposta e podem ser definidas ou medidas, chamadas de <strong>preditoras</strong>, <strong>explicativas</strong> ou <strong>independentes</strong> (sinônimos).</p>
+<p>Vamos voltar a fazer bolo. Queremos saber qual é o segredo para um bolo delicioso; precisamos testar as variáveis que podem ser preditivas de uma receita de bolo de sucesso, como a temperatura do forno, tempo de cozimento, tipo do recheio. Qual seria o resultado do efeito diferenciado delas em uma receita? Saber diferenciar qual é a variável preditora e a variável resposta em um estudo é essencial para a organização dos dados.</p>
+<ul>
+<li>Em uma tabela:
+<ul>
+<li>Variáveis preditoras nas linhas</li>
+<li>Variáveis resposta nas colunas</li>
+</ul></li>
+<li>Em um gráfico:
+<ul>
+<li>Variáveis preditoras no eixo x</li>
+<li>Variáveis resposta no eixo y</li>
+</ul></li>
+</ul>
+<div id="por-que-isso-é-importante" class="section level3">
+<h3>Por que isso é importante?</h3>
+<p>Muitas dificuldades em uma pesquisa decorrem de problemas na organização do conjunto de dados. Quando não se tem clareza sobre o que se quer perguntar aos dados, não se sabe qual é a variável dependente, nem quais são os preditores que atuam sobre ela.</p>
+<p>Uma saída é usar o liquidificador: escolha um pacote estatístico, jogue todos os dados lá dentro e peça todas as possibilidades de análise. Aí escolha a que tiver o p-valor melhor…</p>
+<p>A outra saída é ter clareza do que se quer, ter um plano de registro de pré-análise (o que eu vou perguntar aos meus dados). Isso exige ter clareza da variável dependente e dos preditores.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

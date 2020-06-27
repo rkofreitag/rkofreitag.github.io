@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Ciência Aberta</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Ciência Aberta</h1>
+
+</div>
+
+
+<div id="o-iceberg-da-ciência" class="section level1">
+<h1>O <em>iceberg</em> da ciência</h1>
+<p><img src="iceberg.jpg" /></p>
+<p>Podemos comparar a nossa prática científica a um <em>iceberg</em>: a parte de cima, a visível acima da linha d’água, são os artigos publicados, as apresentações em eventos, as bolsas e os auxílios aprovados. Mas para cada uma das conquistas visíveis há um conjunto muito maior de experiências que ficam emcobertas, abaixo da linha d’água do <em>iceberg</em>: os resultados negativos que não são reportados, os dados primários e secundários coletados e não publicados, as hipóteses equivocadas, as incertezas do pesquisador, assim como os atalhios práticos adotados para superar as dificuldades e o próprio fluxo da pesquisa.</p>
+<p>O movimento Ciência Aberta visa trazer à tona a parte submersa do <em>iceberg</em> da pesquisa: é a prática na qual outros podem colaborar e contribuir, em que os dados de pesquisa, as anotações de laboratório e outros processos de pesquisa estão acessíveis, em condições que permitam o reuso, a redistribuição e a reprodução da pesquisa e de seus métodos subjacentes.</p>
+<p>Precisamos abrir a caixa preta (que na verdade é vermelha) dos dados!</p>
+<div id="dados-fair" class="section level2">
+<h2>Dados <strong>FAIR</strong></h2>
+<p>Em Ciência Aberta, os dados de pesquisa atendem ao acrônico do inglês <em>FAIR</em>:</p>
+<p><img src="https://www.incf.org/sites/default/files/gbb-uploads/FAIR-image.png" /></p>
+<ul>
+<li><p><strong>Achável</strong> (<em>Findable</em>): Para ser localizado, qualquer conjunto de dados precissa ser identificável unicamente e persistentemente. O mesmo conjunto de dados precisa ser reencontrado em qualquer ponto no tempo, de modo persistente. Um conjunto de dados precisa deve incluir metadados básicos para ser distinguido de outros conjuntos de dados. Os identificadores precisam ser únicos e persistentes, como o DOI.</p></li>
+<li><p><strong>Acessível</strong> (<em>Accessible</em>): Dados acessíveis podem ser processados por máquinas e seres humanos, o que envolve a autorização de uso e questões éticas, bem como um protocolo definido de processamento, com glosas e rotinas detalhadas.</p></li>
+<li><p><strong>Interoperável</strong> (<em>Interoperable</em>): Conjuntos de dados interoperáveis são aqueles processáveis por máquina. Por isso, precisam utilizar etiquetas compartilhadas. Além disso, os dados dentro do cojunto de dados devem ser sintaticamente e semanticamente interpretáveis.</p></li>
+<li><p><strong>Reutilizável</strong> (<em>Reusable</em>): Para serem reutilizados, além de atender aos princípios anteriores, os conjuntos de dados precisam ser suficientemente bem descritos para possibilitar a comparação con outros conjuntos de dados. Para garantir a autoria, conjunto de dados publicados devem se referir às fontes com metadados que permitam a citação adequada.</p></li>
+</ul>
+</div>
+<div id="repositórios-para-a-ciência-aberta" class="section level2">
+<h2>Repositórios para a Ciência Aberta</h2>
+<p>O movimento Ciência Aberta preconiza a abertura e a transparência na gestão dos conjuntos de dados de pesquisa. Isso significa a disponinilização de dados em repositórios públicos (não necessariamente abertos), a disponibilização de <em>scripts</em> de busca e de análise de dados, a publicação do projeto e das hipóteses (ou protocolo de registro de pré-análise).</p>
+<p>Para a disponibilização deste conjuntos, as plataformas <a href="https://osf.io">Open Science Framework</a> e <a href="https://figshare.com">Figshare</a> são as mais conhecidas e aderentes aos princípios do movimento Ciência Aberta. Além disso, ao registrar o projeto e armazenar os conjuntos de dados nestas plataformas, é possível atribuir um DOI a cada produto científico, possibilitando a citação e o compartilhamento.</p>
+<p>A disponibilização de conjuntos de dados, scripts de análise e do projeto de pré-análise tem sido requisitada nas publicações científicas, como uma forma de possibilitar a replicabilidade da pesquisa científica, e, assim, contribuir para reverter a crise na ciência.</p>
+</div>
+<div id="as-publicações-científicas-e-o-movimento-ciência-aberta" class="section level2">
+<h2>As publicações científicas e o movimento Ciência Aberta</h2>
+<p>Os efeitos da ciência aberto também se verificam no fluxo da divulgação científica, mais especificamente com a revisão aberta e a publicação de <em>pre-prints</em>.</p>
+<p>O modelo de avaliação tradicionalmente adotado nas revistas científicas é o duplo cego, o que significa que o autor não sabe quem são os pareceristas e os pareceristas não sabem quem são os autores. Na teoria, o sistema funciona. Mas na prática, muitas vezes a especificidade do estudo faz com que rapidamente pareceristas suspeitem quem sejam os autores do manuscrito em avaliação, assim como o tipo de sugestão e encaminhamentos apresentados nos pareceres leva os autores a suspeitar da identidade de quem foi o parecerista. A abertura do processo, ou seja, autores e pareceristas sabem quem é quem, evita o desconforto das suspeitas e ao mesmo tempo possibilita um trabalho colaborativo de verdadeira construção da ciência, ao valorizar a contribuição do parecerista.</p>
+<p>Embora demandem tempo e esforço, pareceres resultantes do processo de avaliação duplo cego são produtos acadêmicos pouco valorizados por conta do anonimato, que impossibilita sua publicação. Muitas vezes a contribuição de um parecer é substancial na condução de uma linha de análise ou de argumentação em um artigo científico, e quem despendeu esforço e tempo para contribuir com o amadurecimento da pesquisa recebe, no máximo, uma nota de agradecimento genérica. A publicação dos pareceres e o reconhecimento nominal dá visibilidade e valoriza o trabalho do parecerista, além de elevar a qualidade da produção científica. Como editora chefe da <a href="https://revista.abralin.org/index.php/abralin">Revista da Abralin</a>, que em 2020 adotou o processo de revisão aberta pioneiramente na área de Linguística no Brasil, posso atestar que a mudança elevou a qualidade não só dos pareceres, mas também das submissões (o anonimato, de certa forma, protege faces), além de reduzir o tempo no fluxo editorial e contar com discussões que promoveram o aprimoramento significativo das ideias dos artigos, com o devido reconhecimento das contribuições dos pareceristas.</p>
+<p>Uma outra forma de revisão aberta, mas anterior ou paralela ao processo editorial, é a publicação de um manuscrito em um repositório de <em>pre-prints</em>.</p>
+<p>Um <em>pre-print</em> é um manuscrito que, antes de passar por um processo de avaliação de pares em um periódico, é compartilhado em um repositório temático para acesso ao público. Em outras palavras, é uma revisão aberta pública: qualquer pessoa pode contribuir com o manuscrito, publicando seu parecer. Com este procedimento, os manuscritos podem passar por uma pré-avaliação antes de serem submetidos ao processo editorial de um periódico, o que permite correções e novas versões do mesmo texto à medida que as contribuições são incorporadas. Outra vantagem do deposito em um repositório de <em>pre-prints</em> é a celeridade na publicação de resultados; por exemplo, em meio à pandemia de COVID-19, as demandas por acesso a resultados não podem esperar os quatro a seis meses em média de tempo de processo por todo o fluxo editorial em um periódico. Nem todas as revistas aceitam submissões de artigos que estejam depositadas em repositórios de <em>pre-prints</em> e não é qualquer manuscrito que é aceito em um repositório: por isso, é importante antes checar tanto a política do periódico (quando aceitam <em>preprints</em>, é necessário informar o identificador de acesso no repositório) quanto a do repositório (que pode ter exigências quanto à língua da publicação ou temática).</p>
+<p>O <a href="https://preprints.scielo.org/index.php/scielo">Scielo</a> tem um repositório de <em>preprints</em> preferencialmente para manuscritos submetidos às revistas vinculadas. E o <a href="https://psyarxiv.com">PsyArXIv</a> é um repositório da área da psicologia que também aceita a submissão de manuscritos da área de linguística.</p>
+</div>
+<div id="política-de-estado" class="section level2">
+<h2>Política de Estado</h2>
+<p>As diretrizes do movimento Ciência Aberta encontram amparo no <a href="https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro/4o-plano-de-acao-nacional_portugues.pdf"><strong>4<sup>o</sup> Plano de Ação Nacional sobre Governo Aberto</strong></a>, que estabece compromissos para a inserção de iniciativas, ações, projetos, programas e políticas públicas inovadoras, e, especificamente no campo da ciência e inovação, visa estabelecer mecanismos de governança de dados científicos para o avanço da ciência aberta no Brasil.</p>
+<p>Um destes mecanismos é o <a href="http://www.ibict.br/sala-de-imprensa/noticias/item/1952-ibict-e-cnpq-assinam-acordo-de-cooperacao-para-o-repositorio-lattes-data"><em>Lattes Data</em></a>, uma expansão da Plataforma Lattes com o objetivo de armazenar e permitir acesso aos dados de projetos fomentados pelo CNPq, permitindo compartilhamento e reuso pela comunidade científica e acompanhamento pela sociedade.</p>
+<p>Outras instituições de pesquisa brasileiras também se comprometem com os princípios de Ciência Aberta. O Instituto Serrapilheira publicou um <a href="https://olz34z4bb51rsojq274o1g19-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/serrapilheira-guia_ciencia_aberta-e-reprodutivel.pdf">Guia de boas práticas em ciência aberta e reprodutível</a> com orientações mais detalhadas e complementares a estas que compartilho aqui. A <a href="http://www.fapesp.br/openscience/">FAPESP</a> apresenta suas diretrizes de Ciência Aberta e divulga suas iniciativas e outras experiências no mundo.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

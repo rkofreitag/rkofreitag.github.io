@@ -1,0 +1,302 @@
+---
+title: "Redução de variáveis e de dados"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  echo = TRUE
+)
+```
+
+> Crie um novo projeto no RStudio e coloque na pasta os arquivos `negacao.csv`e `self.csv`. Crie um `script` do Rstudio para registrar a sua análise. Com esse procedimento, não será necessário ficar mudando de diretório. E você pode voltar os passos caso tenha dificuldade com um comando.
+Este símbolo `#` significa que o `script` não irá ler o que está na sequência; utilize para inserir comentários sobre sua análise.
+
+<a href="negacao.csv#" class="download" title="Baixe o arquivo de dados negacao">Arquivo negacao</a>	
+<a href="self.csv#" class="download" title="Baixe o arquivo de dados self">Arquivo self</a>	
+
+Redução de dados significa sumarizar conjuntos de dados que têm muitas variáveis para  um conjunto menor de variáveis selecionadas no conjunto original, por critérios estatísticos. Neste processo, é preciso garantir que a redução do tamanho para uma  representação mais compacta não implique em supersimplificação, com a  perda de informação relevante.
+
+Depois de realizar os procedimentos de redução de dados, a interpretação depende de conhecimento teórico e das hipóteses assumidas. As técnicas apenas ajudam a decidir. O que impera são os conhecimentos do pesquisador. No conjunto de dados reduzido, podemos observar com mais clareza tendências, padrões e dados fora do esperado (*outliers*).
+
+Quanto mais variáveis incluídas em um modelo de análise, mais complexa e custosa se torna a sua explicação. Por isso, é preciso tomar decisões para reduzir o número de variáveis incluídas. Vamos conhecer algumas técnicas; cada uma delas têm vantagens e desvantagens, além de restrições quanto aos tipos de variável. Antes de escolher qual a técnica, precisamos realizar a checagem do tipo da variável dependente. Seguindo princípios de Ciência Aberta, vamos trabalhar com conjuntos de dados reais, provenientes de outros estudos e compartilhados. 
+Carregue o arquivo `negacao` (disponível em < >):
+
+```{r importacaodados0, echo=TRUE, comment = "#>"}
+negacao <- read.table("negacao.csv", header = T,  sep = ";")
+```
+
+Observe a estrutura do banco de dados importado, com o comando `str`:
+```{r importacaodados1, echo=TRUE, comment = "#>"}
+str(negacao) 
+```
+
+Se na sua versão os dados não forem importados como *factor*, faça a conversão:
+
+```{r importacaodados2, echo=TRUE, comment = "#>"}
+library(dplyr)
+negacao <- negacao %>% mutate_if(is.character, as.factor)
+```
+
+Vamos começar com os procedimentos para um conjunto de dados de variável categórica.
+
+**Procedimentos para a redução dos dados:**
+
+- Decidir qual é a variável dependente
+- Testar a significância em análise univariada
+- Realizar a análise de redução
+- Decidir pela inserção ou exclusão de variáveis dependentes
+- Realizar nova análise
+- Repetir passos anteriores até ter um modelo com um número de variáveis adequado
+
+## Classificação condicional
+
+A técnica de árvores de inferências condicionais é um modelo de árvores de decisões em que as observações de ocorrências são agrupadas modo a ter o **mínimo** de variação **dentro** de um grupo e o **máximo** de variação **entre** os grupos. 
+
+As observações das ocorrências são agrupadas por partição binária recursiva, de modo a estabelecer uma hierarquia entre variáveis preditoras, e o grau de composicionalidade entre elas.
+
+A árvore de inferências condicionais é baseada em cálculos de regressão, em que as partições representam o mais baixo p-valor que é obtido entre todos os níveis de todas as variáveis preditoras. 
+
+Como em uma árvore de verdade, uma árvore de inferências condicionais é um tipo de gráfico constituído por nódulos (*node*), que correspondem às folhas da árvore, e um conjunto de decisões de partição para cada nódulo, que corresponde ao tronco da árvore. 
+
+O objetivo de construir um modelo de árvore de classificação condicional é predizer o comportamento das respostas em observações futuras. 
+
+A aplicação de um modelo de árvore de classificação condicional permite identificar vieses de seleção de variáveis, além de servir a variáveis contínuas, ordinais e nominais (binárias ou eneárias). São modelos simples de entender e de interpretar e que permitem identificar regularidades em conjuntos de dados em que há muitos níveis em cada variável, possibilitando visualizar sobreposições ou categorizações que não agregam significância ao modelo. 
+
+Esta é uma abordagem de exploração de dados, análise estatística exploratória, baseada em testes de significância, e que pode ser especialmente útil para auxiliar na descrição de usos linguísticos diversos e variáveis quanto à regularidade a emergência da diversidade. 
+
+Vamos aprender a realizar uma análise de árvore de classificação condicional, a partir do conjunto de dados que utilizamos em **Modelo de árvore de inferência condicional para explicar usos linguísticos variáveis** (Freitag & Pinheiro 2020). 
+
+O problema em questão diz respeito à negação sentencial no portuguê brasileiro, cuja realização é variável, com padrões morfossintáticos e morfornêmicos diferentes. Do ponto de vista morfossintático, há três arranjos:
+
+- negação pré-verbal (**neg-V**): “minha mãe **não** morava tão perto da casa de minha irmã” 
+
+-	negação dupla (**neg-V-neg**): “ agora calma, eu **não** sou **não**”
+
+-	negação pós-verbal (**V-neg**): “foi perto de onde eu moro **não**”
+
+E, do ponto de vista morfofonêmico, em função das mudanças decorrentes enfraquecimento do elemento negativo, ocorre redução fonética, e a negação pode ter duas realizações: 
+
+- Canônica (**não**): “eu **não** tenho problema com ninguém"
+
+-	Reduzida (**num**): “**num** é um sotaque que gosto, mas a gente convive, né?”
+
+Saber como esses arranjos se configuram nos dados é importante para definir o tipo de análise a ser realizada.
+Carregue os pacotes:
+```{r pacotes, echo=TRUE, comment = "#>"}
+library(rpart)
+library(rpart.plot)
+library(party)
+library(randomForest)
+```
+
+## Árvore de partição
+
+Vamos observar como o conjunto de dados se comporta quando a variável dependente é a realização fonética da negação com a função `part`. 
+Uma técnica que pode ser empregada é a repartição, em que os dados são divididos de acordo com a maior frequência absoluta da variável dependente em fumnção de cada variável.
+Utilizamos o pacote `rpart`, e informamos o nome da variável dependente `contexto_fonetico` seguida do operador `~` e das demais variáveis a serem incluídas no modelo, adicionadas por `+`. Ao final, indicamos a fonte dos dados em `data`.
+
+```{r tree1, echo=TRUE, comment = "#>"}
+class_fonetica <- rpart(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+```
+
+Para visualizar o resultado, utilize o comando `rpart.plot`, as cores podem ser mudadas em `box.col`, e o título em `main`:
+
+```{r tree2, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+rpart.plot(class_fonetica, type=4, extra=2, faclen=0, under=TRUE, cex=1, box.col=c("pink", "lightblue")[class_fonetica$frame$yval], main = "Classificação dos dados em função da realização fonética") ## cores e título podem ser modificados
+```
+
+Observe a figura. A maior frequência de realização fonética na negação é de *não*, e a variável onde essa frequência fica dividida de forma mais polarizada é quanto ao sexo. Das 376 ocorrências de negação, 322 são de *não*. Para a variável *sexo*, o nível *masculino* computa 145 ocorrências de negação, das quais 140 são de *não*. Esta informação está no topo da árvore e no primeiro nódulo à esquerda. Para conferir estes valores, faça uma tabela com a variável dependente `contexto_fonetico` e a variável independente `sexo`, com margens: 
+
+```{r table1, echo=TRUE, comment = "#>"}
+addmargins(table(negacao$contexto_fonetico, negacao$sexo))
+```
+
+O mesmo procedimento vai sendo feito para cada uma das variáveis em ordem da frequência. São formados subconjuntos dos dados: os dados do nível `feminino` são partidos em função da pessoa do sujeito, o conjunto de dados do sexo feminino e da pessoa do sujeito não falante é partido em função do tempo da ação, o conjunto de dados do sexo feminino da pessoa do sujeito não falante e do tempo não passado é partido quanto ao ato de fala; o conjunto de dados do sexo feminino da pessoa do sujeito não falante do tempo não passado e declarativo é partido quanto à região de residência; e, por fim,  o conjunto de dados do sexo feminino da pessoa do sujeito não falante do tempo não passado  declarativo e do interior é composto por 32 ocorrências, das quais 18 são da forma `num`. Ufa! Cansativo! Mas pode indicar uma assimetria na distribuição e embasar decisões sobre a inclusão ou exclusão de variáveis, ou direção de amplicação da amostra.
+
+Esta árvore foi construída com todos as variáveis do conjunto de dados; podemos excluir variáveis e observar o comportamento. Vamos construir um novo modelo excluindo os fatores sociais. 
+
+```{r tree3, echo=TRUE, comment = "#>", fig.height = 2, fig.width = 6, fig.align = "center"}
+arvore_fonetica2 <- rpart(contexto_fonetico ~ negacao + material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito +  preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+rpart.plot(arvore_fonetica2, type=4, extra=2, faclen=0, under=TRUE, cex=1, box.col=c("pink", "lightblue")[arvore_fonetica2$frame$yval], main = "Classificação dos dados em função \n  da realização fonética sem fatores sociais")
+```
+
+Veja que, retirando os fatores sociais, as frequências absolutas não permitem divisão, e sugerem que o enviesamento da análise é relacionado aos fatores sociais. Este dado pode ajudar no balanceamento de uma amostra, na busca de explicações e relação com outros fenômenos, ou mesmo na revisão de amostra, para verificar se não houve erro.
+
+A partição é baseada apenas nas frequências absolutas e só funciona para variáveis dependentes categóricas binárias ou contínuas. Quando a variável dependente categórica tem mais de dois fatores, a partição pode até ser feita, mas o algoritmo fará um pareamento binário (fator 1 ~ fator 2 + fator 3). 
+
+## Árvore de classificação
+
+A árvore de classificação (a variável resposta pode ser dicotômica ou com múltiplos níveis), ou de regressão (se a variável dependente é contínua) implementada pela função `ctree` do pacote `partykit` não considera apenas as frequências absolutas, mas sim a singificância estatística de cada uma. Os procedimentos são:
+
+- Realização de teste de independência entre uma variável explanatória e sua resposta (para se p-valor > 0.05);
+- Seleção da variável com maior associação com a resposta;
+-	Escolha da melhor divisão binária para a variável selecionada;
+-	Repetição recursiva do passo 1 até os critérios de seleção serem esgotados.
+
+A sintaxe é a mesma da partição; vejamos a árvore para o mesmo conjunto de dados da realização fonética de *não*: 
+```{r tree4, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+arvore_fonetica <- ctree(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_fonetica, main = "Árvore de classificação condicional para a realização fonética da negação",  
+     tp_args = list(fill = c("blue", "yellow")), ip_args = list(fill = c("lightgreen")) ## cores podem ser modificadas
+)
+```
+
+O resultado é um diagrama arbóreo, apresentando cada partição do conjunto dos dados e sua distribuição, bem como o nível de significância. Comparando com a árvore de partição, podemos concluir que sexo e pessoa do discuso contribuem para a subcategorização dos dados neste conjunto.
+
+Com estes resultados, o modelo explanatório formulado inicialmente pode ser revisado para cortar “galhos ladrões”: com a análise dos resultados, o modelo pode ser rearranjado com a eliminação das variáveis que não contribuem para uma generalização acurada. 
+
+Vamos agora realizar a testagem para a variável dependente posição:
+```{r tree5, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+arvore_posicao <- ctree(negacao ~ contexto_fonetico + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_posicao, main = "Árvore de classificação condicional para a posição da negação",  
+     tp_args = list(fill = c("grey", "pink")), ip_args = list(fill = c("lightgreen"))
+)
+```
+
+Observe que a distribuição é condicionada pelo material interveniente e pela localidade. 
+```{r tree6, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+arvore_posicao2 <- ctree(negacao ~ contexto_fonetico + material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_posicao2, main = "Árvore de classificação condicional para a posição da negação \n sem fatores sociais", 
+     tp_args = list(fill = c("grey", "pink")), ip_args = list(fill = c("lightgreen"))
+)
+```
+
+Como podemos perceber, uma mudança no arranjo das variáveis leva a outro arranjo de classificação. Esta é uma das limitações desta abordagem: para variáveis categóricas ou nominais com diferentes números de níveis, as decisões podem ser enviesadas em favor dos níveis que computarem o maior número de dados, e pequenas mudanças no conjunto de dados podem afetar drasticamente a estrutura da árvore.
+
+Por sua característica agrupadora, é uma abordagem particularmente interessante em modelos em que há uma grande quantidade de níveis nas diferentes variáveis preditoras. 
+
+## Florestas aleatórias
+
+Florestas aleatórias (*random forest*) é uma técnica de agrupamento de dados que se vale de árvores de decisão simples: é um conjunto de árvores de decisões formadas aleatoriamente a partir de um subconjunto do conjunto de dados (1/3 do total, dados de treino, por reamostragem *bootstrap*), e que depois serão testadas no restante do conjunto de dados.
+
+A sintaxe é a mesma dos demais modelos, implementadas pela função `randomForest` do pacote de mesmo nome.
+
+```{r tree7, echo=TRUE, comment = "#>"}
+floresta_contexto <- randomForest(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+print(floresta_contexto) # view results 
+```
+
+Como podemos ver, o resultado da floresta aleatória apresenta uma matriz de confusão com os erros, e a taxa de erro na predição do comportamento do restante dos dados. No modelo em que consideramos a realização fonétiva da realização da negação, a taxa de erro é de 14.1%
+
+O critério de seleção das variáveis é o valor do algoritmo de entropia ou o índice Gini, que pode ser visualizado em uma lista, ou em um gráfico, como podemos ver abaixo:
+
+```{r tree8, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+importance(floresta_contexto) # importance of each predictor
+varImpPlot(floresta_contexto,type=2, main = "Importância de cada fator para a negação \n em função da realização fonética")
+```
+
+Vamos agora fazer o mesmo com a variável dependente posição da negação:
+
+```{r tree9, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+floresta_posicao <- randomForest(negacao ~ contexto_fonetico + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+varImpPlot(floresta_posicao,type=2, main = "Importância de cada fator para a negação \n em função da posição")
+```
+
+Uma das vantagens do método de Floresta Aleatória é que  pode ser utilizado tanto para regressão (variáveis contínuas) quanto para classificação (variáveis categóricas) e é fácil visualizar a importância relativa das variáveis. 
+Como os métodos de árvore, o resultado também é sensível ao tamanho da amostra, e mudanças mínimas nos dados podem incorrer em grandes mudanças na seleção de variáveis.
+
+## Clusters
+
+Imagine uma situação em que um instrumento de avaliação com 40 itens foi avaliada por cada participante considerando 4 dimensões. Podemos calcular a média de cada um dos itens por dimensão, mas não teremos uma visão do todo. Não há uma variável dependente aqui, então não podemos usar modelos de regressão ou classificação. Precisamos reduzir o número de variáveis. E para isso podemos usar a análise de cluster, técnica para classificar elementos em grupos (*cluster*), de forma que elementos dentro de um mesmo cluster sejam muito parecidos, e os elementos em diferentes clusters sejam distintos entre si.
+
+Na análise de cluster, a medida para a semelhança – ou diferença – entre os elementos de um cluster é a distância. Um método é cluster hierárquico por aglomeração, em que cada observação é inicialmente considerada como um agrupamento, e os agrupamentos mais semelhantes são aglomerados sucessivamente (processo *bottom up*). 
+
+Vamos trabalhar com um conjunto de dados que foi produzido a partir de um teste de julgamento de itens (40 itens em 4 dimensões), cuja descrição está apresentada no resumo expandido **Consciência linguística, prescrição e o ensino de gramática** (manuscrito não publicado). O instrumento consiste em 40 frases seguindo e não seguindo prescrições gramaticais, cada uma delas julgada em uma escala de 7 pontos, em que 1 é o menor nível e 7 é o maior nível, para os parâmetros: *correção*, *aceitabilidade*, *clareza* e *formalidade*. Não há um elemento gramatical específico, e sim o conjunto dos elementos. 
+
+Vamos importar o conjunto de dados `self` e carregar os pacotes necessários:
+```{r self, echo=TRUE, comment = "#>"}
+self <- read.csv("self.csv",  sep = ";", header = TRUE)
+library(dplyr)
+library(factoextra)
+```
+
+Observe a estrutura do banco de dados importado, com o comando `str`, :
+```{r importacaodadosself, echo=TRUE, comment = "#>"}
+str(self)
+```
+
+Observando as primeiras ocorrrências deste conjunto de dados, os resultados do primeiro item, a frase *Por causa do estágio, Pedro vai estar pegando todas as disciplinas pela manhã nos próximos períodos*, sugerem que há grande convergência para a clareza, mas menos para a formalidade. Podemos observar como se comportam os quatro parâmetros avaliados e depois decidir quais os melhores itens para uma análise mais refinada com o número de variáveis reduzido.
+
+O primeiro passo é preparar o conjunto de dados. Para isso, precisamos eliminar as ausências de resposta (usamos a função `na.omit`, que ignora as ocorrências sem resposta) e excluir todos as variáveis que não são numéricas (no caso deste conjunto de dados, a variável `participante`):
+```{r self1, echo=TRUE, comment = "#>"}
+self <- na.omit(self)
+self <- self %>% select(-participante) 
+```
+
+Em seguida, precisamos definir o número de clusters a serem considerados na análise. Há vários métodos, vamos ver dois deles: *elbow* (cotovelo) e *silhouette* (silhueta)
+
+No método *elbow* são rodados clusters de 1 a 10, e é calculada a soma dos quadrados das distâncias internas de cada um. 
+O melhor número para a quantidade de clusters é quando a adição de um novo cluster não aumenta significativamente o valor (geralmente este valor fica no "cotovelo" do gráfico).
+No método *silhouette* os itens são medidos para ver o quanto se enquadram em um cluster. O coeficiente de Silhouette quando próximo de +1, indica que os pontos estão muito longe dos pontos do outro cluster, e quando próximo de 0, indica que os pontos então muito perto ou até interseccionando um outro cluster.
+
+```{r self2, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+fviz_nbclust(self, kmeans, method = "wss") +
+    labs(subtitle = "Método elbow")
+fviz_nbclust(self, kmeans, method = "silhouette")+
+    labs(subtitle = "Método silhouette")
+
+```
+
+Agora que já sabemos quantos clusters, vamos calcular as distâcias e visualizar o dendograma de classificação hierárquica:
+```{r self3, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+hclust <- hclust(dist(self), method = "complete")
+plot(hclust, main = "Dendograma hierárquico de julgamento \n quanto à formalidade, aceitabilidade, clareza e correção")
+rect.hclust(hclust,
+            k = 2, 
+            border = "blue"
+)
+```
+
+A análise de clusters permite encontrar tendências e padrões nos julgamentos, agrupando observações parecidas entre muitas variáveis diferentes, o que possibilita, por exemplo, o redesenho do instrumento, reduzindo itens.
+
+Podemos realizar um cluster para cada uma das dimensões de análise dos itens do instrumento.
+```{r self4, echo=TRUE, comment = "#>", fig.height = 7, fig.width = 6, fig.align = "center"}
+clareza <- self %>% 
+  select(starts_with("clareza"))
+clust.clareza <- hclust(dist(clareza), method = "average")
+plot(clust.clareza, xlab = "", sub="", ylab = "Distância das médias",
+     main = "Dendograma do julgamento de clareza")
+rect.hclust(clust.clareza,
+            k = 2, 
+            border = "blue"
+)
+```
+
+Este resultado ajuda a decidir quais "galhos" podem ser "podados".
+A vantagem no uso da análise de cluster é poder descrever melhor cada um dos grupos identificados e identificar correlações entre dados que não seriam visíveis em análises individuais de cada um dos itens.
+
+## Análise de componentes principais
+
+A análise de componentes principais toma um conjunto de dados em uma matriz de ocorrências por variáveis, que podem estar correlacionadas, e sumariza esse conjunto em eixos não correlacionados (componentes principais) que são uma combinação linear das variáveis originais. Os  componentes principais  são combinações lineares das variáveis originais que respondem pela variação nos dados. O número máximo de componentes  é sempre igual ao número de variáveis. Os autovetores são compostos de coeficientes que correspondem a cada variável e  indicam o peso relativo de cada variável no componente.
+
+```{r PCA, echo=TRUE, comment = "#>", fig.height = 6, fig.width = 6, fig.align = "center"}
+library(FactoMineR)
+pca.self <- PCA(self, graph=TRUE)
+summary(pca.self)
+```
+
+Para interpretar cada componente principal, observamos a magnitude e a direção dos coeficientes das variáveis originais. Quanto maior o valor absoluto do coeficiente, mais importante será a variável correspondente ao calcular o componente. 
+Observe o percentual com que cada dimensão contribui para explicar a variação. A dimensão 1 é responsável por 26.3% da variação no conjunto dos dados. A diemnsão 2 é responsável por 12.1% da variação.
+
+Uma forma de visualizar estes resultados é por meio de um gráfico de cargal fatoria, que representa os coeficientes de cada variável para o primeiro componente em função dos coeficientes para o segundo componente.
+
+```{r PCA2, echo=TRUE, comment = "#>", fig.height =6, fig.width = 6, fig.align = "center"}
+fviz_pca_var(pca.self,
+             col.var = "contrib", 
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE   
+)
+```
+No gráfico de cargas fatoriais para identificar quais variáveis têm o maior efeito em cada componente. As cargas fatoriais podem variar de -1 a 1. As cargas fatoriais próximas de -1 ou 1 indicam que a variável influencia fortemente o componente. As cargas fatoriais próximas de 0 indicam que a variável tem uma influência fraca no componente. 
+
+No caso, vemos que a variável *formalidade17* tem um padrão de comportamento distinto das demais, com carga fatorial negativa. É um caso de infinitivo flexionado duplo: *A universidade é o espaço para podermos fazermos as transformações na sociedade em que vivemos* 
+
+## Análise fatorial
+
+Análise fatorial é um outro procedimento, muito parecido com a análise de componentes principais. Ambas são utilizadas para redução de conjuntos de variáveis. 
+A análise fatorial considera uma matriz de correlação ou de covariância, enquanto a análise de componentes principais considera o conjunto de dados original. A análise de componentes principais tem por objetivo explicar o máximo possível a variância total nas variáveis, enquanto a análise fatorial busca explicar as covariâncias ou correlações entre as variáveis.
+Por isso, a análise de componentes principais é usada para reduzir os dados a um número menor de componentes, e a análise fatorial ajuda a entender quais construtos são subjacentes aos dados.
+
+

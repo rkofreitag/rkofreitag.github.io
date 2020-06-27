@@ -1,0 +1,377 @@
+informante;contexto_fonetico;negacao;tipo_de_verbo;pessoa_do_sujeito;tempo_verbal;marcador_;reforco_negativo;preenchimento_do_sujeito;estatuto_informacional;ato_de_fala;material_interveniente;tipo_textual;sexo;localidade
+ros_fem_01;não;Neg-V;evento;não falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;corporal;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;corporal;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;estado;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;estado;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;estado;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;passado;ausente;com reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;V-Neg;evento;falante;passado;presente;sem reforço negativo;não preenchido;informação nova;não declarativo;presença de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;processo;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;não falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;falante;passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;com reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;não falante;não passado;presente;com reforço negativo;não preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;não falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;não falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;processo;não falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;processo;não falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;não falante;passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;V-Neg;processo;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;cognitivos;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;existência;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;V-Neg;existência;falante;passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;falante;passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;V-Neg;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;não falante;passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;falante;passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;não falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ros_fem_01;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ros_fem_01;não;V-Neg;processo;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;V-Neg;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;V-Neg;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;num;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;num;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;num;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;num;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+eri_fem_02;num;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;existência;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V-Neg;cognitivos;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+sar_fem_03;não;Neg-V;existência;falante;não passado;presente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;cognitivos;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;num;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;num;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;num;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+sar_fem_03;num;Neg-V;evento;não falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V-Neg;cognitivos;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;presença de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;V-Neg;existência;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V-Neg;cognitivos;falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;falante;passado;presente;com reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;presente;com reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;num;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;num;Neg-V;processo;falante;não passado;ausente;com reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+raf_fem_04;num;Neg-V;processo;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;num;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;num;Neg-V;existência;não falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;num;Neg-V;processo;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;num;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+raf_fem_04;num;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+ema_mas_05;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;V-Neg;cognitivos;falante;passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação nova;declarativo;presença de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;cognitivos;falante;passado;presente;com reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;existência;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;presença de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+ema_mas_05;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;cognitivos;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V-Neg;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V-Neg;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;existência;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+end_mas_06;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+end_mas_06;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;existência;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;processo;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;V-Neg;relacional;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;num;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;num;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+pau_mas_07;num;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+pau_mas_07;num;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;falante;não passado;ausente;com reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;falante;não passado;ausente;com reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;estado;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;processo;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;existência;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;estado;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;não declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;com reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;presença de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;estado;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;não declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;masculino;capital
+rua_mas_08;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+rua_mas_08;não;Neg-V;posse;não falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;masculino;capital
+cam_fem_09;não;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;interior
+cam_fem_09;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;interior
+cam_fem_09;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;evento;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;num;Neg-V;evento;falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;num;Neg-V;evento;falante;passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cam_fem_09;num;Neg-V;cognitivos;falante;passado;presente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V;processo;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V;existência;falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V;evento;não falante;passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;evento;não falante;passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;interior
+cris_fem_10;não;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;processo;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V;evento;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V-Neg;evento;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;não;Neg-V-Neg;processo;falante;não passado;presente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;existência;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação nova;declarativo;ausência de material interveniente;opinativo;feminino;interior
+cris_fem_10;num;Neg-V-Neg;evento;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;interior
+cris_fem_10;não;Neg-V;posse;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;interior
+cris_fem_10;não;Neg-V-Neg;cognitivos;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;narrativo;feminino;interior
+cris_fem_10;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;interior
+ing_fem_17;não;Neg-V-Neg;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;presença de material interveniente;opinativo;feminino;capital
+ing_fem_17;não;V-Neg;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;não;V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;não;V-Neg;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;não;V-Neg;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;processo;não falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;posse;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;existência;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;corporal;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;existência;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;corporal;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;evento;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;corporal;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;corporal;não falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+ing_fem_17;num;Neg-V;estado;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+ing_fem_17;num;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação nova;declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;não;Neg-V;material;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V-Neg;material;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;corporal;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;existência;falante;não passado;ausente;sem reforço negativo;não preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;cognitivos;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;cognitivos;falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;não;Neg-V;corporal;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;não;Neg-V;existência;não falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;não;Neg-V;processo;falante;não passado;ausente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;num;Neg-V;existência;não falante;não passado;ausente;com reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;narrativo;feminino;capital
+joa_fem_15;num;Neg-V;existência;não falante;não passado;ausente;com reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;num;Neg-V;existência;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;declarativo;ausência de material interveniente;opinativo;feminino;capital
+joa_fem_15;num;Neg-V;existência;não falante;não passado;presente;sem reforço negativo;preenchido;informação dada;não declarativo;ausência de material interveniente;opinativo;feminino;capital

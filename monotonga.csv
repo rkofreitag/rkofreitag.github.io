@@ -1,0 +1,800 @@
+item;realizacao;correcao;valor;classe;sexo;participante;periodo
+ouviu;nao;nao;morfemico;verbo;feminino;03F20;inicio
+poupava;nao;nao;morfemico;verbo;feminino;03F20;inicio
+entrou;nao;nao;morfemico;verbo;feminino;03F20;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+beijava;nao;nao;morfemico;verbo;feminino;03F20;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+comecou;nao;nao;morfemico;verbo;feminino;03F20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+acompanhou;sim;nao;morfemico;verbo;feminino;03F20;inicio
+mostrou;sim;nao;morfemico;verbo;feminino;03F20;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;03F20;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;03F20;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;04F18;inicio
+poupava;nao;nao;morfemico;verbo;feminino;04F18;inicio
+entrou;nao;nao;morfemico;verbo;feminino;04F18;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+beijava;nao;nao;morfemico;verbo;feminino;04F18;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+comecou;nao;nao;morfemico;verbo;feminino;04F18;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;04F18;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;04F18;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;04F18;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;04F18;inicio
+ouviu;sim;nao;morfemico;verbo;feminino;08F20;inicio
+poupava;nao;nao;morfemico;verbo;feminino;08F20;inicio
+entrou;nao;nao;morfemico;verbo;feminino;08F20;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+beijava;nao;nao;morfemico;verbo;feminino;08F20;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+comecou;sim;nao;morfemico;verbo;feminino;08F20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;08F20;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;08F20;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;08F20;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;08F20;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;13M18;inicio
+poupava;sim;nao;morfemico;verbo;masculino;13M18;inicio
+entrou;nao;nao;morfemico;verbo;masculino;13M18;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+beijava;nao;nao;morfemico;verbo;masculino;13M18;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+comecou;nao;nao;morfemico;verbo;masculino;13M18;inicio
+primeira;nao;sim;nao morfemico;nao verbo;masculino;13M18;inicio
+acompanhou;sim;nao;morfemico;verbo;masculino;13M18;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;13M18;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;13M18;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+beijo;sim;nao;nao morfemico;nao verbo;masculino;13M18;inicio
+dinheiro;nao;sim;nao morfemico;nao verbo;masculino;13M18;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;14F19;final
+poupava;sim;nao;morfemico;verbo;feminino;14F19;final
+entrou;sim;nao;morfemico;verbo;feminino;14F19;final
+pouco;sim;nao;nao morfemico;nao verbo;feminino;14F19;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;14F19;final
+beijava;nao;nao;morfemico;verbo;feminino;14F19;final
+apaixonadamente;sim;nao;nao morfemico;nao verbo;feminino;14F19;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;14F19;final
+comecou;nao;nao;morfemico;verbo;feminino;14F19;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;14F19;final
+acompanhou;sim;nao;morfemico;verbo;feminino;14F19;final
+mostrou;nao;nao;morfemico;verbo;feminino;14F19;final
+deitados;sim;nao;morfemico;nao verbo;feminino;14F19;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;14F19;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;14F19;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;14F19;final
+ouviu;nao;nao;morfemico;verbo;masculino;15M19;final
+poupava;nao;nao;morfemico;verbo;masculino;15M19;final
+entrou;nao;nao;morfemico;verbo;masculino;15M19;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;15M19;final
+passageira;sim;nao;nao morfemico;nao verbo;masculino;15M19;final
+beijava;sim;nao;morfemico;verbo;masculino;15M19;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;15M19;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;15M19;final
+comecou;nao;nao;morfemico;verbo;masculino;15M19;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;15M19;final
+acompanhou;sim;nao;morfemico;verbo;masculino;15M19;final
+mostrou;nao;nao;morfemico;verbo;masculino;15M19;final
+deitados;sim;nao;morfemico;nao verbo;masculino;15M19;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;15M19;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;15M19;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;15M19;final
+ouviu;nao;nao;morfemico;verbo;feminino;18F18;inicio
+poupava;sim;nao;morfemico;verbo;feminino;18F18;inicio
+entrou;nao;nao;morfemico;verbo;feminino;18F18;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+passageira;sim;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+beijava;sim;nao;morfemico;verbo;feminino;18F18;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+comecou;sim;nao;morfemico;verbo;feminino;18F18;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+acompanhou;sim;nao;morfemico;verbo;feminino;18F18;inicio
+mostrou;sim;nao;morfemico;verbo;feminino;18F18;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;18F18;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;18F18;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;19F18;inicio
+poupava;nao;nao;morfemico;verbo;feminino;19F18;inicio
+entrou;nao;nao;morfemico;verbo;feminino;19F18;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+passageira;sim;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+beijava;nao;nao;morfemico;verbo;feminino;19F18;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+comecou;sim;nao;morfemico;verbo;feminino;19F18;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;19F18;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;19F18;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;19F18;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;19F18;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;21F25;final
+poupava;sim;nao;morfemico;verbo;feminino;21F25;final
+entrou;nao;nao;morfemico;verbo;feminino;21F25;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;21F25;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;21F25;final
+beijava;nao;nao;morfemico;verbo;feminino;21F25;final
+apaixonadamente;sim;nao;nao morfemico;nao verbo;feminino;21F25;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;21F25;final
+comecou;nao;nao;morfemico;verbo;feminino;21F25;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;21F25;final
+acompanhou;nao;nao;morfemico;verbo;feminino;21F25;final
+mostrou;nao;nao;morfemico;verbo;feminino;21F25;final
+deitados;sim;nao;morfemico;nao verbo;feminino;21F25;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;21F25;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;21F25;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;21F25;final
+ouviu;nao;nao;morfemico;verbo;feminino;22F19;inicio
+poupava;sim;nao;morfemico;verbo;feminino;22F19;inicio
+entrou;nao;nao;morfemico;verbo;feminino;22F19;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+beijava;nao;nao;morfemico;verbo;feminino;22F19;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+comecou;nao;nao;morfemico;verbo;feminino;22F19;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;22F19;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;22F19;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;22F19;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;22F19;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;25M19;inicio
+poupava;sim;sim;morfemico;verbo;masculino;25M19;inicio
+entrou;nao;nao;morfemico;verbo;masculino;25M19;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+beijava;nao;nao;morfemico;verbo;masculino;25M19;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+comecou;nao;nao;morfemico;verbo;masculino;25M19;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;25M19;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;25M19;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;25M19;inicio
+revolucionario;nao;sim;nao morfemico;nao verbo;masculino;25M19;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;25M19;inicio
+ouviu;sim;nao;morfemico;verbo;feminino;26F19;final
+poupava;sim;nao;morfemico;verbo;feminino;26F19;final
+entrou;nao;nao;morfemico;verbo;feminino;26F19;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;26F19;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;26F19;final
+beijava;sim;nao;morfemico;verbo;feminino;26F19;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;26F19;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;26F19;final
+comecou;nao;nao;morfemico;verbo;feminino;26F19;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;26F19;final
+acompanhou;nao;nao;morfemico;verbo;feminino;26F19;final
+mostrou;nao;nao;morfemico;verbo;feminino;26F19;final
+deitados;sim;nao;morfemico;nao verbo;feminino;26F19;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;26F19;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;26F19;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;26F19;final
+ouviu;sim;nao;morfemico;verbo;masculino;27M23;final
+poupava;sim;nao;morfemico;verbo;masculino;27M23;final
+entrou;sim;nao;morfemico;verbo;masculino;27M23;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;27M23;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;27M23;final
+beijava;nao;nao;morfemico;verbo;masculino;27M23;final
+apaixonadamente;sim;nao;nao morfemico;nao verbo;masculino;27M23;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;27M23;final
+comecou;nao;nao;morfemico;verbo;masculino;27M23;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;27M23;final
+acompanhou;sim;nao;morfemico;verbo;masculino;27M23;final
+mostrou;sim;nao;morfemico;verbo;masculino;27M23;final
+deitados;sim;nao;morfemico;nao verbo;masculino;27M23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;27M23;final
+beijo;sim;nao;nao morfemico;nao verbo;masculino;27M23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;27M23;final
+ouviu;nao;nao;morfemico;verbo;feminino;31F23;final
+poupava;nao;sim;morfemico;verbo;feminino;31F23;final
+entrou;nao;nao;morfemico;verbo;feminino;31F23;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;31F23;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;31F23;final
+beijava;nao;nao;morfemico;verbo;feminino;31F23;final
+apaixonadamente;sim;sim;nao morfemico;nao verbo;feminino;31F23;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;31F23;final
+comecou;nao;nao;morfemico;verbo;feminino;31F23;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;31F23;final
+acompanhou;sim;nao;morfemico;verbo;feminino;31F23;final
+mostrou;sim;nao;morfemico;verbo;feminino;31F23;final
+deitados;sim;nao;morfemico;nao verbo;feminino;31F23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;31F23;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;31F23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;31F23;final
+ouviu;nao;nao;morfemico;verbo;masculino;33M17;inicio
+poupava;sim;sim;morfemico;verbo;masculino;33M17;inicio
+entrou;nao;nao;morfemico;verbo;masculino;33M17;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+beijava;sim;nao;morfemico;verbo;masculino;33M17;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+comecou;nao;nao;morfemico;verbo;masculino;33M17;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;33M17;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;33M17;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;33M17;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;33M17;inicio
+ouviu;sim;nao;morfemico;verbo;masculino;36M21;inicio
+poupava;nao;sim;morfemico;verbo;masculino;36M21;inicio
+entrou;nao;nao;morfemico;verbo;masculino;36M21;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+beijava;nao;nao;morfemico;verbo;masculino;36M21;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+comecou;nao;nao;morfemico;verbo;masculino;36M21;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;36M21;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;36M21;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;36M21;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;36M21;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;38M22;inicio
+poupava;sim;nao;morfemico;verbo;masculino;38M22;inicio
+entrou;nao;nao;morfemico;verbo;masculino;38M22;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+beijava;nao;nao;morfemico;verbo;masculino;38M22;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+comecou;sim;nao;morfemico;verbo;masculino;38M22;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+acompanhou;sim;nao;morfemico;verbo;masculino;38M22;inicio
+mostrou;sim;nao;morfemico;verbo;masculino;38M22;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;38M22;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;38M22;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;39M23;final
+poupava;sim;nao;morfemico;verbo;masculino;39M23;final
+entrou;nao;nao;morfemico;verbo;masculino;39M23;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+beijava;nao;nao;morfemico;verbo;masculino;39M23;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;39M23;final
+comecou;nao;nao;morfemico;verbo;masculino;39M23;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+acompanhou;nao;nao;morfemico;verbo;masculino;39M23;final
+mostrou;nao;nao;morfemico;verbo;masculino;39M23;final
+deitados;sim;nao;morfemico;nao verbo;masculino;39M23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;39M23;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;39M23;final
+ouviu;nao;nao;morfemico;verbo;masculino;40M17;inicio
+poupava;sim;nao;morfemico;verbo;masculino;40M17;inicio
+entrou;nao;nao;morfemico;verbo;masculino;40M17;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+beijava;nao;nao;morfemico;verbo;masculino;40M17;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+comecou;nao;nao;morfemico;verbo;masculino;40M17;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+acompanhou;sim;nao;morfemico;verbo;masculino;40M17;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;40M17;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;40M17;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;40M17;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;41M22;inicio
+poupava;sim;nao;morfemico;verbo;masculino;41M22;inicio
+entrou;nao;nao;morfemico;verbo;masculino;41M22;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+beijava;nao;nao;morfemico;verbo;masculino;41M22;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+comecou;sim;nao;morfemico;verbo;masculino;41M22;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;41M22;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;41M22;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;41M22;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;41M22;inicio
+ouviu;sim;nao;morfemico;verbo;masculino;42M21;final
+poupava;sim;nao;morfemico;verbo;masculino;42M21;final
+entrou;sim;nao;morfemico;verbo;masculino;42M21;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+beijava;nao;nao;morfemico;verbo;masculino;42M21;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;42M21;final
+comecou;sim;nao;morfemico;verbo;masculino;42M21;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+acompanhou;sim;nao;morfemico;verbo;masculino;42M21;final
+mostrou;sim;nao;morfemico;verbo;masculino;42M21;final
+deitados;sim;nao;morfemico;nao verbo;masculino;42M21;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;42M21;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;42M21;final
+ouviu;sim;nao;morfemico;verbo;masculino;44M19;inicio
+poupava;sim;nao;morfemico;verbo;masculino;44M19;inicio
+entrou;sim;nao;morfemico;verbo;masculino;44M19;inicio
+pouco;sim;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+beijava;sim;nao;morfemico;verbo;masculino;44M19;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+comecou;nao;nao;morfemico;verbo;masculino;44M19;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;44M19;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;44M19;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;44M19;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;44M19;inicio
+ouviu;sim;nao;morfemico;verbo;feminino;47F19;inicio
+poupava;sim;sim;morfemico;verbo;feminino;47F19;inicio
+entrou;nao;nao;morfemico;verbo;feminino;47F19;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+beijava;nao;nao;morfemico;verbo;feminino;47F19;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+comecou;nao;nao;morfemico;verbo;feminino;47F19;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;47F19;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;47F19;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;47F19;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+beijo;sim;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;47F19;inicio
+ouviu;sim;nao;morfemico;verbo;masculino;49M20;inicio
+poupava;sim;nao;morfemico;verbo;masculino;49M20;inicio
+entrou;nao;nao;morfemico;verbo;masculino;49M20;inicio
+pouco;sim;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+beijava;nao;nao;morfemico;verbo;masculino;49M20;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+comecou;sim;nao;morfemico;verbo;masculino;49M20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+acompanhou;sim;nao;morfemico;verbo;masculino;49M20;inicio
+mostrou;sim;nao;morfemico;verbo;masculino;49M20;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;49M20;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;49M20;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;50F22;final
+poupava;nao;nao;morfemico;verbo;feminino;50F22;final
+entrou;nao;nao;morfemico;verbo;feminino;50F22;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;50F22;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;50F22;final
+beijava;nao;nao;morfemico;verbo;feminino;50F22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;50F22;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;50F22;final
+comecou;nao;nao;morfemico;verbo;feminino;50F22;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;50F22;final
+acompanhou;nao;nao;morfemico;verbo;feminino;50F22;final
+mostrou;nao;nao;morfemico;verbo;feminino;50F22;final
+deitados;sim;nao;morfemico;nao verbo;feminino;50F22;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;50F22;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;50F22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;50F22;final
+ouviu;sim;nao;morfemico;verbo;feminino;53F22;final
+poupava;sim;nao;morfemico;verbo;feminino;53F22;final
+entrou;sim;nao;morfemico;verbo;feminino;53F22;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;53F22;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;53F22;final
+beijava;sim;sim;morfemico;verbo;feminino;53F22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;53F22;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;53F22;final
+comecou;sim;nao;morfemico;verbo;feminino;53F22;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;53F22;final
+acompanhou;nao;nao;morfemico;verbo;feminino;53F22;final
+mostrou;nao;nao;morfemico;verbo;feminino;53F22;final
+deitados;sim;nao;morfemico;nao verbo;feminino;53F22;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;53F22;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;53F22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;53F22;final
+ouviu;nao;nao;morfemico;verbo;masculino;54M28;inicio
+poupava;sim;nao;morfemico;verbo;masculino;54M28;inicio
+entrou;sim;nao;morfemico;verbo;masculino;54M28;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+beijava;nao;nao;morfemico;verbo;masculino;54M28;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+comecou;nao;nao;morfemico;verbo;masculino;54M28;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;54M28;inicio
+mostrou;sim;nao;morfemico;verbo;masculino;54M28;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;54M28;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;54M28;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;55M21;inicio
+poupava;sim;nao;morfemico;verbo;masculino;55M21;inicio
+entrou;nao;nao;morfemico;verbo;masculino;55M21;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+beijava;nao;nao;morfemico;verbo;masculino;55M21;inicio
+apaixonadamente;nao;sim;nao morfemico;nao verbo;masculino;55M21;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+comecou;nao;nao;morfemico;verbo;masculino;55M21;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;55M21;inicio
+mostrou;sim;nao;morfemico;verbo;masculino;55M21;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;55M21;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;55M21;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;59M23;final
+poupava;sim;sim;morfemico;verbo;masculino;59M23;final
+entrou;nao;nao;morfemico;verbo;masculino;59M23;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+beijava;nao;nao;morfemico;verbo;masculino;59M23;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;59M23;final
+comecou;nao;nao;morfemico;verbo;masculino;59M23;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+acompanhou;nao;nao;morfemico;verbo;masculino;59M23;final
+mostrou;nao;nao;morfemico;verbo;masculino;59M23;final
+deitados;sim;nao;morfemico;nao verbo;masculino;59M23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;59M23;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;59M23;final
+ouviu;nao;nao;morfemico;verbo;feminino;53F36;final
+poupava;sim;nao;morfemico;verbo;feminino;53F36;final
+entrou;nao;nao;morfemico;verbo;feminino;53F36;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+beijava;nao;nao;morfemico;verbo;feminino;53F36;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;53F36;final
+comecou;nao;nao;morfemico;verbo;feminino;53F36;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+acompanhou;sim;nao;morfemico;verbo;feminino;53F36;final
+mostrou;sim;nao;morfemico;verbo;feminino;53F36;final
+deitados;sim;nao;morfemico;nao verbo;feminino;53F36;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;53F36;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;53F36;final
+ouviu;nao;nao;morfemico;verbo;feminino;60F21;final
+poupava;sim;nao;morfemico;verbo;feminino;60F21;final
+entrou;sim;nao;morfemico;verbo;feminino;60F21;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+beijava;nao;nao;morfemico;verbo;feminino;60F21;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;60F21;final
+comecou;sim;nao;morfemico;verbo;feminino;60F21;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+acompanhou;sim;nao;morfemico;verbo;feminino;60F21;final
+mostrou;nao;nao;morfemico;verbo;feminino;60F21;final
+deitados;sim;nao;morfemico;nao verbo;feminino;60F21;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;60F21;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;60F21;final
+ouviu;nao;nao;morfemico;verbo;feminino;65F24;inicio
+poupava;sim;sim;morfemico;verbo;feminino;65F24;inicio
+entrou;nao;nao;morfemico;verbo;feminino;65F24;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+beijava;sim;nao;morfemico;verbo;feminino;65F24;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+comecou;sim;nao;morfemico;verbo;feminino;65F24;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;65F24;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;65F24;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;65F24;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;65F24;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;66F20;inicio
+poupava;sim;sim;morfemico;verbo;feminino;66F20;inicio
+entrou;nao;nao;morfemico;verbo;feminino;66F20;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+passageira;sim;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+beijava;sim;nao;morfemico;verbo;feminino;66F20;inicio
+apaixonadamente;nao;sim;nao morfemico;nao verbo;feminino;66F20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+comecou;nao;nao;morfemico;verbo;feminino;66F20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+acompanhou;nao;nao;morfemico;verbo;feminino;66F20;inicio
+mostrou;nao;nao;morfemico;verbo;feminino;66F20;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;66F20;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+beijo;sim;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;66F20;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;67M23;final
+poupava;sim;nao;morfemico;verbo;masculino;67M23;final
+entrou;nao;nao;morfemico;verbo;masculino;67M23;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;67M23;final
+passageira;sim;nao;nao morfemico;nao verbo;masculino;67M23;final
+beijava;sim;nao;morfemico;verbo;masculino;67M23;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;67M23;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;67M23;final
+comecou;sim;nao;morfemico;verbo;masculino;67M23;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;67M23;final
+acompanhou;sim;nao;morfemico;verbo;masculino;67M23;final
+mostrou;nao;nao;morfemico;verbo;masculino;67M23;final
+deitados;sim;nao;morfemico;nao verbo;masculino;67M23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;67M23;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;67M23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;67M23;final
+ouviu;nao;nao;morfemico;verbo;masculino;68M20;inicio
+poupava;nao;nao;morfemico;verbo;masculino;68M20;inicio
+entrou;nao;nao;morfemico;verbo;masculino;68M20;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+beijava;sim;nao;morfemico;verbo;masculino;68M20;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+comecou;nao;nao;morfemico;verbo;masculino;68M20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;68M20;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;68M20;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;68M20;inicio
+revolucionario;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;68M20;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;69F20;inicio
+poupava;nao;nao;morfemico;verbo;feminino;69F20;inicio
+entrou;nao;nao;morfemico;verbo;feminino;69F20;inicio
+pouco;nao;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+passageira;nao;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+beijava;nao;nao;morfemico;verbo;feminino;69F20;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+deitado;sim;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+comecou;sim;nao;morfemico;verbo;feminino;69F20;inicio
+primeira;nao;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+acompanhou;sim;nao;morfemico;verbo;feminino;69F20;inicio
+mostrou;sim;nao;morfemico;verbo;feminino;69F20;inicio
+deitados;sim;nao;morfemico;nao verbo;feminino;69F20;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+beijo;nao;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;69F20;inicio
+ouviu;sim;nao;morfemico;verbo;feminino;71F22;final
+poupava;sim;nao;morfemico;verbo;feminino;71F22;final
+entrou;sim;nao;morfemico;verbo;feminino;71F22;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+beijava;nao;nao;morfemico;verbo;feminino;71F22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;71F22;final
+comecou;nao;nao;morfemico;verbo;feminino;71F22;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+acompanhou;nao;nao;morfemico;verbo;feminino;71F22;final
+mostrou;nao;nao;morfemico;verbo;feminino;71F22;final
+deitados;sim;nao;morfemico;nao verbo;feminino;71F22;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;71F22;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;71F22;final
+ouviu;nao;nao;morfemico;verbo;masculino;73M19;inicio
+poupava;sim;nao;morfemico;verbo;masculino;73M19;inicio
+entrou;sim;nao;morfemico;verbo;masculino;73M19;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+beijava;sim;nao;morfemico;verbo;masculino;73M19;inicio
+apaixonadamente;sim;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+comecou;nao;nao;morfemico;verbo;masculino;73M19;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+acompanhou;nao;nao;morfemico;verbo;masculino;73M19;inicio
+mostrou;nao;nao;morfemico;verbo;masculino;73M19;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;73M19;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+beijo;nao;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;73M19;inicio
+ouviu;nao;nao;morfemico;verbo;feminino;74F20;final
+poupava;nao;nao;morfemico;verbo;feminino;74F20;final
+entrou;nao;nao;morfemico;verbo;feminino;74F20;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+beijava;nao;nao;morfemico;verbo;feminino;74F20;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;74F20;final
+comecou;nao;nao;morfemico;verbo;feminino;74F20;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+acompanhou;nao;nao;morfemico;verbo;feminino;74F20;final
+mostrou;nao;nao;morfemico;verbo;feminino;74F20;final
+deitados;sim;nao;morfemico;nao verbo;feminino;74F20;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;74F20;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;74F20;final
+ouviu;nao;nao;morfemico;verbo;feminino;76F21;final
+poupava;sim;nao;morfemico;verbo;feminino;76F21;final
+entrou;nao;nao;morfemico;verbo;feminino;76F21;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+beijava;nao;nao;morfemico;verbo;feminino;76F21;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;76F21;final
+comecou;nao;nao;morfemico;verbo;feminino;76F21;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+acompanhou;nao;nao;morfemico;verbo;feminino;76F21;final
+mostrou;nao;nao;morfemico;verbo;feminino;76F21;final
+deitados;sim;nao;morfemico;nao verbo;feminino;76F21;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;76F21;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;76F21;final
+ouviu;nao;nao;morfemico;verbo;feminino;82F22;final
+poupava;sim;nao;morfemico;verbo;feminino;82F22;final
+entrou;nao;nao;morfemico;verbo;feminino;82F22;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+beijava;nao;nao;morfemico;verbo;feminino;82F22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;82F22;final
+comecou;nao;nao;morfemico;verbo;feminino;82F22;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+acompanhou;nao;nao;morfemico;verbo;feminino;82F22;final
+mostrou;nao;nao;morfemico;verbo;feminino;82F22;final
+deitados;sim;nao;morfemico;nao verbo;feminino;82F22;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;82F22;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;82F22;final
+ouviu;nao;nao;morfemico;verbo;feminino;83F24;final
+poupava;nao;nao;morfemico;verbo;feminino;83F24;final
+entrou;nao;nao;morfemico;verbo;feminino;83F24;final
+pouco;nao;sim;nao morfemico;nao verbo;feminino;83F24;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;83F24;final
+beijava;nao;nao;morfemico;verbo;feminino;83F24;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;83F24;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;83F24;final
+comecou;nao;nao;morfemico;verbo;feminino;83F24;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;83F24;final
+acompanhou;nao;nao;morfemico;verbo;feminino;83F24;final
+mostrou;nao;nao;morfemico;verbo;feminino;83F24;final
+deitados;sim;nao;morfemico;nao verbo;feminino;83F24;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;83F24;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;83F24;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;83F24;final
+ouviu;nao;nao;morfemico;verbo;feminino;84F22;final
+poupava;sim;nao;morfemico;verbo;feminino;84F22;final
+entrou;nao;nao;morfemico;verbo;feminino;84F22;final
+pouco;nao;sim;nao morfemico;nao verbo;feminino;84F22;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;84F22;final
+beijava;nao;nao;morfemico;verbo;feminino;84F22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;84F22;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;84F22;final
+comecou;sim;nao;morfemico;verbo;feminino;84F22;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;84F22;final
+acompanhou;sim;nao;morfemico;verbo;feminino;84F22;final
+mostrou;sim;nao;morfemico;verbo;feminino;84F22;final
+deitados;sim;nao;morfemico;nao verbo;feminino;84F22;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;84F22;final
+beijo;nao;nao;nao morfemico;nao verbo;feminino;84F22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;84F22;final
+ouviu;nao;nao;morfemico;verbo;feminino;88F23;final
+poupava;nao;nao;morfemico;verbo;feminino;88F23;final
+entrou;nao;nao;morfemico;verbo;feminino;88F23;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;88F23;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;88F23;final
+beijava;nao;nao;morfemico;verbo;feminino;88F23;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;88F23;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;88F23;final
+comecou;nao;nao;morfemico;verbo;feminino;88F23;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;88F23;final
+acompanhou;sim;nao;morfemico;verbo;feminino;88F23;final
+mostrou;sim;nao;morfemico;verbo;feminino;88F23;final
+deitados;sim;nao;morfemico;nao verbo;feminino;88F23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;88F23;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;88F23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;88F23;final
+ouviu;sim;nao;morfemico;verbo;masculino;90M23;final
+poupava;sim;nao;morfemico;verbo;masculino;90M23;final
+entrou;sim;nao;morfemico;verbo;masculino;90M23;final
+pouco;sim;nao;nao morfemico;nao verbo;masculino;90M23;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;90M23;final
+beijava;nao;nao;morfemico;verbo;masculino;90M23;final
+apaixonadamente;sim;sim;nao morfemico;nao verbo;masculino;90M23;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;90M23;final
+comecou;sim;nao;morfemico;verbo;masculino;90M23;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;90M23;final
+acompanhou;sim;nao;morfemico;verbo;masculino;90M23;final
+mostrou;sim;nao;morfemico;verbo;masculino;90M23;final
+deitados;sim;nao;morfemico;nao verbo;masculino;90M23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;90M23;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;90M23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;90M23;final
+ouviu;sim;nao;morfemico;verbo;feminino;93F23;final
+poupava;sim;nao;morfemico;verbo;feminino;93F23;final
+entrou;nao;nao;morfemico;verbo;feminino;93F23;final
+pouco;nao;nao;nao morfemico;nao verbo;feminino;93F23;final
+passageira;nao;nao;nao morfemico;nao verbo;feminino;93F23;final
+beijava;nao;nao;morfemico;verbo;feminino;93F23;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;feminino;93F23;final
+deitado;sim;nao;nao morfemico;nao verbo;feminino;93F23;final
+comecou;nao;nao;morfemico;verbo;feminino;93F23;final
+primeira;nao;nao;nao morfemico;nao verbo;feminino;93F23;final
+acompanhou;nao;nao;morfemico;verbo;feminino;93F23;final
+mostrou;nao;nao;morfemico;verbo;feminino;93F23;final
+deitados;sim;nao;morfemico;nao verbo;feminino;93F23;final
+revolucionario;sim;nao;nao morfemico;nao verbo;feminino;93F23;final
+beijo;sim;nao;nao morfemico;nao verbo;feminino;93F23;final
+dinheiro;nao;nao;nao morfemico;nao verbo;feminino;93F23;final
+ouviu;nao;nao;morfemico;verbo;masculino;94M24;final
+poupava;sim;nao;morfemico;verbo;masculino;94M24;final
+entrou;nao;nao;morfemico;verbo;masculino;94M24;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+beijava;nao;nao;morfemico;verbo;masculino;94M24;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;94M24;final
+comecou;nao;nao;morfemico;verbo;masculino;94M24;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+acompanhou;nao;nao;morfemico;verbo;masculino;94M24;final
+mostrou;nao;nao;morfemico;verbo;masculino;94M24;final
+deitados;sim;nao;morfemico;nao verbo;masculino;94M24;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;94M24;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;94M24;final
+ouviu;nao;nao;morfemico;verbo;masculino;99M24;final
+poupava;sim;nao;morfemico;verbo;masculino;99M24;final
+entrou;sim;nao;morfemico;verbo;masculino;99M24;final
+pouco;sim;nao;nao morfemico;nao verbo;masculino;99M24;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;99M24;final
+beijava;sim;nao;morfemico;verbo;masculino;99M24;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;99M24;final
+comecou;nao;nao;morfemico;verbo;masculino;99M24;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;99M24;final
+acompanhou;nao;nao;morfemico;verbo;masculino;99M24;final
+mostrou;nao;nao;morfemico;verbo;masculino;99M24;final
+deitados;sim;nao;morfemico;nao verbo;masculino;99M24;final
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;99M24;final
+beijo;sim;nao;nao morfemico;nao verbo;masculino;99M24;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;99M24;final
+ouviu;nao;nao;morfemico;verbo;masculino;101M22;inicio
+poupava;sim;nao;morfemico;verbo;masculino;101M22;inicio
+entrou;sim;nao;morfemico;verbo;masculino;101M22;inicio
+pouco;nao;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+passageira;nao;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+beijava;sim;nao;morfemico;verbo;masculino;101M22;inicio
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+deitado;sim;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+comecou;sim;nao;morfemico;verbo;masculino;101M22;inicio
+primeira;nao;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+acompanhou;sim;nao;morfemico;verbo;masculino;101M22;inicio
+mostrou;sim;nao;morfemico;verbo;masculino;101M22;inicio
+deitados;sim;nao;morfemico;nao verbo;masculino;101M22;inicio
+revolucionario;sim;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+beijo;sim;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;101M22;inicio
+ouviu;nao;nao;morfemico;verbo;masculino;108M22;final
+poupava;sim;nao;morfemico;verbo;masculino;108M22;final
+entrou;nao;nao;morfemico;verbo;masculino;108M22;final
+pouco;nao;nao;nao morfemico;nao verbo;masculino;108M22;final
+passageira;nao;nao;nao morfemico;nao verbo;masculino;108M22;final
+beijava;nao;nao;morfemico;verbo;masculino;108M22;final
+apaixonadamente;nao;nao;nao morfemico;nao verbo;masculino;108M22;final
+deitado;sim;nao;nao morfemico;nao verbo;masculino;108M22;final
+comecou;nao;nao;morfemico;verbo;masculino;108M22;final
+primeira;nao;nao;nao morfemico;nao verbo;masculino;108M22;final
+acompanhou;nao;nao;morfemico;verbo;masculino;108M22;final
+mostrou;nao;nao;morfemico;verbo;masculino;108M22;final
+deitados;sim;nao;morfemico;nao verbo;masculino;108M22;final
+revolucionario;nao;sim;nao morfemico;nao verbo;masculino;108M22;final
+beijo;nao;nao;nao morfemico;nao verbo;masculino;108M22;final
+dinheiro;nao;nao;nao morfemico;nao verbo;masculino;108M22;final

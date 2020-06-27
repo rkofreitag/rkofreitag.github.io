@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Variáveis contínuas</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Variáveis contínuas</h1>
+
+</div>
+
+
+<blockquote>
+<p>Crie um novo projeto no RStudio e coloque na pasta os arquivos <code>corpus.csv</code>e <code>dados.csv</code>. Crie um <code>script</code> do Rstudio para registrar a sua análise. Com esse procedimento, não será necessário ficar mudando de diretório. E você pode voltar os passos caso tenha dificuldade com um comando. Este símbolo <code>#</code> significa que o <code>script</code> não irá ler o que está na sequência; utilize para inserir comentários sobre sua análise.</p>
+</blockquote>
+<p><a href="corpus.csv#" class="download" title="Baixe o arquivo de dados corpus">Arquivo corpus</a><br />
+<a href="dados.csv#" class="download" title="Baixe o arquivo de dados dados">Arquivo dados</a></p>
+<p>Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo <strong>Palavras-tabu e efeitos de gênero na leitura</strong> (Pinheiro, Menezes &amp; Freitag, 2020), que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.</p>
+<p>A organização de um conjunto de dados depende da pergunta que será feita a eles. Por isso, é importante ter clareza das perguntas a serem feitas antes de iniciar a coleta, para não trabalhar à toa. Existem duas formas de organizar os dados, e elas podem ser manipuladas com os recursos do pacote <code>dplyr</code>. Os dados podem ser <em>pareados</em> ou <em>alinhados</em>.</p>
+<div id="importar-os-dados" class="section level2">
+<h2>Importar os dados</h2>
+<p>Este arquivo apresenta as variáveis pareadas. Vamos importar da tabela em formato <code>*.csv</code> para o formato de <em>dataframe</em> do R:</p>
+<pre class="r"><code>dados &lt;- read.table(&quot;dados.csv&quot;, sep = &quot;;&quot;, header = T) </code></pre>
+<p>Observe a estrutura do conjunto de dados importado:</p>
+<pre class="r"><code>str(dados) 
+#&gt; &#39;data.frame&#39;:    40 obs. of  6 variables:
+#&gt;  $ participante    : chr  &quot;lili&quot; &quot;lili&quot; &quot;luana&quot; &quot;luana&quot; ...
+#&gt;  $ entrevistador   : chr  &quot;homem&quot; &quot;homem&quot; &quot;homem&quot; &quot;homem&quot; ...
+#&gt;  $ tempo.de.leitura: num  0.92 0.54 0.52 1.62 0.43 0.71 1.09 0.71 0.46 1.02 ...
+#&gt;  $ tipo.de.texto   : chr  &quot;texto um&quot; &quot;texto dois&quot; &quot;texto um&quot; &quot;texto dois&quot; ...
+#&gt;  $ sexo            : chr  &quot;feminino&quot; &quot;feminino&quot; &quot;feminino&quot; &quot;feminino&quot; ...
+#&gt;  $ metacomentario  : chr  &quot;nao&quot; &quot;nao&quot; &quot;nao&quot; &quot;sim&quot; ...</code></pre>
+<p>Observe que são dois tipos de variáveis: <em>factor</em> e <em>num</em>. Estas são as seis primeiras ocorrências do conjunto de dados:</p>
+<pre class="r"><code>head(dados) 
+#&gt;   participante entrevistador tempo.de.leitura tipo.de.texto     sexo
+#&gt; 1         lili         homem             0.92      texto um feminino
+#&gt; 2         lili         homem             0.54    texto dois feminino
+#&gt; 3        luana         homem             0.52      texto um feminino
+#&gt; 4        luana         homem             1.62    texto dois feminino
+#&gt; 5      mariane         homem             0.43      texto um feminino
+#&gt; 6      mariane         homem             0.71    texto dois feminino
+#&gt;   metacomentario
+#&gt; 1            nao
+#&gt; 2            nao
+#&gt; 3            nao
+#&gt; 4            sim
+#&gt; 5            nao
+#&gt; 6            nao</code></pre>
+<p>E estas são as cinco últimas ocorrências:</p>
+<pre class="r"><code>tail(dados) 
+#&gt;    participante entrevistador tempo.de.leitura tipo.de.texto      sexo
+#&gt; 35         joao        mulher             0.94      texto um masculino
+#&gt; 36         joao        mulher             0.64    texto dois masculino
+#&gt; 37         jose        mulher             0.99      texto um masculino
+#&gt; 38         jose        mulher             0.95    texto dois masculino
+#&gt; 39      eduardo        mulher             1.00      texto um masculino
+#&gt; 40      eduardo        mulher             1.15    texto dois masculino
+#&gt;    metacomentario
+#&gt; 35            nao
+#&gt; 36            nao
+#&gt; 37            nao
+#&gt; 38            nao
+#&gt; 39            nao
+#&gt; 40            nao</code></pre>
+<p><em>factor</em> é uma variável qualitativa e <em>num</em> é uma variável quantitativa. Este comando apresenta um resumo das variáveis:</p>
+<pre class="r"><code>summary(dados)
+#&gt;  participante       entrevistador      tempo.de.leitura tipo.de.texto     
+#&gt;  Length:40          Length:40          Min.   :0.4300   Length:40         
+#&gt;  Class :character   Class :character   1st Qu.:0.5775   Class :character  
+#&gt;  Mode  :character   Mode  :character   Median :0.9400   Mode  :character  
+#&gt;                                        Mean   :0.8460                     
+#&gt;                                        3rd Qu.:1.0000                     
+#&gt;                                        Max.   :1.6200                     
+#&gt;      sexo           metacomentario    
+#&gt;  Length:40          Length:40         
+#&gt;  Class :character   Class :character  
+#&gt;  Mode  :character   Mode  :character  
+#&gt;                                       
+#&gt;                                       
+#&gt; </code></pre>
+<p>Agora, vamos ver outro arranjo para os mesmos dados. Vamos importar este arquivo, que apresenta as variáveis alinhadas.</p>
+<pre class="r"><code>corpus &lt;- read.table(&quot;corpus.csv&quot;, sep = &quot;;&quot;, header = T)</code></pre>
+<p>Faça o mesmo que fez com o arquivo anterior.</p>
+<pre class="r"><code>summary(corpus)
+#&gt;  participante          texto.1       metacomentario        texto.2     
+#&gt;  Length:20          Min.   :0.5400   Length:20          Min.   :0.430  
+#&gt;  Class :character   1st Qu.:0.9675   Class :character   1st Qu.:0.500  
+#&gt;  Mode  :character   Median :1.0550   Mode  :character   Median :0.735  
+#&gt;                     Mean   :1.0845                      Mean   :0.743  
+#&gt;                     3rd Qu.:1.2325                      3rd Qu.:0.985  
+#&gt;                     Max.   :1.6200                      Max.   :1.170  
+#&gt;  entrevistador          sexo          
+#&gt;  Length:20          Length:20         
+#&gt;  Class :character   Class :character  
+#&gt;  Mode  :character   Mode  :character  
+#&gt;                                       
+#&gt;                                       
+#&gt; </code></pre>
+<p>Compare o resumo de variáveis dos dois conjuntos de dados: qual a diferença entre eles? Observe que a forma como organizamos nosso conjunto de dados pode interferir nos tipos de resposta que precisamos. Dito de outra forma: o modo como organizamos o conjunto de dados deve favorecer o tipo de respostas que precisamos dos dados. Por isso, vale a pena repetir: <strong>antes de sair coletando dados, é preciso ter clareza das perguntas que serão feitas aos dados!</strong></p>
+</div>
+<div id="inspecionar-os-dados" class="section level2">
+<h2>Inspecionar os dados</h2>
+<p>Primeiro, é preciso carregar os pacotes para manipulação dos dados. Instale antes. Cada um executará uma função específica e tutoriais para seu uso podem ser encontrados facilmente. Recomendo que estudem os pacotes e vejam as possibilidade de maniputação.</p>
+<pre class="r"><code>library(dplyr)
+#&gt; 
+#&gt; Attaching package: &#39;dplyr&#39;
+#&gt; The following objects are masked from &#39;package:stats&#39;:
+#&gt; 
+#&gt;     filter, lag
+#&gt; The following objects are masked from &#39;package:base&#39;:
+#&gt; 
+#&gt;     intersect, setdiff, setequal, union
+library(report)
+library(ggplot2)
+library(ggsignif)
+library(forcats)
+library(ggpubr)
+#&gt; Loading required package: magrittr
+library(rstatix)
+#&gt; 
+#&gt; Attaching package: &#39;rstatix&#39;
+#&gt; The following object is masked from &#39;package:stats&#39;:
+#&gt; 
+#&gt;     filter</code></pre>
+<p>Uma pergunta que precisamos fazer aos dados é se <strong>existe diferença no tempo de leitura entre os textos</strong> e se <strong>essa diferença é significativa</strong>.</p>
+<p>A primeira pergunta pode ser respondida com a função <code>summary()</code>. Para dizer se essa diferença é signficativa, precisamos realizar um teste estatístico de significância para a diferença. Antes de decidir pelo teste, precisamos conhecer os dados.</p>
+<p><strong>A distribuição é normal?</strong></p>
+<p>Por inspeção visual, podemos ver se há normalidade. Para isso, fazemos um histograma da distribuição dos tempos de leitura, para cada um dos textos (<code>data.frame</code> <code>corpus</code>)</p>
+<pre class="r"><code>hist(corpus$texto.1, main = &quot;Histograma para normalidade dos dados \ texto 1&quot;)</code></pre>
+<p><img src="Continuas_files/figure-html/inspecao0-1.png" width="672" /></p>
+<p>Visualmente, conseguimos ver uma curva normal nos dados. Vamos fazer um teste Shapiro. A hipótese nula do teste de Shapiro-Wilk é que a população tem distribuição normal. Portanto, um valor de p &lt; 0.05 indica que a hipótese nula é rejeitada, ou seja, os dados não apresentam distribuição normal.</p>
+<pre class="r"><code>shapiro.test(corpus$texto.1)
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  corpus$texto.1
+#&gt; W = 0.96974, p-value = 0.7493</code></pre>
+<p>Os dados têm distribuição normal. A dispersão pode ser visualizada:</p>
+<pre class="r"><code>ggqqplot(corpus$texto.1)</code></pre>
+<p><img src="Continuas_files/figure-html/inspecao2-1.png" width="672" /></p>
+<p>Agora faça o mesmo para o texto 2; a distribuição é normal? <img src="Continuas_files/figure-html/inspecao3-1.png" width="672" /><img src="Continuas_files/figure-html/inspecao3-2.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  corpus$texto.2
+#&gt; W = 0.8365, p-value = 0.003193</code></pre>
+<p>A amostra é muito pequena (20 participantes); certamente, a ampliação da amostra resolveria o problema…</p>
+<p><strong>A variância é homogênea?</strong></p>
+<p>Vamos testar a homogeneidade da variância entre os grupos. Aplicaremos o teste Bartlett, que : hipótese nula é que não há diferença na variância entre grupos. Para isso, será preciso testar o efeito de cada grupo (variável independente nominal, no caso, <em>sexo do participante</em> e <em>sexo do entrevistador</em>) em cada texto:</p>
+<pre class="r"><code>bartlett.test(texto.1 ~ entrevistador, data = corpus)
+#&gt; 
+#&gt;  Bartlett test of homogeneity of variances
+#&gt; 
+#&gt; data:  texto.1 by entrevistador
+#&gt; Bartlett&#39;s K-squared = 4.3025, df = 1, p-value = 0.03806
+bartlett.test(texto.2 ~ entrevistador, data = corpus)
+#&gt; 
+#&gt;  Bartlett test of homogeneity of variances
+#&gt; 
+#&gt; data:  texto.2 by entrevistador
+#&gt; Bartlett&#39;s K-squared = 0.0026807, df = 1, p-value = 0.9587
+
+bartlett.test(texto.1 ~ sexo, data = corpus)
+#&gt; 
+#&gt;  Bartlett test of homogeneity of variances
+#&gt; 
+#&gt; data:  texto.1 by sexo
+#&gt; Bartlett&#39;s K-squared = 2.1265, df = 1, p-value = 0.1448
+bartlett.test(texto.2 ~ sexo, data = corpus)
+#&gt; 
+#&gt;  Bartlett test of homogeneity of variances
+#&gt; 
+#&gt; data:  texto.2 by sexo
+#&gt; Bartlett&#39;s K-squared = 0.010829, df = 1, p-value = 0.9171</code></pre>
+<p>Observe os resultados e diga qual é o grupo que está inteferindo na variância?</p>
+<p><strong>Há correlação entre as variáveis?</strong> <strong>Há correlação entre as variáveis?</strong></p>
+<p>A próxima inspeção é saber se correlação entre os dados, ou seja, se há interferência de uma variável na outra. Nos termos do objetivo do estudo em questão, precisamos saber se o tempo de leitura do texto 1 interfere no texto de leitura do texto 2.</p>
+<p>Para isso, vamos calcular o coeficiente de correlação, que mede se e o quanto duas variáveis quantitativas tendem a mudar juntas. Existem três testes, cada um com sua especificidade de variáveis: O coeficiente de correlação de Pearson (r) mede o grau da correlação linear entre duas variáveis quantitativas numéricas. Quando as variáveis são ordinais, podem ser considerados os coeficientes de correlação de Spearman ρ (rhô) ou de Kendall τ (tau); a estatística do teste Kendall é mais robusta, porém, é sensível a amostras restritas. O coeficiente de correlação pode variar de -1 a +1, quanto maior for o valor absoluto do coeficiente, mais forte é a relação entre as variáveis. Um valor absoluto de 1 indica uma relação perfeita, e um valor zero indica ausência de relação. Para realizar o teste, utilizamos a função <code>cor.test</code> e especificamos o método:</p>
+<pre class="r"><code>cor.test(corpus$texto.1, corpus$texto.2, 
+                method = &quot;spearman&quot;)
+#&gt; Warning in cor.test.default(corpus$texto.1, corpus$texto.2, method =
+#&gt; &quot;spearman&quot;): Cannot compute exact p-value with ties
+#&gt; 
+#&gt;  Spearman&#39;s rank correlation rho
+#&gt; 
+#&gt; data:  corpus$texto.1 and corpus$texto.2
+#&gt; S = 753.68, p-value = 0.05631
+#&gt; alternative hypothesis: true rho is not equal to 0
+#&gt; sample estimates:
+#&gt;       rho 
+#&gt; 0.4333245</code></pre>
+<p>O resultado do teste nos permite dizer que, embora o tempo de leitura seja diferente entre os textos, não há correlação entre eles.</p>
+<p>Vamos fazer a inspeção visual do resultado; se a hipótese de pesquisa considerasse a correlação, esta figura poderia ser incluída na análise.</p>
+<pre class="r"><code>ggscatter(corpus, y = &quot;texto.1&quot;, x = &quot;texto.2&quot;, 
+          add = &quot;reg.line&quot;, conf.int = FALSE, 
+          cor.coef = TRUE, cor.method = &quot;spearman&quot;,
+          ylab = &quot;Tempo de leitura texto 1&quot;, xlab = &quot;Tempo de leitura texto 2&quot;)
+#&gt; `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="Continuas_files/figure-html/inspecao7-1.png" width="672" /></p>
+<p>Já testamos a normalidade da distribuição e a correlação entre as variáveis. A partir disso, podemos escolher que teste estatístico aplicaremos para explicar a diferença na comparação entre as médias de tempo de leitura em cada um dos textos.</p>
+<div id="comparação-de-médias" class="section level3">
+<h3>Comparação de médias</h3>
+<p>Para comparar médias, podemos utilizar um conjunto de testes, a depender da quantidade de grupos e do tipo de distribuição dos dados. Neste tutorial, vamos conhecer os usos dos testes: T, Wilcoxon, ANOVA e Kruskal-Wallis.</p>
+<p>Para selecionar o teste, precisamos saber o que queremos fazer:</p>
+<ul>
+<li><strong>Comparar a média de uma amostra com uma média já conhecida</strong>?</li>
+<li><strong>Comparar as médias de dois grupos independentes</strong>?</li>
+<li><strong>Comparar as médias de dois grupos pareados</strong>?</li>
+<li><strong>Comparar as médias de mais de dois grupos</strong>?</li>
+</ul>
+<p>Vamos trabalhar neste tutorial os três primeiros casos.</p>
+</div>
+</div>
+<div id="comparar-a-média-de-uma-amostra-com-uma-média-já-conhecida" class="section level2">
+<h2>Comparar a média de uma amostra com uma média já conhecida</h2>
+<p>Sejam <code>corpus</code> e <code>dados</code> resultados de dois estudos distintos. A média do tempo de leitura de <code>dados</code> pode ser calculada da seguinte forma:</p>
+<pre class="r"><code>mean(dados$tempo.de.leitura)
+#&gt; [1] 0.846</code></pre>
+<p>Queremos saber qual a relação entre o tempo de leitura de <code>dados</code> e o tempo leitura de <code>texto.1</code> em <code>corpus</code>.</p>
+<p>Primeiro, precisamos testar a normalidade dos dados. Teste a normalidade da distribuição de <code>texto.1</code> em <code>corpus</code>:</p>
+<pre class="r"><code>shapiro.test(corpus$texto.1)
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  corpus$texto.1
+#&gt; W = 0.96974, p-value = 0.7493</code></pre>
+<p>Como a distribuição é normal, podemos realizar um <em>teste-t para uma amostra</em>. Este é um teste paramétrico, que pressupõe a condição de normalidade dos dados. Temos a média, calculada por <code>mean(dados$tempo.de.leitura)</code>. Podemos querer saber se a média do tempo de leitura em <code>corpus$texto.1</code> é igual, menor ou maior do que um valor conhecido assumido como padrão de referência (no caso, <code>dados$tempo.de.leitura</code>).</p>
+<p>Vamos fazer o teste assumindo a hipótese de que a média de <code>corpus$texto.1</code> será igual à média teórica/já conhecida (<code>mu</code>), assumindo um nível de alfa = 0.05:</p>
+<pre class="r"><code>t.test(corpus$texto.1, mu = 0.846, alternative = &quot;two.side&quot;)
+#&gt; 
+#&gt;  One Sample t-test
+#&gt; 
+#&gt; data:  corpus$texto.1
+#&gt; t = 3.8734, df = 19, p-value = 0.001023
+#&gt; alternative hypothesis: true mean is not equal to 0.846
+#&gt; 95 percent confidence interval:
+#&gt;  0.9556251 1.2133749
+#&gt; sample estimates:
+#&gt; mean of x 
+#&gt;    1.0845</code></pre>
+<p>Agora vamos fazer o mesmo procedimento de comparação da média de <code>dados$tempo.de.leitura</code> com <code>texto.2</code>. Precisamos saber se a amostra satisfaz as condições de normalidade.</p>
+<pre class="r"><code>shapiro.test(corpus$texto.2)
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  corpus$texto.2
+#&gt; W = 0.8365, p-value = 0.003193</code></pre>
+<p>Como a distribuição não atende às condições de normalidade, precisamos utilizar um teste equivalente não-paramétrico, o teste Wilcoxon para uma amostra. Este teste permite determinar se a mediana de uma amostra é igual, maior ou menor do que um valor conhecido assumido como padrão de referência.</p>
+<p><em>Média e mediana</em> são <strong>medidas de tendência central</strong> e só se aplicam a variáveis quantitativas.</p>
+<ul>
+<li><strong>Média</strong>: somatório de todos os elementos da série dividido pelo número de elementos.</li>
+<li><strong>Mediana</strong>: metade do valor central (ordenação crescente dos elementos dividida em duas partes).</li>
+</ul>
+<p>Vamos calcular a mediana de <code>texto.2</code>:</p>
+<pre class="r"><code>median(corpus$texto.2)
+#&gt; [1] 0.735</code></pre>
+<p>Agora que sabemos a mediana, o procedimento é o mesmo do teste-t, só que com a função <code>wilcox.test()</code>. Vamos testar a hipótese de que são iguais:</p>
+<pre class="r"><code>wilcox.test(corpus$texto.2, mu = 0.735, alternative = &quot;two.side&quot;)
+#&gt; Warning in wilcox.test.default(corpus$texto.2, mu = 0.735, alternative =
+#&gt; &quot;two.side&quot;): cannot compute exact p-value with ties
+#&gt; 
+#&gt;  Wilcoxon signed rank test with continuity correction
+#&gt; 
+#&gt; data:  corpus$texto.2
+#&gt; V = 110, p-value = 0.8664
+#&gt; alternative hypothesis: true location is not equal to 0.735</code></pre>
+<p>Em resumo, quando temos uma amostra e queremos comparar com um valor já conhecido, primeiro testamos a normalidade dos dados. Se os dados apresentam distribuição normal, escolhemos o teste-T para uma amostra, um teste paramétrico; se as condições de normalidade não são atendidas, escolhemos o teste Wilcoxon para uma amostra, um teste não paramétrico.</p>
+</div>
+<div id="comparar-as-médias-de-dois-grupos-independentes" class="section level2">
+<h2>Comparar as médias de dois grupos independentes</h2>
+<p>Queremos saber se o tempo de leitura de participantes homens é diferente do tempo de leitura de participantes mulheres no <code>texto.1</code>. Temos dois grupos independentes entre si, e esta identificação é importante para os procedimentos de seleção dos testes estatísticos.</p>
+<p>Já sabemos que os dados de <code>texto.1</code> têm distribuição normal; vamos ver se a normalidade se conserva dentro dos grupos:</p>
+<pre class="r"><code># teste Shapiro para normalidade com dados de participantes homens
+with(corpus, shapiro.test(texto.1[sexo == &quot;masculino&quot;])) 
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  texto.1[sexo == &quot;masculino&quot;]
+#&gt; W = 0.89336, p-value = 0.1849
+
+# teste Shapiro para normalidade com dados de participantes mulheres
+with(corpus, shapiro.test(texto.1[sexo == &quot;feminino&quot;])) 
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  texto.1[sexo == &quot;feminino&quot;]
+#&gt; W = 0.95066, p-value = 0.6763</code></pre>
+<p>Como os grupos da amostra atendem às condições de normalidade e homogeneidade, podemos empregar um teste paramétrico, o teste-t para amostras independentes para saber se a média entre os grupos é igual, maior ou menor. Vamos testar se as médias são iguais (`alternative = “two.side”’).</p>
+<pre class="r"><code>t.test(texto.1 ~ sexo, data = corpus, var.equal = TRUE, alternative = &quot;two.side&quot;)
+#&gt; 
+#&gt;  Two Sample t-test
+#&gt; 
+#&gt; data:  texto.1 by sexo
+#&gt; t = 0.1186, df = 18, p-value = 0.9069
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  -0.2507083  0.2807083
+#&gt; sample estimates:
+#&gt;  mean in group feminino mean in group masculino 
+#&gt;                   1.092                   1.077</code></pre>
+<p>A última linha do teste informa a média de cada grupo. Vamos fazer a mesma pergunta sobre o efeito dos participantes ao <code>texto.2</code>: existe diferença no tempo de leitura de participantes homnes e participantes mulheres? Em não sendo satisfeita a condição de normalidade entre os grupos, utilizamos um teste não paramétrico, o teste de Wilcoxon para amostras independentes. A sintaxe do teste é a mesma do teste-t. Vamos testar a hipótese de que a mediana do tempo de leitura de participantes mulheres será maior do que a de participantes homens:</p>
+<pre class="r"><code>wilcox.test(texto.2 ~ sexo, data = corpus, 
+            exact = FALSE, alternative = &quot;greater&quot;)
+#&gt; 
+#&gt;  Wilcoxon rank sum test with continuity correction
+#&gt; 
+#&gt; data:  texto.2 by sexo
+#&gt; W = 34, p-value = 0.8949
+#&gt; alternative hypothesis: true location shift is greater than 0</code></pre>
+</div>
+<div id="comparar-as-médias-de-dois-grupos-pareados" class="section level2">
+<h2>Comparar as médias de dois grupos pareados</h2>
+<p>Agora chegamos ao objetivo do estudo em questão: um mesmo participante, leu dois textos diferentes. Temos a mesma medida para cada participante, é o que chamamos de amostras dependentes ou pareadas. Os testes a serem realizados são os mesmos apresentados anteriormente, teste-t para amostras pareadas, se a condição de normalidade é atendida, ou teste Wilcoxon para amostras pareadas se a condição de normalidade não é atendida.</p>
+<p>Já sabemos que em <code>dados$tempo.de.leitura</code> a distribuição não é normal.</p>
+<pre class="r"><code>shapiro.test(dados$tempo.de.leitura)
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  dados$tempo.de.leitura
+#&gt; W = 0.91501, p-value = 0.005386</code></pre>
+<p>Porém, todos os trabalhos com leitura sempre sinalizam para a normalidade das distribuições. Uma explicação para essa amostra seria o tamanho; se ampliássemos o número de participantes, a normalidade tenderia a se regularizar. Outra possibilidade é erro no cômputo de algum dado, um zero a mais ou a menos, uma mudança de ordem de algarismo na hora da digitação. Por isso é importante realizar a inspeção dos dados; sempre que algo sair do que é esperado a partir das evidências de outros estudos, deve-se checar a possível interferência.</p>
+<p>Um primeiro procedimento a ser feito é o de inspeção de <em>outliers</em>, distribuições fora dos parâmetros.</p>
+<pre class="r"><code>dados %&gt;%
+  group_by(tipo.de.texto, sexo, entrevistador) %&gt;% 
+identify_outliers(tempo.de.leitura)
+#&gt; # A tibble: 5 x 8
+#&gt;   entrevistador tipo.de.texto sexo  participante tempo.de.leitura metacomentario
+#&gt;   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;         
+#&gt; 1 homem         texto dois    femi… luana                    1.62 sim           
+#&gt; 2 mulher        texto dois    masc… joao                     0.64 nao           
+#&gt; 3 mulher        texto dois    masc… eduardo                  1.15 nao           
+#&gt; 4 mulher        texto um      femi… vanessa                  1    nao           
+#&gt; 5 homem         texto um      masc… hugo                     0.43 nao           
+#&gt; # … with 2 more variables: is.outlier &lt;lgl&gt;, is.extreme &lt;lgl&gt;</code></pre>
+<p>As duas últimas colunas do resultado informam se há valores <em>outlier</em> (<code>is.outlier</code>) e se estes são extremos (<code>is.extreme</code>). Como podemos ver, há três valores extremos (<em>TRUE</em>). Podemoes excluir estes dados para tentar normalizar a análise (mas perderemos 3 participantes).</p>
+<pre class="r"><code>dados %&gt;%
+  filter((tipo.de.texto != &quot;Texto-controle&quot; &amp; participante != &quot;vanessa&quot;) &amp; (tipo.de.texto != &quot;Texto-controle&quot; &amp; participante != &quot;hugo&quot;) | (tipo.de.texto != &quot;Texto-alvo&quot; &amp; participante != &quot;joao&quot;)) %&gt;% 
+  identify_outliers(tempo.de.leitura)
+#&gt; [1] participante     entrevistador    tempo.de.leitura tipo.de.texto   
+#&gt; [5] sexo             metacomentario   is.outlier       is.extreme      
+#&gt; &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<pre class="r"><code>dados %&gt;%
+  filter((tipo.de.texto != &quot;Texto-controle&quot; &amp; participante != &quot;vanessa&quot;) &amp; (tipo.de.texto != &quot;Texto-controle&quot; &amp; participante != &quot;hugo&quot;) | (tipo.de.texto != &quot;Texto-alvo&quot; &amp; participante != &quot;joao&quot;)) %&gt;% 
+  shapiro_test(tempo.de.leitura)
+#&gt; # A tibble: 1 x 3
+#&gt;   variable         statistic       p
+#&gt;   &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;
+#&gt; 1 tempo.de.leitura     0.915 0.00539</code></pre>
+<p>Para fins didáticos, vamos realizar as análises considerando o <em>teste-t</em> e o <em>teste Wilcoxon</em>. Na prática, as diferenças são poucas. Apenas o procedimento de cálculo muda em função das pressuposições, assim como o modo de reportar os resultados.</p>
+<p>Vamos retomar as estatísticas sumárias, com a função <code>get_summary_stats()</code> do pacote <code>rstatixc</code>:</p>
+<pre class="r"><code>dados %&gt;%
+  group_by(tipo.de.texto, sexo, entrevistador) %&gt;%
+get_summary_stats(tempo.de.leitura)
+#&gt; # A tibble: 8 x 16
+#&gt;   entrevistador tipo.de.texto sexo  variable     n   min   max median    q1
+#&gt;   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 homem         texto dois    femi… tempo.d…     5  0.54  1.62   0.71 0.71 
+#&gt; 2 mulher        texto dois    femi… tempo.d…     5  0.96  1.47   0.99 0.97 
+#&gt; 3 homem         texto dois    masc… tempo.d…     5  0.6   1.09   1    0.6  
+#&gt; 4 mulher        texto dois    masc… tempo.d…     5  0.64  1.15   0.95 0.94 
+#&gt; 5 homem         texto um      femi… tempo.d…     5  0.43  1.09   0.52 0.46 
+#&gt; 6 mulher        texto um      femi… tempo.d…     5  0.45  1      0.56 0.5  
+#&gt; 7 homem         texto um      masc… tempo.d…     5  0.43  0.98   0.91 0.9  
+#&gt; 8 mulher        texto um      masc… tempo.d…     5  0.5   1      0.94 0.580
+#&gt; # … with 7 more variables: q3 &lt;dbl&gt;, iqr &lt;dbl&gt;, mad &lt;dbl&gt;, mean &lt;dbl&gt;,
+#&gt; #   sd &lt;dbl&gt;, se &lt;dbl&gt;, ci &lt;dbl&gt;</code></pre>
+<p>Além da média (<code>mean</code>) e da mediana (<code>median</code>), que já conhecemos, as estatísticas sumárias incluem outras informações, como:</p>
+<ul>
+<li><em>Valor mínimo</em> (<code>min</code>) e <em>valor máximo</em> (<code>max</code>): o menor e o maior valor da série.</li>
+<li><em>Desvio padrão</em> (<code>sd</code>), uma <em>medida de dispersão</em>: medida do grau de dispersão em relação à média.</li>
+<li><em>Erro padrão</em> (<code>se</code>): uma medida de estimativa do desvio padrão.</li>
+<li><em>Intervalo de confiança</em> (<code>ci</code>): estimativa do intervalo considerando o desvio e o erro padrão.</li>
+</ul>
+<p>Agora vamos visualizar graficamente essa diferença.</p>
+<p>Queremos saber se a diferença de leitura entre os textos é estatisticamente significativa. O texto sem palavras-tabu é o <strong>Texto-controle</strong>, e o texto com palavras-tabu é o <strong>Texto-alvo</strong>. Vamos representar graficamente a diferença entre as médias do tempo de leitura, já com o resultado do teste estatístico. Para gerar o gráfico, usamos o pacote <code>ggplot2</code> e para inserir o teste no gráfico, o pacote <code>ggsignif</code>.</p>
+<p>Vamos visualizar o resultado primeiramente com o teste-t:</p>
+<pre class="r"><code>ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_boxplot(outlier.shape = NA) + 
+  scale_fill_grey(start = 0.8, end = 0.6) +
+  geom_jitter(width = .05,
+              height = 0,
+              alpha = 0.4) +
+  theme_minimal() +
+  theme(legend.position = &quot;none&quot;) +
+  ggtitle(&quot;Comparação entre os tempo de leitura dos textos&quot;) +
+  xlab(&quot;Textos lidos&quot;) + ylab(&quot;Tempo de leitura (em minutos)&quot;) +
+  stat_compare_means(method = &quot;t.test&quot;, paired = TRUE) ### Informamos que queremos um teste-t, pareado
+#&gt; Warning: `select_()` is deprecated as of dplyr 0.7.0.
+#&gt; Please use `select()` instead.
+#&gt; This warning is displayed once every 8 hours.
+#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.
+#&gt; Warning: `tbl_df()` is deprecated as of dplyr 1.0.0.
+#&gt; Please use `tibble::as_tibble()` instead.
+#&gt; This warning is displayed once every 8 hours.
+#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<p><img src="Continuas_files/figure-html/analise0-1.png" width="672" /></p>
+<p>Somente o cálculo do teste:</p>
+<pre class="r"><code>t.test(dados$tempo.de.leitura ~ dados$tipo.de.texto, paired = TRUE)
+#&gt; 
+#&gt;  Paired t-test
+#&gt; 
+#&gt; data:  dados$tempo.de.leitura by dados$tipo.de.texto
+#&gt; t = 2.3611, df = 19, p-value = 0.02906
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  0.02554909 0.42445091
+#&gt; sample estimates:
+#&gt; mean of the differences 
+#&gt;                   0.225</code></pre>
+<p>Vamos gerar o mesmo gráfico, mas agora com o teste Wilcoxon:</p>
+<pre class="r"><code>ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_boxplot(outlier.shape = NA) + 
+  scale_fill_grey(start = 0.8, end = 0.6) +
+  geom_jitter(width = .05,
+              height = 0,
+              alpha = 0.4) +
+  theme_minimal() +
+  theme(legend.position = &quot;none&quot;) +
+  ggtitle(&quot;Comparação entre os tempo de leitura dos textos&quot;) +
+  xlab(&quot;Textos lidos&quot;) + ylab(&quot;Tempo de leitura (em minutos)&quot;) +
+  stat_compare_means(method = &quot;wilcox.test&quot;, paired = TRUE)</code></pre>
+<p><img src="Continuas_files/figure-html/analise0a-1.png" width="672" /></p>
+<pre class="r"><code>wilcox.test(dados$tempo.de.leitura ~ dados$tipo.de.texto, paired = TRUE)
+#&gt; 
+#&gt;  Wilcoxon signed rank exact test
+#&gt; 
+#&gt; data:  dados$tempo.de.leitura by dados$tipo.de.texto
+#&gt; V = 162, p-value = 0.03277
+#&gt; alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Como podemos perceber, ambos os testes permitem rejeitar a hipótese nula de que não há diferença, e nos permite lançar a hipótese alternativa de que existe uma diferença entre o tempo de leitura do texto-controle e o texto-alvo.</p>
+<p>Agora vamos verificar se existe efeito do sexo do participante no tempo da leitura. Primeiro, precisamos organizar os fatores, para aparecerem no gráfico.</p>
+<pre class="r"><code>dados$sexo &lt;- dados$sexo %&gt;% 
+  fct_recode(&quot;Mulher&quot; = &quot;feminino&quot;, &quot;Homem&quot; = &quot;masculino&quot;)
+dados$sexo &lt;- factor(dados$sexo, levels = c(&quot;Homem&quot;, &quot;Mulher&quot;)) </code></pre>
+<p>E vamos gerar o gráfico:</p>
+<pre class="r"><code>  ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~sexo) +
+    theme_minimal() +
+    theme(legend.position = &quot;none&quot;) +
+    ggtitle(&quot;Efeito do sexo do participante no tempo de leitura dos textos&quot;) +
+    xlab(&quot;Textos lidos&quot;) + ylab(&quot;Tempo de leitura (em minutos)&quot;) +
+    stat_compare_means(method = &quot;t.test&quot;, paired = TRUE)</code></pre>
+<p><img src="Continuas_files/figure-html/analise7-1.png" width="672" /></p>
+<p>Vamos incorporar ao gráfico uma linha com a média do tempo de leitura:</p>
+<pre class="r"><code>  ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+  geom_hline(yintercept = mean(dados$tempo.de.leitura), linetype = 2) +  ### média geral do tempo de leitura
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~sexo) +
+    theme_minimal() +
+    theme(legend.position = &quot;none&quot;) +
+    ggtitle(&quot;Efeito do sexo do participante no tempo de leitura dos textos&quot;) +
+    xlab(&quot;Textos lidos&quot;) + ylab(&quot;Tempo de leitura (em minutos)&quot;) +
+    stat_compare_means(method = &quot;t.test&quot;, paired = TRUE)</code></pre>
+<p><img src="Continuas_files/figure-html/analise7a-1.png" width="672" /></p>
+<p>Agora o resultado fica mais claro.</p>
+<p>Nossa próxima pergunta é se o sexo do entrevistador interfere no tempo de leitura. Os procedimentos são os mesmos: organizar os fatores, calcular as medidas de centralidade e dispersão, gerar o gráfico, organizar os dados para o teste e realizar o teste para reportar os resultados.</p>
+<p><em>organizar fatores</em>:</p>
+<pre class="r"><code>dados$entrevistador &lt;- dados$entrevistador %&gt;%
+  fct_recode(&quot;Homem&quot; = &quot;homem&quot;, &quot;Mulher&quot; = &quot;mulher&quot;)</code></pre>
+<p><em>gerar gráfico</em>:</p>
+<pre class="r"><code>ggplot(dados, aes(x=tipo.de.texto, y=tempo.de.leitura, fill = tipo.de.texto)) + 
+    geom_boxplot(outlier.shape = NA, width = .5) +
+    scale_fill_grey(start = 0.8, end = 0.6) +
+    geom_jitter(width = .05,
+                height = 0,
+                alpha = 0.4) +
+    facet_wrap(~ entrevistador) +
+    theme_minimal() +
+    theme(legend.position = &quot;none&quot;) +
+    scale_color_manual(labels = c(&quot;Texto-controle&quot;, &quot;Texto-alvo&quot;)) +
+    ggtitle(&quot;Efeito do sexo do entrevistador no tempo de leitura dos textos pelos participantes&quot;) +
+    xlab(&quot;Textos lidos&quot;) + ylab(&quot;Tempo de leitura (em minutos)&quot;) +
+    stat_compare_means(method = &quot;t.test&quot;, paired = TRUE)</code></pre>
+<p><img src="Continuas_files/figure-html/analise12-1.png" width="672" /></p>
+</div>
+<div id="reportar-os-resultados" class="section level2">
+<h2>Reportar os resultados</h2>
+<p>Testes paramétricos comparam médias; testes não paramétricos comparam medianas. Para reportar no corpo do texto os resultados, precisamos das estatísticas sumárias e dos resultados dos testes.</p>
+<pre class="r"><code>dados %&gt;%
+  group_by(tipo.de.texto) %&gt;% 
+get_summary_stats(tempo.de.leitura)
+#&gt; # A tibble: 2 x 14
+#&gt;   tipo.de.texto variable     n   min   max median    q1    q3   iqr   mad  mean
+#&gt;   &lt;chr&gt;         &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 texto dois    tempo.d…    20  0.54  1.62   0.98  0.71  1.04 0.328 0.208 0.959
+#&gt; 2 texto um      tempo.d…    20  0.43  1.09   0.74  0.5   0.95 0.45  0.356 0.734
+#&gt; # … with 3 more variables: sd &lt;dbl&gt;, se &lt;dbl&gt;, ci &lt;dbl&gt;</code></pre>
+<p>As estatísticas sumárias são as mesmas. O resultado para o teste-t é</p>
+<pre class="r"><code>t.test(tempo.de.leitura ~ tipo.de.texto, data = dados,  paired = TRUE)
+#&gt; 
+#&gt;  Paired t-test
+#&gt; 
+#&gt; data:  tempo.de.leitura by tipo.de.texto
+#&gt; t = 2.3611, df = 19, p-value = 0.02906
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  0.02554909 0.42445091
+#&gt; sample estimates:
+#&gt; mean of the differences 
+#&gt;                   0.225</code></pre>
+<p>As médias do tempo de leitura do texto-alvo e do texto-controle foram, respectivamente, 0.73 e 0.96 segundos. Um teste-t de amostras pareadas mostra que há um efeito significativo do tipo de texto (t = -2.3611, df = 19, p-valor = 0.029).</p>
+<pre class="r"><code>wilcox.test(tempo.de.leitura ~ tipo.de.texto, data = dados, paired = TRUE)
+#&gt; 
+#&gt;  Wilcoxon signed rank exact test
+#&gt; 
+#&gt; data:  tempo.de.leitura by tipo.de.texto
+#&gt; V = 162, p-value = 0.03277
+#&gt; alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>As medianas do tempo de leitura do texto-alvo e do texto-controle foram, respectivamente, 0.74 e 0.98 segundos. Um teste Wilcoxon de amostras pareadas mostra que há um efeito significativo do tipo de texto (V = 48, p-valor = 0.032).</p>
+<p>Neste tutorial, vimos o funcionamento de variáveis quantitativas em uma situação pareada e vimos a importância de saber a pergunta que será feita aos dados para poder organizar o conjunto de dados da maneira mais otimizada para as respostas. Aproveite o conhecimento para aplicar em outros estudos! E aprimore seus conhecimentos em <code>dplyr</code> e <code>ggplot2</code>.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

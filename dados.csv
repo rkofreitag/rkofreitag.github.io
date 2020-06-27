@@ -1,0 +1,41 @@
+participante;entrevistador ;tempo de leitura;tipo de texto;sexo;metacomentario
+lili;homem;0.92;texto um;feminino;nao
+lili;homem;0.54;texto dois;feminino;nao
+luana;homem;0.52;texto um;feminino;nao
+luana;homem;1.62;texto dois;feminino;sim
+mariane;homem;0.43;texto um;feminino;nao
+mariane;homem;0.71;texto dois;feminino;nao
+alice;homem;1.09;texto um;feminino;nao
+alice;homem;0.71;texto dois;feminino;nao
+vivian;homem;0.46;texto um;feminino;nao
+vivian;homem;1.02;texto dois;feminino;sim
+pedro ;homem;0.98;texto um;masculino;nao
+pedro ;homem;1.09;texto dois;masculino;nao
+luiz;homem;0.9;texto um;masculino;nao
+luiz;homem;0.6;texto dois;masculino;nao
+marcos;homem;0.91;texto um;masculino;nao
+marcos;homem;0.6;texto dois;masculino;nao
+mateus;homem;0.94;texto um;masculino;nao
+mateus;homem;1.00;texto dois;masculino;nao
+hugo;homem;0.43;texto um;masculino;nao
+hugo;homem;1.02;texto dois;masculino;sim
+aline;mulher;0.57;texto um;feminino;nao
+aline;mulher;0.96;texto dois;feminino;sim
+jaqueline;mulher;0.56;texto um;feminino;nao
+jaqueline;mulher;1.47;texto dois;feminino;sim
+roberta;mulher;0.45;texto um;feminino;nao
+roberta;mulher;0.99;texto dois;feminino;nao
+vanessa;mulher;1.00;texto um;feminino;nao
+vanessa;mulher;1.19;texto dois;feminino;nao
+barbara;mulher;0.50;texto um;feminino;nao
+barbara;mulher;0.97;texto dois;feminino;nao
+galileu;mulher;0.58;texto um;masculino;nao
+galileu;mulher;0.94;texto dois;masculino;nao
+pedro;mulher;0.50;texto um;masculino;nao
+pedro;mulher;1.00;texto dois;masculino;nao
+joao;mulher;0.94;texto um;masculino;nao
+joao;mulher;0.64;texto dois;masculino;nao
+jose;mulher;0.99;texto um;masculino;nao
+jose;mulher;0.95;texto dois;masculino;nao
+eduardo;mulher;1.00;texto um;masculino;nao
+eduardo;mulher;1.15;texto dois;masculino;nao

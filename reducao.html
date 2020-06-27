@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Redução de variáveis e de dados</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Redução de variáveis e de dados</h1>
+
+</div>
+
+
+<blockquote>
+<p>Crie um novo projeto no RStudio e coloque na pasta os arquivos <code>negacao.csv</code>e <code>self.csv</code>. Crie um <code>script</code> do Rstudio para registrar a sua análise. Com esse procedimento, não será necessário ficar mudando de diretório. E você pode voltar os passos caso tenha dificuldade com um comando. Este símbolo <code>#</code> significa que o <code>script</code> não irá ler o que está na sequência; utilize para inserir comentários sobre sua análise.</p>
+</blockquote>
+<p><a href="negacao.csv#" class="download" title="Baixe o arquivo de dados negacao">Arquivo negacao</a><br />
+<a href="self.csv#" class="download" title="Baixe o arquivo de dados self">Arquivo self</a></p>
+<p>Redução de dados significa sumarizar conjuntos de dados que têm muitas variáveis para um conjunto menor de variáveis selecionadas no conjunto original, por critérios estatísticos. Neste processo, é preciso garantir que a redução do tamanho para uma representação mais compacta não implique em supersimplificação, com a perda de informação relevante.</p>
+<p>Depois de realizar os procedimentos de redução de dados, a interpretação depende de conhecimento teórico e das hipóteses assumidas. As técnicas apenas ajudam a decidir. O que impera são os conhecimentos do pesquisador. No conjunto de dados reduzido, podemos observar com mais clareza tendências, padrões e dados fora do esperado (<em>outliers</em>).</p>
+<p>Quanto mais variáveis incluídas em um modelo de análise, mais complexa e custosa se torna a sua explicação. Por isso, é preciso tomar decisões para reduzir o número de variáveis incluídas. Vamos conhecer algumas técnicas; cada uma delas têm vantagens e desvantagens, além de restrições quanto aos tipos de variável. Antes de escolher qual a técnica, precisamos realizar a checagem do tipo da variável dependente. Seguindo princípios de Ciência Aberta, vamos trabalhar com conjuntos de dados reais, provenientes de outros estudos e compartilhados. Carregue o arquivo <code>negacao</code> (disponível em &lt; &gt;):</p>
+<pre class="r"><code>negacao &lt;- read.table(&quot;negacao.csv&quot;, header = T,  sep = &quot;;&quot;)</code></pre>
+<p>Observe a estrutura do banco de dados importado, com o comando <code>str</code>:</p>
+<pre class="r"><code>str(negacao) 
+#&gt; &#39;data.frame&#39;:    376 obs. of  15 variables:
+#&gt;  $ informante              : chr  &quot;ros_fem_01&quot; &quot;ros_fem_01&quot; &quot;ros_fem_01&quot; &quot;ros_fem_01&quot; ...
+#&gt;  $ contexto_fonetico       : chr  &quot;não&quot; &quot;não&quot; &quot;não&quot; &quot;não&quot; ...
+#&gt;  $ negacao                 : chr  &quot;Neg-V&quot; &quot;Neg-V&quot; &quot;Neg-V&quot; &quot;Neg-V&quot; ...
+#&gt;  $ tipo_de_verbo           : chr  &quot;evento&quot; &quot;cognitivos&quot; &quot;existência&quot; &quot;existência&quot; ...
+#&gt;  $ pessoa_do_sujeito       : chr  &quot;não falante&quot; &quot;falante&quot; &quot;falante&quot; &quot;falante&quot; ...
+#&gt;  $ tempo_verbal            : chr  &quot;passado&quot; &quot;não passado&quot; &quot;não passado&quot; &quot;passado&quot; ...
+#&gt;  $ marcador_               : chr  &quot;ausente&quot; &quot;ausente&quot; &quot;ausente&quot; &quot;presente&quot; ...
+#&gt;  $ reforco_negativo        : chr  &quot;sem reforço negativo&quot; &quot;sem reforço negativo&quot; &quot;sem reforço negativo&quot; &quot;sem reforço negativo&quot; ...
+#&gt;  $ preenchimento_do_sujeito: chr  &quot;não preenchido&quot; &quot;não preenchido&quot; &quot;não preenchido&quot; &quot;não preenchido&quot; ...
+#&gt;  $ estatuto_informacional  : chr  &quot;informação dada&quot; &quot;informação nova&quot; &quot;informação dada&quot; &quot;informação dada&quot; ...
+#&gt;  $ ato_de_fala             : chr  &quot;declarativo&quot; &quot;não declarativo&quot; &quot;não declarativo&quot; &quot;declarativo&quot; ...
+#&gt;  $ material_interveniente  : chr  &quot;ausência de material interveniente&quot; &quot;ausência de material interveniente&quot; &quot;ausência de material interveniente&quot; &quot;ausência de material interveniente&quot; ...
+#&gt;  $ tipo_textual            : chr  &quot;narrativo&quot; &quot;opinativo&quot; &quot;opinativo&quot; &quot;narrativo&quot; ...
+#&gt;  $ sexo                    : chr  &quot;feminino&quot; &quot;feminino&quot; &quot;feminino&quot; &quot;feminino&quot; ...
+#&gt;  $ localidade              : chr  &quot;capital&quot; &quot;capital&quot; &quot;capital&quot; &quot;capital&quot; ...</code></pre>
+<p>Se na sua versão os dados não forem importados como <em>factor</em>, faça a conversão:</p>
+<pre class="r"><code>library(dplyr)
+#&gt; 
+#&gt; Attaching package: &#39;dplyr&#39;
+#&gt; The following objects are masked from &#39;package:stats&#39;:
+#&gt; 
+#&gt;     filter, lag
+#&gt; The following objects are masked from &#39;package:base&#39;:
+#&gt; 
+#&gt;     intersect, setdiff, setequal, union
+negacao &lt;- negacao %&gt;% mutate_if(is.character, as.factor)</code></pre>
+<p>Vamos começar com os procedimentos para um conjunto de dados de variável categórica.</p>
+<p><strong>Procedimentos para a redução dos dados:</strong></p>
+<ul>
+<li>Decidir qual é a variável dependente</li>
+<li>Testar a significância em análise univariada</li>
+<li>Realizar a análise de redução</li>
+<li>Decidir pela inserção ou exclusão de variáveis dependentes</li>
+<li>Realizar nova análise</li>
+<li>Repetir passos anteriores até ter um modelo com um número de variáveis adequado</li>
+</ul>
+<div id="classificação-condicional" class="section level2">
+<h2>Classificação condicional</h2>
+<p>A técnica de árvores de inferências condicionais é um modelo de árvores de decisões em que as observações de ocorrências são agrupadas modo a ter o <strong>mínimo</strong> de variação <strong>dentro</strong> de um grupo e o <strong>máximo</strong> de variação <strong>entre</strong> os grupos.</p>
+<p>As observações das ocorrências são agrupadas por partição binária recursiva, de modo a estabelecer uma hierarquia entre variáveis preditoras, e o grau de composicionalidade entre elas.</p>
+<p>A árvore de inferências condicionais é baseada em cálculos de regressão, em que as partições representam o mais baixo p-valor que é obtido entre todos os níveis de todas as variáveis preditoras.</p>
+<p>Como em uma árvore de verdade, uma árvore de inferências condicionais é um tipo de gráfico constituído por nódulos (<em>node</em>), que correspondem às folhas da árvore, e um conjunto de decisões de partição para cada nódulo, que corresponde ao tronco da árvore.</p>
+<p>O objetivo de construir um modelo de árvore de classificação condicional é predizer o comportamento das respostas em observações futuras.</p>
+<p>A aplicação de um modelo de árvore de classificação condicional permite identificar vieses de seleção de variáveis, além de servir a variáveis contínuas, ordinais e nominais (binárias ou eneárias). São modelos simples de entender e de interpretar e que permitem identificar regularidades em conjuntos de dados em que há muitos níveis em cada variável, possibilitando visualizar sobreposições ou categorizações que não agregam significância ao modelo.</p>
+<p>Esta é uma abordagem de exploração de dados, análise estatística exploratória, baseada em testes de significância, e que pode ser especialmente útil para auxiliar na descrição de usos linguísticos diversos e variáveis quanto à regularidade a emergência da diversidade.</p>
+<p>Vamos aprender a realizar uma análise de árvore de classificação condicional, a partir do conjunto de dados que utilizamos em <strong>Modelo de árvore de inferência condicional para explicar usos linguísticos variáveis</strong> (Freitag &amp; Pinheiro 2020).</p>
+<p>O problema em questão diz respeito à negação sentencial no portuguê brasileiro, cuja realização é variável, com padrões morfossintáticos e morfornêmicos diferentes. Do ponto de vista morfossintático, há três arranjos:</p>
+<ul>
+<li><p>negação pré-verbal (<strong>neg-V</strong>): “minha mãe <strong>não</strong> morava tão perto da casa de minha irmã”</p></li>
+<li><p>negação dupla (<strong>neg-V-neg</strong>): “ agora calma, eu <strong>não</strong> sou <strong>não</strong>”</p></li>
+<li><p>negação pós-verbal (<strong>V-neg</strong>): “foi perto de onde eu moro <strong>não</strong>”</p></li>
+</ul>
+<p>E, do ponto de vista morfofonêmico, em função das mudanças decorrentes enfraquecimento do elemento negativo, ocorre redução fonética, e a negação pode ter duas realizações:</p>
+<ul>
+<li><p>Canônica (<strong>não</strong>): “eu <strong>não</strong> tenho problema com ninguém”</p></li>
+<li><p>Reduzida (<strong>num</strong>): “<strong>num</strong> é um sotaque que gosto, mas a gente convive, né?”</p></li>
+</ul>
+<p>Saber como esses arranjos se configuram nos dados é importante para definir o tipo de análise a ser realizada. Carregue os pacotes:</p>
+<pre class="r"><code>library(rpart)
+library(rpart.plot)
+library(party)
+#&gt; Loading required package: grid
+#&gt; Loading required package: mvtnorm
+#&gt; Loading required package: modeltools
+#&gt; Loading required package: stats4
+#&gt; Loading required package: strucchange
+#&gt; Loading required package: zoo
+#&gt; 
+#&gt; Attaching package: &#39;zoo&#39;
+#&gt; The following objects are masked from &#39;package:base&#39;:
+#&gt; 
+#&gt;     as.Date, as.Date.numeric
+#&gt; Loading required package: sandwich
+library(randomForest)
+#&gt; randomForest 4.6-14
+#&gt; Type rfNews() to see new features/changes/bug fixes.
+#&gt; 
+#&gt; Attaching package: &#39;randomForest&#39;
+#&gt; The following object is masked from &#39;package:dplyr&#39;:
+#&gt; 
+#&gt;     combine</code></pre>
+</div>
+<div id="árvore-de-partição" class="section level2">
+<h2>Árvore de partição</h2>
+<p>Vamos observar como o conjunto de dados se comporta quando a variável dependente é a realização fonética da negação com a função <code>part</code>. Uma técnica que pode ser empregada é a repartição, em que os dados são divididos de acordo com a maior frequência absoluta da variável dependente em fumnção de cada variável. Utilizamos o pacote <code>rpart</code>, e informamos o nome da variável dependente <code>contexto_fonetico</code> seguida do operador <code>~</code> e das demais variáveis a serem incluídas no modelo, adicionadas por <code>+</code>. Ao final, indicamos a fonte dos dados em <code>data</code>.</p>
+<pre class="r"><code>class_fonetica &lt;- rpart(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)</code></pre>
+<p>Para visualizar o resultado, utilize o comando <code>rpart.plot</code>, as cores podem ser mudadas em <code>box.col</code>, e o título em <code>main</code>:</p>
+<pre class="r"><code>rpart.plot(class_fonetica, type=4, extra=2, faclen=0, under=TRUE, cex=1, box.col=c(&quot;pink&quot;, &quot;lightblue&quot;)[class_fonetica$frame$yval], main = &quot;Classificação dos dados em função da realização fonética&quot;) ## cores e título podem ser modificados</code></pre>
+<p><img src="reducao_files/figure-html/tree2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Observe a figura. A maior frequência de realização fonética na negação é de <em>não</em>, e a variável onde essa frequência fica dividida de forma mais polarizada é quanto ao sexo. Das 376 ocorrências de negação, 322 são de <em>não</em>. Para a variável <em>sexo</em>, o nível <em>masculino</em> computa 145 ocorrências de negação, das quais 140 são de <em>não</em>. Esta informação está no topo da árvore e no primeiro nódulo à esquerda. Para conferir estes valores, faça uma tabela com a variável dependente <code>contexto_fonetico</code> e a variável independente <code>sexo</code>, com margens:</p>
+<pre class="r"><code>addmargins(table(negacao$contexto_fonetico, negacao$sexo))
+#&gt;      
+#&gt;       feminino masculino Sum
+#&gt;   não      182       140 322
+#&gt;   num       49         5  54
+#&gt;   Sum      231       145 376</code></pre>
+<p>O mesmo procedimento vai sendo feito para cada uma das variáveis em ordem da frequência. São formados subconjuntos dos dados: os dados do nível <code>feminino</code> são partidos em função da pessoa do sujeito, o conjunto de dados do sexo feminino e da pessoa do sujeito não falante é partido em função do tempo da ação, o conjunto de dados do sexo feminino da pessoa do sujeito não falante e do tempo não passado é partido quanto ao ato de fala; o conjunto de dados do sexo feminino da pessoa do sujeito não falante do tempo não passado e declarativo é partido quanto à região de residência; e, por fim, o conjunto de dados do sexo feminino da pessoa do sujeito não falante do tempo não passado declarativo e do interior é composto por 32 ocorrências, das quais 18 são da forma <code>num</code>. Ufa! Cansativo! Mas pode indicar uma assimetria na distribuição e embasar decisões sobre a inclusão ou exclusão de variáveis, ou direção de amplicação da amostra.</p>
+<p>Esta árvore foi construída com todos as variáveis do conjunto de dados; podemos excluir variáveis e observar o comportamento. Vamos construir um novo modelo excluindo os fatores sociais.</p>
+<pre class="r"><code>arvore_fonetica2 &lt;- rpart(contexto_fonetico ~ negacao + material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito +  preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+rpart.plot(arvore_fonetica2, type=4, extra=2, faclen=0, under=TRUE, cex=1, box.col=c(&quot;pink&quot;, &quot;lightblue&quot;)[arvore_fonetica2$frame$yval], main = &quot;Classificação dos dados em função \n  da realização fonética sem fatores sociais&quot;)</code></pre>
+<p><img src="reducao_files/figure-html/tree3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Veja que, retirando os fatores sociais, as frequências absolutas não permitem divisão, e sugerem que o enviesamento da análise é relacionado aos fatores sociais. Este dado pode ajudar no balanceamento de uma amostra, na busca de explicações e relação com outros fenômenos, ou mesmo na revisão de amostra, para verificar se não houve erro.</p>
+<p>A partição é baseada apenas nas frequências absolutas e só funciona para variáveis dependentes categóricas binárias ou contínuas. Quando a variável dependente categórica tem mais de dois fatores, a partição pode até ser feita, mas o algoritmo fará um pareamento binário (fator 1 ~ fator 2 + fator 3).</p>
+</div>
+<div id="árvore-de-classificação" class="section level2">
+<h2>Árvore de classificação</h2>
+<p>A árvore de classificação (a variável resposta pode ser dicotômica ou com múltiplos níveis), ou de regressão (se a variável dependente é contínua) implementada pela função <code>ctree</code> do pacote <code>partykit</code> não considera apenas as frequências absolutas, mas sim a singificância estatística de cada uma. Os procedimentos são:</p>
+<ul>
+<li>Realização de teste de independência entre uma variável explanatória e sua resposta (para se p-valor &gt; 0.05);</li>
+<li>Seleção da variável com maior associação com a resposta;</li>
+<li>Escolha da melhor divisão binária para a variável selecionada;</li>
+<li>Repetição recursiva do passo 1 até os critérios de seleção serem esgotados.</li>
+</ul>
+<p>A sintaxe é a mesma da partição; vejamos a árvore para o mesmo conjunto de dados da realização fonética de <em>não</em>:</p>
+<pre class="r"><code>arvore_fonetica &lt;- ctree(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_fonetica, main = &quot;Árvore de classificação condicional para a realização fonética da negação&quot;,  
+     tp_args = list(fill = c(&quot;blue&quot;, &quot;yellow&quot;)), ip_args = list(fill = c(&quot;lightgreen&quot;)) ## cores podem ser modificadas
+)</code></pre>
+<p><img src="reducao_files/figure-html/tree4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>O resultado é um diagrama arbóreo, apresentando cada partição do conjunto dos dados e sua distribuição, bem como o nível de significância. Comparando com a árvore de partição, podemos concluir que sexo e pessoa do discuso contribuem para a subcategorização dos dados neste conjunto.</p>
+<p>Com estes resultados, o modelo explanatório formulado inicialmente pode ser revisado para cortar “galhos ladrões”: com a análise dos resultados, o modelo pode ser rearranjado com a eliminação das variáveis que não contribuem para uma generalização acurada.</p>
+<p>Vamos agora realizar a testagem para a variável dependente posição:</p>
+<pre class="r"><code>arvore_posicao &lt;- ctree(negacao ~ contexto_fonetico + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_posicao, main = &quot;Árvore de classificação condicional para a posição da negação&quot;,  
+     tp_args = list(fill = c(&quot;grey&quot;, &quot;pink&quot;)), ip_args = list(fill = c(&quot;lightgreen&quot;))
+)</code></pre>
+<p><img src="reducao_files/figure-html/tree5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Observe que a distribuição é condicionada pelo material interveniente e pela localidade.</p>
+<pre class="r"><code>arvore_posicao2 &lt;- ctree(negacao ~ contexto_fonetico + material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+plot(arvore_posicao2, main = &quot;Árvore de classificação condicional para a posição da negação \n sem fatores sociais&quot;, 
+     tp_args = list(fill = c(&quot;grey&quot;, &quot;pink&quot;)), ip_args = list(fill = c(&quot;lightgreen&quot;))
+)</code></pre>
+<p><img src="reducao_files/figure-html/tree6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Como podemos perceber, uma mudança no arranjo das variáveis leva a outro arranjo de classificação. Esta é uma das limitações desta abordagem: para variáveis categóricas ou nominais com diferentes números de níveis, as decisões podem ser enviesadas em favor dos níveis que computarem o maior número de dados, e pequenas mudanças no conjunto de dados podem afetar drasticamente a estrutura da árvore.</p>
+<p>Por sua característica agrupadora, é uma abordagem particularmente interessante em modelos em que há uma grande quantidade de níveis nas diferentes variáveis preditoras.</p>
+</div>
+<div id="florestas-aleatórias" class="section level2">
+<h2>Florestas aleatórias</h2>
+<p>Florestas aleatórias (<em>random forest</em>) é uma técnica de agrupamento de dados que se vale de árvores de decisão simples: é um conjunto de árvores de decisões formadas aleatoriamente a partir de um subconjunto do conjunto de dados (1/3 do total, dados de treino, por reamostragem <em>bootstrap</em>), e que depois serão testadas no restante do conjunto de dados.</p>
+<p>A sintaxe é a mesma dos demais modelos, implementadas pela função <code>randomForest</code> do pacote de mesmo nome.</p>
+<pre class="r"><code>floresta_contexto &lt;- randomForest(contexto_fonetico ~ negacao + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+print(floresta_contexto) # view results 
+#&gt; 
+#&gt; Call:
+#&gt;  randomForest(formula = contexto_fonetico ~ negacao + sexo + material_interveniente +      reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito +      localidade + preenchimento_do_sujeito + estatuto_informacional +      ato_de_fala + tipo_textual, data = negacao) 
+#&gt;                Type of random forest: classification
+#&gt;                      Number of trees: 500
+#&gt; No. of variables tried at each split: 3
+#&gt; 
+#&gt;         OOB estimate of  error rate: 15.43%
+#&gt; Confusion matrix:
+#&gt;     não num class.error
+#&gt; não 316   6  0.01863354
+#&gt; num  52   2  0.96296296</code></pre>
+<p>Como podemos ver, o resultado da floresta aleatória apresenta uma matriz de confusão com os erros, e a taxa de erro na predição do comportamento do restante dos dados. No modelo em que consideramos a realização fonétiva da realização da negação, a taxa de erro é de 14.1%</p>
+<p>O critério de seleção das variáveis é o valor do algoritmo de entropia ou o índice Gini, que pode ser visualizado em uma lista, ou em um gráfico, como podemos ver abaixo:</p>
+<pre class="r"><code>importance(floresta_contexto) # importance of each predictor
+#&gt;                          MeanDecreaseGini
+#&gt; negacao                         3.4851469
+#&gt; sexo                            6.1405648
+#&gt; material_interveniente          0.9956675
+#&gt; reforco_negativo                1.7155343
+#&gt; marcador_                       3.1261204
+#&gt; tempo_verbal                    3.9397621
+#&gt; pessoa_do_sujeito               3.6430072
+#&gt; localidade                      3.3845320
+#&gt; preenchimento_do_sujeito        2.5940276
+#&gt; estatuto_informacional          1.9017204
+#&gt; ato_de_fala                     3.0284713
+#&gt; tipo_textual                    2.6065880
+varImpPlot(floresta_contexto,type=2, main = &quot;Importância de cada fator para a negação \n em função da realização fonética&quot;)</code></pre>
+<p><img src="reducao_files/figure-html/tree8-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Vamos agora fazer o mesmo com a variável dependente posição da negação:</p>
+<pre class="r"><code>floresta_posicao &lt;- randomForest(negacao ~ contexto_fonetico + sexo +  material_interveniente + reforco_negativo + marcador_ + tempo_verbal + pessoa_do_sujeito + localidade + preenchimento_do_sujeito + estatuto_informacional + ato_de_fala + tipo_textual, data = negacao)
+varImpPlot(floresta_posicao,type=2, main = &quot;Importância de cada fator para a negação \n em função da posição&quot;)</code></pre>
+<p><img src="reducao_files/figure-html/tree9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Uma das vantagens do método de Floresta Aleatória é que pode ser utilizado tanto para regressão (variáveis contínuas) quanto para classificação (variáveis categóricas) e é fácil visualizar a importância relativa das variáveis. Como os métodos de árvore, o resultado também é sensível ao tamanho da amostra, e mudanças mínimas nos dados podem incorrer em grandes mudanças na seleção de variáveis.</p>
+</div>
+<div id="clusters" class="section level2">
+<h2>Clusters</h2>
+<p>Imagine uma situação em que um instrumento de avaliação com 40 itens foi avaliada por cada participante considerando 4 dimensões. Podemos calcular a média de cada um dos itens por dimensão, mas não teremos uma visão do todo. Não há uma variável dependente aqui, então não podemos usar modelos de regressão ou classificação. Precisamos reduzir o número de variáveis. E para isso podemos usar a análise de cluster, técnica para classificar elementos em grupos (<em>cluster</em>), de forma que elementos dentro de um mesmo cluster sejam muito parecidos, e os elementos em diferentes clusters sejam distintos entre si.</p>
+<p>Na análise de cluster, a medida para a semelhança – ou diferença – entre os elementos de um cluster é a distância. Um método é cluster hierárquico por aglomeração, em que cada observação é inicialmente considerada como um agrupamento, e os agrupamentos mais semelhantes são aglomerados sucessivamente (processo <em>bottom up</em>).</p>
+<p>Vamos trabalhar com um conjunto de dados que foi produzido a partir de um teste de julgamento de itens (40 itens em 4 dimensões), cuja descrição está apresentada no resumo expandido <strong>Consciência linguística, prescrição e o ensino de gramática</strong> (manuscrito não publicado). O instrumento consiste em 40 frases seguindo e não seguindo prescrições gramaticais, cada uma delas julgada em uma escala de 7 pontos, em que 1 é o menor nível e 7 é o maior nível, para os parâmetros: <em>correção</em>, <em>aceitabilidade</em>, <em>clareza</em> e <em>formalidade</em>. Não há um elemento gramatical específico, e sim o conjunto dos elementos.</p>
+<p>Vamos importar o conjunto de dados <code>self</code> e carregar os pacotes necessários:</p>
+<pre class="r"><code>self &lt;- read.csv(&quot;self.csv&quot;,  sep = &quot;;&quot;, header = TRUE)
+library(dplyr)
+library(factoextra)
+#&gt; Loading required package: ggplot2
+#&gt; 
+#&gt; Attaching package: &#39;ggplot2&#39;
+#&gt; The following object is masked from &#39;package:randomForest&#39;:
+#&gt; 
+#&gt;     margin
+#&gt; Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa</code></pre>
+<p>Observe a estrutura do banco de dados importado, com o comando <code>str</code>, :</p>
+<pre class="r"><code>str(self)
+#&gt; &#39;data.frame&#39;:    29 obs. of  161 variables:
+#&gt;  $ participante    : chr  &quot;carla&quot; &quot;adilson&quot; &quot;rafaela&quot; &quot;alexandra&quot; ...
+#&gt;  $ correcao1       : int  3 6 6 6 7 6 4 5 7 7 ...
+#&gt;  $ aceitabilidade1 : int  7 7 6 5 7 7 4 6 7 7 ...
+#&gt;  $ clareza1        : int  6 7 7 7 7 7 4 6 7 7 ...
+#&gt;  $ formalidade1    : int  6 4 4 2 5 4 4 5 6 6 ...
+#&gt;  $ correcao2       : int  6 7 5 6 7 3 4 4 7 6 ...
+#&gt;  $ aceitabilidade2 : int  7 6 5 7 7 6 4 5 5 7 ...
+#&gt;  $ clareza2        : int  6 3 6 7 7 6 4 6 7 7 ...
+#&gt;  $ formalidade2    : int  5 2 3 2 7 2 3 4 3 7 ...
+#&gt;  $ correcao3       : int  5 6 5 6 7 7 6 6 7 7 ...
+#&gt;  $ aceitabilidade3 : int  6 7 5 7 7 7 6 5 7 7 ...
+#&gt;  $ clareza3        : int  6 7 4 7 7 7 6 6 7 2 ...
+#&gt;  $ formalidade3    : int  5 4 3 2 7 7 6 5 6 6 ...
+#&gt;  $ correcao4       : int  6 7 7 5 6 2 5 7 5 7 ...
+#&gt;  $ aceitabilidade4 : int  6 7 6 6 6 4 5 7 6 7 ...
+#&gt;  $ clareza4        : int  6 5 7 5 7 3 5 7 7 7 ...
+#&gt;  $ formalidade4    : int  6 4 6 2 6 2 3 7 6 6 ...
+#&gt;  $ correcao5       : int  1 5 3 4 5 4 3 5 4 4 ...
+#&gt;  $ aceitabilidade5 : int  6 6 4 5 5 5 4 5 4 7 ...
+#&gt;  $ clareza5        : int  5 6 6 7 7 6 6 5 7 7 ...
+#&gt;  $ formalidade5    : int  2 2 3 2 4 5 3 5 5 5 ...
+#&gt;  $ correcao6       : int  1 4 2 3 3 2 3 4 4 2 ...
+#&gt;  $ aceitabilidade6 : int  5 5 3 5 3 6 3 4 3 5 ...
+#&gt;  $ clareza6        : int  6 7 6 7 7 6 6 6 7 7 ...
+#&gt;  $ formalidade6    : int  1 3 2 1 2 1 3 3 4 3 ...
+#&gt;  $ correcao7       : int  3 7 7 7 7 7 7 6 7 7 ...
+#&gt;  $ aceitabilidade7 : int  5 7 7 7 7 7 7 5 6 7 ...
+#&gt;  $ clareza7        : int  5 7 7 7 7 7 7 6 7 7 ...
+#&gt;  $ formalidade7    : int  4 7 5 6 7 7 7 4 7 7 ...
+#&gt;  $ correcao8       : int  3 7 6 6 7 4 6 6 7 7 ...
+#&gt;  $ aceitabilidade8 : int  6 7 6 7 7 4 6 6 6 7 ...
+#&gt;  $ clareza8        : int  6 7 7 7 7 4 6 6 7 5 ...
+#&gt;  $ formalidade8    : int  4 5 5 5 7 2 6 5 5 7 ...
+#&gt;  $ correcao9       : int  6 7 7 6 5 6 6 5 7 7 ...
+#&gt;  $ aceitabilidade9 : int  6 7 7 7 5 7 6 5 6 7 ...
+#&gt;  $ clareza9        : int  6 7 7 7 7 7 6 6 7 7 ...
+#&gt;  $ formalidade9    : int  4 6 5 2 4 2 6 5 5 6 ...
+#&gt;  $ correcao10      : int  3 5 7 5 6 6 5 6 7 7 ...
+#&gt;  $ aceitabilidade10: int  6 6 7 6 6 7 6 6 6 7 ...
+#&gt;  $ clareza10       : int  7 5 7 7 7 4 6 6 7 7 ...
+#&gt;  $ formalidade10   : int  6 4 5 2 5 2 3 5 5 7 ...
+#&gt;  $ correcao11      : int  5 6 6 5 6 4 5 7 7 6 ...
+#&gt;  $ aceitabilidade11: int  7 7 7 5 6 4 5 7 7 7 ...
+#&gt;  $ clareza11       : int  6 6 7 7 7 4 5 7 7 7 ...
+#&gt;  $ formalidade11   : int  5 6 5 2 5 1 4 7 6 6 ...
+#&gt;  $ correcao12      : int  3 1 7 4 7 5 4 5 6 4 ...
+#&gt;  $ aceitabilidade12: int  7 2 7 NA 7 7 5 5 5 6 ...
+#&gt;  $ clareza12       : int  7 1 7 6 7 7 5 6 7 7 ...
+#&gt;  $ formalidade12   : int  1 1 6 3 6 4 4 5 6 5 ...
+#&gt;  $ correcao13      : int  5 4 7 5 6 7 6 5 5 7 ...
+#&gt;  $ aceitabilidade13: int  7 5 7 6 6 7 6 5 5 7 ...
+#&gt;  $ clareza13       : int  7 6 7 7 7 7 6 6 7 7 ...
+#&gt;  $ formalidade13   : int  2 5 5 4 6 7 6 6 4 7 ...
+#&gt;  $ correcao14      : int  5 4 6 3 2 6 5 4 6 3 ...
+#&gt;  $ aceitabilidade14: int  7 6 6 4 2 7 5 5 6 5 ...
+#&gt;  $ clareza14       : int  7 7 6 6 7 7 5 6 7 7 ...
+#&gt;  $ formalidade14   : int  2 4 4 2 2 5 5 4 4 5 ...
+#&gt;  $ correcao15      : int  7 6 7 4 6 7 6 6 6 7 ...
+#&gt;  $ aceitabilidade15: int  7 7 7 5 6 7 6 5 6 7 ...
+#&gt;  $ clareza15       : int  7 7 7 6 7 7 6 7 7 7 ...
+#&gt;  $ formalidade15   : int  5 4 4 2 6 6 4 5 4 7 ...
+#&gt;  $ correcao16      : int  6 5 6 4 6 6 6 6 7 7 ...
+#&gt;  $ aceitabilidade16: int  7 7 7 6 6 7 6 6 6 7 ...
+#&gt;  $ clareza16       : int  7 7 7 6 7 7 6 5 7 7 ...
+#&gt;  $ formalidade16   : int  7 5 5 3 6 4 5 5 5 6 ...
+#&gt;  $ correcao17      : int  6 1 3 4 5 4 4 7 6 2 ...
+#&gt;  $ aceitabilidade17: int  7 2 4 4 5 5 5 6 6 4 ...
+#&gt;  $ clareza17       : int  7 2 4 6 7 5 5 5 7 7 ...
+#&gt;  $ formalidade17   : int  5 1 2 2 4 2 3 6 6 4 ...
+#&gt;  $ correcao18      : int  4 7 5 4 7 4 7 5 7 4 ...
+#&gt;  $ aceitabilidade18: int  7 7 6 5 7 6 7 7 7 6 ...
+#&gt;  $ clareza18       : int  7 7 7 6 7 6 7 6 7 7 ...
+#&gt;  $ formalidade18   : int  2 7 7 6 7 5 7 6 7 6 ...
+#&gt;  $ correcao19      : int  3 6 2 4 4 4 4 4 6 1 ...
+#&gt;  $ aceitabilidade19: int  7 7 4 4 4 5 5 6 5 3 ...
+#&gt;  $ clareza19       : int  7 7 5 6 7 5 5 7 7 7 ...
+#&gt;  $ formalidade19   : int  1 6 3 3 3 1 5 3 4 1 ...
+#&gt;  $ correcao20      : int  3 4 2 3 4 4 3 3 5 1 ...
+#&gt;  $ aceitabilidade20: int  7 5 4 4 4 5 5 4 5 3 ...
+#&gt;  $ clareza20       : int  7 5 5 6 7 5 5 6 7 7 ...
+#&gt;  $ formalidade20   : int  1 2 3 2 3 2 3 3 3 1 ...
+#&gt;  $ correcao21      : int  6 7 6 5 6 7 7 7 7 7 ...
+#&gt;  $ aceitabilidade21: int  7 7 6 6 6 7 7 7 7 7 ...
+#&gt;  $ clareza21       : int  7 7 7 6 7 7 7 7 7 7 ...
+#&gt;  $ formalidade21   : int  7 5 5 2 5 6 7 7 7 7 ...
+#&gt;  $ correcao22      : int  6 7 7 5 6 7 6 6 6 7 ...
+#&gt;  $ aceitabilidade22: int  7 6 7 6 6 7 6 5 6 7 ...
+#&gt;  $ clareza22       : int  7 7 7 6 6 7 6 6 7 7 ...
+#&gt;  $ formalidade22   : int  7 5 5 2 6 7 6 5 6 7 ...
+#&gt;  $ correcao23      : int  6 6 6 5 6 6 5 6 5 6 ...
+#&gt;  $ aceitabilidade23: int  7 7 7 6 6 6 5 6 5 7 ...
+#&gt;  $ clareza23       : int  7 7 7 6 7 6 5 7 7 7 ...
+#&gt;  $ formalidade23   : int  3 6 4 3 5 6 5 5 3 5 ...
+#&gt;  $ correcao24      : int  5 6 6 5 7 7 5 6 6 6 ...
+#&gt;  $ aceitabilidade24: int  7 7 7 6 7 7 5 7 6 7 ...
+#&gt;  $ clareza24       : int  7 7 7 6 7 7 5 6 7 7 ...
+#&gt;  $ formalidade24   : int  6 5 4 3 7 5 5 4 5 6 ...
+#&gt;  $ correcao25      : int  5 4 5 5 7 6 5 6 4 6 ...
+#&gt;  $ aceitabilidade25: int  6 4 6 6 7 7 5 7 3 7 ...
+#&gt;   [list output truncated]</code></pre>
+<p>Observando as primeiras ocorrrências deste conjunto de dados, os resultados do primeiro item, a frase <em>Por causa do estágio, Pedro vai estar pegando todas as disciplinas pela manhã nos próximos períodos</em>, sugerem que há grande convergência para a clareza, mas menos para a formalidade. Podemos observar como se comportam os quatro parâmetros avaliados e depois decidir quais os melhores itens para uma análise mais refinada com o número de variáveis reduzido.</p>
+<p>O primeiro passo é preparar o conjunto de dados. Para isso, precisamos eliminar as ausências de resposta (usamos a função <code>na.omit</code>, que ignora as ocorrências sem resposta) e excluir todos as variáveis que não são numéricas (no caso deste conjunto de dados, a variável <code>participante</code>):</p>
+<pre class="r"><code>self &lt;- na.omit(self)
+self &lt;- self %&gt;% select(-participante) </code></pre>
+<p>Em seguida, precisamos definir o número de clusters a serem considerados na análise. Há vários métodos, vamos ver dois deles: <em>elbow</em> (cotovelo) e <em>silhouette</em> (silhueta)</p>
+<p>No método <em>elbow</em> são rodados clusters de 1 a 10, e é calculada a soma dos quadrados das distâncias internas de cada um. O melhor número para a quantidade de clusters é quando a adição de um novo cluster não aumenta significativamente o valor (geralmente este valor fica no “cotovelo” do gráfico). No método <em>silhouette</em> os itens são medidos para ver o quanto se enquadram em um cluster. O coeficiente de Silhouette quando próximo de +1, indica que os pontos estão muito longe dos pontos do outro cluster, e quando próximo de 0, indica que os pontos então muito perto ou até interseccionando um outro cluster.</p>
+<pre class="r"><code>fviz_nbclust(self, kmeans, method = &quot;wss&quot;) +
+    labs(subtitle = &quot;Método elbow&quot;)</code></pre>
+<p><img src="reducao_files/figure-html/self2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>fviz_nbclust(self, kmeans, method = &quot;silhouette&quot;)+
+    labs(subtitle = &quot;Método silhouette&quot;)</code></pre>
+<p><img src="reducao_files/figure-html/self2-2.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Agora que já sabemos quantos clusters, vamos calcular as distâcias e visualizar o dendograma de classificação hierárquica:</p>
+<pre class="r"><code>hclust &lt;- hclust(dist(self), method = &quot;complete&quot;)
+plot(hclust, main = &quot;Dendograma hierárquico de julgamento \n quanto à formalidade, aceitabilidade, clareza e correção&quot;)
+rect.hclust(hclust,
+            k = 2, 
+            border = &quot;blue&quot;
+)</code></pre>
+<p><img src="reducao_files/figure-html/self3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>A análise de clusters permite encontrar tendências e padrões nos julgamentos, agrupando observações parecidas entre muitas variáveis diferentes, o que possibilita, por exemplo, o redesenho do instrumento, reduzindo itens.</p>
+<p>Podemos realizar um cluster para cada uma das dimensões de análise dos itens do instrumento.</p>
+<pre class="r"><code>clareza &lt;- self %&gt;% 
+  select(starts_with(&quot;clareza&quot;))
+clust.clareza &lt;- hclust(dist(clareza), method = &quot;average&quot;)
+plot(clust.clareza, xlab = &quot;&quot;, sub=&quot;&quot;, ylab = &quot;Distância das médias&quot;,
+     main = &quot;Dendograma do julgamento de clareza&quot;)
+rect.hclust(clust.clareza,
+            k = 2, 
+            border = &quot;blue&quot;
+)</code></pre>
+<p><img src="reducao_files/figure-html/self4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Este resultado ajuda a decidir quais “galhos” podem ser “podados”. A vantagem no uso da análise de cluster é poder descrever melhor cada um dos grupos identificados e identificar correlações entre dados que não seriam visíveis em análises individuais de cada um dos itens.</p>
+</div>
+<div id="análise-de-componentes-principais" class="section level2">
+<h2>Análise de componentes principais</h2>
+<p>A análise de componentes principais toma um conjunto de dados em uma matriz de ocorrências por variáveis, que podem estar correlacionadas, e sumariza esse conjunto em eixos não correlacionados (componentes principais) que são uma combinação linear das variáveis originais. Os componentes principais são combinações lineares das variáveis originais que respondem pela variação nos dados. O número máximo de componentes é sempre igual ao número de variáveis. Os autovetores são compostos de coeficientes que correspondem a cada variável e indicam o peso relativo de cada variável no componente.</p>
+<pre class="r"><code>library(FactoMineR)
+pca.self &lt;- PCA(self, graph=TRUE)</code></pre>
+<p><img src="reducao_files/figure-html/PCA-1.png" width="576" style="display: block; margin: auto;" /><img src="reducao_files/figure-html/PCA-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>summary(pca.self)
+#&gt; 
+#&gt; Call:
+#&gt; PCA(X = self, graph = TRUE) 
+#&gt; 
+#&gt; 
+#&gt; Eigenvalues
+#&gt;                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7
+#&gt; Variance              42.180  19.321  12.610  10.898   9.672   7.278   6.932
+#&gt; % of var.             26.362  12.076   7.881   6.811   6.045   4.548   4.332
+#&gt; Cumulative % of var.  26.362  38.438  46.319  53.131  59.176  63.724  68.056
+#&gt;                        Dim.8   Dim.9  Dim.10  Dim.11  Dim.12  Dim.13  Dim.14
+#&gt; Variance               6.156   5.422   5.043   4.952   4.349   3.704   3.392
+#&gt; % of var.              3.848   3.389   3.152   3.095   2.718   2.315   2.120
+#&gt; Cumulative % of var.  71.904  75.293  78.445  81.540  84.258  86.573  88.693
+#&gt;                       Dim.15  Dim.16  Dim.17  Dim.18  Dim.19  Dim.20  Dim.21
+#&gt; Variance               3.161   2.778   2.211   2.202   1.957   1.546   1.325
+#&gt; % of var.              1.975   1.736   1.382   1.376   1.223   0.966   0.828
+#&gt; Cumulative % of var.  90.668  92.404  93.786  95.162  96.385  97.351  98.180
+#&gt;                       Dim.22  Dim.23  Dim.24
+#&gt; Variance               1.053   0.998   0.862
+#&gt; % of var.              0.658   0.624   0.538
+#&gt; Cumulative % of var.  98.838  99.462 100.000
+#&gt; 
+#&gt; Individuals (the 10 first)
+#&gt;                      Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2  
+#&gt; 1                | 11.883 |  2.922  0.810  0.060 |  2.909  1.752  0.060 |
+#&gt; 2                | 11.338 |  1.083  0.111  0.009 | -0.899  0.167  0.006 |
+#&gt; 3                |  7.664 |  2.253  0.481  0.086 | -1.709  0.605  0.050 |
+#&gt; 5                |  9.221 |  5.144  2.509  0.311 |  0.432  0.039  0.002 |
+#&gt; 7                |  8.201 | -0.866  0.071  0.011 |  3.501  2.537  0.182 |
+#&gt; 8                |  8.758 |  0.604  0.035  0.005 |  3.148  2.052  0.129 |
+#&gt; 9                |  9.057 |  4.446  1.875  0.241 |  0.534  0.059  0.003 |
+#&gt; 10               | 11.008 |  7.280  5.026  0.437 | -1.327  0.364  0.015 |
+#&gt; 11               | 12.089 | -5.970  3.380  0.244 | -2.335  1.129  0.037 |
+#&gt; 12               |  9.934 |  7.939  5.977  0.639 | -0.906  0.170  0.008 |
+#&gt;                   Dim.3    ctr   cos2  
+#&gt; 1                -3.971  5.001  0.112 |
+#&gt; 2                 0.224  0.016  0.000 |
+#&gt; 3                -1.008  0.322  0.017 |
+#&gt; 5                 2.203  1.539  0.057 |
+#&gt; 7                -0.190  0.011  0.001 |
+#&gt; 8                -1.681  0.896  0.037 |
+#&gt; 9                -0.054  0.001  0.000 |
+#&gt; 10                2.077  1.369  0.036 |
+#&gt; 11                1.120  0.398  0.009 |
+#&gt; 12               -0.516  0.084  0.003 |
+#&gt; 
+#&gt; Variables (the 10 first)
+#&gt;                     Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
+#&gt; correcao1        |  0.363  0.312  0.131 |  0.283  0.413  0.080 | -0.125  0.124
+#&gt; aceitabilidade1  |  0.245  0.143  0.060 |  0.082  0.035  0.007 | -0.228  0.411
+#&gt; clareza1         |  0.073  0.013  0.005 | -0.298  0.459  0.089 | -0.049  0.019
+#&gt; formalidade1     |  0.121  0.035  0.015 |  0.712  2.621  0.506 |  0.030  0.007
+#&gt; correcao2        |  0.709  1.191  0.502 | -0.020  0.002  0.000 | -0.342  0.926
+#&gt; aceitabilidade2  |  0.636  0.958  0.404 | -0.071  0.026  0.005 | -0.435  1.503
+#&gt; clareza2         |  0.351  0.292  0.123 | -0.129  0.086  0.017 |  0.089  0.062
+#&gt; formalidade2     |  0.571  0.772  0.325 |  0.339  0.596  0.115 |  0.222  0.392
+#&gt; correcao3        |  0.357  0.303  0.128 | -0.587  1.783  0.344 |  0.243  0.469
+#&gt; aceitabilidade3  |  0.455  0.490  0.207 | -0.366  0.695  0.134 |  0.250  0.495
+#&gt;                    cos2  
+#&gt; correcao1         0.016 |
+#&gt; aceitabilidade1   0.052 |
+#&gt; clareza1          0.002 |
+#&gt; formalidade1      0.001 |
+#&gt; correcao2         0.117 |
+#&gt; aceitabilidade2   0.189 |
+#&gt; clareza2          0.008 |
+#&gt; formalidade2      0.049 |
+#&gt; correcao3         0.059 |
+#&gt; aceitabilidade3   0.062 |</code></pre>
+<p>Para interpretar cada componente principal, observamos a magnitude e a direção dos coeficientes das variáveis originais. Quanto maior o valor absoluto do coeficiente, mais importante será a variável correspondente ao calcular o componente. Observe o percentual com que cada dimensão contribui para explicar a variação. A dimensão 1 é responsável por 26.3% da variação no conjunto dos dados. A diemnsão 2 é responsável por 12.1% da variação.</p>
+<p>Uma forma de visualizar estes resultados é por meio de um gráfico de cargal fatoria, que representa os coeficientes de cada variável para o primeiro componente em função dos coeficientes para o segundo componente.</p>
+<pre class="r"><code>fviz_pca_var(pca.self,
+             col.var = &quot;contrib&quot;, 
+             gradient.cols = c(&quot;#00AFBB&quot;, &quot;#E7B800&quot;, &quot;#FC4E07&quot;),
+             repel = TRUE   
+)</code></pre>
+<p><img src="reducao_files/figure-html/PCA2-1.png" width="576" style="display: block; margin: auto;" /> No gráfico de cargas fatoriais para identificar quais variáveis têm o maior efeito em cada componente. As cargas fatoriais podem variar de -1 a 1. As cargas fatoriais próximas de -1 ou 1 indicam que a variável influencia fortemente o componente. As cargas fatoriais próximas de 0 indicam que a variável tem uma influência fraca no componente.</p>
+<p>No caso, vemos que a variável <em>formalidade17</em> tem um padrão de comportamento distinto das demais, com carga fatorial negativa. É um caso de infinitivo flexionado duplo: <em>A universidade é o espaço para podermos fazermos as transformações na sociedade em que vivemos</em></p>
+</div>
+<div id="análise-fatorial" class="section level2">
+<h2>Análise fatorial</h2>
+<p>Análise fatorial é um outro procedimento, muito parecido com a análise de componentes principais. Ambas são utilizadas para redução de conjuntos de variáveis. A análise fatorial considera uma matriz de correlação ou de covariância, enquanto a análise de componentes principais considera o conjunto de dados original. A análise de componentes principais tem por objetivo explicar o máximo possível a variância total nas variáveis, enquanto a análise fatorial busca explicar as covariâncias ou correlações entre as variáveis. Por isso, a análise de componentes principais é usada para reduzir os dados a um número menor de componentes, e a análise fatorial ajuda a entender quais construtos são subjacentes aos dados.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

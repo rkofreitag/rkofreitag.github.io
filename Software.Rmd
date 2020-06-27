@@ -1,0 +1,100 @@
+---
+title: "Modelagem de dados"
+---
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Escolha do software
+
+Existem vários softwares que podem oferecer soluções de ferramentas estatísticas às nossas questões de pesquisa. A escolha do software depende da disponibilidade de recursos financeiros, técnicos e operacionais, mas também da necessidade. Os programas editores de planilhas eletrônicas, como o *Microsoft Office Excel* ou o *Apache OpenOffice Calc* permitem realizar o tratamento de frequências descritivas (contagem de ocorrências, frequência, média, mediana, desvio padrão, etc.) e também possibilitam a visualização de resultados, com opções de gráficos. 
+
+> Não é necessário utilizar VARBRUL ou versões para computar ocorrências e calcular frequências!
+
+Mas, para realizar alguns testes inferenciais, como o qui-quadrado, são necessários mais passos e um pouco de conhecimento da linguagem de programação das fórmulas, o que pode se tornar complicado para usuários iniciantes e que não tem familiaridade com estatística.
+
+Para essa demanda, existem softwares estatísticos específicos. O mais famoso para a área de humanas é o *Statistical Package for the Social Sciences*, mais conhecido por sua sigla **SPSS**. Este é um software proprietário, ou seja, é preciso pagar para usar. E não é barato, apesar dos descontos para a versão de estudantes, ainda assim o custo é alto. 
+
+Nas instituições públicas, em consonância às políticas de governança digital instituídas pelo Decreto nº 8.638/2016, o estímulo e a priorização de uso de software livre são estimulados e difundidos, motivo pelo qual neste curso nossa opção será pela adoção de ferramentas de software livre. No entanto, o foco do curso é a modelagem de dados, a ferramenta a ser usada pode ser qualquer uma, inclusive SPSS. O foco do curso não é explicar o funcionamento do software, mas o raciocínio subjacente à escolha do modelo estatístico. 
+
+A plataforma **R** (não é um software) é uma excelente opção para análise de dados, um verdadeiro canivete suíço. Nem em uma vida inteira uma pessoa vai conseguir explorar todas as possibilidades que o **R** oferece. 
+
+### Preparando para usar
+
+O R não morde, e há interfaces amigáveis. Primeiro, instale o R base: <https://cran-r.c3sl.ufpr.br> escolha a versão compatível com seu sistema operacional. 
+
+- Caso tenha dificuldades:
+    + tutorial em pdf <https://edisciplinas.usp.br/pluginfile.php/2996937/mod_resource/content/1/Tutorial.pdf>
+    + tutorial em video <https://www.youtube.com/watch?v=1WXgaa2Spp0>
+
+Depois de instalar o R base, instale o RStudio, uma ferramenta de interface para o R, mais amigável. Procure a versão gratuita para o seu sistema operacional <https://rstudio.com/products/rstudio/download/>  e faça a instalação. 
+
+Se a instalação foi bem sucedida, você irá encontrar dois atalhos: 
+![Ícones do R e do RStudio](https://community.rstudio.com/uploads/default/original/2X/9/95d95f5512a943c89520544e0a47d9c641b7333f.png)
+
+Estes são os atalhos, respectivamente, do R e do RStudio (na imagem acima, da esqueda para a direita). Familiarize-se com o software.
+
+> Este é um tutorial introdutório ao funcionamento RStudio <https://www.curso-r.com/material/rstudio/>. Observe a terminologia para as telas que o programa organiza em janelas: **editor**, **console** e **plot**. Nos próximos tutoriais, estes termos serão utilizados.
+
+### O que o R pode fazer? 
+
+Quase tudo! Estes tutoriais e materiais do curso, por exemplo, estão sendo feitos via *R Markdown* (e quem quiser conhecer uma funcionalidade <http://www.leg.ufpr.br/~fernandomayer/palestra/useR-2015/Rmarkdown-rautu.html>). Além da estatística descritiva e inferencial, o R possibilita os mais avançados recursos de visualização de dados, assim como permite realizar tratamento quantitativo a dados de natureza textual.
+
+Existem também interfaces amigáveis com alguns recursos do R, como o **JASP**, **JAMOVI** e o **Iramuteq**. 
+
+##### JASP
+
+O JASP é um pacote estatístico gratuito e com interface amigável, que pode ser instalado a partir de <https://jasp-stats.org/download/> (escolha a versão compatível com seu sistema operacional).
+
+> Aqui você pode assistir a um tutorial de instalação e demonstração do JASP: <https://youtu.be/7uZC7Vvb6wk>
+
+Vantagens                      | Desvantagens
+------------------------------ | ------------------------------
+Fácil de usar                  | Limitado a certos tipos de análise
+Exporta tabelas em formato APA | Visualização gráfica ruim
+Integrado ao OSF               | Opera melhor com variáveis contínuas/ordinais
+
+Então, se você precisa de tabelas e está armazenando os dados no OSF, o JASP é uma excelente ferramenta! 
+
+> OSJ é Open Science Framework, um repositório para compartilhamento de conjuntos de dados e outros materiais. O meu é esse: <https://osf.io/j4hgb/>
+> Faça o seu perfil também!
+
+##### JAMOVI
+
+O JAMOVI também é um pacote estatístico gratuito e com interface amigável, que pode ser instalado a partir de <https://www.jamovi.org> (escolha a versão compatível com seu sistema operacional).
+
+> Aqui você pode assistir a um tutorial de instalação e demonstração do JAMOVI: <https://youtu.be/3amJB6YuSOI>
+
+Vantagens                      | Desvantagens
+------------------------------ | ------------------------------
+Fácil de usar                  | Limitado a certos tipos de análise
+Boa visualização gráfica       | Limitado para tabelas
+Implementa pacotes do R        | Requer conhecimento da sintaxe do R
+
+Se você precisa de visualização gráfica dos dados e entende um pouco da sintaxe do R, o JAMOVI é uma excelente ferramenta!
+
+## Depois de instalados os softwares
+
+Comece a explorá-los! Se você tem um conjunto de dados, explore as funcionalidades de estatística descritiva que JASP e JAMOVI oferecem. 
+
+Se você ainda não tem um conjunto de dados para chamar de seu, não se preocupe! Na próxima postagem vou compartilhar um conjunto de dados modelo, para trabalharmos nas próximas aulas.
+
+### O R...
+
+Se você quer explorar o R, lembre-se que o império romano não foi construído em um único dia. Comece aos poucos, e aproveite os vários cursos introdutórios disponíveis online.
+Vá se familiarizando aos poucos e praticando todo dia um pouquinho. 
+
+Alguns cursos gratuitos e em português:
+
+- Bem inicial e passo a passo online: <https://www.datacamp.com/community/open-courses/introducao-a-r>
+
+- Em vídeo:
+<https://youtu.be/28G51yu4zAA> 
+
+- Curso do básico ao avançado, para fazer off-line:
+<https://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf>
+<http://www.uft.edu.br/engambiental/prof/catalunha/arquivos/r/r_bruno.pdf>
+
+
+

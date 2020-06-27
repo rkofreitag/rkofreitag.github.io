@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Variáveis categóricas</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Variáveis categóricas</h1>
+
+</div>
+
+
+<blockquote>
+<p>Crie um novo projeto no RStudio e coloque na pasta o arquivo <code>monotonga.csv</code>. Crie um <code>script</code> do Rstudio para registrar a sua análise. Com esse procedimento, não será necessário ficar mudando de diretório. E você pode voltar os passos caso tenha dificuldade com um comando. Este símbolo <code>#</code> significa que o <code>script</code> não irá ler o que está na sequência; utilize para inserir comentários sobre sua análise.</p>
+</blockquote>
+<p><a href="monotonga.csv#" class="download" title="Baixe o arquivo de dados monotonga">Arquivo monotonga</a></p>
+<p>Neste tutorial, utilizaremos uma amostra do conjunto de dados que foi explorado no artigo <a href="https://sistemas.uft.edu.br/periodicos/index.php/portodasletras/article/view/8350/16654"><strong>Da fala à leitura: variação linguística na leitura em voz altade estudantes da Universidade Federal de Sergipe</strong></a> (Souza, Silva e Araujo Jr., 2020), considerando apenas um fenômeno fonológico, a monotongação.</p>
+<p>O conjunto de dados em questão se refere ao processo fonológico de monotongação na leitura. Esta subamostra foi utilizada em um estudo sobre reparos em leitura (Freitag, 2020). Por isso, o número de observações é diferente, com resultados diferentes.</p>
+<pre class="r"><code>dados &lt;- read.table(&quot;monotonga.csv&quot;, header = T, sep = &quot;;&quot;, stringsAsFactors = TRUE)
+### estamos importando os dados da planilha intitulada &quot;monotonga.csv&quot;, informando que a primeira linha é a dos título (header) e que o separador da planilha é &quot;;&quot;)</code></pre>
+<p>Utilize a função <code>head()</code> para inspecionar as seis ocorrências:</p>
+<pre class="r"><code>head(dados)
+#&gt;         item realizacao correcao         valor    classe     sexo participante
+#&gt; 1      ouviu        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 2    poupava        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 3     entrou        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 4      pouco        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 5 passageira        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 6    beijava        nao      nao     morfemico     verbo feminino        03F20
+#&gt;   periodo
+#&gt; 1  inicio
+#&gt; 2  inicio
+#&gt; 3  inicio
+#&gt; 4  inicio
+#&gt; 5  inicio
+#&gt; 6  inicio</code></pre>
+<p>Observe a estrutura de <code>dados</code> com a função <code>str()</code>.</p>
+<pre class="r"><code>str(dados)
+#&gt; &#39;data.frame&#39;:    799 obs. of  8 variables:
+#&gt;  $ item        : Factor w/ 16 levels &quot;acompanhou&quot;,&quot;apaixonadamente&quot;,..: 11 14 9 13 12 3 2 6 5 15 ...
+#&gt;  $ realizacao  : Factor w/ 2 levels &quot;nao&quot;,&quot;sim&quot;: 1 1 1 1 1 1 1 2 1 1 ...
+#&gt;  $ correcao    : Factor w/ 2 levels &quot;nao&quot;,&quot;sim&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ valor       : Factor w/ 2 levels &quot;morfemico&quot;,&quot;nao morfemico&quot;: 1 1 1 2 2 1 2 2 1 2 ...
+#&gt;  $ classe      : Factor w/ 2 levels &quot;nao verbo&quot;,&quot;verbo&quot;: 2 2 2 1 1 2 1 1 2 1 ...
+#&gt;  $ sexo        : Factor w/ 2 levels &quot;feminino&quot;,&quot;masculino&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ participante: Factor w/ 50 levels &quot;03F20&quot;,&quot;04F18&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ periodo     : Factor w/ 2 levels &quot;final&quot;,&quot;inicio&quot;: 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+<p>Vamos eleger como <strong>variável dependente</strong> <code>realizacao</code>, que tem dois níveis: <em>sim</em> (ocorre ditongo) ou <em>nao</em> (não ocorre ocorre o ditongo, havendo monotongação). A partir desta variável dependente, realizaremos análises univariadas com as variáveis independentes.</p>
+<p>Primeiramente iremos realizar procedimentos de <strong>estatística descritiva</strong>, para descrever as frequências observadas. Depois, iremos realizar os procedimentos de <strong>estatística inferencial</strong>, para testar associação entre as variáveis.</p>
+<div id="estatística-descritiva" class="section level2">
+<h2>Estatística descritiva</h2>
+<p>As medidas de descrição de um conjunto de dados composto por variáveis categóricas são contagens e frequências.</p>
+<pre class="r"><code>table(dados$realizacao) ### tabela para a contagem de ocorrências da VD
+#&gt; 
+#&gt; nao sim 
+#&gt; 500 299
+prop.table(table(dados$realizacao)) ### proporção da contagem de ocorrências da VD
+#&gt; 
+#&gt;       nao       sim 
+#&gt; 0.6257822 0.3742178
+prop.table(table(dados$realizacao))*100 ### frequência da contagem de ocorrências da VD (%)
+#&gt; 
+#&gt;      nao      sim 
+#&gt; 62.57822 37.42178
+round(prop.table(table(dados$realizacao))*100, 2) ### frequência em % arredondada em 2 casas decimais
+#&gt; 
+#&gt;   nao   sim 
+#&gt; 62.58 37.42</code></pre>
+<p>Queremos saber agora verificar a distribuição das observações em função das variáveis independentes. A <strong>tabela de contingência</strong> é a tabela que calcula observações por múltiplas variáveis categóricas. As linhas e colunas das tabelas correspondem a variáveis categóricas.</p>
+<p>O procedimento é o mesmo realizado anteriormente para a contagem de ocorrências, com as funções <code>table</code>, <code>prop.table</code> e <code>round</code>: a variável dependente é a primeira a ser informada, em seguida, a variável independente.</p>
+<p>Vamos calcular a tabela de contingência da VI <code>valor</code>:</p>
+<pre class="r"><code>table(dados$realizacao, dados$valor) ### tabela para a contagem de ocorrências da VD em função da VI
+#&gt;      
+#&gt;       morfemico nao morfemico
+#&gt;   nao       227           273
+#&gt;   sim       173           126
+addmargins(table(dados$valor, dados$realizacao)) ### soma dos totais por linha e por coluna
+#&gt;                
+#&gt;                 nao sim Sum
+#&gt;   morfemico     227 173 400
+#&gt;   nao morfemico 273 126 399
+#&gt;   Sum           500 299 799
+prop.table(table(dados$valor, dados$realizacao), 1) ### proporção da contagem de ocorrências da VI em função da VD.
+#&gt;                
+#&gt;                       nao       sim
+#&gt;   morfemico     0.5675000 0.4325000
+#&gt;   nao morfemico 0.6842105 0.3157895
+prop.table(table(dados$valor, dados$realizacao), 1)*100 ### frequência da contagem de ocorrências da VD (%)
+#&gt;                
+#&gt;                      nao      sim
+#&gt;   morfemico     56.75000 43.25000
+#&gt;   nao morfemico 68.42105 31.57895
+round(prop.table(table(dados$valor, dados$realizacao), 1)*100, 2)### frequência em % arredondada em 2 casas decimais
+#&gt;                
+#&gt;                   nao   sim
+#&gt;   morfemico     56.75 43.25
+#&gt;   nao morfemico 68.42 31.58</code></pre>
+<p>Podemos visualizar os dados na forma de um gráfico. O objetivo deste tutorial não é a visualização gráfica (teremos um tutorial específico para isso); veremos apenas uma forma de visualização simples por meio de gráfico de barras de contagens e de frequências <code>barplot()</code>:</p>
+<p>O primeiro gráfico é o de contagens de ocorrências da variável <code>valor</code>:</p>
+<pre class="r"><code>barplot(table(dados$valor, dados$realizacao), ### informe a tabela que será visualizada
+        beside = TRUE,      ### Barras lado a lado
+        legend = TRUE,
+        main = &quot;Contagem de ocorrências do fenômeno na leitura \n quanto ao valor gramatical&quot;,
+        ylim = c(0, 300),   ### Ajustar o eixo y para o máximo de ocorrências
+        cex.names = 0.8,  ### Tamanho do texto das colunas
+        cex.axis = 0.8,   ### tamanho do texto dos eixos
+        args.legend = list(x   = &quot;topright&quot;,   ### Posição da legenda
+                           cex = 0.8,          ### Tamanho do texto da legenda
+                           bty = &quot;n&quot;))</code></pre>
+<p><img src="Categorica_files/figure-html/grafico1-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>E o segundo gráfico é o de frequências da variável <code>periodo</code> do curso:</p>
+<pre class="r"><code>barplot(prop.table(table(dados$periodo, dados$realizacao), 2), ### informe a tabela que será visualizada
+        beside = TRUE,      ### Barras lado a lado
+        legend = TRUE,
+        main = &quot;Frequências do fenômeno na leitura \n quanto ao período do curso&quot;,
+        ylim = c(0, 1),   ### Ajustar o eixo y para o máximo de ocorrências
+        cex.names = 0.8,  ### Tamanho do texto das colunas
+        cex.axis = 0.8,   ### tamanho do texto dos eixos
+        args.legend = list(x   = &quot;bottom&quot;,   ### Posição da legenda
+                           cex = 0.8,          ### Tamanho do texto da legenda
+                           bty = &quot;n&quot;))</code></pre>
+<p><img src="Categorica_files/figure-html/grafico2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Cadê a pizza????</strong></p>
+<p>Embora faça muito sucesso,gráfico de pizza não é a melhor forma de dispor dados, pois não possibilita comparação entre variáveis. Mas, mesmo assim, para apresentar a distribuição geral da variável dependente, é uma forma muito usada.</p>
+<pre class="r"><code>pie(table(dados$realizacao), main = &quot;Distribuição das ocorrências \n do fenômeno na leitura&quot;)</code></pre>
+<p><img src="Categorica_files/figure-html/pizza-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Agora que já inspecionamos a contagem de ocorrências e as frequências, vamos ao teste de hipóteses com estatística inferencial para variáveis categóricas.</p>
+</div>
+<div id="estatística-inferencial" class="section level2">
+<h2>Estatística inferencial</h2>
+<p>Vamos agora testar hipóteses para as distribuições da variável dependente em função das variáveis independentes.</p>
+<p>Existem hipóteses que consideram conhecimentos do funcionamento linguístico do processo fonológico de monotongação:</p>
+<ul>
+<li>Existe associação entre a monotongação na leitura e a classe gramatical da palavra?</li>
+<li>Existe associação entre a monotongação na leitura e o valor do segmento?</li>
+<li>Existe associação entre a monotongação na leitura e a correção do segmento?</li>
+</ul>
+<p>E existem hipóteses que consideram conhecimentos da comunidade:</p>
+<ul>
+<li>Existe associação entre a monotongação na leitura e o sexo/gênero do participante?</li>
+<li>Existe associação entre a monotongação na leitura na leitura e o tempo no curso?</li>
+</ul>
+<p><strong>Relembrando:</strong> (Se estiver com dúvida, volte para <a href="Pvalor.html">Teste de hipótese</a></p>
+<p>A premissa de testes estatísticos é que o resultado não é diferente do acaso. É o que chamamos de <strong>hipótese nula <em>H<sub>0</sub></em> </strong></p>
+<p>Isso significa que assumimos sempre que a distribuição entre dois grupos não é diferente, ou que não há associação entre duas variáveis.</p>
+<p>Quando a hipótese nula não é validada, apresentamos a <strong>hipótese alternativa <em>H<sub>1</sub></em> </strong>, isso significa que há uma diferença entre grupos ou associação entre variáveis.</p>
+<p>Nosso limite para aceitação da hipótese é <em>α</em> = 0.05 (p-valor).</p>
+<p>Para todas as perguntas acima, assumimos a H<sub>0</sub>; em não aceitando a H<sub>0</sub>, propomos nossa H<sub>1</sub>, com base nos conhecimentos anteriores.</p>
+<p>Os testes estatísticos verificam a probabilidade de as diferenças encontradas serem devidas ao acaso, partindo do pressuposto que, na verdade, não existem diferenças na população:</p>
+<ul>
+<li>Conformidade: diferenças entre uma amostra e uma população. Até que ponto a minha amostra é representativa da população?</li>
+<li>Homogeneidade: as diferenças encontradas entre dois grupos da amostra serão representativas de diferenças reais na população de origem?</li>
+<li>Independência: duas variáveis simétricas são independentes?</li>
+</ul>
+<div id="teste-de-qui-quadrado" class="section level3">
+<h3>Teste de qui-quadrado</h3>
+<p>Com os procedimentos de estatística descritiva, observamos que há uma diferença de distribuição da variável dependente entre os níveis da variável independente.</p>
+<p>Para verificar se esta distribuição observada é signficativamente diferente da esperada, realizamos o teste de qui-quadrado de Pearson (<em>χ<sup>2</sup></em>), com a função <code>chisq.test</code>.</p>
+<p>O ponto de partida é uma tabela de contingência. Vamos realizar o teste para VI <code>valor</code> gramatical e VD <code>realizacao</code>.</p>
+<p>Nossas hipóteses: + H<sub>0</sub>: são independentes (não são associadas) + H<sub>1</sub>: não são independentes (são associadas)</p>
+<pre class="r"><code>chisq.test(dados$valor, dados$realizacao)
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+#&gt; 
+#&gt; data:  dados$valor and dados$realizacao
+#&gt; X-squared = 11.126, df = 1, p-value = 0.0008514</code></pre>
+<p>O resultado do teste é de que com <em>α</em> = 0.05, falhamos em rejeitar a H<sub>0</sub>, e as variáveis não são independentes.</p>
+<p><em>Pressupostos para o teste de qui-quadrado:</em> - Funciona bem para tabela cruzada 2 x 2 - Em tabelas <em>n</em> x <em>n</em>, depende do equilíbrio entre os fatores - Não funciona com zeros ou com baixa recorrência - Compara apenas amostras independentes</p>
+<p>Quando há menos de 20 observações na amostra, ou menos de 5 contagens em uma célula, o teste exato de Fisher é indicado: <code>fisher.test()</code>.</p>
+<p>Faça o teste Fisher para a variável utilizando a função <code>fisher.test()</code></p>
+<p>Agora que já sabemos quais variáveis tem associação, ou seja, não são independentes, precisamos ver a intensidade dessa associação.</p>
+<p>A partir da estatística do teste de qui-quadrado, três medidas de intensidade de associação podem ser calculadas: <em>ϕ</em> (phi), <em>V<sup>2</sup> de Crámer</em> e <em>coeficiente de contingência</em>.</p>
+<ul>
+<li><p><em>ϕ</em>: somente em tabelas de contingência 2 x 2 e os resultados vão de -1 (associação negativa) a 1 (1 associação positiva);</p></li>
+<li><p><em>V<sup>2</sup> de Crámer</em>: tabelas de contingência <em>n</em> x <em>n</em> e os resultados vão de 0 (ausência de associação) a 1 (associação muito forte);</p></li>
+<li><p><em>Coeficiente de contingência</em>: somente em tabelas 2 x 2 e os resultados vão de 0 (ausência de associação) a 1 (associação muito forte).</p></li>
+</ul>
+<p>Com o conjunto de dados que estamos trabalhando, os três procedimentos podem ser realizados. Vamos utilizar uma função que sumariza os testes de associação para uma tabela de contingência, <code>assocstats</code>, do pacote <code>vcd</code> (este teste requer que a tabela esteja em um objeto).</p>
+<pre class="r"><code>library(vcd)  ### carregar o pacote 
+#&gt; Loading required package: grid
+valor &lt;- table(dados$valor, dados$realizacao) ### criar o objeto
+assocstats(valor) ### aplicar ao objeto a função
+#&gt;                     X^2 df   P(&gt; X^2)
+#&gt; Likelihood Ratio 11.655  1 0.00064015
+#&gt; Pearson          11.619  1 0.00065291
+#&gt; 
+#&gt; Phi-Coefficient   : 0.121 
+#&gt; Contingency Coeff.: 0.12 
+#&gt; Cramer&#39;s V        : 0.121</code></pre>
+<p>Esta função realiza o teste de qui-quadrado (sem correção, por isso há uma pequena diferença em relação ao que foi calculado anteriormente) e calcula as estatísticas de associação possíveis.</p>
+<p>Aogra que já sabemos o resultado, vamos reportá-lo. Para variáveis categóricas, apresentamos a contagem e a frequência e o resultado dos testes de independência e associação.</p>
+<p>Podemos transpor as tabelas e os cálculos para o texto do relatório (resumo, artigo, dissertacão, tese). Um dos pontos negativos evocados para o não uso do R é que a apresentação gráfica dos resultados não é boa e que a realização dos testes exige muitos procedimentos. Existe um movimento dos usuários do R chamado <strong>EasyStats</strong>, com pacotes de funções que facilitam a rotina de procedimentos. Vamos usar alguns deles para ver as possibilidades.</p>
+<p>Para produzir tabelas, já com contagens, frequências e resultados de testes inferências, o pacote <code>sjPlot</code> é uma boa opção.</p>
+<pre class="r"><code>library(sjPlot)  ### carregar o pacote
+#&gt; #refugeeswelcome
+sjt.xtab(
+  dados$valor, dados$realizacao, ### tabela de contingência
+  show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
+  show.summary = TRUE, ### solicitamos o sumário dos testes inferenciais
+  statistics = &quot;cramer&quot;, ### informamos qual o teste solicitado; se esta linha for retirada, o pacote seleciona automaticamente um teste
+)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; border-bottom:1px solid;" rowspan="2">
+valor
+</th>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal;" colspan="2">
+realizacao
+</th>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; font-weight:bolder; font-style:italic; border-bottom:1px solid; " rowspan="2">
+Total
+</th>
+</tr>
+<tr>
+<td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">
+nao
+</td>
+<td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">
+sim
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+morfemico
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">227</span><br><span style="color:#333399;">56.8 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">173</span><br><span style="color:#333399;">43.2 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">400</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+nao morfemico
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">273</span><br><span style="color:#333399;">68.4 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">126</span><br><span style="color:#333399;">31.6 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">399</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  border-bottom:double; font-weight:bolder; font-style:italic; text-align:left; vertical-align:middle;">
+Total
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">500</span><br><span style="color:#333399;">62.6 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">299</span><br><span style="color:#333399;">37.4 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">799</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<td style="text-align:right; font-size:0.9em; font-style:italic; padding:0.2cm;" colspan="4">
+χ<sup>2</sup>=11.126 · df=1 · Cramer’s V=0.121 · p=0.001
+</td>
+</tr>
+</table>
+<p>Basta copiar e colar, ou salvar a tabela já em formato *.doc. Se não quiser os testes estatísticos, basta retirar a linha <code>show.summary</code> do comando.</p>
+<p>A visualização gráfica pode ser realizada pelo pacote <code>ggstatsplot</code>. A sintaxe do comando é simples:</p>
+<pre class="r"><code>library(ggstatsplot)  ### carregar o pacote
+#&gt; Registered S3 methods overwritten by &#39;broom.mixed&#39;:
+#&gt;   method         from 
+#&gt;   augment.lme    broom
+#&gt;   augment.merMod broom
+#&gt;   glance.lme     broom
+#&gt;   glance.merMod  broom
+#&gt;   glance.stanreg broom
+#&gt;   tidy.brmsfit   broom
+#&gt;   tidy.gamlss    broom
+#&gt;   tidy.lme       broom
+#&gt;   tidy.merMod    broom
+#&gt;   tidy.rjags     broom
+#&gt;   tidy.stanfit   broom
+#&gt;   tidy.stanreg   broom
+#&gt; Registered S3 methods overwritten by &#39;car&#39;:
+#&gt;   method                          from
+#&gt;   influence.merMod                lme4
+#&gt;   cooks.distance.influence.merMod lme4
+#&gt;   dfbeta.influence.merMod         lme4
+#&gt;   dfbetas.influence.merMod        lme4
+ggstatsplot::ggbarstats(
+  data = dados, ### informe o nome do arquivo dos dados
+  x = realizacao, ### informe a variável dependente
+  y = valor, ### informe a variável independente
+  title = &quot;Frequências do processo na leitura&quot;, ### edite o título
+  xlab = &quot;Valor gramatical&quot;, ### edite o nome do eixo da variável indepentente
+  legend.title = &quot;Realização do segmento&quot; ## Edite o nome da variável dependente
+)
+#&gt; Note: 95% CI for effect size estimate was computed with 100 bootstrap samples.
+#&gt; 
+#&gt; # A tibble: 2 x 11
+#&gt;   valor counts  perc N     nao   sim   statistic  p.value parameter method
+#&gt;   &lt;fct&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt; 
+#&gt; 1 nao …    399  49.9 (n =… 68.4… 31.5…     54.2  1.85e-13         1 Chi-s…
+#&gt; 2 morf…    400  50.1 (n =… 56.7… 43.2…      7.29 6.93e- 3         1 Chi-s…
+#&gt; # … with 1 more variable: significance &lt;chr&gt;</code></pre>
+<p><img src="Categorica_files/figure-html/visu2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>No texto, escolha <strong>ou</strong> o gráfico <strong>ou</strong> a tabela, os dois é desnecessário. Informe as medidas de contagem e frequência e o teste de hipótese.</p>
+<blockquote>
+<p>A monotongação é maior em contextos não morfêmicos (68%, n = 273) do que em contextos morfêmicos (57%, n = 227), e esta diferença é estatisticamente significativa (<em>χ</em><sup>2</sup> = 11.62(1), p = 0.001), com associação fraca (V<sup>2</sup> = 0.12).</p>
+</blockquote>
+<p>Uma outra forma de reportar os resultados considera a mudança da pergunta de pesquisa: consideramos o processo de monotongação. Mas poderíamos considerar o processo de realização do ditongo. Se a pergunta fosse qual a relação entre o valor gramatical e a conservação do ditongo, resultado seria:</p>
+<blockquote>
+<p>A conservação do ditongo é maior em contextos morfêmicos (43%, n = 173) do que em contexto não morfêmicos (32%, n = 126), e esta diferença é estatisticamente significativa (<em>χ</em><sup>2</sup> = 11.62(1), p = 0.001), com associação fraca (V<sup>2</sup> = 0.12).</p>
+</blockquote>
+<p>Observe que não é necessário reportar os dois valores (se em contextos morfêmicos 57% das ocorrências são de monotongação, então 43% são de conservação do ditongo), apenas o valor de referência para a resposta da questão de pesquisa.</p>
+<p>O mesmo procedimento deve ser realizado para as demais variáveis, dentro do interesse da pergunta de pesquisa. Observe que os resultados desta amostra do conjunto de dados original é diferente do que é reportado no artigo, e isto se deve a uma escolha metodológica. Por isso é importante o detalhamento da modelagem dos dados.</p>
+</div>
+<div id="resíduos-do-teste-qui-quadrado" class="section level3">
+<h3>Resíduos do teste qui-quadrado</h3>
+<p>No gráfico produzido pelo pacote <code>ggstatsplot</code>, sobre as colunas de cada nível da variável independente há asteriscos (*** **). Esta é uma convenção para resultados estatisticamente significativos.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">ns</td>
+<td align="center">p &gt; 0.05</td>
+</tr>
+<tr class="even">
+<td align="center">*</td>
+<td align="center">p ≤ 0.05</td>
+</tr>
+<tr class="odd">
+<td align="center">**</td>
+<td align="center">p ≤ 0.01</td>
+</tr>
+<tr class="even">
+<td align="center">***</td>
+<td align="center">p ≤ 0.001</td>
+</tr>
+<tr class="odd">
+<td align="center">****</td>
+<td align="center">p ≤ 0.0001</td>
+</tr>
+</tbody>
+</table>
+<p>Neste gráfico em específico, os arteriscos indicam o quanto cada um dos níveis das variáveis contribui para a diferença entre os valores esperados e observados. Para isso, precisamos investigar os <em>resíduos</em>, ou seja, a diferença entre a frequência observada e a frequência esperada em cada célula.</p>
+<p>Vamos criar um objeto com o resultado do teste de qui-quadrado e observar os resíduos:</p>
+<pre class="r"><code>resultado &lt;- chisq.test(dados$valor, dados$realizacao) ### criar o objeto
+round(resultado$residuals, 3) ### apresentar o nível resíduos com arredondamento de 3 casas decimais
+#&gt;                dados$realizacao
+#&gt; dados$valor        nao    sim
+#&gt;   morfemico     -1.474  1.905
+#&gt;   nao morfemico  1.475 -1.908</code></pre>
+<p>O sinal dos resíduos é importante para interpretar a associação entre as linhas e as colunas, ou entre a variável dependente e independente. Podemos melorar a visualização dos resíduos por meio de uma matriz de correlação, com o pacote <code>corrplot</code>:</p>
+<pre class="r"><code>library(corrplot)
+#&gt; corrplot 0.84 loaded
+corrplot(resultado$residuals, is.cor = FALSE)</code></pre>
+<p><img src="Categorica_files/figure-html/residuos2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Nesta matriz de correlação, ou correlograma, o tamanho do círculo é proporcional à contribuição da célula para o efeito.</p>
+<ul>
+<li>Resíduos positivos estão em azul e sinalizam uma associação positiva entre linha e coluna.</li>
+<li>Resíduos negativos estão em vermelho e sinalizam uma associação negativa entre linha e coluna.</li>
+</ul>
+<p>Podemos calcular o quanto cada célula contribui para o total do escore de qui-quadrado e dispor no correlograma:</p>
+<pre class="r"><code>library(corrplot)
+contrib &lt;- 100*resultado$residuals^2/resultado$statistic ## cálculo da contribuição de cada nível nos resíduos
+round(contrib, 3) ## arredondamento em 3 casas decimais
+#&gt;                dados$realizacao
+#&gt; dados$valor        nao    sim
+#&gt;   morfemico     19.516 32.635
+#&gt;   nao morfemico 19.565 32.717
+corrplot(contrib, is.cor = FALSE) </code></pre>
+<p><img src="Categorica_files/figure-html/residuos3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>O nível “sim” (rezlização do ditongo) é o que mais contribui para o resultado do teste. No gráfico gerado pelo <code>ggstatsplot</code>, esta contribuição está sinalizada com ***.</p>
+</div>
+<div id="manipulação-de-dados-para-a-criação-de-outras-variáveis" class="section level3">
+<h3>Manipulação de dados para a criação de outras variáveis</h3>
+<p>No conjunto de dados, ainda não exploramos os resultados de três variáveis: <code>participante</code> e <code>item</code>. Estas variáveis precisam ser manipuladas.</p>
+<p>Vamos começar por <code>item</code>. Se fizermos uma tabela de contingência com a VD realizacão e a VI correção, o resultado será o seguinte:</p>
+<pre class="r"><code>library(sjPlot)  ### carregar o pacote
+sjt.xtab(
+  dados$item, dados$realizacao, ### tabela de contingência
+  show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
+)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; border-bottom:1px solid;" rowspan="2">
+item
+</th>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal;" colspan="2">
+realizacao
+</th>
+<th style="border-top:double; text-align:center; font-style:italic; font-weight:normal; font-weight:bolder; font-style:italic; border-bottom:1px solid; " rowspan="2">
+Total
+</th>
+</tr>
+<tr>
+<td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">
+nao
+</td>
+<td style="border-bottom:1px solid; text-align:center; padding:0.2cm;">
+sim
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+acompanhou
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">31</span><br><span style="color:#333399;">62 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">19</span><br><span style="color:#333399;">38 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+apaixonadamente
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">38</span><br><span style="color:#333399;">77.6 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">11</span><br><span style="color:#333399;">22.4 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">49</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+beijava
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">37</span><br><span style="color:#333399;">74 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">13</span><br><span style="color:#333399;">26 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+beijo
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">37</span><br><span style="color:#333399;">74 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">13</span><br><span style="color:#333399;">26 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+comecou
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">35</span><br><span style="color:#333399;">70 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">15</span><br><span style="color:#333399;">30 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+deitado
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">0</span><br><span style="color:#333399;">0 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+deitados
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">0</span><br><span style="color:#333399;">0 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+dinheiro
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">0</span><br><span style="color:#333399;">0 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+entrou
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">38</span><br><span style="color:#333399;">76 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">12</span><br><span style="color:#333399;">24 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+mostrou
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">35</span><br><span style="color:#333399;">70 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">15</span><br><span style="color:#333399;">30 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+ouviu
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">38</span><br><span style="color:#333399;">76 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">12</span><br><span style="color:#333399;">24 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+passageira
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">45</span><br><span style="color:#333399;">90 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">5</span><br><span style="color:#333399;">10 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+pouco
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">45</span><br><span style="color:#333399;">90 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">5</span><br><span style="color:#333399;">10 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+poupava
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">13</span><br><span style="color:#333399;">26 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">37</span><br><span style="color:#333399;">74 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+primeira
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">0</span><br><span style="color:#333399;">0 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  text-align:left; vertical-align:middle;">
+revolucionario
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">8</span><br><span style="color:#333399;">16 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center; ">
+<span style="color:black;">42</span><br><span style="color:#333399;">84 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;  ">
+<span style="color:black;">50</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0.2cm;  border-bottom:double; font-weight:bolder; font-style:italic; text-align:left; vertical-align:middle;">
+Total
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">500</span><br><span style="color:#333399;">62.6 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">299</span><br><span style="color:#333399;">37.4 %</span>
+</td>
+<td style="padding:0.2cm; text-align:center;   border-bottom:double;">
+<span style="color:black;">799</span><br><span style="color:#333399;">100 %</span>
+</td>
+</tr>
+<td style="text-align:right; font-size:0.9em; font-style:italic; padding:0.2cm;" colspan="4">
+χ<sup>2</sup>=354.337 · df=15 · Cramer’s V=0.666 · p=0.000
+</td>
+</tr>
+</table>
+<p>Inspecionando os resultados, observamos o seguinte:</p>
+<ul>
+<li>Todos os itens têm 50 ocorrências no total, exceto <em>apaixonadamente</em> (que foi lido de outra forma por um participante, sem o ambiente alvo de monotongação, por isso excluído da análise);</li>
+<li>Os itens <em>deitado</em> e <em>deitados</em> são do mesmo lexema e com o mesmo comportamento, com realização categórica (ou seja, todas as ocorrências são de realização do ditongo)</li>
+<li>Os itens <em>dinheiro</em> e <em>primeira</em> são ocorrências categóricas de não realização do ditongo (monotongação); ambos têm o mesmo contexto seguinte -r, porém, <em>passageira</em>, com o mesmo ambiente, é variável;</li>
+<li>O item <em>revolucionário</em> apresenta um tipo de ditongo diferente dos demais itens (ditongo crescente)</li>
+</ul>
+<p>Estes itens são muito diversificados quanto ao comportamento, e um teste de qui-quadrado geral resultados inconsistentes por conta dos zeros. É preciso reorganizar as variáveis. Para isso, usaremos funções do pacote <code>dplyr</code> (procure saber mais sobre esse pacote). Vamos criar uma nova variável, o ambiente seguinte, considerando os traços articulatórios.</p>
+<pre class="r"><code>library(dplyr) ### carregar o pacote
+#&gt; 
+#&gt; Attaching package: &#39;dplyr&#39;
+#&gt; The following objects are masked from &#39;package:stats&#39;:
+#&gt; 
+#&gt;     filter, lag
+#&gt; The following objects are masked from &#39;package:base&#39;:
+#&gt; 
+#&gt;     intersect, setdiff, setequal, union
+dados &lt;- dados %&gt;%
+  mutate(ambiente = recode(item, &quot;primeira&quot; = &quot;tepe&quot;, 
+                          &quot;passageira&quot; = &quot;tepe&quot;,
+                          &quot;dinheiro&quot; = &quot;tepe&quot;,
+                          &quot;acompanhou&quot; = &quot;final&quot;,
+                          &quot;comecou&quot;= &quot;final&quot;,
+                          &quot;entrou&quot;= &quot;final&quot;,
+                          &quot;mostrou&quot; = &quot;final&quot;,
+                          &quot;apaixonadamente&quot; = &quot;fricativo&quot;,
+                          &quot;beijava&quot; = &quot;fricativo&quot;,
+                          &quot;beijo&quot; = &quot;fricativo&quot;,
+                          &quot;ouviu&quot; = &quot;fricativo&quot;,
+                          &quot;deitado&quot; = &quot;oclusivo&quot;,
+                          &quot;deitados&quot; = &quot;oclusivo&quot;,
+                          &quot;pouco&quot; = &quot;oclusivo&quot;,
+                          &quot;poupava&quot; = &quot;oclusivo&quot;,
+                          &quot;revolucionario&quot; = &quot;oclusivo&quot;)) ### é um ditongo crescente, mas o comportamento é muito próximo do das oclusivas
+head(dados)
+#&gt;         item realizacao correcao         valor    classe     sexo participante
+#&gt; 1      ouviu        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 2    poupava        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 3     entrou        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 4      pouco        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 5 passageira        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 6    beijava        nao      nao     morfemico     verbo feminino        03F20
+#&gt;   periodo  ambiente
+#&gt; 1  inicio fricativo
+#&gt; 2  inicio  oclusivo
+#&gt; 3  inicio     final
+#&gt; 4  inicio  oclusivo
+#&gt; 5  inicio      tepe
+#&gt; 6  inicio fricativo</code></pre>
+<p>Faça uma tabela de contingência e teste de significância (use qui-quadrado) para a variável nova, <code>ambiente</code>:</p>
+<pre class="r"><code>table(dados$ambiente, dados$realizacao)
+#&gt;            
+#&gt;             nao sim
+#&gt;   final     139  61
+#&gt;   fricativo 150  49
+#&gt;   oclusivo   66 184
+#&gt;   tepe      145   5
+chisq.test(dados$ambiente, dados$realizacao)
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dados$ambiente and dados$realizacao
+#&gt; X-squared = 232.17, df = 3, p-value &lt; 2.2e-16</code></pre>
+<p>Vamos criar uma nova variável, o tipo do glide.</p>
+<pre class="r"><code>library(dplyr) ### carregar o pacote
+dados &lt;- dados %&gt;%
+  mutate(glide = recode(item, &quot;primeira&quot; = &quot;j&quot;, 
+                          &quot;passageira&quot; = &quot;j&quot;,
+                          &quot;dinheiro&quot; = &quot;j&quot;,
+                          &quot;acompanhou&quot; = &quot;w&quot;,
+                          &quot;comecou&quot;= &quot;w&quot;,
+                          &quot;entrou&quot;= &quot;w&quot;,
+                          &quot;mostrou&quot; = &quot;w&quot;,
+                          &quot;apaixonadamente&quot; = &quot;j&quot;,
+                          &quot;beijava&quot; = &quot;j&quot;,
+                          &quot;beijo&quot; = &quot;j&quot;,
+                          &quot;ouviu&quot; = &quot;w&quot;,
+                          &quot;deitado&quot; = &quot;j&quot;,
+                          &quot;deitados&quot; = &quot;j&quot;,
+                          &quot;pouco&quot; = &quot;w&quot;,
+                          &quot;poupava&quot; = &quot;w&quot;,
+                          &quot;revolucionario&quot; = &quot;j&quot;))
+head(dados)
+#&gt;         item realizacao correcao         valor    classe     sexo participante
+#&gt; 1      ouviu        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 2    poupava        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 3     entrou        nao      nao     morfemico     verbo feminino        03F20
+#&gt; 4      pouco        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 5 passageira        nao      nao nao morfemico nao verbo feminino        03F20
+#&gt; 6    beijava        nao      nao     morfemico     verbo feminino        03F20
+#&gt;   periodo  ambiente glide
+#&gt; 1  inicio fricativo     w
+#&gt; 2  inicio  oclusivo     w
+#&gt; 3  inicio     final     w
+#&gt; 4  inicio  oclusivo     w
+#&gt; 5  inicio      tepe     j
+#&gt; 6  inicio fricativo     j</code></pre>
+<p>Agora faça uma tabela de contingência e teste de significância (use qui-quadrado) para a variável nova, <code>glide</code>:</p>
+<pre class="r"><code>table(dados$glide, dados$realizacao)
+#&gt;    
+#&gt;     nao sim
+#&gt;   w 235 115
+#&gt;   j 265 184
+chisq.test(dados$glide, dados$realizacao)
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+#&gt; 
+#&gt; data:  dados$glide and dados$realizacao
+#&gt; X-squared = 5.2001, df = 1, p-value = 0.02259</code></pre>
+<p>Temos agora três variáveis que apresentam associação: <code>valor</code>, <code>ambiente</code> e <code>glide</code>. Para ver como essas variáveis se relacionam e o quanto contribuem para a monotongação, seria necessário entrar em modelos de regressão, um conjunto de testes inferenciais para análises multivariadas.</p>
+<p>Não é o propósito deste tutorial; apenas para dar um gostinho:</p>
+<pre class="r"><code>modelo &lt;- glm(formula = as.factor(realizacao) ~ as.factor(ambiente) + as.factor(glide) + as.factor(valor), data = dados, family = &quot;binomial&quot;)
+library(sjPlot)
+summary(modelo)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = as.factor(realizacao) ~ as.factor(ambiente) + as.factor(glide) + 
+#&gt;     as.factor(valor), family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.9728  -0.8530  -0.2604   0.5552   2.6081  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                               Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)                    -0.8236     0.1536  -5.363 8.20e-08 ***
+#&gt; as.factor(ambiente)fricativo   -1.6413     0.3509  -4.677 2.91e-06 ***
+#&gt; as.factor(ambiente)oclusivo     1.5759     0.2850   5.531 3.19e-08 ***
+#&gt; as.factor(ambiente)tepe        -3.5832     0.5828  -6.148 7.83e-10 ***
+#&gt; as.factor(glide)j               2.5366     0.3134   8.093 5.84e-16 ***
+#&gt; as.factor(valor)nao morfemico  -1.4971     0.2677  -5.592 2.25e-08 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 1056.54  on 798  degrees of freedom
+#&gt; Residual deviance:  706.99  on 793  degrees of freedom
+#&gt; AIC: 718.99
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 6
+plot_model(modelo, transform = NULL, title = &quot;Modelo de regressão linear generalizado para monotongação na leitura&quot;)</code></pre>
+<p><img src="Categorica_files/figure-html/regressao-1.png" width="672" /></p>
+<p>Veja mais em <a href="regressao.html">Modelos de regressão</a></p>
+</div>
+</div>
+<div id="taxas-por-participante" class="section level2">
+<h2>Taxas por participante</h2>
+<p>Todos os participantes leram as mesmas 50 palavras. Podemos caluclar a taxa de monotongação por participante na leitura. Para isso, usaremos funções do pacote <code>dplyr</code>.</p>
+<pre class="r"><code>library(dplyr) ### carregar o pacote
+leitura &lt;- dados %&gt;% #### criar um novo objeto a partir do objeto &quot;dados&quot;
+  group_by(participante, realizacao) %&gt;% ### informar que queremos resultados agrupados por participantes e realizacao
+  summarise(n = n()) %&gt;% ### informar que queremos um procedimento de sumarização
+  mutate(total = sum(n), taxa = n / total) %&gt;% ### informar que serão criadas duas variáveis, uma com o total e outra com a taxa
+  select(participante, taxa) ### informar que só queremos os resultados do participante e da taxa
+#&gt; `summarise()` regrouping output by &#39;participante&#39; (override with `.groups` argument)</code></pre>
+<p>Inspecione as seis primeiras ocorrências do objeto <code>leitura</code> com a função <code>head()</code>:</p>
+<pre class="r"><code>head(leitura)
+#&gt; # A tibble: 6 x 2
+#&gt; # Groups:   participante [3]
+#&gt;   participante  taxa
+#&gt;   &lt;fct&gt;        &lt;dbl&gt;
+#&gt; 1 03F20        0.75 
+#&gt; 2 03F20        0.25 
+#&gt; 3 04F18        0.75 
+#&gt; 4 04F18        0.25 
+#&gt; 5 08F20        0.688
+#&gt; 6 08F20        0.312</code></pre>
+<p>O tratamento deste tipo de variável será explorado no próximo tutorial.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

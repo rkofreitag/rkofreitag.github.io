@@ -1,0 +1,73 @@
+---
+title: "Teste de hipóteses e valores de significância"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  echo = TRUE
+)
+```
+
+A premissa de testes estatísticos é que o resultado não é diferente do acaso. É o que chamamos de **hipótese nula *H~0~* **
+
+Isso significa que assumimos sempre que a distribuição entre dois grupos não é diferente, ou que não há associação entre duas variáveis.
+
+Quando a hipótese nula não é validada, apresentamos a **hipótese alternativa *H~1~* **, isso significa que há uma diferença entre grupos ou associação entre variáveis.
+
+Uma medida para decidir se aceitamos ou não aceitamos a hipótese nula é o p-valor. Assumindo que *H~0~* é verdadeira, o p-valor é a probabilidade de obtermos um resultado igual ao que observamos nos dados.
+
+O teste estatístico irá determinar um p-valor, que é comparado com um p-valor pré-determinado, conhecido como α *alfa*. Nas ciências humanas em geral, este valor é de 0.05. Isso significa que, se um teste for repetido 100 vezes, em cinco o resultado pode ser diferente do obtido inicialmente. 
+
+> α =0.05 não é um número mágico! Há casos em que pode ser aumentado ou diminuído, em função do desenho do estudo, premissas teóricas ou metodológicas.
+
+Na comparação entre o p-valor obtido no teste e o valor de α assumido, se:
+
+* o p-valor obtido for menor que o valor de α, rejeitamos a hipótese nula
+* o p-valor obtido for maior ou igual ao valor de α, falhamos em rejeitar a hipótese nula
+
+O p-valor não diz se está certo ou errado, se vai acontecer ou não vai acontecer, se há associação ou não há associação. Ao realizarmos testes estatísticos, estamos buscando rejeitar a hipótese nula ou falhar em rejeitar a hipótese nula.
+Assumir que falhamos na rejeição da hipótese nula é diferente de dizer que a hipótese nula está certa: significa apenas que não temos condições de rejeitar a hipótese nula, por questões de amostra ou porque outros fatores não controlados interferiram nos resultados, por exemplo.
+A premissa da maior parte dos testes estatísticos é que os resultados podem ser efeitos do acaso. Isso significa que podemos ter dois tipos de erro ao testar a H~0~:
+
+- **Erros do tipo I**: quando a hipótese nula *H~0~* é de fato verdade, mas, baseados em nossas regras de decisão, rejeitamos a hipótese nula. Isso gera um resultado falso positivo: decidimos que há um efeito quando efetivamente não há. A probabilidade de acontecer esse erro é o valor de α.
+
+- **Erros do tipo II**: quando a hipótese nula *H~0~* é de fato falsa, mas, baseados em nossas regras de decisão, nós falhamos em rejeitar a hipótese nula. Nesse caso, o que temos é um falso negativo: falhamos em ao encontrar um efeito que não existe. A probabilidade deste tipo de erro acontecer é β (*beta*).
+
+|                  |  Rejeita H~0~    | Aceita  H~0~      |
+|------------------|:----------------:|:-----------------:|
+|**H~0~ é verdadeira** | Erro tipo I (α)   | Decisão correta  (1 - α) |
+|**H~0~ é falsa**      | Poder do teste (1 - β)   | Erro tipo II (β)  |
+
+O poder estatístico de um teste é uma medida da capacidade do teste em detectar um efeito real, e depende do tamanho do efeito, do tamanho da amostra e da escolha do nível de α.
+
+O tamanho do efeito é a medida de força de associação entre duas variáveis e do quanto se diferem dois grupos. Se o tamanho do efeito, o número de observações aumentam ou o nível de  α diminui, o poder do teste aumenta.
+
+### Vamos analisar um exemplo.
+
+Um teste comercial de gravidez diz que a precisão é de 97,5%. Transformando em probabilidade, isso significa que, em 100 vezes, 2,5 vezes pode ser um resultado falso (positivo quando na verdade deveria ser negativo), ou 0.025.
+
+* Uma mulher comprou um destes testes e vai fazer: qual é a possibilidade de o resultado ser um falso positivo?
+    + teste positivo = 1
+    + uma vez = 1
+    + probabilidade = 0.025
+    + alternativa = maior 
+
+A função `binomial.test` realiza esse cálculo. Assumindo que α = 0.05
+
+```{r binomial, echo=TRUE}
+binom.test(1,1,0.025, alternative = "greater")
+```
+
+Vamos ler o resultado: o p-valor é de 0.025.Em um único teste, a hipótese de ser falso um resultado positivo é refutada. Agora, se por outros meios, a mulher souber que não está grávida e o resultado do teste for positivo? E se um homem decidir realizar o teste e o resultado for positivo? Estes são os tipos de erro: falso positivo e falso negativo.
+
+![ ](https://miro.medium.com/max/619/1*T5mfQqhcn-nB-n7LOiPv6A.png)
+
+*P-valor 0.05* não é um dogma. Cada situação pede um ajuste e uma consideração. Em estudos preliminares, por exemplo, é melhor ampliar os efeitos para considerar o maior número de possibilidades. Isso significa que o pesquisador está ciente que vai ampliar o número de erros do tipo I (falsos positivos) do que erros de tipo II (falsos negativos).
+É o pesquisador que ajusta o nível de α que é apropriado para seu modelo. Isso significa assumir erros do tipo I quando H~0~ é verdadeira. 
+
+> O p-valor não indica o tamanho do efeito. Não se deve assumir que um p-valor baixo indica uma grande diferença entre grupos.
+
+O p-valor é sensível ao tamanho da amostra! 
+Em grandes conjuntos de dados, pequenos efeitos podem resultar em resultados de p-valor significativos.

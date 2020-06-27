@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Introdução à regressão</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introdução à regressão</h1>
+
+</div>
+
+
+<p>Há vários tipos de regressão, vamos conhecer alguns deles e as premissas para a construção de um modelo.</p>
+<blockquote>
+<p>Neste tutorial, não vamos precisar importar dados; apenas digite os comandos no console do R ou do RStudio.</p>
+</blockquote>
+<div id="progressão-e-regressão" class="section level2">
+<h2>Progressão e regressão</h2>
+<p>Na escola, você deve ter estudado em Matemática progressões aritméticas e geométricas. Basicamente, as progressões envolvem uma ordem sequencial em que os números são sempre acrescidos por um valor constante. Na progressão aritmética, descobrimos o valor dessa constante pela subtração do primeiro elemento do segundo elemento deste conjunto. Na progressão geométrica, a constante é o resultado da divisão do segundo pelo primeiro elemento. Daí decorre que a progressão aritmética é linear, e a progressão geométrica é exponencial.</p>
+<p>Nas progressões, o valor da constante sempre é adicionado à sequência, aumentando.</p>
+<p>Por exemplo, se eu tenho um cofrinho onde coloco todo mês R$10,00, ao final de 10 meses terei 100,00</p>
+<p>Um modelo de progressão significa que o valor é constante, ou seja, sempre o mesmo, não muda.</p>
+<p>Mas nem sempre temos valores constantes, nem mesmo nos nossos cofrinhos. Vamos acompanhar a evolução do cofrinho de duas crianças, Joãozinho e Pedrinho, por um período de 10 meses. Primeiro, vamos criar um <code>data-frame</code>.</p>
+<pre class="r"><code>dados &lt;- data.frame(joaozinho = c(10, 12, 18, 10, 15, 20, 25, 12, 15, 27),
+                    pedrinho = c(12, 13, 15, 10, 17, 19, 24, 20, 20, 25),
+                    mes = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+dados
+#&gt;    joaozinho pedrinho mes
+#&gt; 1         10       12   1
+#&gt; 2         12       13   2
+#&gt; 3         18       15   3
+#&gt; 4         10       10   4
+#&gt; 5         15       17   5
+#&gt; 6         20       19   6
+#&gt; 7         25       24   7
+#&gt; 8         12       20   8
+#&gt; 9         15       20   9
+#&gt; 10        27       25  10</code></pre>
+<p>No primeiro mês, Joãozinho colocou 10,00 reais no seu cofrinho, e Pedrinho 12,00 reais, no segundo mês, 12,00 e 13,00, e assim por diante.</p>
+<p>Perguntas que podem ser respondidas:</p>
+<ul>
+<li>Quanto cada um tem?</li>
+</ul>
+<pre class="r"><code>sum(dados$pedrinho)
+#&gt; [1] 175
+sum(dados$joaozinho)
+#&gt; [1] 164</code></pre>
+<ul>
+<li>Qual foi a média de depósito no cofrinho por mês?</li>
+</ul>
+<pre class="r"><code>mean(dados$pedrinho)
+#&gt; [1] 17.5
+mean(dados$joaozinho)
+#&gt; [1] 16.4</code></pre>
+<p>Podemos concluir que Pedrinho poupou mais que Joãozinho, em progressão, mas não há um valor constante. Podemos calcular a média de cada um, mas a média não é a constante. Para saber qual é o valor que explica a progressão, precisamos utilizar um modelo chamado de regressão.</p>
+<p>Análises de regressão são procedimentos estatísticos que calculam qual é esse valor constante, ou melhor, permite estimar o comportamento médio de uma variável resposta (ou dependente) em relação a uma ou mais variáveis explicativas (ou independentes).</p>
+<p>Um primeiro tipo de regressão é a regressão linear simples, em que o comportamento é explicado por uma variável resposta e uma variável explicativa.</p>
+<p>No caso de Joãozinho e Pedrinho, temos uma variável explicativa, o tempo, e uma variável resposta, o valor depositado no cofrinho.</p>
+<p>Para entender o comportamento médio, precisamos construir uma equação, em que <code>y</code> é o valor médio da variável resposta e <code>x</code> e a variável explicativa.</p>
+<p>Em uma progressão aritmética, a equação seria <code>y = x + k</code>, onde <code>k</code> é a constante.</p>
+<p>Mas em um modelo de regressão, o valor de y, precisamos prever o ponto onde a reta irá tocar o plano cartesiano e o efeito da variável explicativa, que determinará o ângulo da reta:</p>
+<blockquote>
+<p><em>y = α + βx</em></p>
+</blockquote>
+<p>Onde <code>y</code> é a média da variável resposta, <code>x</code> a variável explicativa, <code>α</code> representa o ponto onde a reta cruza o eixo <code>y</code> quando <code>y = 0</code>, e <code>β</code> é o coficiente do efeito da variável explicativa na variável resposta.</p>
+<p>Vamos, primeiro, visualizar os dados:</p>
+<pre class="r"><code>plot(dados$mes, dados$joaozinho, col = &quot;red&quot;, main = &quot;Cofre de Joãozinho&quot;)
+abline(h= mean(dados$joaozinho), col = &quot;red&quot;,
+       lwd = 2)</code></pre>
+<p><img src="regressao_files/figure-html/dotplot-1.png" width="672" /></p>
+<pre class="r"><code>
+plot(dados$mes, dados$pedrinho, col = &quot;blue&quot;, main = &quot;Cofre de Pedrinho&quot;)
+abline(h= mean(dados$pedrinho), col = &quot;blue&quot;,
+       lwd = 2)</code></pre>
+<p><img src="regressao_files/figure-html/dotplot-2.png" width="672" /></p>
+<p>Na inspeção visual, os pontos correspondem às observações, e a linha corresponde à média. No cofre de Pedrinho, o valor do depósito no cofre (as observações) parece aumentar com o tempo, não conseguimos ver o mesmo no cofre de Joãozinho. Vamos construir o modelo de regressão para estimar o efeito do tempo no valor de depósito no cofre de cada um dos nossos personagens.</p>
+<p>A função é <code>lm</code>: especificamos a fórmula e geramos um objeto, vamos chamá-lo de <code>modelo</code>.</p>
+<pre class="r"><code>modelo.p &lt;- lm(dados$pedrinho ~ dados$mes)
+modelo.j &lt;- lm(dados$joaozinho ~ dados$mes)</code></pre>
+<p>Com o objeto criado, vamos buscar os parâmetros:</p>
+<pre class="r"><code>modelo.p$coefficients
+#&gt; (Intercept)   dados$mes 
+#&gt;    9.666667    1.424242
+modelo.j$coefficients
+#&gt; (Intercept)   dados$mes 
+#&gt;    9.933333    1.175758</code></pre>
+<p>Os coeficientes são positivos, o que significa que o aporte aumenta em função do tempo. Arredondando em duas casas decimais, a equação para o cofre de Joãozinho é <code>y = 9.93 + 1.17x</code> e a do cofre de Pedrinho é <code>y = 9.66 + 1.42x</code>. Se observarmos os dados, Pedrinho coemça fazendo aportes maiores no seu cofre, mas o coeficiente de aumento é menor do que o coeficiente de aumento do cofre de Joãozinho. Vamos visualizar as retas:</p>
+<pre class="r"><code>plot(dados$mes, dados$joaozinho, col = &quot;red&quot;, main = &quot;Cofre de Joãozinho&quot;)
+# Média:
+abline(h= mean(dados$joaozinho), col = &quot;red&quot;,
+       lwd = 2)
+# Reta da regressão linear:
+abline(lm(dados$joaozinho ~ dados$mes), col = &quot;red&quot;)</code></pre>
+<p><img src="regressao_files/figure-html/regressa%CC%83o3-1.png" width="672" /></p>
+<pre class="r"><code>
+plot(dados$mes, dados$pedrinho, col = &quot;blue&quot;, main = &quot;Cofre de Pedrinho&quot;)
+# Média:
+abline(h= mean(dados$pedrinho), col = &quot;blue&quot;,
+       lwd = 2)
+# Reta da regressão linear:
+abline(lm(dados$pedrinho ~ dados$mes), col = &quot;blue&quot;)</code></pre>
+<p><img src="regressao_files/figure-html/regressa%CC%83o3-2.png" width="672" /></p>
+<p>Como não estamos tratando de uma progressão, a reta estimada claramente não coincidirá com todos os nossos dados. Observando os gráficos, os pontos que correspondem às observações estão mais próximos à reta no cofre de Pedrinho do que no cofre de Joãozinho; existe mais um parâmetro para ser colocado na equação: o erro <code>e</code>. Para entender o que significa o erro, precisamos entender como o coeficiente e o intercepto foram calculados pelo método dos mínimos quadrados, processo de análise que procura encontrar o melhor ajuste em um conjunto de dados tentando minimizar a soma dos quadrados das diferenças entre o valor estimado e os dados observados (resíduos), que são utilizados para avaliar o ajuste do modelo e o nível de confiança das estimativas feitas a partir dele.</p>
+<p>Este é o arranjo das observações do conjunto de dados; para saber o nível de confiança em que este efeito é diferente de um valor α (p-valor), precisamos considerar o efeito do erro.</p>
+<p>E para saber o quanto da variação presente nos dados é explicada pela covariável, calculamos o coeficiente de determinação (R<sup>2</sup> ajustado), uma medida de qualidade do modelo em relação à sua habilidade de estimar corretamente os valores da variável resposta.</p>
+<p>Estes valores são apresentandos na função <code>summary</code>:</p>
+<pre class="r"><code>summary(modelo.p)
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = dados$pedrinho ~ dados$mes)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -5.3636 -0.7424  0.6364  1.0227  4.3636 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)   9.6667     1.8576   5.204 0.000818 ***
+#&gt; dados$mes     1.4242     0.2994   4.757 0.001432 ** 
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 2.719 on 8 degrees of freedom
+#&gt; Multiple R-squared:  0.7388, Adjusted R-squared:  0.7062 
+#&gt; F-statistic: 22.63 on 1 and 8 DF,  p-value: 0.001432</code></pre>
+<p>O primeiro bloco dos resultados é a fórmula do modelo <code>lm(formula = dados$joaozinho ~ dados$mes)</code>.</p>
+<p>O segundo bloco apresenta os resíduos (diferença entre os valores estimados e os valores observados), distribuídos em quartis.</p>
+<p>O terceiro bloco apresenta os coeficientes calculados: o intercepto e o coeficiente da variável explicativa <code>mes</code>. A primeira coluna apresenta o valor estimado, a segunda coluna apresenta o erro padrão calculado, a terceira coluna apresenta a estatística t calculada e a quarta coluna apresenta o nível de significância (também glosado com os asteriscos ao lado).</p>
+<p>O último bloco dos resultados apresenta o erro residual padronizado, o valos de R<sup>2</sup> e R<sup>2</sup> ajustado.</p>
+<p>Observe agora os valores no conjunto de dados do confre de Joãozinho e compare com os de Pedrinho:</p>
+<pre class="r"><code>summary(modelo.j)
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = dados$joaozinho ~ dados$mes)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -7.3394 -3.7545 -0.5485  4.1576  6.8364 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)  
+#&gt; (Intercept)   9.9333     3.5195   2.822   0.0224 *
+#&gt; dados$mes     1.1758     0.5672   2.073   0.0719 .
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 5.152 on 8 degrees of freedom
+#&gt; Multiple R-squared:  0.3494, Adjusted R-squared:  0.2681 
+#&gt; F-statistic: 4.297 on 1 and 8 DF,  p-value: 0.07191</code></pre>
+<p>No modelo do cofre de Pedrinho, o efeito da variável explicativa <em>mês</em> é positivo e forte, estatisticamente singnificativo com α &gt; 0.05. A variável explicativa, neste modelo, explica 70% da variação dos dados (R<sup>2</sup> ajustado).</p>
+<p>Já no modelo do cofre de Joãozinho, o efeito da variável explicativa <em>mês</em> não é estatisticamente significativo com α &gt; 0.05.</p>
+<p>Observe o erro padrão em cada um dos modelos: o erro padrão no modelo do cofre de Joãozinho (3.51) é muito maior do que no de Pedrinho (1.85).</p>
+<p>Para que o modelo de uma regressão linear seja bem ajustado (<em>best fit model</em>), o conjunto de dados precisa atender às seguintes condições:</p>
+<ul>
+<li>Normalidade dos resíduos: os resíduos decorrentes do ajuste da reta segue distribuição normal;</li>
+<li>Homocedasticidade: a variância de Y é constante para todos os valores de X;</li>
+<li>Independência (ou não colinearidade): ausência de dependência entre os dados.</li>
+</ul>
+<p>Podemos verificar estas condições por meio da inspeção gráfica do modelo pela função <code>plot</code>:</p>
+<pre class="r"><code>plot(modelo.p, main = &quot;Cofre de Pedrinho&quot;)</code></pre>
+<p><img src="regressao_files/figure-html/regressa%CC%83o4-1.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o4-2.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o4-3.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o4-4.png" width="672" /></p>
+<p>No gráfico do primeiro quadrante, observamos na relação entre os resíduos em função dos valores estimados a independência e a homocedasticidade: se os resíduos estão distribuídos aleatoriamente e com mesma amplitude em torno do zero. No gráfico do terceiro quadrante (abaixo), são apresentados os resultados dos resíduos padronizados.</p>
+<p>No gráfico do segundo quadrante, a linha diagonal pontilhada representa a distribuição normal teórica, e os pontos a distribuição dos resíduos observada. Espera-se que não exista grande diferença entre os pontos em relação à reta teórica.</p>
+<p>O gráfico do quarto quadrante permite visualizar as distâncias de Cook das observações, medida que pode indicar a presença de <em>outliers</em> quando &gt; 1.</p>
+<pre class="r"><code>plot(modelo.j, main = &quot;Cofre de Joãozinho&quot;)</code></pre>
+<p><img src="regressao_files/figure-html/regressa%CC%83o5-1.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o5-2.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o5-3.png" width="672" /><img src="regressao_files/figure-html/regressa%CC%83o5-4.png" width="672" /></p>
+<p>É possível também realizar testes estatísticos sobre os resíduos obtidos, como o teste Shapiro para a normalidade dos resíduos do modelo:</p>
+<pre class="r"><code>shapiro.test(modelo.p$residuals) #Cofre de Pedrinho
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  modelo.p$residuals
+#&gt; W = 0.90323, p-value = 0.2376
+shapiro.test(modelo.j$residuals) #Cofre de Joãozinho
+#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  modelo.j$residuals
+#&gt; W = 0.94791, p-value = 0.6439</code></pre>
+<p>Como podemos ver, os modelos atendem às condições de ajuste. Como conclusão destes modelos, podemos dizer que, para o Cofre de Pedrinho, a variável tempo explica a evolução dos depósitos: com o passar do tempo, aumenta o valor depositado no cofre. Para o cofre de Joãozinho, não.</p>
+<p>Mas com a regresssão linear simples testamos o efeito de uma variável, dentre um conjunto de variáveis que poderiam explicar o modelo. Vamos adicionar uma nova variável ao nosso conjunto de dados: festas, <em>sim</em> significa que naquele mês houve festa, <em>não</em> não houve. Será que esta variável influencia no montante de dinheiro depositado em cada cofre?</p>
+<pre class="r"><code>dados &lt;- data.frame(joaozinho = c(10, 12, 18, 10, 15, 20, 25, 12, 15, 27),
+                    pedrinho = c(12, 13, 15, 10, 17, 19, 24, 20, 20, 25),
+                    mes = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+                    festa = c(1, 1, 0, 1, 1, 1, 0, 1, 1, 0))</code></pre>
+<p>A variável explicativa <code>festa</code> foi também assumida como contínua (0 = ausência de festa, 1 = presença de festa). Em uma regressão linear, a variável resposta sempre será contínua. Vamos calcular o modelo considerando o valor depositado (variável resposta) e a ocorrência de festa no mês:</p>
+<ul>
+<li>Cofre de Joãozinho:</li>
+</ul>
+<pre class="r"><code>summary(lm(dados$joaozinho ~ dados$festa))
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = dados$joaozinho ~ dados$festa)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -5.3333 -2.9286  0.0714  1.6429  6.5714 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)   23.333      2.240   10.42 6.25e-06 ***
+#&gt; dados$festa   -9.905      2.677   -3.70  0.00604 ** 
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 3.879 on 8 degrees of freedom
+#&gt; Multiple R-squared:  0.6312, Adjusted R-squared:  0.5851 
+#&gt; F-statistic: 13.69 on 1 and 8 DF,  p-value: 0.006041</code></pre>
+<ul>
+<li>Cofre de Pedrinho:</li>
+</ul>
+<pre class="r"><code>summary(lm(dados$pedrinho ~ dados$festa))
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = dados$pedrinho ~ dados$festa)
+#&gt; 
+#&gt; Residuals:
+#&gt;    Min     1Q Median     3Q    Max 
+#&gt; -6.333 -3.607  1.905  3.536  4.143 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)   21.333      2.610   8.173 3.74e-05 ***
+#&gt; dados$festa   -5.476      3.120  -1.755    0.117    
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 4.521 on 8 degrees of freedom
+#&gt; Multiple R-squared:  0.278,  Adjusted R-squared:  0.1878 
+#&gt; F-statistic: 3.081 on 1 and 8 DF,  p-value: 0.1173</code></pre>
+<p>Como podemos observar, a variável <em>festa</em> tem efeito estatisticamente significativo muito forte no modelo do cofre de Joãozinho, explicando 58% da variação. Já no modelo do cofre de Pedrinho, não há efeito estatisticamente significativo desta variável com α &gt; 0.05.</p>
+<p>Vamos agora construir um modelo de <em>regressão linear múltipla</em>, com duas variáveis explicativas, <em>festa</em> e <em>mês</em>:</p>
+<pre class="r"><code>modelo2.p &lt;- lm(pedrinho ~ mes + festa, data = dados)
+modelo2.j &lt;- lm(joaozinho ~ mes + festa, data = dados)</code></pre>
+<p>Usamos o operador <code>+</code> para indicar que as variáveis explicativas são adicionadas ao modelo. Vamos ver os resultados:</p>
+<pre class="r"><code>summary(modelo2.p) # Cofre de Pedrinho
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = pedrinho ~ mes + festa, data = dados)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -4.5745 -0.8929  0.6429  1.2407  2.2391 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)   12.783      2.209   5.787 0.000672 ***
+#&gt; mes            1.283      0.264   4.859 0.001838 ** 
+#&gt; festa         -3.338      1.655  -2.018 0.083418 .  
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 2.311 on 7 degrees of freedom
+#&gt; Multiple R-squared:  0.8349, Adjusted R-squared:  0.7877 
+#&gt; F-statistic:  17.7 on 2 and 7 DF,  p-value: 0.00183
+summary(modelo2.j) # Cofre de Joãozinho
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = joaozinho ~ mes + festa, data = dados)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -3.8677 -2.1843  0.3901  1.2994  5.7584 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)  17.9130     3.0152   5.941 0.000575 ***
+#&gt; mes           0.8130     0.3604   2.256 0.058673 .  
+#&gt; festa        -8.5497     2.2588  -3.785 0.006847 ** 
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 3.156 on 7 degrees of freedom
+#&gt; Multiple R-squared:  0.7865, Adjusted R-squared:  0.7254 
+#&gt; F-statistic: 12.89 on 2 and 7 DF,  p-value: 0.0045</code></pre>
+<p>Os resultados são apresentados da mesma forma que na regressão linear simples.</p>
+<p>Para o modelo do cofre de Pedrinho, o valor de intercepto, que corresponde ao ponto onde a reta toca o eixo y (variáveis contínuas = 0) é de 12.78. O efeito da variável explicativa <em>mês</em> é positivo e estatisticamente significativ, e o efeito da variável festa é negativo, mas não estatisticamente significativo.</p>
+<p>Já para o modelo do cofre de Joãozinho o valor de intercepto é de 17.91, o efeito da variável explicativa <em>mês</em> é positivao mas não estatisticamente significativo. Em relação ao valor de intercepto, a variável <em>festa</em> é negativa e estatisticamente significativa: o que significa que, quando ocorre festa, o valor de depósito no cofre diminui.</p>
+<p>O modelo de regressão linear múltipla para o cofre de cada uma das crianças apontou variáveis explicativas diferentes; vamos agora observar como os dados se comportam conjuntamente. Para isso, vamos criar um novo conjunto de dados a partir do inicial, unindo as observações individuais em uma nova variável, <em>dono</em>:</p>
+<pre class="r"><code>library(reshape2)
+geral &lt;- melt(dados, id.vars = c(&quot;mes&quot;, &quot;festa&quot;), value.name = &quot;valor&quot;, variable.name = &quot;dono&quot;)
+str(geral)
+#&gt; &#39;data.frame&#39;:    20 obs. of  4 variables:
+#&gt;  $ mes  : num  1 2 3 4 5 6 7 8 9 10 ...
+#&gt;  $ festa: num  1 1 0 1 1 1 0 1 1 0 ...
+#&gt;  $ dono : Factor w/ 2 levels &quot;joaozinho&quot;,&quot;pedrinho&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ valor: num  10 12 18 10 15 20 25 12 15 27 ...</code></pre>
+<p>Agora, vamos gerar um novo modelo, desta vez considerando os efeitos das variáveis explicativas sem considerar o efeito individual:</p>
+<pre class="r"><code>summary(lm(valor ~ mes + festa, data = geral))
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = valor ~ mes + festa, data = geral)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -5.7863 -1.4924  0.8332  1.7148  4.3093 
+#&gt; 
+#&gt; Coefficients:
+#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)  15.3478     1.9541   7.854 4.69e-07 ***
+#&gt; mes           1.0478     0.2336   4.486 0.000325 ***
+#&gt; festa        -5.9441     1.4639  -4.060 0.000814 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; Residual standard error: 2.892 on 17 degrees of freedom
+#&gt; Multiple R-squared:  0.7456, Adjusted R-squared:  0.7157 
+#&gt; F-statistic: 24.91 on 2 and 17 DF,  p-value: 8.849e-06</code></pre>
+<p>Neste modelo, tanto <em>festa</em> como <em>mês</em> são estatisticamente significativos e o percentual de explicação de variância no modelo (R<sup>2</sup> ajustado) é de 71%.</p>
+<p>Os modelos de regressão calculam o efeito de variáveis explicativas na média.</p>
+<pre class="r"><code>plot(geral$mes, geral$valor, main = &quot;Distribuição dos efeitos das variáveis explicativas na média&quot;, ylab = &quot;Valor&quot;, xlab = &quot;mês&quot;)
+abline(h= mean(geral$valor),lwd = 2)
+abline(lm(geral$valor ~ geral$mes), col = &quot;red&quot;)
+abline(lm(geral$valor ~ geral$festa), col = &quot;blue&quot;)
+abline(lm(geral$valor ~ geral$festa + geral$mes),lwd = 2)
+#&gt; Warning in abline(lm(geral$valor ~ geral$festa + geral$mes), lwd = 2): only
+#&gt; using the first two of 3 regression coefficients</code></pre>
+<p><img src="regressao_files/figure-html/media-1.png" width="672" /></p>
+<p>A linha horizontal preta corresponde à média de valor nos 10 meses de observação dos cofres dos dois donos. A linha azul corresponde aos coeficientes do modelo de regressão simples do efeito da variável <em>festa</em> no valor; a limha vermelha corresponde aos coeficientes do modelo de regressão simples do efeito da variável <em>mês</em> no valor. A linha inclinada preta corresponde aos coeficientes do modelo de regressão múltipla do efeito das variáveis <em>mês</em> e <em>festa</em> no valor. Observe o movimento em direção à média. Não consideramos, ainda, os efeitos individuais neste modelo (como vimos, em separado, as variáveis explicativas agem de modo diferente em cada um dos modelos dos cofres).</p>
+</div>
+<div id="modelos-lineares-generalizados" class="section level2">
+<h2>Modelos lineares generalizados</h2>
+<p>Modelos lineares são uma extensão dos modelos de regressão simples e múltipla que possibilitam usar outras distribuições. A rigor, no modelo anterior, não temos variáveis quantitativas contínuas, e sim discretas, mas que foram assumidas como contínuas por conta da limitação da regressão linear.</p>
+<p>Os modelos lineares generalizados foram formulados por <a href="https://docs.ufpr.br/~taconeli/CE225/Artigo.pdf">Nelder &amp; Wedderburn (1972)</a> como proposta de unificar vários modelos estatísticos, a partir de um algoritmo geral para a estimativa demáxima verossimilhança em todos modelos que investigam a relação entre uma variável de resposta e um ou mais preditores.</p>
+<p>As técnicas de modelo linear generalizado normalmente são usadas com variáveis de resposta categóricas. A regressão de mínimos quadrados - regressão linear - geralmente é utilizada com variáveis de resposta contínuas.</p>
+<p>Ambas as técnicas estimam parâmetros para o ajuste do modelo: os mínimos quadrados minimizam a soma de erros quadrados para obter estimativas de verossimilhança máxima dos parâmetros, enquanto modelos linear generalizados obtêm estimativas de verossimilhança máxima dos parâmetros usando um algoritmo de mínimos quadrados reponderados iterativamente.</p>
+<p>Em termos práticos, modelos lineares generalizados são utilizados em basicamente três tipos de conjuntos de dados:</p>
+<ul>
+<li>contagens, como onúmero de disfluências produzidas por um falante, número de reprovações em disciplinas, etc;</li>
+<li>categóricos, como a realização vs. a não realização de um traço linguístico, preenchimento ou não preechimento de instrumentos, etc.;</li>
+<li>assimétricos positivos, como a temperatura de uma cidade, nível de precipitação, etc.</li>
+</ul>
+<p>Nos três casos acima, a distribuição dos dados não é normal. Mas o que é uma distribuição normal? Um conjunto de dados quantitativos, discretos ou contínuos, quando ordenado, apresenta um tipo de distribuição. Vamos a seguir ver alguns dos tipos que podem ser de alvo de interesse (lista não exaustiva). ### Distribuição Bernoulli</p>
+<p>Uma distribuição Bernoulli tem apenas dois resultados possíveis: 1 (sucesso) e 0 (fracasso), e uma única tentativa. Uma variável que tenha uma distribuição Bernoulli pode tomar o valor 1 com a probabilidade de sucesso (p), e o valor 0 com a probabilidade de fracasso, (1-p). &gt; <code>E(X) = 1*p + 0*(1-p) = p</code></p>
+<p>A variância de uma variável aleatória de uma distribuição Bernoulli é: &gt; <code>V(X) = E(X²) – [E(X)]² = p – p² = p(1-p)</code></p>
+<div id="distribuição-uniforme" class="section level3">
+<h3>Distribuição uniforme</h3>
+<p>Enquanto na distribuição Bernoulli, um resultado é o oposto do outro, na distribuição uniforme, todos os resultados tem a mesma razão de chances, motivo pelo qual é conhecido também por distribuição retangular.</p>
+<p>A média e a variância de X após uma distribuição uniforme são: &gt; Média -&gt; <code>E(X) = (a+b)/2</code> &gt; Variância -&gt; <code>V(X) = (b-a)²/2</code></p>
+</div>
+<div id="distribuição-binomial" class="section level3">
+<h3>Distribuição binomial</h3>
+<p>Na distribuição binomial, somente dois resultados são possíveis (1 ou 0), mas há possibilidade de repetição do evento, com a mesma probabilidade de sucesso e fracasso em todas as tentativas. Cada experiência (observação) é independente. Uma experiência com apenas dois resultados possíveis repetidos <em>n</em> número de vezes é chamada binomial. Os parâmetros de uma distribuição binomial são <em>n</em> e <em>p</em>, onde <em>n</em> é o número total de tentativas e <em>p</em> é a probabilidade de sucesso em cada tentativa.</p>
+<p><strong>Propriedades de uma distribuição binomial:</strong></p>
+<ul>
+<li>Cada observação é independente.</li>
+<li>Há apenas dois resultados possíveis (0 ou 1) em cada observação.</li>
+<li>É realizado um número total de n observações idênticas.</li>
+<li>A probabilidade de sucesso e insucesso é a mesma para todas as observações.</li>
+</ul>
+<blockquote>
+<p>Média -&gt; <code>µ = n*p</code> Variância -&gt; <code>Var(X) = n*p*q</code></p>
+</blockquote>
+<p>Sim, se você viu semelhanças com a distribuição Bernoulli, está correto! A distribuição Bernoulli é um caso especial de distribuição binomial com um único julgamento.</p>
+</div>
+<div id="distribuição-gaussiana-ou-normal" class="section level3">
+<h3>Distribuição gaussiana, ou normal</h3>
+<p>A distribuição normal representa o comportamento da maioria das situações no universo.</p>
+<p><strong>Propriedades de uma distribuição normal:</strong></p>
+<ul>
+<li>A média, a mediana e a moda da distribuição coincidem.</li>
+<li>A curva da distribuição é em forma de sino e simétrica em relação à linha <code>x = μ</code>.</li>
+<li>A área total sob a curva é 1.</li>
+<li>Exatamente metade dos valores estão à esquerda do centro e a outra metade à direita (formato de sino, curva de Gauss).</li>
+</ul>
+<p>A média e a variância de uma variável aleatória X com distribuição normal é dada por (onde µ (média) e σ (desvio padrão) são parâmetros):</p>
+<blockquote>
+<p>Média -&gt; <code>E(X) = µ</code> Variância -&gt; <code>Var(X) = σ^2</code></p>
+</blockquote>
+</div>
+<div id="distribuição-poisson" class="section level3">
+<h3>Distribuição Poisson</h3>
+<p>A distribuição Poisson é aplicável em situações em que os eventos ocorrem em pontos aleatórios de tempo e espaço em que o nosso interesse é apenas o número de ocorrências do evento.</p>
+<p><strong>Propriedades de uma distribuição Poisson:</strong></p>
+<ul>
+<li>Qualquer evento bem-sucedido não deve influenciar o resultado de outro evento bem-sucedido.</li>
+<li>A probabilidade de sucesso num intervalo curto deve ser igual à probabilidade de sucesso num intervalo mais longo.</li>
+<li>A probabilidade de sucesso num intervalo aproxima-se de zero à medida que o intervalo se torna menor.</li>
+</ul>
+<p>As notações usadas na distribuição de Poisson: - λ é a taxa de ocorrência de um evento, - t é a duração de um intervalo de tempo, - X é o número de eventos nesse intervalo de tempo.</p>
+<p>X é a variável aleatória de Poisson e a distribuição de probabilidade de <em>X</em> é chamada de distribuição de Poisson, em que <em>µ</em> é o número médio de eventos num intervalo de comprimento <em>t</em>, tal que <code>µ = λ*t</code>. A média µ é o parâmetro desta distribuição, definida como o λ vezes o comprimento desse intervalo:</p>
+<blockquote>
+<p>Média -&gt; <code>E(X) = µ</code> Variância -&gt; <code>Var(X) = µ</code></p>
+</blockquote>
+</div>
+<div id="outras-distribuições-e-inspeção-visual" class="section level3">
+<h3>Outras distribuições e inspeção visual</h3>
+<p>Há vários outros tipos de distribuição, e também há situações que não fica claro qual é o tipo de distribuições, havendo interação entre características ou porque a extensão do conjunto de dados é pequena.</p>
+<p>Aqui há um quadro sumário dos diversos tipos de distribuição e sua apresentação gráfica, que auxilia na inspeção visual:</p>
+<p><img src="distribuições4.png" /> As linhas representam distribuições de conjuntos de dados com variáveis contínuas e as barras, conjuntos de dados com variáveis discretas. Nem sempre a inspeção visual é suficiente para diferenciar a distribuição. Além da inpeção gráfica com o histograma, o pacote <code>fitdistrplus</code> pode auxiliar neste processo. Vamos retomar o conjunto de dados anterior e verificar as distribuições. Carregue o pacote, e utlizando a função <code>descdist</code>, informe o vetor da variável, se é discrta ou não, e quantas reamostragens serão utilizadas (<em>bootstrap</em>).</p>
+<pre class="r"><code>library(fitdistrplus)
+#&gt; Loading required package: MASS
+#&gt; Loading required package: survival
+descdist(dados$joaozinho, discrete = FALSE,  boot=500)</code></pre>
+<p><img src="regressao_files/figure-html/distribuc%CC%A7a%CC%83o-1.png" width="672" /></p>
+<pre><code>#&gt; summary statistics
+#&gt; ------
+#&gt; min:  10   max:  27 
+#&gt; median:  15 
+#&gt; mean:  16.4 
+#&gt; estimated sd:  6.022181 
+#&gt; estimated skewness:  0.7489164 
+#&gt; estimated kurtosis:  2.374766
+descdist(dados$pedrinho, discrete = FALSE,  boot=500)</code></pre>
+<p><img src="regressao_files/figure-html/distribuc%CC%A7a%CC%83o-2.png" width="672" /></p>
+<pre><code>#&gt; summary statistics
+#&gt; ------
+#&gt; min:  10   max:  25 
+#&gt; median:  18 
+#&gt; mean:  17.5 
+#&gt; estimated sd:  5.016639 
+#&gt; estimated skewness:  0.03960331 
+#&gt; estimated kurtosis:  1.955271</code></pre>
+<p>O ponto azul corresponde à observação do conjunto de dados. Observe que mas observações dos dados, o cofre de Joãozinho está entre a distribuição normal e uniforme. Já o de Pedrinho está no ponto do uniforme. Junto com a representação gráfica, a função retorna medidas descritivas da amostra, o erro padrão, a estimativa de achatamento (<em>kurtosis</em>) e de inclinação (<em>skewness</em>) da curva.</p>
+<p>Saber o tipo da distribuição é essencial para a configuração de um modelo linear generalizado.</p>
+</div>
+<div id="configurando-o-modelo" class="section level3">
+<h3>Configurando o modelo</h3>
+<p>Com os modelos lineares generalizados é possível modelar variáveis de interesse que assumem a forma de contagem, contínuas simétricas e assimétricas, binárias e categóricas. A sintaxe de um modelo linear generalizado envolve a definição dos seguintes parâmetros:</p>
+<ul>
+<li>Comportamento (distribuição) da variável resposta.</li>
+<li>Variáveis explicativas.</li>
+<li>Função de ligação entre as variáveis explicativas e variável resposta.</li>
+</ul>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="24%" />
+<col width="24%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo de variável resposta</th>
+<th>Número de níveis</th>
+<th>Características</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>binária</td>
+<td>2</td>
+<td>dois níveis opostos</td>
+<td>aprovado/reprovado no exame</td>
+</tr>
+<tr class="even">
+<td>ordinal</td>
+<td>3 ou mais</td>
+<td>ordem natural dos níveis</td>
+<td>Resultados da pesquisa (discordo, neutro, concordo)</td>
+</tr>
+<tr class="odd">
+<td>nominal</td>
+<td>3 ou mais</td>
+<td>Nenhuma ordem natural dos níveis</td>
+<td>Disciplina escolar (matemática, ciência, arte)</td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td>3 ou mais</td>
+<td>A variável resposta descreve o número de vezes que um evento ocorre em um espaço de observação finito</td>
+<td>0, 1, 2, …</td>
+</tr>
+</tbody>
+</table>
+<p>A partir destes parâmetros, o modelo de regressão linear generalizado pode ser configurado:</p>
+<ul>
+<li><p>Se a sua variável dependente assume uma ampla gama de valores e idealmente está normalmente distribuída, utilize um modelo de regressão linear (<code>lm</code>).</p></li>
+<li><p>Se a sua variável dependente pode assumir um de dois valores possíveis, como presença ou ausência, com variância, utlilize um modelo de regressao linear generalizado (<code>glm</code>) com a função de ligação <code>binomial</code> (<code>family = binomial</code>).</p></li>
+<li><p>Se a sua variável dependente for discreta e representar o número de ocorrências de um evento, ou se for uma taxa cuo denominador é fixo, com média e variância iguais, sem ser negativos ou ou conter decimais, utilize um modelo de regressao linear generalizado (<code>glm</code>) com a função de ligação <code>poisson</code> (<code>family = poisson</code>).</p></li>
+<li><p>Se a sua variável dependente for discreta e ordenada, como na escala Likert, utilize um modelo de regressão ordinal (<code>polr</code>) do pacote <code>MASS</code>. O nome da função vem da regressão logística de razões (<em>odds</em>) proporcionais, especificando <code>Hess = TRUE</code> para que o modelo devolva a matriz de informação observada a partir da otimização que é usada para calcular o erro-padrão.</p></li>
+<li><p>Se a variável variável dependente é categórica, não binária e não ordenada, utilize um modelo de regressão logística multinomial (<code>multinom</code>) do pacote <code>nnet</code>.</p></li>
+</ul>
+</div>
+<div id="limitações" class="section level3">
+<h3>Limitações</h3>
+<p>Uma das limitações dos modelos de regressão generalizados é a exigência de que os erros sejam independentes. Isso significa que eles não são adequados a conjuntos de dados com estruturas longitudinais (medidas repetidas, amostras medidas mais de uma vez ao longo do tempo), espaciais ou multiníveis. Mas é possível contornar essa limitação utilizando <strong>modelos lineares generalizados mistos</strong>.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

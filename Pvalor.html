@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Teste de hipóteses e valores de significância</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Teste de hipóteses e valores de significância</h1>
+
+</div>
+
+
+<p>A premissa de testes estatísticos é que o resultado não é diferente do acaso. É o que chamamos de <strong>hipótese nula <em>H<sub>0</sub></em> </strong></p>
+<p>Isso significa que assumimos sempre que a distribuição entre dois grupos não é diferente, ou que não há associação entre duas variáveis.</p>
+<p>Quando a hipótese nula não é validada, apresentamos a <strong>hipótese alternativa <em>H<sub>1</sub></em> </strong>, isso significa que há uma diferença entre grupos ou associação entre variáveis.</p>
+<p>Uma medida para decidir se aceitamos ou não aceitamos a hipótese nula é o p-valor. Assumindo que <em>H<sub>0</sub></em> é verdadeira, o p-valor é a probabilidade de obtermos um resultado igual ao que observamos nos dados.</p>
+<p>O teste estatístico irá determinar um p-valor, que é comparado com um p-valor pré-determinado, conhecido como α <em>alfa</em>. Nas ciências humanas em geral, este valor é de 0.05. Isso significa que, se um teste for repetido 100 vezes, em cinco o resultado pode ser diferente do obtido inicialmente.</p>
+<blockquote>
+<p>α =0.05 não é um número mágico! Há casos em que pode ser aumentado ou diminuído, em função do desenho do estudo, premissas teóricas ou metodológicas.</p>
+</blockquote>
+<p>Na comparação entre o p-valor obtido no teste e o valor de α assumido, se:</p>
+<ul>
+<li>o p-valor obtido for menor que o valor de α, rejeitamos a hipótese nula</li>
+<li>o p-valor obtido for maior ou igual ao valor de α, falhamos em rejeitar a hipótese nula</li>
+</ul>
+<p>O p-valor não diz se está certo ou errado, se vai acontecer ou não vai acontecer, se há associação ou não há associação. Ao realizarmos testes estatísticos, estamos buscando rejeitar a hipótese nula ou falhar em rejeitar a hipótese nula. Assumir que falhamos na rejeição da hipótese nula é diferente de dizer que a hipótese nula está certa: significa apenas que não temos condições de rejeitar a hipótese nula, por questões de amostra ou porque outros fatores não controlados interferiram nos resultados, por exemplo. A premissa da maior parte dos testes estatísticos é que os resultados podem ser efeitos do acaso. Isso significa que podemos ter dois tipos de erro ao testar a H<sub>0</sub>:</p>
+<ul>
+<li><p><strong>Erros do tipo I</strong>: quando a hipótese nula <em>H<sub>0</sub></em> é de fato verdade, mas, baseados em nossas regras de decisão, rejeitamos a hipótese nula. Isso gera um resultado falso positivo: decidimos que há um efeito quando efetivamente não há. A probabilidade de acontecer esse erro é o valor de α.</p></li>
+<li><p><strong>Erros do tipo II</strong>: quando a hipótese nula <em>H<sub>0</sub></em> é de fato falsa, mas, baseados em nossas regras de decisão, nós falhamos em rejeitar a hipótese nula. Nesse caso, o que temos é um falso negativo: falhamos em ao encontrar um efeito que não existe. A probabilidade deste tipo de erro acontecer é β (<em>beta</em>).</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Rejeita H<sub>0</sub></th>
+<th align="center">Aceita H<sub>0</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>H<sub>0</sub> é verdadeira</strong></td>
+<td align="center">Erro tipo I (α)</td>
+<td align="center">Decisão correta (1 - α)</td>
+</tr>
+<tr class="even">
+<td><strong>H<sub>0</sub> é falsa</strong></td>
+<td align="center">Poder do teste (1 - β)</td>
+<td align="center">Erro tipo II (β)</td>
+</tr>
+</tbody>
+</table>
+<p>O poder estatístico de um teste é uma medida da capacidade do teste em detectar um efeito real, e depende do tamanho do efeito, do tamanho da amostra e da escolha do nível de α.</p>
+<p>O tamanho do efeito é a medida de força de associação entre duas variáveis e do quanto se diferem dois grupos. Se o tamanho do efeito, o número de observações aumentam ou o nível de α diminui, o poder do teste aumenta.</p>
+<div id="vamos-analisar-um-exemplo." class="section level3">
+<h3>Vamos analisar um exemplo.</h3>
+<p>Um teste comercial de gravidez diz que a precisão é de 97,5%. Transformando em probabilidade, isso significa que, em 100 vezes, 2,5 vezes pode ser um resultado falso (positivo quando na verdade deveria ser negativo), ou 0.025.</p>
+<ul>
+<li>Uma mulher comprou um destes testes e vai fazer: qual é a possibilidade de o resultado ser um falso positivo?
+<ul>
+<li>teste positivo = 1</li>
+<li>uma vez = 1</li>
+<li>probabilidade = 0.025</li>
+<li>alternativa = maior</li>
+</ul></li>
+</ul>
+<p>A função <code>binomial.test</code> realiza esse cálculo. Assumindo que α = 0.05</p>
+<pre class="r"><code>binom.test(1,1,0.025, alternative = &quot;greater&quot;)
+#&gt; 
+#&gt;  Exact binomial test
+#&gt; 
+#&gt; data:  1 and 1
+#&gt; number of successes = 1, number of trials = 1, p-value = 0.025
+#&gt; alternative hypothesis: true probability of success is greater than 0.025
+#&gt; 95 percent confidence interval:
+#&gt;  0.05 1.00
+#&gt; sample estimates:
+#&gt; probability of success 
+#&gt;                      1</code></pre>
+<p>Vamos ler o resultado: o p-valor é de 0.025.Em um único teste, a hipótese de ser falso um resultado positivo é refutada. Agora, se por outros meios, a mulher souber que não está grávida e o resultado do teste for positivo? E se um homem decidir realizar o teste e o resultado for positivo? Estes são os tipos de erro: falso positivo e falso negativo.</p>
+<p><img src="https://miro.medium.com/max/619/1*T5mfQqhcn-nB-n7LOiPv6A.png" /></p>
+<p><em>P-valor 0.05</em> não é um dogma. Cada situação pede um ajuste e uma consideração. Em estudos preliminares, por exemplo, é melhor ampliar os efeitos para considerar o maior número de possibilidades. Isso significa que o pesquisador está ciente que vai ampliar o número de erros do tipo I (falsos positivos) do que erros de tipo II (falsos negativos). É o pesquisador que ajusta o nível de α que é apropriado para seu modelo. Isso significa assumir erros do tipo I quando H<sub>0</sub> é verdadeira.</p>
+<blockquote>
+<p>O p-valor não indica o tamanho do efeito. Não se deve assumir que um p-valor baixo indica uma grande diferença entre grupos.</p>
+</blockquote>
+<p>O p-valor é sensível ao tamanho da amostra! Em grandes conjuntos de dados, pequenos efeitos podem resultar em resultados de p-valor significativos.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

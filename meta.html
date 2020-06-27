@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Como fazer meta-análise com dados socioliguísticos?</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-user"></span>
+     
+    Melhores Práticas
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-rocket"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-rocket"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-rocket"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-rocket"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contato
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Como fazer meta-análise com dados socioliguísticos?</h1>
+
+</div>
+
+
+<p><strong>Como citar:</strong></p>
+<blockquote>
+<p>FREITAG, Raquel M. K. <strong>Como fazer meta-análise com dados sociolinguísticos?</strong> Disponível em: link. Acesso em: 2020-06-27.</p>
+</blockquote>
+<div id="replicabilidade-na-ciência" class="section level2">
+<h2>Replicabilidade na ciência</h2>
+<p>A ciência vive uma crise generalizada em função da baixa replicabilidade de resultados ou de estudos. Há várias causas para essa crise, uma delas é a falta de clareza de procedimentos de análise dos dados, Como consequência, o poder explanatório das análises e da generalização dos resultados são limitados.</p>
+<p>A não explicitação de todos os procedimentos realizados na análise e estatísticas reportadas parcialmente ou apenas quando conveniente são problemas recorrentes nos estudos, o que tornam uma meta-análise muito difícil de ser realizada.</p>
+<p>A meta-análise é um procedimento em que são reunidos resultados de estudos com diferentes conjuntos de dado sobre determinado fenômeno e são aplicadas técnicas estatísticas para explicar a variância dos resultados a partir de fatores comuns aos estudos.</p>
+<p>Uma vantagem em um estudo de meta-análise é eliminar viéses da revisão da literatura narrativa, em que são reportados resultados de estudo independentemente. Ao integrar as análises, o poder explanatório aumenta.</p>
+<p>Vamos explorar neste tutorial algumas estratégias para produzir uma meta-análise, considerando um cenário em que estudos são independentes e com resultados estatísticos reportados apenas parcialmente.</p>
+</div>
+<div id="concordância-verbal" class="section level2">
+<h2>Concordância verbal</h2>
+<p>A concordância verbal no português brasileiro é um fenômeno amplamente estudado, que tem apresentado resultados convergentes em relação aos condicionamentos internos (saliência fônica, posição), mas diversificados social e dialetalmente. A diversidade tem sido explicada como resultado das diferentes sócio-histórias do português brasileiro. Mas também decorre das diferentes tipologizações dos condicionamentos e por viéses de amostragem.</p>
+<p>Vamos examinar os resultados reportados em uma primeira versão de um texto, em que é apresentada uma revisão narrativa da concordância verbal em duas comunidades de fala da Bahia, e aprender a realizar uma meta-análise dos estudos, objeto da segunda versão do texto (em preparação).</p>
+<p><img src="fig2.jpg" width="600px" /></p>
+<p>A tabela 2 apresenta a contagem das ocorrências do fenômeno em função do tipo de subamostra. A variável dependente é a realização da concordância, uma variável categórica nominal, e os resultados estão apresentados apenas em função do valor escolhido como <em>default</em>, no caso, a realização padrão. A variável independente é o tipo de amostra, com três níveis, “norma popular rural”, “norma popular urbana” e “norma culta”.</p>
+<p>Os percentuais não nos permitem inferências. Um teste inferencial que pode ser realizado é o teste de qui-quadrado, que tem por objetivo verificar se a frequência absoluta observada de uma variável é significativamente diferente da distribuição de frequência absoluta esperada.</p>
+<p>Um teste simples que pode ser realizado sem muita dificuldade é o teste aproximado para independência entre as proporções:</p>
+<pre class="r"><code>aplicacao = c(97, 119, 619)
+total = c(449, 436, 659)
+prop.test(aplicacao, total, correct = TRUE)
+#&gt; 
+#&gt;  3-sample test for equality of proportions without continuity
+#&gt;  correction
+#&gt; 
+#&gt; data:  aplicacao out of total
+#&gt; X-squared = 738.08, df = 2, p-value &lt; 2.2e-16
+#&gt; alternative hypothesis: two.sided
+#&gt; sample estimates:
+#&gt;    prop 1    prop 2    prop 3 
+#&gt; 0.2160356 0.2729358 0.9393020</code></pre>
+<p>Se os valores foram digitados corretamente, as proporções apresentadas devem corresponder aos percentuais da tabela. O teste sugere que a distribuição entre as proporções é diferente da hipótese nula (p &gt; 0.001).</p>
+<div id="como-fazer-um-teste-de-qui-quadrado-a-partir-de-uma-tabela" class="section level3">
+<h3>Como fazer um teste de qui-quadrado a partir de uma tabela?</h3>
+<ul>
+<li>Informar as variáveis em dois vetores:
+<ul>
+<li>Um vetor será nomeado de <code>VD</code> e listará os níveis da variável dependente;</li>
+<li>O outro de <code>VI</code> e listará os níveis da variável independente</li>
+</ul></li>
+<li>Listar as contagens de cada nível da variável independente, seguindo a ordem da variável dependente em vetores em uma matriz <code>data.matrix</code> que serão unidos pela função <code>rbind</code> no objeto <code>dadosP6</code>.</li>
+<li>Vincular os nomes das variáveis:
+<ul>
+<li>Variável dependente = <code>colnames</code></li>
+<li>Variável independente = <code>rownames</code></li>
+</ul></li>
+</ul>
+<pre class="r"><code>VD &lt;- c(&quot;concordância&quot;, &quot;não concordância&quot;)
+VI &lt;- c(&quot;Norma popular rural&quot;, &quot;Norma popular urbana&quot;, &quot;Norma culta&quot;)
+dadosP6 &lt;- data.matrix(rbind(
+  c(97, 352),
+  c(119, 307),
+  c(619, 40)
+))
+rownames(dadosP6) &lt;- VI
+colnames(dadosP6) &lt;- VD</code></pre>
+<p>Se todos os procedimentos estiverem corretos, você terá um objeto:</p>
+<pre class="r"><code>dadosP6
+#&gt;                      concordância não concordância
+#&gt; Norma popular rural            97              352
+#&gt; Norma popular urbana          119              307
+#&gt; Norma culta                   619               40</code></pre>
+<p>Vamos inspecionar visualmente este objeto, construindo um gráfico de barras:</p>
+<pre class="r"><code>dadosP6.t = t(dadosP6)      ### Transpor a matriz (colunas em linhas e linhas em colunas)
+barplot(dadosP6.t,
+        beside = TRUE,      ### Barras lado a lado
+        legend = TRUE,
+        main = &quot;Frequências da concordância em P6 \n em função do tipo de amostra&quot;,
+        ylim = c(0, 700),   ### Ajustar o eixo y para o máximo de ocorrências
+        cex.names = 0.8,  ### Tamanho do texto das colunas
+        cex.axis = 0.8,   ### tamanho do texto dos eixos
+        args.legend = list(x   = &quot;topleft&quot;,   ### Posição da legenda
+                           cex = 0.8,          ### Tamanho do texto da legenda
+                           bty = &quot;n&quot;))</code></pre>
+<p><img src="meta_files/figure-html/bar1-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Podemos ver que há uma diferença de distribuição entre os níveis da variável independente.Para confirmar se esta distribuição observada é signficativamente diferente da esperada, realizamos o teste de qui-quadrado:</p>
+<pre class="r"><code>chisq.test(dadosP6)
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dadosP6
+#&gt; X-squared = 730.18, df = 2, p-value &lt; 2.2e-16</code></pre>
+<p>O efeito da dependência é estatisticamente significativo. Podemos descobrir o quanto cada nível contribui para essa associação. Para isso, precisamos investigar os <em>resíduos</em>, ou seja, a diferença entre a frequência observada e a frequência esperada em cada célula.</p>
+<pre class="r"><code>resultadoP6 &lt;- chisq.test(dadosP6)
+round(resultadoP6$residuals, 3)
+#&gt;                      concordância não concordância
+#&gt; Norma popular rural        -9.429           10.305
+#&gt; Norma popular urbana       -7.413            8.102
+#&gt; Norma culta                13.743          -15.021</code></pre>
+<p>O sinal dos resíduos é importante para interpretar a associação entre as linhas e as colunas, ou entre a variável dependente e independente. Podemos visualizar melhor os resíduos por meio de uma matriz de correlação, com o pacote <code>corrplot</code>:</p>
+<p>Podemos visualizar melhor os resíduos por meio de uma matriz de correlação, com o pacote <code>corrplot</code>:</p>
+<pre class="r"><code>library(corrplot)
+#&gt; corrplot 0.84 loaded
+corrplot(resultadoP6$residuals, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/matriz5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Nesta matriz de correlação, ou correlograma, o tamanho do círculo é proporcional à contribuição da célula para o efeito.</p>
+<ul>
+<li>Resíduos positivos estão em azul e sinalizam uma associação positiva entre linha e coluna.</li>
+<li>Resíduos negativos estão em vermelho e sinalizam uma associação negativa entre linha e coluna.</li>
+</ul>
+<p>Podemos calcular o quanto cada célula contribui para o total do escore de qui-quadrado e dispor no correlograma:</p>
+<pre class="r"><code>contrib &lt;- 100*resultadoP6$residuals^2/resultadoP6$statistic
+round(contrib, 3)
+#&gt;                      concordância não concordância
+#&gt; Norma popular rural        12.175           14.544
+#&gt; Norma popular urbana        7.526            8.990
+#&gt; Norma culta                25.866           30.899
+corrplot(contrib, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/matriz6-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>O nível “norma culta”’ é o que mais contribui para o resultado do teste.</p>
+</div>
+<div id="como-fazer-um-teste-de-regressão-a-partir-de-uma-tabela" class="section level3">
+<h3>Como fazer um teste de regressão a partir de uma tabela?</h3>
+<p>Primeiro, precisamos desfazer a tabela, retornando as ocorrências, para poder realizar uma análise de regressão. O preparo dos dados requer a conversão em um objeto <code>data.frame.table</code> e depois utilizar uma função que transforma as contagens em ocorrências <code>counsToCases</code>.</p>
+<pre class="r"><code>dados &lt;- as.data.frame.table(dadosP6) ### converter a matriz em um data.frame
+countsToCases &lt;- function(x, countcol = &quot;Freq&quot;) {  ###converter as contagens em ocorrências
+  idx &lt;- rep.int(seq_len(nrow(x)), x[[countcol]])
+  x[[countcol]] &lt;- NULL
+  x[idx, ]
+}
+dados &lt;- countsToCases(as.data.frame(dados))
+names(dados) &lt;- c(&quot;VI&quot;, &quot;VD&quot;)  ## renomeando as colunas 
+dados$VI &lt;- factor(dados$VI, levels =c(&quot;Norma popular urbana&quot;, &quot;Norma culta&quot;, &quot;Norma popular rural&quot;)) ## reordenando os níveis
+head(dados)  ##observar as 6 primeiras linhas
+#&gt;                      VI           VD
+#&gt; 1   Norma popular rural concordância
+#&gt; 1.1 Norma popular rural concordância
+#&gt; 1.2 Norma popular rural concordância
+#&gt; 1.3 Norma popular rural concordância
+#&gt; 1.4 Norma popular rural concordância
+#&gt; 1.5 Norma popular rural concordância</code></pre>
+<p>Agora os dados estão distribuídos por ocorrências, e não mais por contagem. Podemos realizar um outro tipo de teste, uma regressão logística generalizada (<em>retome o material das outras aulas</em>).</p>
+<p>Vamos construir um modelo de regressão considerando que variável dependente é categórica nominal binária (com concordância ou sem concordância, em termos binários, 1 ou 0) e a variável preditora é também categórica.</p>
+<pre class="r"><code>modP6 &lt;- glm(VD ~ VI, data = dados, family = &quot;binomial&quot;)
+summary(modP6)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.7506  -0.3539  -0.3539   0.6977   2.3672  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                       Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)             0.9477     0.1080   8.776   &lt;2e-16 ***
+#&gt; VINorma culta          -3.6870     0.1956 -18.845   &lt;2e-16 ***
+#&gt; VINorma popular rural   0.3412     0.1575   2.166   0.0303 *  
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 2114.5  on 1533  degrees of freedom
+#&gt; Residual deviance: 1275.0  on 1531  degrees of freedom
+#&gt; AIC: 1281
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 5</code></pre>
+<blockquote>
+<p>Um resultado <em>2.2e-16</em> está em notação científica e significa <em>2.2 x 10_-16_</em>, ou seja, <strong>0.00000000000000022</strong>, 15 zeros antes do ponto decimal.</p>
+</blockquote>
+<p>A interpretação dos resultados considera o fato de que as chances de realização da variável são concordância ou não concordância.</p>
+<p>O log das chances é uma função dos coeficientes estimados: <em>P(ocorrer)/P(ocorrer) = β<sub>0</sub> + β<sub>1</sub>x<sub>1</sub> + β<sub>2</sub>x<sub>2</sub> + … + β<sub>n</sub>x<sub>n</sub></em> em que <em>P</em> significa probabilidade de (ocorrer/não ocorrer), <em>β<sub>0</sub></em> é o intercepto, ponto do eixo em que a curva toca, <em>β<sub>1</sub></em> é o coeficiente das variáveis preditoras.</p>
+<p>A tabela de coeficientes nos mostra uma estimativa para cada coeficiente (<em>β</em>) para o modelo de regressão logística. O coeficiente de uma variável preditora categórica é a mudança estimada no log natural das chances com o nível de referência o nível de coeficiente. Por padrão, os níveis são ordenados pela ordem alfabética (a mudança na ordem dos níveis do fator pode ser feita).</p>
+<p>Coeficientes positivos indicam que o evento torna-se mais provável e coeficientes negativos indicam que o evento torna-se menos provável.</p>
+<p>No exemplo, o nível de referência do intercepto é a realização <em>com concordância</em> e <em>norma urbana popular</em>. Na mudança de nível, o coeficiente para a ocorrência de <em>não concordância</em> na norma culta aumenta o log natural das chances em - 3.687 em relação à <em>norma popular urbana</em>, enquanto para a <em>norma popular rural</em> aumenta em <em>0.3412</em> em relação à <em>norma popular urbana</em>.</p>
+<p>O valor do coeficiente não é em probabilidades, mas sim em log das razões de chance (log-odds).</p>
+<blockquote>
+<ul>
+<li>Probabilidade: valor entre 0 e 1</li>
+<li>Razão de chances (odds): valor de 0 ao ∞</li>
+<li>Log de razão de chances (log-odds): de −∞ a ∞</li>
+</ul>
+</blockquote>
+<p>Os resultados em log-odds permitem a comparação da magnitude dos coeficientes.</p>
+<p><strong>O que observar:</strong></p>
+<ul>
+<li>A ordem dos níveis das variáveis na saída (se não houve mudança, a ordenação dos níveis segue a ordem alfabética;</li>
+<li>Os sinais dos coeficientes: se positivos ou negativos;</li>
+<li>A magnitude dos coeficientes: a diferença entre eles;</li>
+<li>O p-valor: a probabilidade que mede a evidência contrária à hipótese nula. P-valor baixo é uma forte evidência contra a hipótese nula.</li>
+</ul>
+<p>Podemos visualizar os resultados do modelo em gráfico, utilizando o pacote <code>ggstats</code>.</p>
+<pre class="r"><code>library(ggstatsplot)
+#&gt; Registered S3 methods overwritten by &#39;broom.mixed&#39;:
+#&gt;   method         from 
+#&gt;   augment.lme    broom
+#&gt;   augment.merMod broom
+#&gt;   glance.lme     broom
+#&gt;   glance.merMod  broom
+#&gt;   glance.stanreg broom
+#&gt;   tidy.brmsfit   broom
+#&gt;   tidy.gamlss    broom
+#&gt;   tidy.lme       broom
+#&gt;   tidy.merMod    broom
+#&gt;   tidy.rjags     broom
+#&gt;   tidy.stanfit   broom
+#&gt;   tidy.stanreg   broom
+#&gt; Registered S3 methods overwritten by &#39;car&#39;:
+#&gt;   method                          from
+#&gt;   influence.merMod                lme4
+#&gt;   cooks.distance.influence.merMod lme4
+#&gt;   dfbeta.influence.merMod         lme4
+#&gt;   dfbetas.influence.merMod        lme4
+ggstatsplot::ggcoefstats(x = modP6, exclude.intercept = FALSE, output = &quot;plot&quot;)
+#&gt; Can&#39;t calculate log-loss.
+#&gt; New names:
+#&gt; * NA -&gt; ...1
+#&gt; * NA -&gt; ...2
+#&gt; * NA -&gt; ...3
+#&gt; * NA -&gt; ...4</code></pre>
+<p><img src="meta_files/figure-html/grafico-1.png" width="576" style="display: block; margin: auto;" /> Nesta visualização, os resultados estão em log-odds (de −∞ a ∞).</p>
+<p>Outra forma de visualização em gráfico pode ser produzida com o pacote <code>sjPlot</code>. Vejamos como ficam os resultados em razão de chances (odds):</p>
+<pre class="r"><code>library(sjPlot)
+#&gt; Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!
+plot_model(modP6)</code></pre>
+<p><img src="meta_files/figure-html/grafico2-1.png" width="576" style="display: block; margin: auto;" /> Embora “digam a mesma coisa”, os resultados em log-odds permitem observar a magnitude do efeito, daí por ser a forma preferível de reportar o resultado de um modelo de regressão generalizado.</p>
+<p>Podemos também dispor os resultados em uma tabela formatável, com o pacote <code>sjlabelled</code>.</p>
+<pre class="r"><code>library(sjlabelled)
+tab_model(modP6, transform = NULL, auto.label = FALSE)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+ 
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+VD
+</th>
+</tr>
+<tr>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+Predictors
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Log-Odds
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+p
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+(Intercept)
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.95
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.74 – 1.16
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VINorma culta
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-3.69
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-4.08 – -3.31
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VINorma popular rural
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.34
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.03 – 0.65
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>0.030</strong>
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+Observations
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+1534
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> Tjur
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.476
+</td>
+</tr>
+</table>
+<p>Como vimos, o teste do qui-quadrado, com a observação dos resíduos, apontou a contribuição do nível <em>norma culta</em>; o modelo de regressão construído explica de forma mais específica a atuação deste nível, estimando em log-odds a magnitude do efeito deste nível da variável independente na realização da variável dependente.</p>
+<p>Os procedimentos para a análise univariada podem ser reproduzíveis mesmo sem se ter acesso ao conjunto de dados original. Este recurso pode auxiliar na produção de estudos de meta-análise, ao suprir resultados estatísticos nem sempre acessíveis e reportados nos estudos originais.</p>
+</div>
+<div id="como-comparar-estudos-com-conjuntos-de-dados-distintos" class="section level3">
+<h3>Como comparar estudos com conjuntos de dados distintos?</h3>
+<p>A direção do fenômento de variação na concordância verbal na terceira pessoa é a mesma em comunidades de fala distintas? Podemos responder a esta questão a partir de resultados apresentados em estudos anteriores, seguindo os procedimentos explicados anteriormente, e depois podemos proceder a uma meta-análise.</p>
+<div id="concordância-verbal-na-fala-de-salvador-e-de-feira-de-santana" class="section level4">
+<h4>Concordância verbal na fala de Salvador e de Feira de Santana</h4>
+<p>Vamos realizar os procedimentos para comparar os resultados de Araujo (2013), concordância de terceira pessoa em função da idade em Feira de Santana, e de Souza (2011), concordância de terceira pessoa em função da idade em Salvador.</p>
+<p><img src="fig4.jpg" width="600px" /></p>
+<p>O teste aproximado para independência entre as proporções pode ser calculado:</p>
+<pre class="r"><code>prop.test(x = c(736, 2338), n = c(1082, 3368))
+#&gt; 
+#&gt;  2-sample test for equality of proportions with continuity correction
+#&gt; 
+#&gt; data:  c(736, 2338) out of c(1082, 3368)
+#&gt; X-squared = 0.68309, df = 1, p-value = 0.4085
+#&gt; alternative hypothesis: two.sided
+#&gt; 95 percent confidence interval:
+#&gt;  -0.04641901  0.01850159
+#&gt; sample estimates:
+#&gt;    prop 1    prop 2 
+#&gt; 0.6802218 0.6941805</code></pre>
+<p>O resultado não considera o efeito dos níveis da variável independente faixa etária, que foi controlada de maneira diferente nos dois estudos. Precisamos realizar análises univariadas para cada conjunto de dados e depois reuni-los.</p>
+<p>Começamos por Feira de Santana:</p>
+<ul>
+<li>Importar o conjunto de dados:</li>
+</ul>
+<pre class="r"><code>VD &lt;- c(&quot;concordância&quot;, &quot;não concordância&quot;)
+
+VI &lt;- c(&quot;25 a 35 anos&quot;, &quot;45 a 55 anos&quot;, &quot;mais de 65 anos&quot;)
+dadosP6id &lt;- data.matrix(rbind(
+  c(225, 85),
+  c(321,117),
+  c(190, 144)
+))
+rownames(dadosP6id) &lt;- VI
+colnames(dadosP6id) &lt;- VD</code></pre>
+<ul>
+<li>Realizar teste de qui-quadrado e observar os resíduos:</li>
+</ul>
+<pre class="r"><code>resultadoP6id &lt;- chisq.test(dadosP6id)
+resultadoP6id
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dadosP6id
+#&gt; X-squared = 27.586, df = 2, p-value = 1.023e-06
+corrplot(resultadoP6id$residuals, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/idade_feira2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>contrib &lt;- 100*resultadoP6id$residuals^2/resultadoP6id$statistic
+round(contrib, 3)
+#&gt;                 concordância não concordância
+#&gt; 25 a 35 anos           3.433            7.302
+#&gt; 45 a 55 anos           6.472           13.766
+#&gt; mais de 65 anos       22.073           46.953
+corrplot(contrib, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/idade_feira2-2.png" width="576" style="display: block; margin: auto;" /> - Converter as contagens em ocorrências:</p>
+<pre class="r"><code>dados &lt;- as.data.frame.table(dadosP6id)
+dados &lt;- countsToCases(as.data.frame(dados))
+names(dados) &lt;- c(&quot;VI&quot;, &quot;VD&quot;) 
+head(dados)
+#&gt;               VI           VD
+#&gt; 1   25 a 35 anos concordância
+#&gt; 1.1 25 a 35 anos concordância
+#&gt; 1.2 25 a 35 anos concordância
+#&gt; 1.3 25 a 35 anos concordância
+#&gt; 1.4 25 a 35 anos concordância
+#&gt; 1.5 25 a 35 anos concordância</code></pre>
+<ul>
+<li>Construir o modelo de regressão:</li>
+</ul>
+<pre class="r"><code>modP6fs &lt;- glm(VD ~ VI, data = dados, family = &quot;binomial&quot;)
+summary(modP6fs)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.0622  -0.8006  -0.7884   1.2972   1.6248  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)       -0.97345    0.12732  -7.646 2.07e-14 ***
+#&gt; VI45 a 55 anos    -0.03582    0.16695  -0.215     0.83    
+#&gt; VImais de 65 anos  0.69624    0.16857   4.130 3.62e-05 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 1356.2  on 1081  degrees of freedom
+#&gt; Residual deviance: 1329.3  on 1079  degrees of freedom
+#&gt; AIC: 1335.3
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+ggstatsplot::ggcoefstats(x = modP6fs, output = &quot;plot&quot;)
+#&gt; Can&#39;t calculate log-loss.
+#&gt; New names:
+#&gt; * NA -&gt; ...1
+#&gt; * NA -&gt; ...2
+#&gt; * NA -&gt; ...3
+#&gt; * NA -&gt; ...4</code></pre>
+<p><img src="meta_files/figure-html/idade_feira4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Agora, vamos realizar os mesmos procedimentos para Salvador:</p>
+<ul>
+<li>Importar o conjunto de dados:</li>
+</ul>
+<pre class="r"><code>VD &lt;- c(&quot;concordância&quot;, &quot;não concordância&quot;)
+VI &lt;- c(&quot;15 a 24 anos&quot;, &quot;25 a 35 anos&quot;, &quot;45 a 55 anos&quot;, &quot;mais de 65 anos&quot;)
+dadosP6ssa &lt;- data.matrix(rbind(
+  c(315, 309),
+  c(640,328),
+  c(650, 239),
+  c(733, 154)
+))
+rownames(dadosP6ssa) &lt;- VI
+colnames(dadosP6ssa) &lt;- VD</code></pre>
+<ul>
+<li>Realizar teste de qui-quadrado e observar os resíduos:</li>
+</ul>
+<pre class="r"><code>resultadoP6ssa &lt;- chisq.test(dadosP6ssa)
+resultadoP6ssa
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dadosP6ssa
+#&gt; X-squared = 189.13, df = 3, p-value &lt; 2.2e-16
+corrplot(resultadoP6ssa$residuals, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/salvador2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>contrib &lt;- 100*resultadoP6ssa$residuals^2/resultadoP6ssa$statistic
+round(contrib, 3)
+#&gt;                 concordância não concordância
+#&gt; 15 a 24 anos          17.045           38.689
+#&gt; 25 a 35 anos           0.804            1.825
+#&gt; 45 a 55 anos           0.926            2.102
+#&gt; mais de 65 anos       11.807           26.802
+corrplot(contrib, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/salvador2-2.png" width="576" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Converter as contagens em ocorrências:</li>
+</ul>
+<pre class="r"><code>dados &lt;- as.data.frame.table(dadosP6ssa)
+dados &lt;- countsToCases(as.data.frame(dados))
+names(dados) &lt;- c(&quot;VI&quot;, &quot;VD&quot;) 
+head(dados)
+#&gt;               VI           VD
+#&gt; 1   15 a 24 anos concordância
+#&gt; 1.1 15 a 24 anos concordância
+#&gt; 1.2 15 a 24 anos concordância
+#&gt; 1.3 15 a 24 anos concordância
+#&gt; 1.4 15 a 24 anos concordância
+#&gt; 1.5 15 a 24 anos concordância</code></pre>
+<ul>
+<li>Construir o modelo de regressão:</li>
+</ul>
+<pre class="r"><code>modP6ssa &lt;- glm(VD ~ VI, data = dados, family = &quot;binomial&quot;)
+summary(modP6ssa)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.1692  -0.9097  -0.6176   1.1856   1.8713  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)       -0.01923    0.08007  -0.240     0.81    
+#&gt; VI25 a 35 anos    -0.64922    0.10499  -6.184 6.25e-10 ***
+#&gt; VI45 a 55 anos    -0.98128    0.11015  -8.908  &lt; 2e-16 ***
+#&gt; VImais de 65 anos -1.54096    0.11945 -12.900  &lt; 2e-16 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 4147.5  on 3367  degrees of freedom
+#&gt; Residual deviance: 3958.4  on 3364  degrees of freedom
+#&gt; AIC: 3966.4
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+ggstatsplot::ggcoefstats(x = modP6ssa, output = &quot;plot&quot;)
+#&gt; Can&#39;t calculate log-loss.
+#&gt; New names:
+#&gt; * NA -&gt; ...1
+#&gt; * NA -&gt; ...2
+#&gt; * NA -&gt; ...3
+#&gt; * NA -&gt; ...4</code></pre>
+<p><img src="meta_files/figure-html/salvador4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Podemos visualizar os dois modelos lado a lado em uma única tabela:</p>
+<pre class="r"><code>library(sjlabelled)
+tab_model(modP6fs, modP6ssa, transform = NULL)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+ 
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+VD
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+VD
+</th>
+</tr>
+<tr>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+Predictors
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Log-Odds
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+p
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Log-Odds
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
+p
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+(Intercept)
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.97
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-1.23 – -0.73
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.02
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.18 – 0.14
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.810
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VI [45 a 55 anos]
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.04
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.36 – 0.29
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.830
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.98
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-1.20 – -0.77
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VI [mais de 65 anos]
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.70
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.37 – 1.03
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-1.54
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-1.78 – -1.31
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VI [25 a 35 anos]
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.65
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.86 – -0.44
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+Observations
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+1082
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+3368
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> Tjur
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.025
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.056
+</td>
+</tr>
+</table>
+<p>Agora, vamos considerar os resultados para a fala popular de Feira de Santana e Salvador, também considerando a idade. <img src="fig5.jpg" width="600px" /></p>
+<p>O teste aproximado para independência entre as proporções pode ser calculado:</p>
+<pre class="r"><code>prop.test(x = c(118, 331), n = c(425, 1409))
+#&gt; 
+#&gt;  2-sample test for equality of proportions with continuity correction
+#&gt; 
+#&gt; data:  c(118, 331) out of c(425, 1409)
+#&gt; X-squared = 2.9974, df = 1, p-value = 0.0834
+#&gt; alternative hypothesis: two.sided
+#&gt; 95 percent confidence interval:
+#&gt;  -0.006790312  0.092247666
+#&gt; sample estimates:
+#&gt;    prop 1    prop 2 
+#&gt; 0.2776471 0.2349184</code></pre>
+<ul>
+<li><em>O estudo de Araújo (2013) não fornece a linha de totais, o que requer usar a calculadora - sempre informe a linha de totais!</em></li>
+</ul>
+<p>Vamos repetir os mesmos procedimentos anteriores para cada um dos conjuntos de dados. Começamos por Feira de Santana.</p>
+<ul>
+<li>Importar o conjunto de dados:</li>
+</ul>
+<pre class="r"><code>VD &lt;- c(&quot;concordância&quot;, &quot;não concordância&quot;)
+VI &lt;- c(&quot;25 a 35 anos&quot;, &quot;45 a 55 anos&quot;, &quot;mais de 65 anos&quot;)
+dadosP6fspop &lt;- data.matrix(rbind(
+  c(47, 72),
+  c(46, 92),
+  c(25, 143)
+))
+rownames(dadosP6fspop) &lt;- VI
+colnames(dadosP6fspop) &lt;- VD</code></pre>
+<ul>
+<li>Realizar teste de qui-quadrado e observar os resíduos:</li>
+</ul>
+<pre class="r"><code>resultadoP6fspop &lt;- chisq.test(dadosP6fspop)
+resultadoP6fspop
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dadosP6fspop
+#&gt; X-squared = 24.204, df = 2, p-value = 5.55e-06
+corrplot(resultadoP6fspop$residuals, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/feirapop2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>contrib &lt;- 100*resultadoP6fspop$residuals^2/resultadoP6fspop$statistic
+round(contrib, 3)
+#&gt;                 concordância não concordância
+#&gt; 25 a 35 anos          24.370            9.367
+#&gt; 45 a 55 anos           6.368            2.448
+#&gt; mais de 65 anos       41.498           15.950
+corrplot(contrib, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/feirapop2-2.png" width="576" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Converter as contagens em ocorrências:</li>
+</ul>
+<pre class="r"><code>dados &lt;- as.data.frame.table(dadosP6fspop)
+dados &lt;- countsToCases(as.data.frame(dados))
+names(dados) &lt;- c(&quot;VI&quot;, &quot;VD&quot;) </code></pre>
+<ul>
+<li>Construir o modelo:</li>
+</ul>
+<pre class="r"><code>modP6fspop &lt;- glm(VD ~ VI, data = dados, family = &quot;binomial&quot;)
+summary(modP6fspop)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.9520  -1.3631   0.5677   0.9005   1.0025  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)         0.4265     0.1875   2.274   0.0229 *  
+#&gt; VI45 a 55 anos      0.2666     0.2603   1.024   0.3058    
+#&gt; VImais de 65 anos   1.3175     0.2866   4.596  4.3e-06 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 502.11  on 424  degrees of freedom
+#&gt; Residual deviance: 476.69  on 422  degrees of freedom
+#&gt; AIC: 482.69
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+ggstatsplot::ggcoefstats(x = modP6fspop, output = &quot;plot&quot;)
+#&gt; Can&#39;t calculate log-loss.
+#&gt; New names:
+#&gt; * NA -&gt; ...1
+#&gt; * NA -&gt; ...2
+#&gt; * NA -&gt; ...3
+#&gt; * NA -&gt; ...4</code></pre>
+<p><img src="meta_files/figure-html/feira5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Idem para Salvador (Teixeira, 2013).</p>
+<ul>
+<li>Importar o conjunto de dados:</li>
+</ul>
+<pre class="r"><code>VD &lt;- c(&quot;concordância&quot;, &quot;não concordância&quot;)
+VI &lt;- c(&quot;25 a 35 anos&quot;, &quot;45 a 55 anos&quot;, &quot;mais de 65 anos&quot;)
+dadosP6ssapop &lt;- data.matrix(rbind(
+  c(118, 308),
+  c(104, 449),
+  c(109, 341)
+))
+rownames(dadosP6ssapop) &lt;- VI
+colnames(dadosP6ssapop) &lt;- VD</code></pre>
+<ul>
+<li>Realizar teste de qui-quadrado e observar os resíduos:</li>
+</ul>
+<pre class="r"><code>resultadoP6ssapop &lt;- chisq.test(dadosP6ssapop)
+resultadoP6ssapop
+#&gt; 
+#&gt;  Pearson&#39;s Chi-squared test
+#&gt; 
+#&gt; data:  dadosP6ssapop
+#&gt; X-squared = 11.107, df = 2, p-value = 0.003875
+corrplot(resultadoP6ssapop$residuals, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/salvadorpop2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>contrib &lt;- 100*resultadoP6ssapop$residuals^2/resultadoP6ssapop$statistic
+round(contrib, 3)
+#&gt;                 concordância não concordância
+#&gt; 25 a 35 anos          34.078           10.273
+#&gt; 45 a 55 anos          40.797           12.299
+#&gt; mais de 65 anos        1.962            0.592
+corrplot(contrib, is.cor = FALSE)</code></pre>
+<p><img src="meta_files/figure-html/salvadorpop2-2.png" width="576" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Converter as contagens em ocorrências:</li>
+</ul>
+<pre class="r"><code>dados &lt;- as.data.frame.table(dadosP6ssapop)
+dados &lt;- countsToCases(as.data.frame(dados))
+names(dados) &lt;- c(&quot;VI&quot;, &quot;VD&quot;) </code></pre>
+<ul>
+<li>Construir o modelo:</li>
+</ul>
+<pre class="r"><code>modP6ssapop &lt;- glm(VD ~ VI, data = dados, family = &quot;binomial&quot;)
+summary(modP6ssapop)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.8281   0.6455   0.6455   0.7448   0.8054  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)         0.9594     0.1083   8.862  &lt; 2e-16 ***
+#&gt; VI45 a 55 anos      0.5032     0.1535   3.278  0.00104 ** 
+#&gt; VImais de 65 anos   0.1811     0.1544   1.173  0.24066    
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 1546.9  on 1428  degrees of freedom
+#&gt; Residual deviance: 1535.7  on 1426  degrees of freedom
+#&gt; AIC: 1541.7
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+ggstatsplot::ggcoefstats(x = modP6ssapop, output = &quot;plot&quot;)
+#&gt; Can&#39;t calculate log-loss.
+#&gt; New names:
+#&gt; * NA -&gt; ...1
+#&gt; * NA -&gt; ...2
+#&gt; * NA -&gt; ...3
+#&gt; * NA -&gt; ...4</code></pre>
+<p><img src="meta_files/figure-html/salvadorpop4-1.png" width="576" style="display: block; margin: auto;" /> Novamente, podemos sumarizar os modelos em uma mesma tabela:</p>
+<pre class="r"><code>library(sjlabelled)
+tab_model(modP6fspop, modP6ssapop, transform = NULL)</code></pre>
+<table style="border-collapse:collapse; border:none;">
+<tr>
+<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
+ 
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+VD
+</th>
+<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
+VD
+</th>
+</tr>
+<tr>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
+Predictors
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Log-Odds
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+p
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+Log-Odds
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
+CI
+</td>
+<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
+p
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+(Intercept)
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.43
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.06 – 0.80
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>0.023</strong>
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.96
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.75 – 1.18
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>&lt;0.001
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VI [45 a 55 anos]
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.27
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.24 – 0.78
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.306
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.50
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.20 – 0.81
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+<strong>0.001</strong>
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
+VI [mais de 65 anos]
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+1.32
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.76 – 1.89
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+<strong>&lt;0.001
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+0.18
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
+-0.12 – 0.48
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
+0.241
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
+Observations
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+425
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
+1429
+</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
+R<sup>2</sup> Tjur
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.057
+</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
+0.008
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="meta-análise" class="section level2">
+<h2>Meta-análise</h2>
+<p>Como ficam todos os estudos no mesmo modelo? EVamos construir uma visualização de regressão com os parâmetros dos quatro estudos anteriores.</p>
+<pre class="r"><code>library(sjlabelled)
+summary(modP6fs)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.0622  -0.8006  -0.7884   1.2972   1.6248  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)       -0.97345    0.12732  -7.646 2.07e-14 ***
+#&gt; VI45 a 55 anos    -0.03582    0.16695  -0.215     0.83    
+#&gt; VImais de 65 anos  0.69624    0.16857   4.130 3.62e-05 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 1356.2  on 1081  degrees of freedom
+#&gt; Residual deviance: 1329.3  on 1079  degrees of freedom
+#&gt; AIC: 1335.3
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+summary(modP6fspop)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.9520  -1.3631   0.5677   0.9005   1.0025  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)         0.4265     0.1875   2.274   0.0229 *  
+#&gt; VI45 a 55 anos      0.2666     0.2603   1.024   0.3058    
+#&gt; VImais de 65 anos   1.3175     0.2866   4.596  4.3e-06 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 502.11  on 424  degrees of freedom
+#&gt; Residual deviance: 476.69  on 422  degrees of freedom
+#&gt; AIC: 482.69
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+summary(modP6ssa)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.1692  -0.9097  -0.6176   1.1856   1.8713  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)       -0.01923    0.08007  -0.240     0.81    
+#&gt; VI25 a 35 anos    -0.64922    0.10499  -6.184 6.25e-10 ***
+#&gt; VI45 a 55 anos    -0.98128    0.11015  -8.908  &lt; 2e-16 ***
+#&gt; VImais de 65 anos -1.54096    0.11945 -12.900  &lt; 2e-16 ***
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 4147.5  on 3367  degrees of freedom
+#&gt; Residual deviance: 3958.4  on 3364  degrees of freedom
+#&gt; AIC: 3966.4
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4
+summary(modP6ssapop)
+#&gt; 
+#&gt; Call:
+#&gt; glm(formula = VD ~ VI, family = &quot;binomial&quot;, data = dados)
+#&gt; 
+#&gt; Deviance Residuals: 
+#&gt;     Min       1Q   Median       3Q      Max  
+#&gt; -1.8281   0.6455   0.6455   0.7448   0.8054  
+#&gt; 
+#&gt; Coefficients:
+#&gt;                   Estimate Std. Error z value Pr(&gt;|z|)    
+#&gt; (Intercept)         0.9594     0.1083   8.862  &lt; 2e-16 ***
+#&gt; VI45 a 55 anos      0.5032     0.1535   3.278  0.00104 ** 
+#&gt; VImais de 65 anos   0.1811     0.1544   1.173  0.24066    
+#&gt; ---
+#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+#&gt; 
+#&gt; (Dispersion parameter for binomial family taken to be 1)
+#&gt; 
+#&gt;     Null deviance: 1546.9  on 1428  degrees of freedom
+#&gt; Residual deviance: 1535.7  on 1426  degrees of freedom
+#&gt; AIC: 1541.7
+#&gt; 
+#&gt; Number of Fisher Scoring iterations: 4</code></pre>
+<p>São dois procedimentos: o primeiro é construir um <code>data.frame</code> com os parâmetros de cada modelo; depois, gerar a visualização dos resultados em um único eixo. &gt; o procedimento de construção do <code>data.frame</code>, neste momento, será manual (copie os valores em cada um dos vetores; o processo pode ser automatizado, mas eu ainda não consegui aplicar uma função para isso)</p>
+<pre class="r"><code>### Construtir o data.frame
+df &lt;-
+  structure(
+    list(
+      term = structure(
+        1:4,
+        .Label = c(&quot;Feira de Santana \n (Araújo, 2013)&quot;, &quot;Feira de Santana, Popular \n (Araújo, 2013)&quot;, &quot;Salvador \n (Souza, 2009)&quot;, &quot;Salvador, Popular \n (Teixeira, 2013)&quot;),
+        class = &quot;factor&quot;
+      ),
+      estimate = c(
+        -0.97345,
+        0.4265,
+        -0.01923,
+        0.9594
+      ),
+      std.error = c(
+        0.12732,
+        0.1875,
+        0.08007,
+        0.1083
+      ),
+      statistic = c(
+        -7.646,
+        2.274,
+        -0.240,
+        8.862 
+      ),
+      p.value = c(
+        2.07e-14,
+        0.0229,
+        0.81,
+        2e-16
+      ),
+      df.residual = c(
+        1079,
+        422,
+        3364,
+        422
+      )
+    ),
+    row.names = c(NA, -4L),
+    class = c(&quot;tbl_df&quot;, &quot;tbl&quot;, &quot;data.frame&quot;)
+  )
+### gerar a visualização gráfica:
+ggstatsplot::ggcoefstats(
+  x = df,
+  statistic = &quot;z&quot;,
+  sort = &quot;ascending&quot;,
+  title = &quot;Concordância padrão em P6&quot;,
+  ylab = &quot;Amostras&quot;,
+  xlab = &quot;Coeficiente de regressão&quot;,
+  caption = &quot;Meta-análise&quot;
+)</code></pre>
+<p><img src="meta_files/figure-html/meta-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Agora os modelos podem ser comparados! As amostras de fala popular tanto de Salvador como de Feira de Santana são as que mais tendem à não concordância (nível de referência = concordância; os resultados devem ser interepretados em relação à contraparte do valor de referência). A amostra de fala não popular de Salvador não é estatisticamente significativa, e a fala não popular de Feira de Santana tende a realização da concordância (o coeficiente é negativo para a não concordância).</p>
+<p>Uma representação apenas com os percentuais para esta relação foi apresentada na primeira versão do manuscrito:</p>
+<p><img src="resumo.jpg" width="600px" style="display: block; margin: auto;" /></p>
+<p>O problema de considerar apenas os percentuais é que a distribuição pode não ser estatisticiamente sigificativa, como foi o caso da fala não popular de Salvador. A meta-análise dá segurança e suporte para a generalização de resultados, e neste caso, para a validação da tendência geral da direção de mudança.</p>
+<blockquote>
+<ul>
+<li>Confira sempre os números! Um erro e todo o resultado é modificado.</li>
+</ul>
+</blockquote>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

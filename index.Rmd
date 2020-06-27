@@ -1,0 +1,11 @@
+---
+title: "Questões de método"
+---
+
+Sistematicamente tenho oferecido cursos e treinamentos voltados ao compartilhamento de métodos de trabalho, de a documentação linguística,  tratamento de dados e até escrita científica. Embora a oferta seja sistemática, o compatilhamento dos tutoriais era assistemático. Por isso decidi reuni-los neste repositório, com o objetivo de facilitar o acesso e ampliar o escopo de público.
+
+Sigo a linha da Ciência Aberta, com o compartilhamento de instrumentos, colaboração em materiais e reuso de dados. Como nem tudo cabe no Lattes, eu narro a minha visão sobre aquilo que considero minhas melhores práticas, que não necessariamente são os produtos científicos mais importantes no Lattes, mas os que me permitiram refletir sobre minha carreira e o impacto da ciência. 
+
+A necessidade de tantos tutoriais e instruções explícitas é inerente a mim: sou bagunceira e acumuladora, e gosto de trabalho em grandes grupos (nunca tive menos de 10 orientandos, a média é 20). Para manter a ordem, organização é essencial. 
+
+O desenvolvimento de todas essas ações só é possível pela estrutura do [Condomínio de Laboratórios Mulitusuário de Informática e Documentação Linguística](http://apoia.ufs.br/pagina/21072-condominio-de-laboratorios-multiusuarios-de-informatica-e-documentacao-lamid), sob minha coordenação, na Universidade Federal de Sergipe. 

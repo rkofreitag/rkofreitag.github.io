@@ -1,0 +1,181 @@
+---
+title: "Organização do conjunto de dados"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  echo = TRUE
+)
+```
+
+## Apresentação
+
+Modelagem de dados é a combinação de procedimentos de:
+
+- **Análise de dados**, para coletar, organizar e sumarizar
+- **Estatística**, para chegar a conclusões a partir de um conjunto de dados usando conhecimentos de probabilidade
+	
+A modelagem de dados só faz sentido se houver uma pergunta a ser feita aos dados. A pergunta pode ter motivação empírica ou teórica; a partir da pergunta, são construídas hipóteses e são organizados os dados para a testagem destas hipóteses.
+	
+Por isso, precisamos  ter clareza do problema de pesquisa (saber que pergunta será feita aos dados), e saber selecionar a ferramenta estatística adequada, para extrair significado dos dados.
+	
+Estatística lida com probabilidades, razões de chance de ocorrer; e o que fazemos é quantificar a nossa incerteza: eu tenho 95% de confiança de que, após este curso, entre 83% e 87% de vocês, alunos, serão capazes de realizar um teste de qui-quadrado.
+	
+Como eu cheguei a esses números? Ou melhor, o que significam esses números? Estas são algumas das respostas que este curso pode oferecer.
+
+## Os 10 mandamentos
+
+Para podermos fazer as perguntas ao conjunto de dados, a organização é essencial. Utilize um programa de planilhas eletrônicas para construir o seu conjunto de dados, há várias opções (*Microsoft Office Excel*, *Open Office Calc *, *Planilhas Google*, etc.). 
+Siga os 10 mandamentos e as suas perguntas serão mais facilmente respondidas:
+
+**1. Todos os seus dados devem ser armazenados em uma única planilha**
+
+  + Não salve o seu banco de dados em vários arquivos separados
+  + Não faça codificações paralelas, faça sempre no mesmo arquivo
+
+**2. A planilha deve seguir a ordem de formatação**
+
+  + Comece pela primeira linha e coluna, não deixe linhas ou colunas em branco
+
+**3. Uma linha = uma ocorrência**
+
+  + Não sobreponha ocorrências
+
+**4. Uma coluna = uma variável**
+
+  + Não sobreponha variáveis
+
+**5. Não codifique todas as variáveis qualitativas**
+
+  + Não precisa considerar todas as variáveis qualitativas tais como aparecem em respostas, utilize alguma estratégia de generalização
+
+**6. O banco de dados deve conter apenas dados**
+
+  + Formação, comentários e balões não são processados
+
+**7. A codificação deve ser homogênea**
+
+  + Letra maiúscula e letra minúscula fazem diferença, assim como espaço em branco
+
+**8. Respeite as variáveis numéricas**
+
+  + Colunas de variáveis numéricas devem ter apenas números
+
+**9. Garanta o anonimato das fontes**
+
+  + Remova informações que podem identificar participantes
+
+**10. O banco de dados precisa ser legível para humanos**
+
+  + Utilize códigos e siglas icônicos, que permitam acessar o conteúdo rapidamente
+
+**Relembrando:**
+
+- Não use várias tabelas dentro de uma planilha|
+- Evite espalhar dados por múltiplas abas
+- Registre zeros como zeros
+- Use um valor nulo apropriado para registrar dados ausentes
+- Não utilize a formatação para codificar informações ou para tornar a sua planilha bonita
+- Coloque comentários em uma coluna separada
+- Registre unidades nos cabeçalhos das colunas
+- Inclua apenas uma informação em uma célula
+- Evite espaços, números e caracteres especiais nos cabeçalhos das colunas
+- Evite caracteres especiais nos seus dados
+- Registre os metadados em um arquivo de texto simples separado
+
+Estes cuidados vão facilitar a sua vida na análise e permitir o compartilhamento e reuso de dados, um dos princípios de Ciência Aberta.
+
+**Formato do arquivo:** Os dados armazenados em formatos comuns de planilha eletrônica (*.xls, etc.) muitas vezes não serão lidos corretamente no software de análise de dados, levando a erros em seus dados.
+A exportação de dados de planilhas para formatos como CSV ou TSV permite o uso consistente pela maioria dos programas.
+
+Se você quiser saber mais sobre organização de conjuntos de dados, leia estes artigos:
+
+- [*Data Organization in Spreadsheets*](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)
+- [*Some simple guidelines for effective data management*](https://esajournals.onlinelibrary.wiley.com/doi/epdf/10.1890/0012-9623-90.2.205)
+  
+## Tipos de variáveis
+
+**Já tenho meu conjunto de dados, e agora?** Vamos iniciar a exploração dos dados:
+
+- Olhar sempre primeiro para a distribuição dos dados brutos
+- Inspecionar as variáveis uma a uma
+- Verificar as relações entre as variáveis
+
+>  + **Nunca faça um teste estatístico antes das etapas prévias de exploração!!!!**
+
+A primeira inspeção que fazemos em um conjunto de dados é quanto ao tipo de dados, na forma de variáveis. As variáveis são as representações das colunas, as ocorrências são as representações das linhas. 
+
+Variável   |Variável   |Variável   |Variável   |Variável  
+---------- |---------- |---------- |---------- |---------- |
+Ocorrência |Ocorrência |Ocorrência |Ocorrência |Ocorrência |
+Ocorrência |Ocorrência |Ocorrência |Ocorrência |Ocorrência |
+Ocorrência |Ocorrência |Ocorrência |Ocorrência |Ocorrência |
+Ocorrência |Ocorrência |Ocorrência |Ocorrência |Ocorrência |
+
+Os tipos de variáveis que compõe um conjunto de dados podem ser:
+
+- **Numéricas**: observações que podem ser tomadas por um valor no conjunto dos números reais. Podem ser manipuladas, ou seja, podemos somá-la, dividi-las, calcular sua média, etc.
+  + *Discretas*: valores numéricos em intervalos. Um número finito (por exemplo: quantos alunos estudam em uma classe? Quantos cigarros uma pessoa fuma por dia?) 
+  + *Contínuas*: valores numéricos medidos em uma escala (por exemplo: qual foi a nota que cada estudante obteve em um teste? Quanto custou um cigarro?)
+
+- **Categóricas**: observações que podem ser agrupadas em categorias. Ao contrário de variáveis numéricas, não podem ser manipuladas: não podemos somar categorias, dividir categorias nem calcular média de categorias. 
+  + *Nominais*: uma ou mais categorias, sem ordenação entre elas (por exemplo: gênero)
+  + *Ordinais*: ordenação entre os níveis (por exemplo: grau de escolarização)
+
+Vamos observar dados reais em um conjunto de dados. Vamos importar um conjunto de dados nativo da plataforma R, o `iris`. Para inspecioná-lo, digite `str(iris)` no console do R e rode o código.
+
+```{r iris1}
+str(iris)
+```
+
+A função `str()` sumariza a estrutura de um conjunto de dados. No caso do conjunto `iris`, temos um `data.frame`, um tipo de arranjo em que cada observação corresponde a uma linha e cada coluna a uma variável. Este é o formato normalmente importado das planilhas.
+
+Neste conjunto de dados, temos **150** ocorrências e **5** variáveis. 
+
+Vamos agora inspecionar os tipos de variáveis neste conjunto de dados. Utilize a função `head()` no conjunto de dados `iris` e rode o código. 
+
+```{r iris2,}
+head(iris)
+```
+
+A função `head()` lista as seis primeiras ocorrências do `data.frame`. 
+
+Vamos inspecionar outro conjunto de dados, `airquality`. Utilize as funções `str()` e `head()` para inspeção:
+
+```{r iris3}
+str(airquality)
+head(airquality)
+```
+
+Vamos agora identificar as variáveis. Todas as variáveis apresentam números, mas nem todos os números são variáveis numéricas! *Dia* e *mês* são unidades de ordenação e não de medida. Por isso é importante conhecer o conjunto de dados e sua organização. 
+
+> Se você quiser conhecer mais conjuntos de dados, utilize a função `data()` no console da plataforma R e veja as formas de apresentação e distribuição de variáveis. 
+
+## Variáveis de interesse
+
+Um conjunto de dados provê respostas a uma pergunta de pesquisa. Por isso, é importante saber a natureza da pesquisa e identificar as variáveis de interesse.
+
+As pesquisas podem ser classificadas em **observacionais**, quando o pesquisador estuda um problema, mas não interfere no seu desfecho, ou **experimentais**, quando o pesquisador interfere no problema para então observar o que acontece. Pesquisas experimentais podem ser controladas, naturais ou de campo. Pesquisas observacionais podem ser seccionais, transversais ou longitudinais.
+
+Saber se há ou não interferência do pesquisador no resultado é importante para delinear as  **variáveis de interesse**, aquelas que são medidas ou observadas, também chamadas de variáveis de resposta ou dependentes, e saber quais são as variáveis que afetam a resposta e podem ser definidas ou medidas, chamadas de **preditoras**, **explicativas** ou **independentes** (sinônimos). 
+
+Vamos voltar a fazer bolo. Queremos saber qual é o segredo para um bolo delicioso; precisamos testar as variáveis que podem ser preditivas de uma receita de bolo de sucesso, como a temperatura do forno, tempo de cozimento, tipo do recheio. Qual seria o resultado do efeito diferenciado delas em uma receita? Saber diferenciar qual é a variável preditora e a variável resposta em um estudo é essencial para a organização dos dados. 
+
+- Em uma tabela:
+  + Variáveis preditoras nas linhas 
+  + Variáveis resposta nas colunas
+
+- Em um gráfico:
+  + Variáveis preditoras no eixo x 
+  + Variáveis resposta no eixo y
+
+
+### Por que isso é importante?
+
+Muitas dificuldades em uma pesquisa decorrem de problemas na organização do conjunto de dados. Quando não se tem clareza sobre o que se quer perguntar aos dados, não se sabe qual é a variável dependente, nem quais são os preditores que atuam sobre ela.
+
+Uma saída é usar o liquidificador: escolha um pacote estatístico, jogue todos os dados lá dentro e peça todas as possibilidades de análise. Aí escolha a que tiver o p-valor melhor...
+
+A outra saída é ter clareza do que se quer, ter um plano de registro de pré-análise (o que eu vou perguntar aos meus dados). Isso exige ter clareza da variável dependente e dos preditores.
