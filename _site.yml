@@ -1,7 +1,7 @@
-name: "Raquel Freitag"                                # CHANGE HERE 
+name: "Raquel Freitag"
 output_dir: "."
 navbar:
-  title: "Raquel Freitag"                             # CHANGE HERE 
+  title: "Raquel Freitag"
   type: inverse
   left:
     - text: "Início"
@@ -18,25 +18,25 @@ navbar:
       menu:
         - text: "Modelagem de dados"
         - text: "Organização do conjunto de dados"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: Organizacao.html
         - text: "A escolha do software"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: Software.html
         - text: "Teste de hipóteses"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: Pvalor.html
         - text: "Redução de variáveis"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: reducao.html
         - text: "Variáveis categóricas"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: Categorica.html
         - text: "Variáveis contínuas"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: Continuas.html
         - text: "Introdução à regresão - parte 1"
-          icon: fa-rocket
+          icon: fa-pie-chart
           href: regressao.html
         - text: "---------"
         - text: "Tutoriais"
@@ -49,7 +49,9 @@ navbar:
   right:
     - text: "Contato"
       icon: fa-envelope-o
-      href: mailto:rkofreitag@uol.com.br                    # CHANGE HERE 
+      href: mailto:rkofreitag@uol.com.br
+      icon: fa-osf
+      href: https://osf.io/j4hgb/
 output:
   html_document:
     theme: cosmo
