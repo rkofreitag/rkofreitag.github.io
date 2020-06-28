@@ -1,9 +1,6 @@
 ---
 title: "Como fazer meta-análise com dados socioliguísticos?"
 ---
-**Como citar:**
-
->FREITAG, Raquel M. K. **Como fazer meta-análise com dados sociolinguísticos?**  Disponível em: link. Acesso em: `r Sys.Date()`.
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
@@ -482,3 +479,6 @@ O problema de considerar apenas os percentuais é que a distribuição pode não
 
 > + Confira sempre os números! Um erro e todo o resultado é modificado.
 
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Como fazer meta-análise com dados sociolinguísticos?**.  Disponível em: <https://rkofreitag.github.io/meta.html/>. Acesso em: `r Sys.Date()`.

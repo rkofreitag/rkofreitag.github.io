@@ -387,3 +387,7 @@ head(leitura)
 ```
 
 O tratamento deste tipo de variável será explorado no próximo tutorial. 
+
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Variáveis categóricas**.  Disponível em: <https://rkofreitag.github.io/Categorica.html/>. Acesso em: `r Sys.Date()`.

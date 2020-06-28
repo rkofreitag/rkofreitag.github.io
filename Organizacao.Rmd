@@ -179,3 +179,7 @@ Muitas dificuldades em uma pesquisa decorrem de problemas na organização do co
 Uma saída é usar o liquidificador: escolha um pacote estatístico, jogue todos os dados lá dentro e peça todas as possibilidades de análise. Aí escolha a que tiver o p-valor melhor...
 
 A outra saída é ter clareza do que se quer, ter um plano de registro de pré-análise (o que eu vou perguntar aos meus dados). Isso exige ter clareza da variável dependente e dos preditores.
+
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Organização do conjunto de dados**. Disponível em: <https://rkofreitag.github.io/Organizacao.html/>. Acesso em: `r Sys.Date()`.

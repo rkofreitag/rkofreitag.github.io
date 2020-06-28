@@ -299,4 +299,6 @@ Análise fatorial é um outro procedimento, muito parecido com a análise de com
 A análise fatorial considera uma matriz de correlação ou de covariância, enquanto a análise de componentes principais considera o conjunto de dados original. A análise de componentes principais tem por objetivo explicar o máximo possível a variância total nas variáveis, enquanto a análise fatorial busca explicar as covariâncias ou correlações entre as variáveis.
 Por isso, a análise de componentes principais é usada para reduzir os dados a um número menor de componentes, e a análise fatorial ajuda a entender quais construtos são subjacentes aos dados.
 
+**Como citar:**
 
+>FREITAG, Raquel M. K. **Redução de variáveis e de dados**.  Disponível em: <https://rkofreitag.github.io/reducao.html/>. Acesso em: `r Sys.Date()`.

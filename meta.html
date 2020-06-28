@@ -282,7 +282,7 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="cv.html">
-    <span class="fa fa-user"></span>
+    <span class="fa fa-language"></span>
      
     Melhores Práticas
   </a>
@@ -292,6 +292,13 @@ $(document).ready(function () {
     <span class="fa fa-recycle"></span>
      
     Ciência Aberta
+  </a>
+</li>
+<li>
+  <a href="pop.html">
+    <span class="fa fa-smile-o"></span>
+     
+    Popularização
   </a>
 </li>
 <li class="dropdown">
@@ -306,49 +313,49 @@ $(document).ready(function () {
     <li class="dropdown-header">Modelagem de dados</li>
     <li>
       <a href="Organizacao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Organização do conjunto de dados
       </a>
     </li>
     <li>
       <a href="Software.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         A escolha do software
       </a>
     </li>
     <li>
       <a href="Pvalor.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Teste de hipóteses
       </a>
     </li>
     <li>
       <a href="reducao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Redução de variáveis
       </a>
     </li>
     <li>
       <a href="Categorica.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Variáveis categóricas
       </a>
     </li>
     <li>
       <a href="Continuas.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Variáveis contínuas
       </a>
     </li>
     <li>
       <a href="regressao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Introdução à regresão - parte 1
       </a>
@@ -374,10 +381,16 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="about.html">
+    <span class="fa fa-user"></span>
+     
+    Sobre
+  </a>
+</li>
+<li>
   <a href="mailto:rkofreitag@uol.com.br">
     <span class="fa fa-envelope-o"></span>
      
-    Contato
   </a>
 </li>
       </ul>
@@ -394,10 +407,6 @@ $(document).ready(function () {
 </div>
 
 
-<p><strong>Como citar:</strong></p>
-<blockquote>
-<p>FREITAG, Raquel M. K. <strong>Como fazer meta-análise com dados sociolinguísticos?</strong> Disponível em: link. Acesso em: 2020-06-27.</p>
-</blockquote>
 <div id="replicabilidade-na-ciência" class="section level2">
 <h2>Replicabilidade na ciência</h2>
 <p>A ciência vive uma crise generalizada em função da baixa replicabilidade de resultados ou de estudos. Há várias causas para essa crise, uma delas é a falta de clareza de procedimentos de análise dos dados, Como consequência, o poder explanatório das análises e da generalização dos resultados são limitados.</p>
@@ -610,7 +619,6 @@ ggstatsplot::ggcoefstats(x = modP6, exclude.intercept = FALSE, output = &quot;pl
 <p><img src="meta_files/figure-html/grafico-1.png" width="576" style="display: block; margin: auto;" /> Nesta visualização, os resultados estão em log-odds (de −∞ a ∞).</p>
 <p>Outra forma de visualização em gráfico pode ser produzida com o pacote <code>sjPlot</code>. Vejamos como ficam os resultados em razão de chances (odds):</p>
 <pre class="r"><code>library(sjPlot)
-#&gt; Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!
 plot_model(modP6)</code></pre>
 <p><img src="meta_files/figure-html/grafico2-1.png" width="576" style="display: block; margin: auto;" /> Embora “digam a mesma coisa”, os resultados em log-odds permitem observar a magnitude do efeito, daí por ser a forma preferível de reportar o resultado de um modelo de regressão generalizado.</p>
 <p>Podemos também dispor os resultados em uma tabela formatável, com o pacote <code>sjlabelled</code>.</p>
@@ -1502,6 +1510,10 @@ ggstatsplot::ggcoefstats(
 <ul>
 <li>Confira sempre os números! Um erro e todo o resultado é modificado.</li>
 </ul>
+</blockquote>
+<p><strong>Como citar:</strong></p>
+<blockquote>
+<p>FREITAG, Raquel M. K. <strong>Como fazer meta-análise com dados sociolinguísticos?</strong>. Disponível em: <a href="https://rkofreitag.github.io/meta.html/" class="uri">https://rkofreitag.github.io/meta.html/</a>. Acesso em: 2020-06-28.</p>
 </blockquote>
 </div>
 

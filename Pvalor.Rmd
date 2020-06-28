@@ -71,3 +71,7 @@ Vamos ler o resultado: o p-valor é de 0.025.Em um único teste, a hipótese de 
 
 O p-valor é sensível ao tamanho da amostra! 
 Em grandes conjuntos de dados, pequenos efeitos podem resultar em resultados de p-valor significativos.
+
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Teste de hipóteses e valores de significância**. Disponível em: <https://rkofreitag.github.io/Pvalor.html/>. Acesso em: `r Sys.Date()`.

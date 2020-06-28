@@ -378,3 +378,8 @@ A partir destes parâmetros, o modelo de regressão linear generalizado pode ser
 ### Limitações
 
 Uma das limitações dos modelos de regressão generalizados é a exigência de que os erros sejam independentes. Isso significa que eles não são adequados a conjuntos de dados com estruturas longitudinais (medidas repetidas, amostras medidas mais de uma vez ao longo do tempo), espaciais ou multiníveis. Mas é possível contornar essa limitação utilizando **modelos lineares generalizados mistos**.
+
+
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Introdução à regressão**.  Disponível em: <https://rkofreitag.github.io/regressao.html/>. Acesso em: `r Sys.Date()`.

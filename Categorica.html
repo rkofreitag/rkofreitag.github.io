@@ -282,7 +282,7 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="cv.html">
-    <span class="fa fa-user"></span>
+    <span class="fa fa-language"></span>
      
     Melhores Práticas
   </a>
@@ -292,6 +292,13 @@ $(document).ready(function () {
     <span class="fa fa-recycle"></span>
      
     Ciência Aberta
+  </a>
+</li>
+<li>
+  <a href="pop.html">
+    <span class="fa fa-smile-o"></span>
+     
+    Popularização
   </a>
 </li>
 <li class="dropdown">
@@ -306,49 +313,49 @@ $(document).ready(function () {
     <li class="dropdown-header">Modelagem de dados</li>
     <li>
       <a href="Organizacao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Organização do conjunto de dados
       </a>
     </li>
     <li>
       <a href="Software.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         A escolha do software
       </a>
     </li>
     <li>
       <a href="Pvalor.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Teste de hipóteses
       </a>
     </li>
     <li>
       <a href="reducao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Redução de variáveis
       </a>
     </li>
     <li>
       <a href="Categorica.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Variáveis categóricas
       </a>
     </li>
     <li>
       <a href="Continuas.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Variáveis contínuas
       </a>
     </li>
     <li>
       <a href="regressao.html">
-        <span class="fa fa-rocket"></span>
+        <span class="fa fa-pie-chart"></span>
          
         Introdução à regresão - parte 1
       </a>
@@ -374,10 +381,16 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="about.html">
+    <span class="fa fa-user"></span>
+     
+    Sobre
+  </a>
+</li>
+<li>
   <a href="mailto:rkofreitag@uol.com.br">
     <span class="fa fa-envelope-o"></span>
      
-    Contato
   </a>
 </li>
       </ul>
@@ -576,7 +589,7 @@ assocstats(valor) ### aplicar ao objeto a função
 <p>Podemos transpor as tabelas e os cálculos para o texto do relatório (resumo, artigo, dissertacão, tese). Um dos pontos negativos evocados para o não uso do R é que a apresentação gráfica dos resultados não é boa e que a realização dos testes exige muitos procedimentos. Existe um movimento dos usuários do R chamado <strong>EasyStats</strong>, com pacotes de funções que facilitam a rotina de procedimentos. Vamos usar alguns deles para ver as possibilidades.</p>
 <p>Para produzir tabelas, já com contagens, frequências e resultados de testes inferências, o pacote <code>sjPlot</code> é uma boa opção.</p>
 <pre class="r"><code>library(sjPlot)  ### carregar o pacote
-#&gt; #refugeeswelcome
+#&gt; Learn more about sjPlot with &#39;browseVignettes(&quot;sjPlot&quot;)&#39;.
 sjt.xtab(
   dados$valor, dados$realizacao, ### tabela de contingência
   show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
@@ -1205,6 +1218,10 @@ leitura &lt;- dados %&gt;% #### criar um novo objeto a partir do objeto &quot;da
 #&gt; 5 08F20        0.688
 #&gt; 6 08F20        0.312</code></pre>
 <p>O tratamento deste tipo de variável será explorado no próximo tutorial.</p>
+<p><strong>Como citar:</strong></p>
+<blockquote>
+<p>FREITAG, Raquel M. K. <strong>Variáveis categóricas</strong>. Disponível em: <a href="https://rkofreitag.github.io/Categorica.html/" class="uri">https://rkofreitag.github.io/Categorica.html/</a>. Acesso em: 2020-06-28.</p>
+</blockquote>
 </div>
 
 

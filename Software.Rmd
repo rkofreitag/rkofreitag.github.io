@@ -96,5 +96,7 @@ Alguns cursos gratuitos e em português:
 <https://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf>
 <http://www.uft.edu.br/engambiental/prof/catalunha/arquivos/r/r_bruno.pdf>
 
+**Como citar:**
 
+>FREITAG, Raquel M. K. **Modelagem de dados**.  Disponível em: <https://rkofreitag.github.io/Software.html/>. Acesso em: `r Sys.Date()`.
 

@@ -8,11 +8,14 @@ navbar:
       icon: fa-home
       href: index.html
     - text: "Melhores Práticas"
-      icon: fa-user
+      icon: fa-language
       href: cv.html
     - text: "Ciência Aberta"
       icon: fa-recycle
       href: aberta.html
+    - text: "Popularização"
+      icon: fa-smile-o
+      href: pop.html
     - text: "Cursos e tutoriais"
       icon: fa-gear
       menu:
@@ -47,11 +50,11 @@ navbar:
           icon: fa-gear
           href: etica.html
   right:
-    - text: "Contato"
-      icon: fa-envelope-o
+    - text: "Sobre"
+      icon: fa-user
+      href: about.html
+    - icon: fa-envelope-o
       href: mailto:rkofreitag@uol.com.br
-      icon: fa-osf
-      href: https://osf.io/j4hgb/
 output:
   html_document:
     theme: cosmo
