@@ -1,7 +1,7 @@
 ---
 title: "Questões de método: para uma Sociolinguística socialmente sensível"
 ---
-Sistematicamente tenho oferecido cursos e treinamentos voltados ao compartilhamento de métodos de trabalho, de a documentação linguística,  tratamento de dados e até escrita científica. Embora a oferta seja sistemática, o compatilhamento dos tutoriais era assistemático. Por isso decidi reuni-los neste repositório, com o objetivo de facilitar o acesso e ampliar o escopo de público.
+Sistematicamente tenho oferecido cursos e treinamentos voltados ao compartilhamento de métodos de trabalho, de documentação linguística,  tratamento de dados e até escrita científica. Embora a oferta seja sistemática, o compatilhamento dos tutoriais era assistemático. Por isso decidi reuni-los neste repositório, com o objetivo de facilitar o acesso e ampliar o escopo de público.
 
 Sigo a linha da Ciência Aberta, com o compartilhamento de instrumentos, colaboração em materiais e reuso de dados. Como nem tudo cabe no Lattes, eu narro a minha visão sobre aquilo que considero minhas melhores práticas, que não necessariamente são os produtos científicos mais importantes no Lattes, mas os que me permitiram refletir sobre minha carreira e o impacto da ciência. 
 
