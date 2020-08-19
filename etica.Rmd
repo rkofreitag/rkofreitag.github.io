@@ -90,7 +90,11 @@ Esta é uma discussão muito ampliada, com diferentes vertentes e matizes, com d
 
 O primeiro ponto a ser esclarecido é que são diferentes tipos de pesquisa, como aponta Zaluar (2015): pesquisa **com** seres humanos é diferente de pesquisa **em** seres humanos. As ciências biométicas fazem pesquisas **em** seres humanos, em que os particiantes são sujeitos da pesquisa; as humanidades fazem pesquisas **com** seres humanos, em que os participantes são objetos da pesquisa. Sobottka (2015) distingue as pesquisas que acompanham intervenção ou experimentação, que contêm ou vêm associadas a algum tipo de provocação de mudanças em sua população alvo, das pesquisas que fazem observação (sentido lato, incluindo diálogo, participação etc.), observam as ações das pessoas, as relações entre as pessoas e o sentido que pessoas dão ao que fazem, e sua principal tarefa consiste em interpretar essas observações e relacioná-las com características do contexto ou então com características inatas ou adscritas às pessoas. Essas pesquisas não *envolvem seres humanos*, mas têm pessoas como interlocutoras e, muito frequentemente, como parceiras nas pesquisas.
 
+<<<<<<< HEAD
 Enquanto as pesquisas do primeiro tipo são foco prioritário da avaliação do CEP/CONEP, as pesquisas do segundo tipo não prescindem desta instância, que em alguns casos são inviabilizadas pelas determinações das resoluções. Isso não significa que sejam isentas de princípios éticos, ou que não existam, como explica Sobottka (2015), pesquisas eticamente críticas, tais como:
+=======
+Enquanto as pesquisas do primeiro tipo seriam foco prioritário da avaliação do CEP/CONEP, as pesquisas do segundo tipo não prescindem desta instância, que em alguns casos são inviabilizadas pelas determinações das resoluções. Isso não significa que sejam isentas de princípios éticos, ou que não existam, como explica Sobottka (2015), pesquisas eticamente críticas, tais como:
+>>>>>>> cc1c9a1910871e8969df9a104dc0d59a4c3c67b4
 
 - pesquisas em que seja necessário recorrer ao expediente do pesquisador oculto
 - pesquisas destinadas a gerar tecnologia social: as pessoas, em confiança, podem ter dado informações tão somente porque não podiam avaliar as consequências de sua generosidade com os pesquisadores 
