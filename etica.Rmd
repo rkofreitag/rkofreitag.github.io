@@ -4,3 +4,173 @@ title: "Tutorial para submissão de projeto na Plataforma Brasil"
 
 Aqui você encontra um tutorial de <a href="tutorial_etica.pdf#" class="download" title="Download CV as PDF">Como submeter um projeto da área de sociolinguística na Plataforma Brasil</a> , que apresentei como oficina do XXIV Instituto Linguístico da Abralin, em 2019.
 
+## Preciso submeter meu projeto ao comitê de ética?
+
+Esta é a pergunta que todos me fazem quando ministro capacitações ou oficinas sobre o tema. Mas não cabe a mim respondê-la; é o próprio pesquisador que precisa decidir. Para isso, algumas reflexões sobre as questões envolvidas na pesquisa são necessárias, e espero que este texto ajude nas tomadas de decisão.
+
+### As leis e as práticas
+
+"Ah, os anos 80 eram incríveis..."  Assim inicia cada capítulo de uma série chamada ["Os Goldbergs"](https://www1.folha.uol.com.br/ilustrada/2014/03/1430940-serie-os-goldbergs-faz-graca-com-moda-e-tecnologia-dos-anos-80.shtml). Acompanhar os costumes de uma época anterior com o olhar da nossa época nos coloca em choque com algumas práticas. Fumar era chique, propaganda de bebida alcoólica era sinônimo de mulher, programas infantis eram quase que pornográficos aos olhos de hoje. O [BuzzFeed](https://www.buzzfeed.com/br) tinha postagens nostálgicas sobre os anos 80, mas que, na onda da cultura do cancelamento, foram censuradas em 2020 (as fotos não estão mais disponíveis). Dentre as várias coisas incríveis que poderiam ser base para uma dissertação sobre costumes dos anos 80, vou escolher a que permite uma analogia com o ponto que motiva a proposta deste tutorial, o cinto de segurança. 
+
+Hoje, é um ato automático ao entrar em um automóvel procurar o cinto de segurança e o afivelar. Mas por que desenvolvemos esse comportamento automático? 
+Vendo, talvez fique óbvio porque sempre devemos utilizar o cinto de seguranca, mesmo no banco traseiro: <https://www.youtube.com/watch?v=hNw1-OPwiKs>. Este vídeo é com bonecos de teste; a cada ano, o trânsito gera muito mais vítimas do que guerras, e o cinto de segurança em muitos casos é o divisor entre a vida e a morte. 
+
+Mas, ainda assim, as pessoas não usam o cinto de segurança pensando na segurança. O cinto de segurança, embora seja dispositivo obrigatoriamente presente em veículos no Brasil desde o final da década de 1960, somente passou a ser levado a sério a partir de 1997, com a instituição do [Código de Trânsito Brasileiro](https://detran.to.gov.br/legislacao/outros/codigo-de-transito-brasileiro-ctb/), que, em seu artigo 65 obriga o uso, tanto pelo condutor, como pelos passageiros.  
+
+Não usar o cinto de segurança é uma infração grave, que gera 5 pontos na carteira e multa de `R$ 195,23`. E, se um dos passageiros sem cinto for uma criança, a infração é gravíssima, com 7 pontos na carteira e multa de `R$ 293,47`. 
+Na verdade, só tivemos um Código de Trânsito Brasileiro em 1997. Antes disso, a obrigatoriedade do uso do cinto de segurança se dava apenas nas rodovias federais. desde 1989. Ou então, apenas no banco da frente. Ou, ainda, uma regulamentação local, como o caso da cidade de São Paulo, em 1994. Então, se hoje o comportamento automático é usar cinto de segurança, não foi por sensibilidade à segurança, mas por força coercitiva da lei. Ainda assim, com mais de 20 anos de vigência, encontramos justificativas para o não cumprimento da lei: "É pertinho", "É rapidinho", "Atrás não precisa", "Vou devagar", "O cinto é desconfortável". Pode haver alguém que a vida toda nunca tenha usado cinto de segurança e não aconteceu nada. Mas, se acontecer uma única vez, a chance de ser fatal é grande. 
+
+Mas por que falar de cinto de segurança se o assunto é ética em pesquisa? Porque, no Brasil, a avaliação de pesquisas quanto aos preceitos éticos é feita pelo Conselho Nacional de Saúde, que instituiu os Comitês de Ética em Pesquisa, e isso tem mais ou menos a mesma idade da lei do cinto de segurança: a [Resolução 196, de 10 de outubro de 1996](http://bvsms.saude.gov.br/bvs/saudelegis/cns/1996/res0196_10_10_1996.html), com modificações posteriores pelas Resoluções [466, de 12 de dezembro de 2012](http://www.conselho.saude.gov.br/resolucoes/2012/Reso466.pdf), e [510, de 6 de abril de 2016](https://bvsms.saude.gov.br/bvs/saudelegis/cns/2016/res0510_07_04_2016.html). Então, a submissão de projeto de pesquisa ao comitê de ética não é uma novidade. Talvez o tema cause impacto agora que agências de financiamento e periódicos estão solicitando este procedimento. Mas novidade, definitivamente não é, assim como não deveria ser o fato de pensarmos e discutirmos questões relacionadas às práticas de nossa pesquisa. Antes de decidir se vai submeter um projeto a um comitê de ética, leia este texto até o fim.
+
+### Situações eticamente sensíveis e a ciência
+
+Imagine que você trabalha em um hospital e um homem desacordado e ferido dá entrada. Sem documentos, sem telefones de contato, sem nenhuma referência. O homem teve uma parada cardiorrespiratória; ao prepará-lo para a reanimação, você se depara com a seguinte mensagem tatuada no peito:
+![](https://s2.glbimg.com/qqeEJGyioHhZw0BSRmjsXUnECb8=/i.glbimg.com/og/ig/infoglobo1/f/original/2017/12/01/blog_resuscitate_Jo3Fd6W.jpg)
+
+O que você faria? Ressucitaria o homem, mesmo contrariando seu pedido? Ou atenderia ao pedido tatuado na pele (mas não expresso em um formulário padrão para o procedimento, o pedido de não ressucitação)? Note que, em uma parada cardiorrespiratória, o tempo é contado em milissegundos, não há tempo para reflexões, pois cada segundo que se passa o risco de dano aumenta exponencialmente. Este é um [caso real](https://cadeacura.blogfolha.uol.com.br/2017/12/02/nao-ressuscitar/), [tatuagens deste tipo são mais frequentes do que podemos imaginar](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmsubioethics.com%2F2018%2F01%2F09%2Fthree-cheers-for-the-dnr-tattoo%2F&psig=AOvVaw3JxFygx2xCvHYjUzbh-djG&ust=1597741722321000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjqxvDxoesCFQAAAAAdAAAAABAD), e sucitam [discussões na medicina](https://msubioethics.com/2018/01/09/three-cheers-for-the-dnr-tattoo/), por envolver a tensão entre a vontade e direito do paciente, e a responsabilidade e o compromisso do médico. 
+
+Uma definição simplista de ética é o conjunto de valores que definem o que eu quero, o que eu posso e o que eu devo. E o arranjo entre estes valores é o seguinte: **Nem tudo que eu quero eu posso, nem tudo que eu posso eu devo e nem tudo que eu devo eu quero.** 
+
+Os princípios da ética em pesquisa são sustentado em três pilares: **respeito às pessoas**, **beneficência** e a **justiça**. O respeito às pessoas se materializa pelo processo de consentimento livre e esclarecido para a participação na pesquisa. A beneficência se traduz na garantia de segurança e bem estar aos participantes em função de uma avaliação criteriosa do custo-benefício da sua inserção na pesquisa. E a justiça se refere à equidade no acesso à participação no estudo e aos seus resultados. É responsabilidades de quem conduz a pesquisa: 
+
+- Proteger os participantes
+- Conduzir a pesquisa de acordo com os princípios éticos universais
+- Usar os melhores métodos científicos possíveis
+- Obter o consentimento livre e esclarecido dos participantes
+- Respeitar a privacidade
+
+Mas já não fazemos isso? Quem conduz uma pesquisa vive a tensão constante entre resultados e valores. Precisamos saber os nossos limites. Até onde vamos?  
+
+#### Quais são nossos limites?
+
+Digamos que você está em uma festa e são servidos canapés de patê e de queijo. Você comeria? E se soubesse que o [queijo é feito de leite materno](https://gizmodo.uol.com.br/voce-comeria-este-queijo-humano-feito-a-partir-de-leite-humano/), ainda assim você comeria? Se soubesse que o patê foi feito com [a esteatose hepática de um pato](https://www.huffpostbrasil.com/elizabeth-mac-gregor/foie-gras-quanta-crueldade-voce-pode-engolir_b_7771728.html), o famoso *foie gras*, ainda assim você comeria? 
+
+Não nos passaria pela cabeça que em uma festa serviriam coisas assim, digamos, tão polêmicas. Melhor comer [salsicha](https://veja.abril.com.br/economia/afinal-a-salsicha-e-feita-de-que/)...
+
+A ciência também lida com limites. Um exemplo de nossos limites pode ser exemplificado com a energia nuclear, uma fonte de energia limpa e segura. Mas também deu origem à [bomba atômica](https://www.scielo.br/pdf/ss/v3n4/a10v3n4.pdf). Um conjunto de notáveis cientistas aderiu ao *Projeto Manhattan*, cuja faceta do poderio destrutivo foi conhecida pelo mundo com a detonação das bombas *Little Boy* em [Hiroshima](https://www.nytimes.com/2020/08/06/world/asia/hiroshima-nagasaki-japan-photos.html) e *Fat Man* em [Nagasaki](https://www.nationalgeographic.com/history/2020/08/twists-fate-made-nagasaki-target-atomic-bomb/) em um Japão já rendido, em agosto de 1945. Precisava? Era apenas um teste? Não, o teste foi feito em [Alamogordo](https://www.smithsonianmag.com/travel/trinity-site-open-house-offers-public-rare-glimpse-atomic-bomb-site-180965110/), com a bomba *Trinity*, em  julho do mesmo ano. O poder destrutivo já era conhecido. Mas o mais assombroso é ver esta figura: 
+![](https://i.redd.it/4tsyf49r6km21.jpg)
+
+Os efeitos sobre a população civil, sentidos em Hiroshima e Nagasaki, não foram suficientes para parar o ímpeto destruitivo do homem. Observe que, no detalhe ampliado estão a *Trinity* e a *Little Boy*, a bomba que explodiu em Hiroshima; perto da *Tsar* estas bombas são quase que poeira... A bomba [*Tsar*](https://www.bbc.com/portuguese/vert-fut-42146164) é tão destrutiva que sequer pôde ser testada em sua plenitude de carga.  
+
+Apesar de já saber os impactos, continuamos tentando... Sim, porque nem sempre conseguimos discernir os nossos limites, precisamos de um comitê de ética.
+
+#### Origens da regulamentação
+
+Para saber mais sobre as regulamentações sobre ética em pesquisa, é importante conhecer alguns marcos legais:
+
+- As origens das diretrizes para a ética em pesquisa remontam à [Declaração Universal dos Direitos Humanos](https://nacoesunidas.org/direitoshumanos/declaracao/), dispostivo que é consequência dos crimes da Segunda Guerra Mundial, julgados no [tribunal de Nurenmberg](http://m.acervo.estadao.com.br/noticias/acervo,tribunal-de-nuremberg-o-horror-no-banco-dos-reus,11759,0.htm). 
+
+- Especificamente em relação à pesquisa na área de biotecnologia  e pesquisa médica, a 
+[Declaração de Helsinki](https://www.fcm.unicamp.br/fcm/sites/default/files/declaracao_de_helsinque.pdf) é a baliza mundial.  
+
+- O [Code of Ethics for Young Scientists](WEF)(http://www3.weforum.org/docs/WEF_Code_of_Ethics.pdf) é outra leitura importante. 
+
+No Brasil, as resoluções específicas sobre ética em pesquisa são emanadas pelo Ministério da Saúde:
+
+- [Resolução 196, de 10 de outubro de 1996](http://bvsms.saude.gov.br/bvs/saudelegis/cns/1996/res0196_10_10_1996.html) 
+- [Resolução 466, de 12 de dezembro de 2012](http://www.conselho.saude.gov.br/resolucoes/2012/Reso466.pdf)
+- [Resolução 510, de 6 de abril de 2016](https://bvsms.saude.gov.br/bvs/saudelegis/cns/2016/res0510_07_04_2016.html).
+
+Depois de ler estes documentos, você pode se perguntar "preciso submeter meu projeto ao Comitê de Ética? Vou fazer apenas entrevistas..." Se é essa a sua dúvida, então conheça a história de Alice Goofman. Ela iniciou um projeto escolar com alunos do segundo ano, para imersão na vida da periferia, em uma comunidade pobre e de afroamericanos. Ela continuou trabalhando nesse projeto, que virou sua tese de doutorado, publicada em livro. 
+
+![](https://images-na.ssl-images-amazon.com/images/I/51TMkR7xHFL.jpg)
+
+O trabalho mostra como os jovens negros da periferia são tratados pela polícia.
+Na imersão etnográfica, Alice Goffmann acompanhou a trama de um assassinato de um dos seus sujeitos de pesquisa, por outros sujeitos da pesquisa; ela deveria ter agido para evitar o crime? e a confiança da comunidade, essencial para sua investigação?
+
+>[Leia uma resenha do livro](https://journals.openedition.org/configuracoes/7824)
+
+Fazer entrevista, coisa tão simples, pode nos colocar em situações eticamente sensíveis. Por isso, as pesquisas envolvendo humanos são matéria de deliberação de comitês de ética, seguindo as diretrizes das resoluções do Conselho Nacional de Saúde. Para as áreas de saúde, esse procedimento já é automatizado, tal como colocar o cinto de segurança. Mas, na grande área das Humanidades, existe uma grande objeção à submissão de projetos ao CEP/CONEP. 
+
+Esta é uma discussão muito ampliada, com diferentes vertentes e matizes, com diferentes autores que se propõem a tratada de ética e conduta na pesquisa em ciências humanas e sociais. Vou me basear em três textos que me ajudaram muito na formação da concepção que tenho hoje sobre o tema:
+
+- [**Reflexões sobre ética e pesquisa**](https://www.scielo.br/pdf/rbla/v5n1/03.pdf), de Vera Menezes, voltado para trabalhos na área de linguagem;
+- [**Ética na pesquisa social: novos impasses burocráticos e paroquiais**](http://www.sbsociologia.com.br/rbsociologia/index.php/rbs/article/view/154), de Alba Zaluar, que aponta uma questão crucial na gênese da pesquisa na área das das humanidades: pesquisa em humanos é diferente de pesquisa com humanos;
+- [**Regulamentação, ética e controle social na pesquisa em ciências humanas**](http://www.sbsociologia.com.br/rbsociologia/index.php/rbs/article/view/150), de Emil A. Sobottka, que além de retrospectar a gênese da regulamentação dos princípios de ética em pesquisa, delimita situações eticamente críticas na pesquisa na área das humanidades.
+
+O primeiro ponto a ser esclarecido é que são diferentes tipos de pesquisa, como aponta Zaluar (2015): pesquisa **com** seres humanos é diferente de pesquisa **em** seres humanos. As ciências biométicas fazem pesquisas **em** seres humanos, em que os particiantes são sujeitos da pesquisa; as humanidades fazem pesquisas **com** seres humanos, em que os participantes são objetos da pesquisa. Sobottka (2015) distingue as pesquisas que acompanham intervenção ou experimentação, que contêm ou vêm associadas a algum tipo de provocação de mudanças em sua população alvo, das pesquisas que fazem observação (sentido lato, incluindo diálogo, participação etc.), observam as ações das pessoas, as relações entre as pessoas e o sentido que pessoas dão ao que fazem, e sua principal tarefa consiste em interpretar essas observações e relacioná-las com características do contexto ou então com características inatas ou adscritas às pessoas. Essas pesquisas não *envolvem seres humanos*, mas têm pessoas como interlocutoras e, muito frequentemente, como parceiras nas pesquisas.
+
+Enquanto as pesquisas do primeiro tipo seriam foco prioritário da avaliação do CEP/CONEP, as pesquisas do segundo tipo não prescindem desta instância, que em alguns casos são inviabilizadas pelas determinações das resoluções. Isso não significa que sejam isentas de princípios éticos, ou que não existam, como explica Sobottka (2015), pesquisas eticamente críticas, tais como:
+
+- pesquisas em que seja necessário recorrer ao expediente do pesquisador oculto
+- pesquisas destinadas a gerar tecnologia social: as pessoas, em confiança, podem ter dado informações tão somente porque não podiam avaliar as consequências de sua generosidade com os pesquisadores 
+- pesquisas feitas em contextos de conflito
+- pesquisas com pessoas ou grupos onde atual ou potencialmente eclodem conflitos em torno da condição que as inclui na pesquisa
+- pesquisas cujo produto final não se destina integralmente a publicação científica, mas a uso restrito pelo encomendante ou patrocinador
+
+Nestes contextos, a finalidade da pesquisa colide, ainda que em parte, com o compromisso negociado com os participantes da pesquisa. A finalidade pode entrar em conflito com o compromisso com a verdade e com a boa técnica da produção de conhecimento na área, por exemplo, levando à valorização de aspectos favoráveis, desvalorização ou ocultamento de aspectos desfavoráveis.
+
+Outra situação éticamente crítica é quando a participação é involuntária ou apenas restritamente voluntária. Por exemplo, em uma pesquisa em sala de aula, em que o pesquisador e o professor são a mesma pessoa, será que os alunos estão participando voluntariamente? Ou há algum tipo de coerção, ainda que velada, para que participem? Mais: o que fazer com um aluno que decide que não quer participar? Retirá-lo da sala e do convívio com os colegas e da situação de aprendizado? O texto de Vera Menezes (2005) reporta uma situação deste tipo.
+
+As situações eticamente críticas precisam ser consideradas no desenvolvimento da pesquisa. Mas nem sempre a motivação para a submissão do projeto ao CEP/CONEP se fundamenta nestas possibilidades, mas sim no fato de que, segundo a Resolução 196/96, *as agências de fomento à pesquisa e o corpo editorial das revistas científicas deverão exigir documentação comprobatória de aprovação do projeto pelo Sistema CEP/CONEP*.
+
+Afinal, qual a finalidade da submissão ao CEP/CONEP?
+
+- Proteger os participantes?
+- Proteger o pesquisador?
+- Proteger a instituição?
+
+Em caso de judicialização, o alvo é sempre quem tem mais potencialidade de pagar a indenização. Toda pesquisa envolvendo humanos têm riscos. Esse é o mantra do comitê de ética. 
+
+### Riscos
+
+Existe um risco que é chamado de *risco natural*, ou seja, aquele que a pessoa já tem, deve ser diferenciado do risco criado, ou construído, por um procedimento diagnóstico ou terapêutico ou por uma intervenção de pesquisa. Por exemplo: é um risco natural de uma pesquisa em sala de aula um aluno reprovar de ano. Mas se a reprovação decorrer do procedimento da pesquisa, é um risco criado (processo). 
+
+Existem ainda pesquisas que são consideradas de *risco mínimo*: Estudos que empregam técnicas e métodos retrospectivos de pesquisa e aqueles em que não se realiza nenhuma intervenção ou modificação intencional nas variáveis fisiológicas ou psicológicas e sociais das pessoas que participam no estudo, entre os quais se consideram: questionários, entrevistas, revisão de prontuários clínicos e outros, nos quais não se identifique nem seja invasivo à intimidade da pessoa. Mas, apesar de mínimo, existem riscos. Toda pesquisa envolvendo humanos têm riscos.
+
+Nos tipos de pesquisa que realizamos, com entrevistas, a exposição da imagem, a exposição de informações pessoais e a própria abordagem em uma entrevista podem causar constrangimentos ou trazer à memória experiências ou situações vividas que causam sofrimento psíquico. 
+As pessoas convidadas para serem participantes de uma pesquisa devem ser selecionados de tal maneira que os riscos e benefícios da pesquisa sejam equitativamente distribuídos. 
+Justificativa especial deve ser dada quando forem convidadas pessoas em situação vulnerável e, se selecionadas, os meios de proteger os seus direitos e bem-estar devem ser particular e estritamente aplicados.
+
+Se a distribuição entre riscos e benefícios deve ser equitativa, já vimos os riscos a que estão expostos os participantes em uma entrevista (constrangimento, exposição, sofrimento psíquico). Qual seriam os benefícios (para participantes)? Além de contribuir para a ciência, o que podemos oferecer em contrapartida? 
+
+*????*
+
+Depois de tudo isso, coloque na balança: preciso submeter meu projeto ao CEP/CONEP?
+
+**Sim**. Toda pesquisa envolvendo humanos têm riscos e as regras devem ser as mesmas para todos os campos da ciência.
+
+**Não**. Pesquisa com humanos é diferente de pesquisa em humanos e as ciências humanas têm especificidades que não são compatíveis com as demandas da CEP/CONEP.
+
+### Mas não é só comitê de ética
+
+Se você chegou até aqui decidido a submeter seu projeto ao CEP/CONEP, saiba que tem mais. Se os participantes de sua pesquisa fizerem parte do grupo social associado ao conhecimento tradicional, você precisa também submeter sua pesquisa ao **SISGEN**, [Sistema Nacional de Gestão do Patrimônio Genético e do Conhecimento Tradicional Associado](https://www.mma.gov.br/patrimonio-genetico/conselho-de-gestao-do-patrimonio-genetico/sis-gen), criado pelo Decreto nº 8.772, de 11 de maio de 2016, que regulamenta a Lei nº 13.123, de 20 de maio de 2015.
+
+*Conhecimento tradicional* é o patrimônio comum de um grupo social, que foi adquirido por meio de práticas, conhecimentos empíricos e costumes passados de pais para filhos
+Resultado de um processo cumulativo, informal e de longo tempo de formação
+Este conhecimento não pertence a um único indivíduo, mas sim a toda comunidade, que deve receber os benefícios em caso de exploração.
+
+Direitos difusos são  direitos transindividuais, que ultrapassam a esfera de um único indivíduo, caracterizados principalmente por sua indivisibilidade, em que a satisfação do direito deve atingir a uma coletividade indeterminada, porém, ligada por uma circunstância de fato. Por essa definição, língua é um direito difuso, e pode ser considerada como um conhecimento tradicional... 
+
+### Responsabilidade pelos dados
+
+Você já ouviu falar do caso de [*Neiva do céu...*](https://f5.folha.uol.com.br/voceviu/2019/09/protagonista-do-audio-neiva-do-ceu-confirma-historia-que-viralizou.shtml)? Não vou colocar o link do áudio. Em resumo: um áudio de zap foi sendo repassado, até sair do controle e virar notícia. Pensando em pesquisa, e pensando nas diretrizes do movimento [Ciência Aberta](file:///Users/raquelfreitag/Site/rkofreitag.github.io/aberta.html), quem é responsável pelo sigilo, uso e reuso dos dados primários de uma pesquisa envolvendo humanos? Se um excerto de entrevista é recortado e descontextualizado, replicado e causa constrangimento ou sofrimento psíquico por conta de exposição a um participante? Existem implicações legais regidas pelo termo de consentimento livre e esclarecido, que devem considerar as políticas de armazenamento e compartilhamento, como o sigilo e anonimato e o direito ao esquecimento (a qualquer momento desistir da pesquisa, ou não mais permitir o uso de dados produzidos com sua colaboração). 
+
+Anonimato dos participantes é dever do pesquisador? é escolha do pesquisado? ou é compromisso social do pesquisador? Se o anonimato ou o uso de informações públicas permitem que as questões éticas sejam “controladas” pelos próprios pesquisadores, não se estaria diante de um dispositivo regulador preocupado principalmente com as consequências jurídicas que podem surgir a partir da identificação de sujeitos e instituições nas pesquisas? E quando os participantes querem ser nomeados?
+
+Dilemas, conflitos e mais questões éticas na pesquisa envolvendo humanos.
+
+### O paradoxo dos dados
+
+Vivemos um paradoxo dos dados: antigamente, a pesquisa era limitada por questões tecnológicas (a coleta de William Labov nas lojas de departamento foi realizada de oitiva e com caderninho), mas havia muita autonomia. Atualmente, vivemos um boom tecnológico que nos dá uma autonomia tecnológica enorme (basta ver o fenômeno Neiva do Céu e a absurda quantidade de dados espontâneo que geramos), mas sofremos com restrições de pesquisa, e CEP/CONEP é uma delas.
+
+Curiosamente, as empresas não seguem essas diretrizes... Estamos a todo momento participando de pesquisas sem o consentimento livre e esclarecido. O escândalo da [Cambridge Analytica](https://brasil.elpais.com/brasil/2018/05/02/internacional/1525285885_691249.html) é apenas a ponta de um grande iceberg. Ou você nunca foi surpreendido por falar sobre um assunto perto do celular e de repente surgirem várias propagandas sobre o tema? Coincidências? 
+
+Nós pesquisadores seguimos as políticas de ciência aberta, atendemos preceitos legais e boas práticas e visamos a minimização de riscos. Precisamos de um comitê de ética? 
+
+## Vai encarar?
+
+Se você chegou até aqui, espero que tenha entendido que submeter um projeto ao CEP/CONEP (e ter a sua aprovação) não é garantia de ausência de riscos. Cuidados éticos podem e devem ser tomados em pesquisas com seres humanos, independentemente de comitê de ética. E, em tempos de [Ciência Aberta](file:///Users/raquelfreitag/Site/rkofreitag.github.io/aberta.html), a curadoria do um conjunto de dados produzidos pelos participantes envolve assumir a responsabilidade pelo uso e reuso dos dados.
+
+Voltando ao cinto de segurança: você usa automaticamente por causa da multa ou por causa da segurança? Você pensa em submeter o seu projeto de pesquisa ao CEP/CONEP para ter um olhar externo sobre seu projeto certificando que você se compromete em garantir cuidados éticos ou porque precisa deste papel para publicar um artigo depois? *As duas coisas...* é uma resposta hipócrita, porque dificilmente as questões éticas da pesquisa seriam discutidas se não por demanda da decisão da submissão ao CEP/CONEP. 
+
+Se você não sabia de nada disso até ler por aqui, não se desespere. A Resolução é de 1996. Eu entrei na graduação em 1997, fiz IC, mestrado e doutorado trabalhando com entrevistas sociolinguísticas, e só em 2010, ao ter um artigo aceito para publicação mas que não foi publicado porque eu não tinha o CAAA, é que tive ciência dessas questões e comecei a estudar o tema para poder implementá-lo em minhas pesquisas, e a compartilhar a minha experiência. Para padronizar o treinamento dos integrantes de projetos que coordeno, organizei um [manual](https://www.researchgate.net/publication/319186082_Documentacao_sociolinguistica_coleta_de_dados_e_etica_em_pesquisa) que pode auxiliar na elaboração do projeto e nos procedimentos de submissão. Também tenho disseminado essa discussão em como nos que ofereci na UEFS, UFF, na Jornada do Gelne, no Instituto Linguítico da Abralin e no FIS, além de incluir o tema no programa de disciplinas de metodologia de pesquisa na UFS. 
+
+Espero que tenha ajudado!
+
+>Como citar: FREITAG, Raquel M. K. **Preciso submeter meu projeto ao comitê de ética?**. Disponível em: https://rkofreitag.github.io/etica.html/. Acesso em: Acesso em: `r Sys.Date()`.
+
+
+
+
+
