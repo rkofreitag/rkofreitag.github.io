@@ -10,7 +10,7 @@ Esta é a pergunta que todos me fazem quando ministro capacitações ou oficinas
 
 ### As leis e as práticas
 
-"Ah, os anos 80 eram incríveis..."  Assim inicia cada capítulo de uma série chamada ["Os Goldbergs"](https://www1.folha.uol.com.br/ilustrada/2014/03/1430940-serie-os-goldbergs-faz-graca-com-moda-e-tecnologia-dos-anos-80.shtml). Acompanhar os costumes de uma época anterior com o olhar da nossa época nos coloca em choque com algumas práticas. Fumar era chique, propaganda de bebida alcoólica era sinônimo de mulher, programas infantis eram quase que pornográficos aos olhos de hoje. O [BuzzFeed](https://www.buzzfeed.com/br) tinha postagens nostálgicas sobre os anos 80, mas que, na onda da cultura do cancelamento, foram censuradas em 2020 (as fotos não estão mais disponíveis). Dentre as várias coisas incríveis que poderiam ser base para uma dissertação sobre costumes dos anos 80, vou escolher a que permite uma analogia com o ponto que motiva a proposta deste tutorial, o cinto de segurança. 
+"Ah, os anos 80 eram incríveis..."  Assim inicia cada capítulo de uma série chamada ["Os Goldbergs"](https://www1.folha.uol.com.br/ilustrada/2014/03/1430940-serie-os-goldbergs-faz-graca-com-moda-e-tecnologia-dos-anos-80.shtml). Acompanhar os costumes de uma época anterior com o olhar da nossa época nos coloca em xeque com algumas práticas. Fumar era chique, propaganda de bebida alcoólica era sinônimo de mulher, programas infantis eram quase que pornográficos aos olhos de hoje. O [BuzzFeed](https://www.buzzfeed.com/br) tinha postagens nostálgicas sobre os anos 80, mas que, na onda da cultura do cancelamento, foram censuradas em 2020 (as fotos não estão mais disponíveis). Dentre as várias coisas incríveis que poderiam ser base para uma dissertação sobre costumes dos anos 80, vou escolher a que permite uma analogia com o ponto que motiva a proposta deste tutorial, o cinto de segurança. 
 
 Hoje, é um ato automático ao entrar em um automóvel procurar o cinto de segurança e o afivelar. Mas por que desenvolvemos esse comportamento automático? 
 Vendo, talvez fique óbvio porque sempre devemos utilizar o cinto de seguranca, mesmo no banco traseiro: <https://www.youtube.com/watch?v=hNw1-OPwiKs>. Este vídeo é com bonecos de teste; a cada ano, o trânsito gera muito mais vítimas do que guerras, e o cinto de segurança em muitos casos é o divisor entre a vida e a morte. 
@@ -18,7 +18,7 @@ Vendo, talvez fique óbvio porque sempre devemos utilizar o cinto de seguranca, 
 Mas, ainda assim, as pessoas não usam o cinto de segurança pensando na segurança. O cinto de segurança, embora seja dispositivo obrigatoriamente presente em veículos no Brasil desde o final da década de 1960, somente passou a ser levado a sério a partir de 1997, com a instituição do [Código de Trânsito Brasileiro](https://detran.to.gov.br/legislacao/outros/codigo-de-transito-brasileiro-ctb/), que, em seu artigo 65 obriga o uso, tanto pelo condutor, como pelos passageiros.  
 
 Não usar o cinto de segurança é uma infração grave, que gera 5 pontos na carteira e multa de `R$ 195,23`. E, se um dos passageiros sem cinto for uma criança, a infração é gravíssima, com 7 pontos na carteira e multa de `R$ 293,47`. 
-Na verdade, só tivemos um Código de Trânsito Brasileiro em 1997. Antes disso, a obrigatoriedade do uso do cinto de segurança se dava apenas nas rodovias federais. desde 1989. Ou então, apenas no banco da frente. Ou, ainda, uma regulamentação local, como o caso da cidade de São Paulo, em 1994. Então, se hoje o comportamento automático é usar cinto de segurança, não foi por sensibilidade à segurança, mas por força coercitiva da lei. Ainda assim, com mais de 20 anos de vigência, encontramos justificativas para o não cumprimento da lei: "É pertinho", "É rapidinho", "Atrás não precisa", "Vou devagar", "O cinto é desconfortável". Pode haver alguém que a vida toda nunca tenha usado cinto de segurança e não aconteceu nada. Mas, se acontecer uma única vez, a chance de ser fatal é grande. 
+Na verdade, só tivemos um Código de Trânsito Brasileiro em 1997. Antes disso, a obrigatoriedade do uso do cinto de segurança se dava apenas nas rodovias federais, desde 1989. Ou então, apenas no banco da frente. Ou, ainda, uma regulamentação local, como o caso da cidade de São Paulo, em 1994. Então, se hoje o comportamento automático é usar cinto de segurança, não foi por sensibilidade à segurança, mas por força coercitiva da lei. Ainda assim, com mais de 20 anos de vigência, encontramos justificativas para o não cumprimento da lei: "É pertinho", "É rapidinho", "Atrás não precisa", "Vou devagar", "O cinto é desconfortável". Pode haver alguém que a vida toda nunca tenha usado cinto de segurança e não aconteceu nada. Mas, se acontecer uma única vez, a chance de ser fatal é grande. 
 
 Mas por que falar de cinto de segurança se o assunto é ética em pesquisa? Porque, no Brasil, a avaliação de pesquisas quanto aos preceitos éticos é feita pelo Conselho Nacional de Saúde, que instituiu os Comitês de Ética em Pesquisa, e isso tem mais ou menos a mesma idade da lei do cinto de segurança: a [Resolução 196, de 10 de outubro de 1996](http://bvsms.saude.gov.br/bvs/saudelegis/cns/1996/res0196_10_10_1996.html), com modificações posteriores pelas Resoluções [466, de 12 de dezembro de 2012](http://www.conselho.saude.gov.br/resolucoes/2012/Reso466.pdf), e [510, de 6 de abril de 2016](https://bvsms.saude.gov.br/bvs/saudelegis/cns/2016/res0510_07_04_2016.html). Então, a submissão de projeto de pesquisa ao comitê de ética não é uma novidade. Talvez o tema cause impacto agora que agências de financiamento e periódicos estão solicitando este procedimento. Mas novidade, definitivamente não é, assim como não deveria ser o fato de pensarmos e discutirmos questões relacionadas às práticas de nossa pesquisa. Antes de decidir se vai submeter um projeto a um comitê de ética, leia este texto até o fim.
 
@@ -41,7 +41,7 @@ Os princípios da ética em pesquisa são sustentado em três pilares: **respeit
 
 Mas já não fazemos isso? Quem conduz uma pesquisa vive a tensão constante entre resultados e valores. Precisamos saber os nossos limites. Até onde vamos?  
 
-#### Quais são nossos limites?
+### Quais são nossos limites?
 
 Digamos que você está em uma festa e são servidos canapés de patê e de queijo. Você comeria? E se soubesse que o [queijo é feito de leite materno](https://gizmodo.uol.com.br/voce-comeria-este-queijo-humano-feito-a-partir-de-leite-humano/), ainda assim você comeria? Se soubesse que o patê foi feito com [a esteatose hepática de um pato](https://www.huffpostbrasil.com/elizabeth-mac-gregor/foie-gras-quanta-crueldade-voce-pode-engolir_b_7771728.html), o famoso *foie gras*, ainda assim você comeria? 
 
@@ -54,7 +54,7 @@ Os efeitos sobre a população civil, sentidos em Hiroshima e Nagasaki, não for
 
 Apesar de já saber os impactos, continuamos tentando... Sim, porque nem sempre conseguimos discernir os nossos limites, precisamos de um comitê de ética.
 
-#### Origens da regulamentação
+### Origens da regulamentação
 
 Para saber mais sobre as regulamentações sobre ética em pesquisa, é importante conhecer alguns marcos legais:
 
@@ -82,7 +82,7 @@ Na imersão etnográfica, Alice Goffmann acompanhou a trama de um assassinato de
 
 Fazer entrevista, coisa tão simples, pode nos colocar em situações eticamente sensíveis. Por isso, as pesquisas envolvendo humanos são matéria de deliberação de comitês de ética, seguindo as diretrizes das resoluções do Conselho Nacional de Saúde. Para as áreas de saúde, esse procedimento já é automatizado, tal como colocar o cinto de segurança. Mas, na grande área das Humanidades, existe uma grande objeção à submissão de projetos ao CEP/CONEP. 
 
-Esta é uma discussão muito ampliada, com diferentes vertentes e matizes, com diferentes autores que se propõem a tratada de ética e conduta na pesquisa em ciências humanas e sociais. Vou me basear em três textos que me ajudaram muito na formação da concepção que tenho hoje sobre o tema:
+Esta é uma discussão muito ampliada, com diferentes vertentes e matizes, com diferentes autores que se propõem a tratar de ética e conduta na pesquisa em ciências humanas e sociais. Vou me basear em três textos que me ajudaram muito na formação da concepção que tenho hoje sobre o tema:
 
 - [**Reflexões sobre ética e pesquisa**](https://www.scielo.br/pdf/rbla/v5n1/03.pdf), de Vera Menezes, voltado para trabalhos na área de linguagem;
 - [**Ética na pesquisa social: novos impasses burocráticos e paroquiais**](http://www.sbsociologia.com.br/rbsociologia/index.php/rbs/article/view/154), de Alba Zaluar, que aponta uma questão crucial na gênese da pesquisa na área das das humanidades: pesquisa em humanos é diferente de pesquisa com humanos;
@@ -90,11 +90,7 @@ Esta é uma discussão muito ampliada, com diferentes vertentes e matizes, com d
 
 O primeiro ponto a ser esclarecido é que são diferentes tipos de pesquisa, como aponta Zaluar (2015): pesquisa **com** seres humanos é diferente de pesquisa **em** seres humanos. As ciências biométicas fazem pesquisas **em** seres humanos, em que os particiantes são sujeitos da pesquisa; as humanidades fazem pesquisas **com** seres humanos, em que os participantes são objetos da pesquisa. Sobottka (2015) distingue as pesquisas que acompanham intervenção ou experimentação, que contêm ou vêm associadas a algum tipo de provocação de mudanças em sua população alvo, das pesquisas que fazem observação (sentido lato, incluindo diálogo, participação etc.), observam as ações das pessoas, as relações entre as pessoas e o sentido que pessoas dão ao que fazem, e sua principal tarefa consiste em interpretar essas observações e relacioná-las com características do contexto ou então com características inatas ou adscritas às pessoas. Essas pesquisas não *envolvem seres humanos*, mas têm pessoas como interlocutoras e, muito frequentemente, como parceiras nas pesquisas.
 
-<<<<<<< HEAD
 Enquanto as pesquisas do primeiro tipo são foco prioritário da avaliação do CEP/CONEP, as pesquisas do segundo tipo não prescindem desta instância, que em alguns casos são inviabilizadas pelas determinações das resoluções. Isso não significa que sejam isentas de princípios éticos, ou que não existam, como explica Sobottka (2015), pesquisas eticamente críticas, tais como:
-=======
-Enquanto as pesquisas do primeiro tipo seriam foco prioritário da avaliação do CEP/CONEP, as pesquisas do segundo tipo não prescindem desta instância, que em alguns casos são inviabilizadas pelas determinações das resoluções. Isso não significa que sejam isentas de princípios éticos, ou que não existam, como explica Sobottka (2015), pesquisas eticamente críticas, tais como:
->>>>>>> cc1c9a1910871e8969df9a104dc0d59a4c3c67b4
 
 - pesquisas em que seja necessário recorrer ao expediente do pesquisador oculto
 - pesquisas destinadas a gerar tecnologia social: as pessoas, em confiança, podem ter dado informações tão somente porque não podiam avaliar as consequências de sua generosidade com os pesquisadores 
