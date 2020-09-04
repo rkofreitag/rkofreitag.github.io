@@ -412,7 +412,7 @@ $(document).ready(function () {
 </blockquote>
 <p><a href="monotonga.csv#" class="download" title="Baixe o arquivo de dados monotonga">Arquivo monotonga</a></p>
 <p>Neste tutorial, utilizaremos uma amostra do conjunto de dados que foi explorado no artigo <a href="https://sistemas.uft.edu.br/periodicos/index.php/portodasletras/article/view/8350/16654"><strong>Da fala à leitura: variação linguística na leitura em voz altade estudantes da Universidade Federal de Sergipe</strong></a> (Souza, Silva e Araujo Jr., 2020), considerando apenas um fenômeno fonológico, a monotongação.</p>
-<p>O conjunto de dados em questão se refere ao processo fonológico de monotongação na leitura. Esta subamostra foi utilizada em um estudo sobre reparos em leitura (Freitag, 2020). Por isso, o número de observações é diferente, com resultados diferentes.</p>
+<p>O conjunto de dados em questão se refere ao processo fonológico de monotongação na leitura. Esta subamostra foi utilizada em um estudo sobre <a href="https://www.scielo.br/scielo.php?pid=S0102-44502020000200405&amp;script=sci_abstract&amp;tlng=pt">reparos em leitura (Freitag, 2020)</a>. Por isso, o número de observações é diferente, com resultados diferentes.</p>
 <pre class="r"><code>dados &lt;- read.table(&quot;monotonga.csv&quot;, header = T, sep = &quot;;&quot;, stringsAsFactors = TRUE)
 ### estamos importando os dados da planilha intitulada &quot;monotonga.csv&quot;, informando que a primeira linha é a dos título (header) e que o separador da planilha é &quot;;&quot;)</code></pre>
 <p>Utilize a função <code>head()</code> para inspecionar as seis ocorrências:</p>
@@ -589,7 +589,6 @@ assocstats(valor) ### aplicar ao objeto a função
 <p>Podemos transpor as tabelas e os cálculos para o texto do relatório (resumo, artigo, dissertacão, tese). Um dos pontos negativos evocados para o não uso do R é que a apresentação gráfica dos resultados não é boa e que a realização dos testes exige muitos procedimentos. Existe um movimento dos usuários do R chamado <strong>EasyStats</strong>, com pacotes de funções que facilitam a rotina de procedimentos. Vamos usar alguns deles para ver as possibilidades.</p>
 <p>Para produzir tabelas, já com contagens, frequências e resultados de testes inferências, o pacote <code>sjPlot</code> é uma boa opção.</p>
 <pre class="r"><code>library(sjPlot)  ### carregar o pacote
-#&gt; Learn more about sjPlot with &#39;browseVignettes(&quot;sjPlot&quot;)&#39;.
 sjt.xtab(
   dados$valor, dados$realizacao, ### tabela de contingência
   show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
@@ -1217,10 +1216,10 @@ leitura &lt;- dados %&gt;% #### criar um novo objeto a partir do objeto &quot;da
 #&gt; 4 04F18        0.25 
 #&gt; 5 08F20        0.688
 #&gt; 6 08F20        0.312</code></pre>
-<p>O tratamento deste tipo de variável será explorado no próximo tutorial.</p>
+<p>O tratamento deste tipo de variável será explorado em <a href="https://rkofreitag.github.io/continuas.html">outro tutorial</a>.</p>
 <p><strong>Como citar:</strong></p>
 <blockquote>
-<p>FREITAG, Raquel M. K. <strong>Variáveis categóricas</strong>. Disponível em: <a href="https://rkofreitag.github.io/Categorica.html/" class="uri">https://rkofreitag.github.io/Categorica.html/</a>. Acesso em: 2020-06-28.</p>
+<p>FREITAG, Raquel M. K. <strong>Variáveis categóricas</strong>. Disponível em: <a href="https://rkofreitag.github.io/Categorica.html/" class="uri">https://rkofreitag.github.io/Categorica.html/</a>. Acesso em: 2020-09-04.</p>
 </blockquote>
 </div>
 

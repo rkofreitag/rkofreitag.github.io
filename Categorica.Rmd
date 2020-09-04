@@ -18,7 +18,7 @@ Este símbolo `#` significa que o `script` não irá ler o que está na sequênc
 
 Neste tutorial, utilizaremos uma amostra do conjunto de dados que foi explorado no artigo [**Da fala à leitura: variação linguística na leitura em voz altade estudantes da Universidade Federal de Sergipe**](https://sistemas.uft.edu.br/periodicos/index.php/portodasletras/article/view/8350/16654)  (Souza, Silva e Araujo Jr., 2020), considerando apenas um fenômeno fonológico, a monotongação.
 
-O conjunto de dados em questão se refere ao processo fonológico de monotongação na leitura. Esta subamostra foi utilizada em um estudo sobre reparos em leitura (Freitag, 2020). Por isso, o número de observações é diferente, com resultados diferentes. 
+O conjunto de dados em questão se refere ao processo fonológico de monotongação na leitura. Esta subamostra foi utilizada em um estudo sobre [reparos em leitura (Freitag, 2020)](https://www.scielo.br/scielo.php?pid=S0102-44502020000200405&script=sci_abstract&tlng=pt). Por isso, o número de observações é diferente, com resultados diferentes. 
 
 ```{r import, echo=TRUE, comment = "#>"}
 dados <- read.table("monotonga.csv", header = T, sep = ";", stringsAsFactors = TRUE)
@@ -386,7 +386,7 @@ Inspecione as seis primeiras ocorrências do objeto `leitura` com a função `he
 head(leitura)
 ```
 
-O tratamento deste tipo de variável será explorado no próximo tutorial. 
+O tratamento deste tipo de variável será explorado em [outro tutorial](https://rkofreitag.github.io/continuas.html). 
 
 **Como citar:**
 
