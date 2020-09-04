@@ -412,7 +412,7 @@ $(document).ready(function () {
 </blockquote>
 <p><a href="corpus.csv#" class="download" title="Baixe o arquivo de dados corpus">Arquivo corpus</a><br />
 <a href="dados.csv#" class="download" title="Baixe o arquivo de dados dados">Arquivo dados</a></p>
-<p>Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo <strong>Palavras-tabu e efeitos de gênero na leitura</strong> (Pinheiro, Menezes &amp; Freitag, 2020), que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.</p>
+<p>Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo <a href="https://openaccess.blucher.com.br/article-details/12-22195"><strong>Palavras-tabu e efeitos de gênero na leitura</strong> (Pinheiro, Menezes &amp; Freitag, 2020)</a>, que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.</p>
 <p>A organização de um conjunto de dados depende da pergunta que será feita a eles. Por isso, é importante ter clareza das perguntas a serem feitas antes de iniciar a coleta, para não trabalhar à toa. Existem duas formas de organizar os dados, e elas podem ser manipuladas com os recursos do pacote <code>dplyr</code>. Os dados podem ser <em>pareados</em> ou <em>alinhados</em>.</p>
 <div id="importar-os-dados" class="section level2">
 <h2>Importar os dados</h2>
@@ -570,7 +570,7 @@ bartlett.test(texto.2 ~ sexo, data = corpus)
 #&gt; data:  texto.2 by sexo
 #&gt; Bartlett&#39;s K-squared = 0.010829, df = 1, p-value = 0.9171</code></pre>
 <p>Observe os resultados e diga qual é o grupo que está inteferindo na variância?</p>
-<p><strong>Há correlação entre as variáveis?</strong> <strong>Há correlação entre as variáveis?</strong></p>
+<p><strong>Há correlação entre as variáveis?</strong></p>
 <p>A próxima inspeção é saber se correlação entre os dados, ou seja, se há interferência de uma variável na outra. Nos termos do objetivo do estudo em questão, precisamos saber se o tempo de leitura do texto 1 interfere no texto de leitura do texto 2.</p>
 <p>Para isso, vamos calcular o coeficiente de correlação, que mede se e o quanto duas variáveis quantitativas tendem a mudar juntas. Existem três testes, cada um com sua especificidade de variáveis: O coeficiente de correlação de Pearson (r) mede o grau da correlação linear entre duas variáveis quantitativas numéricas. Quando as variáveis são ordinais, podem ser considerados os coeficientes de correlação de Spearman ρ (rhô) ou de Kendall τ (tau); a estatística do teste Kendall é mais robusta, porém, é sensível a amostras restritas. O coeficiente de correlação pode variar de -1 a +1, quanto maior for o valor absoluto do coeficiente, mais forte é a relação entre as variáveis. Um valor absoluto de 1 indica uma relação perfeita, e um valor zero indica ausência de relação. Para realizar o teste, utilizamos a função <code>cor.test</code> e especificamos o método:</p>
 <pre class="r"><code>cor.test(corpus$texto.1, corpus$texto.2, 
@@ -916,7 +916,7 @@ get_summary_stats(tempo.de.leitura)
 <p>Neste tutorial, vimos o funcionamento de variáveis quantitativas em uma situação pareada e vimos a importância de saber a pergunta que será feita aos dados para poder organizar o conjunto de dados da maneira mais otimizada para as respostas. Aproveite o conhecimento para aplicar em outros estudos! E aprimore seus conhecimentos em <code>dplyr</code> e <code>ggplot2</code>.</p>
 <p><strong>Como citar:</strong></p>
 <blockquote>
-<p>FREITAG, Raquel M. K. <strong>Variáveis contínuas</strong>. Disponível em: <a href="https://rkofreitag.github.io/continuas.html/" class="uri">https://rkofreitag.github.io/continuas.html/</a>. Acesso em: 2020-06-28.</p>
+<p>FREITAG, Raquel M. K. <strong>Variáveis contínuas</strong>. Disponível em: <a href="https://rkofreitag.github.io/continuas.html/" class="uri">https://rkofreitag.github.io/continuas.html/</a>. Acesso em: 2020-09-04.</p>
 </blockquote>
 </div>
 

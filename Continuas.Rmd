@@ -15,7 +15,7 @@ Este símbolo `#` significa que o `script` não irá ler o que está na sequênc
 <a href="corpus.csv#" class="download" title="Baixe o arquivo de dados corpus">Arquivo corpus</a>	
 <a href="dados.csv#" class="download" title="Baixe o arquivo de dados dados">Arquivo dados</a>	
 
-Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo **Palavras-tabu e efeitos de gênero na leitura** (Pinheiro, Menezes & Freitag, 2020), que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.
+Vamos trabalhar com variáveis quantitativas. Para isso, vamos usar o conjunto de dados do capítulo [**Palavras-tabu e efeitos de gênero na leitura** (Pinheiro, Menezes & Freitag, 2020)](https://openaccess.blucher.com.br/article-details/12-22195), que apresenta o resultado de um estudo sobre os efeitos de palavras-tabu e de gênero na situação de leitura como pistas de processamento de estereótipo e preconceito.
 
 A organização de um conjunto de dados depende da pergunta que será feita a eles. Por isso, é importante ter clareza das perguntas a serem feitas antes de iniciar a coleta, para não trabalhar à toa. Existem duas formas de organizar os dados, e elas podem ser manipuladas com os recursos do pacote `dplyr`. Os dados podem ser *pareados* ou *alinhados*.
 
@@ -119,7 +119,6 @@ bartlett.test(texto.2 ~ sexo, data = corpus)
 
 Observe os resultados e diga qual é o grupo que está inteferindo na variância?
 
-**Há correlação entre as variáveis?**
 **Há correlação entre as variáveis?**
 
 A próxima inspeção é saber se correlação entre os dados, ou seja, se há interferência de uma variável na outra. Nos termos do objetivo do estudo em questão, precisamos saber se o tempo de leitura do texto 1 interfere no texto de leitura do texto 2.
