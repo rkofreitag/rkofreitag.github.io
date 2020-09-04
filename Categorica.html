@@ -589,6 +589,7 @@ assocstats(valor) ### aplicar ao objeto a função
 <p>Podemos transpor as tabelas e os cálculos para o texto do relatório (resumo, artigo, dissertacão, tese). Um dos pontos negativos evocados para o não uso do R é que a apresentação gráfica dos resultados não é boa e que a realização dos testes exige muitos procedimentos. Existe um movimento dos usuários do R chamado <strong>EasyStats</strong>, com pacotes de funções que facilitam a rotina de procedimentos. Vamos usar alguns deles para ver as possibilidades.</p>
 <p>Para produzir tabelas, já com contagens, frequências e resultados de testes inferências, o pacote <code>sjPlot</code> é uma boa opção.</p>
 <pre class="r"><code>library(sjPlot)  ### carregar o pacote
+#&gt; Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!
 sjt.xtab(
   dados$valor, dados$realizacao, ### tabela de contingência
   show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
