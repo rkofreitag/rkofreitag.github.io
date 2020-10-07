@@ -7,15 +7,23 @@ navbar:
     - text: "Início"
       icon: fa-home
       href: index.html
-    - text: "Melhores Práticas"
+    - text: "Currículo"
       icon: fa-language
       href: cv.html
     - text: "Ciência Aberta"
       icon: fa-recycle
       href: aberta.html
-    - text: "Popularização"
-      icon: fa-smile-o
-      href: pop.html
+    - text: "Produtos"
+      icon: fa-eye
+      menu:
+        - text: "Difusão da Ciência"
+          icon: fa-coffee
+          menu:
+            - text: "Gramática Viva ao Vivo"
+              href: gramatica.html
+        - text: "Popularização da Ciência"
+          icon: fa-smile-o
+          href: pop.html
     - text: "Cursos e tutoriais"
       icon: fa-gear
       menu:

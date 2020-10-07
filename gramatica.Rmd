@@ -1,0 +1,171 @@
+---
+title: "Gramática Viva ao Vivo"
+---
+
+```{r, out.width = "20%", echo=FALSE}
+library(knitr)
+include_graphics("https://portal.uneb.br/profletras/wp-content/uploads/sites/90/2019/09/logo-profletras-780x400.jpg")
+```
+
+O ciclo de oficinas **Gramática Viva ao Vivo** no Webinário do Profletras foi uma das experiências mais enriquecedoras das quais tive a oportunidade de participar. Foram cinco encontros, dos quais participei do terceiro, o do [eixo Gramática e variação linguística](https://www.youtube.com/watch?v=NQBnwYR0Ph0), e do [quinto](https://www.youtube.com/watch?v=RQjlQwqygfQ), que foi um balanço final com todas as participantes.
+
+Os vídeos dos encontros estão disponíveis no canal do [Profletras Nacional no YouTube](https://www.youtube.com/c/PROFLETRASNACIONAL). 
+
+Aqui resumo minha exposição no eixo **Gramática e variação linguística**.
+
+Vivemos tempos de intolerância. Ações extremistas, discriminação, discursos de ódio, cultura do cancelamento. A sociedade está doente. Onde nós erramos? É papel da escola formar para a cidadania. E tudo que está acontecendo é o contrário do que esperamos. Eu quero falar um pouco da nossa responsabilidade em tudo isso. E variação linguística é um bom ponto de partida.
+
+Falamos muito de variação linguística, mas nem sempre temos clareza sobre ela. Variação linguística na escola muitas vezes se resume a *aipim*, *mandioca* e *macaxeira*. Na sociedade, falamos muito de sotaques. Perceber a variação no nível fonológico é mais fácil do que perceber [nos níveis gramaticais mais altos](https://www.e-publicacoes.uerj.br/index.php/matraga/article/view/27799/19920). 
+Precisamos superar as limitações na abordagem pedagógica da variação linguística, precisamos reconhecer que existe variação além da fonologia, que existe variação na gramática, e que está, inclusive, na gramática normativa). E possibilitar a reflexão sobre a variação e para estimular a sensibilidade aos contextos e aos registros é papel da aula de língua portuguesa.
+
+Por que intuitivamente é tão difícil perceber que existe variação além da fonologia? Porque no processamento da língua, nem sempre paramos para refletir sobre os pedaços maiores que constituem a nossa fala. O fato é que existe muito mais variação na gramática do que podemos nos dar conta, em função de diferentes níveis de saliência e de avaliação social das formas. Podemos identificar quatro tipos de fenômenos variáveis no nível da gramática:
+
+  - fenômenos variáveis a que as pessoas não reagem
+  - fenômenos variáveis dialetalmente salientes
+  - fenômenos variáveis socialmente salientes
+  - fenômenos variáveis salientes por força do prescritivismo
+ 
+Por exemplo, nestas frases, retiradas do [estudo de Josilene Mendonça e Jaqueline Nascimento](https://periodicos.uff.br/cadernosdeletras/article/view/43581/24889), você consegue identificar que domínio variável está presente?
+
+- *Espero que você entenda nosso ponto de vista, esperamos muito que possamos curtir essa viagem juntos.*
+- *Por isso eu estou pedindo que realize o nosso sonho.*
+- *Em breve você saberá quem é a pessoa.*
+
+Observe o preenchimento do sujeito pronominal:
+
+- **( )** Espero que **você** entenda nosso ponto de vista, **( )** esperamos muito que **( )** possamos curtir essa viagem juntos.
+- Por isso **eu** estou pedindo que **( )** realize o nosso sonho.
+- Em breve **você** saberá quem é a pessoa.
+
+> E é variação? Eu nem sabia...
+
+Este é um **fenômeno variável a que as pessoas não reagem**. Havia um tempo que as desinências número-pessoais do português eram suficientes para uma indicação unívoca do sujeito gramatical. Mas com a entrada de novos pronomes, como *a gente* e *você*, a relação unívoca é desfeita e não mais basta observar a desinência para saber quem é o sujeito gramatical (o famoso, mas falho, “pergunte ao verbo”). Quando eu digo *canta*, o falante precisa de mais informações para saber se o sujeito é *ele*, *você*, *tu*, *a gente*, *nós*, *vocês* ou *eles*, porque ainda temos outra variação encaixada, a expressão das marcas de concordância. Para desfazer a ambiguidade, só preenchendo o sujeito gramatical. 
+
+[É possível saber origem social ou dialetal do falante](http://www.roseta.org.br/pt/2018/05/13/e-possivel-saber-a-classe-social-de-uma-pessoa-so-de-ouvi-la/) por causa do preenchimento ou não do sujeito pronominal? 
+
+É variação, mas não é socialmente ou dialetalmente indexada. Pode ter relação com registro (fala ou escrita), como mostram alguns estudos, com especial destaque [ao conjunto de trabalhos de Eugenia Duarte](http://www.revel.inf.br/files/23f8c093cf2be398414c965bf05f8e75.pdf), que descreve essa mudança, em especial, *A evolução na representação do sujeito pronominal em dois tempos*, uma leitura muito esclarecedora da questão. 
+
+Também traços linguísticos no nível gramatical que evocam imediatamente uma presunção de origem, como é o caso da variação na expressão da segunda pessoa do singular. Em certas regiões, se usa **tu**, em outras **você**, algumas mais **tu** do que **você**, outras mais **você** do que **tu**. Marta Scherre tem organizado quadros comparativos da distribuição dessa variação no português brasileiro, como o apresentado no livro [Mapeamento sociolinguístico do português brasileiro](https://www.editoracontexto.com.br/produto/mapeamento-sociolinguistico-do-portugues-brasileiro/1496695). Este é um exemplo de
+**fenômeno variável dialetalmente saliente**. Apesar disso, os materiais didáticos ainda não contemplam essa variação, continuam no *aipim*, *mandioca* e *macaxeira*. 
+
+Nas regiões onde as duas formas coexistem, existem valores de formalidade, contexto e de geração/faixa etária associados, que determinam a escolha de um ou de outro pronome, configurando um **fenômeno variável socialmente saliente**. No escopo do Profletras, Jilcicleide Paes desenvolveu um produto, a [balança das relações sociais](https://ri.ufs.br/handle/riufs/13614), para estimular essa reflexão, já que o livro didático adotado na escola onde ela atuava não contemplava essa abordagem.
+
+```{r, out.width = "60%", echo=FALSE}
+library(knitr)
+include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCL1Einhw7hg2y-7_TvWzBE9lDPVj0NwJJ0g&usqp=CAU")
+include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSygpe7T6VmL32YabNyBcm9lZbpqegPu4mSHQ&usqp=CAU")
+```
+
+E há também os traços linguísticos “pelo em ovo”. Tem pelo em ovo? Aparentemente não. Mas quem procura, acaba achando... É o caso deste exemplo: 
+
+```{r, out.width = "70%", echo=FALSE}
+library(knitr)
+include_graphics("https://i.pinimg.com/originals/28/0a/ba/280aba748c1dbd8eda19b532485cad4e.jpg")
+```
+
+O que tem de errado? Tem variação? Automaticamente, alguém pode dizer que *pra mim* é errado. Você nunca falou *pra mim*? Mesmo? Este é um pelo em ovo: as pessoas só percebem esta variação existe porque são apresentadas a ela por prescrições, é um **fenômeno variável saliente por força do prescritivismo**. E, por se amparar nas prescrições, se sentem no direito de corrigir os outros, embora sequer percebam na sua fala ou na sua escrita. 
+
+Aqui é importante destacar que tipo de prescrições são essas. Não são as prescrições encontradas em bons instrumentos normativos, como gramáticas. São prescritivismos: comandos paragramaticais, com foco totalmente no erro e na correção, e regras deste tipo fazem com que as pessoas saiam à caça de erros: 
+
+```{r, out.width = "40%", echo=FALSE}
+library(knitr)
+include_graphics("https://3.bp.blogspot.com/-yB8f3qGKh7Y/VG2PG22sf8I/AAAAAAAAAR0/1jU7Kmo4D5o/s1600/Para%2BEU%2BFazer.jpg")
+include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS5kkIWAprQc6G3cdvn2V3gWToaaCKFKrkLwQ&usqp=CAU")
+```
+
+Este fenômeno variável tem funcionamento regular e estável no português brasileiro, e pode ser explicado por diferentes abordagens:
+
+- Marcação excepcional de caso [(Mioto; Figueiredo; Lopes, 1990)](https://www.editoracontexto.com.br/produto/novo-manual-de-sintaxe/1496734)
+- Contexto de dativo com infinitivo [(Torrent, 2008)](https://www.ufjf.br/revistaveredas/files/2009/12/artigo71.pdf)
+- Estudos de abordagem sociolinguística [(Gomes, 2019)](https://repositorio.unesp.br/handle/11449/182194)
+
+Apesar da ampla descrição e explicação linguística, as pessoas não só se sentem no direito de corrigir, elas usam essa correção como mecanismo de discriminação e de preconceito:
+
+```{r, out.width = "60%", echo=FALSE}
+library(knitr)
+include_graphics("https://dicionarioegramatica.files.wordpress.com/2016/01/12523091_618154401655645_265751860710933278_n.jpg?w=640")
+include_graphics("https://conversadeportugues.com.br//wp-content/uploads/2012/04/indio.jpg")
+```
+
+*Mim índio* só existe em tradução de desenhos do Pica-Pau. Este tipo de prescritivismo foi inclusive utilizado [em propaganda de McDonalds nos anos 1990](https://www1.folha.uol.com.br/fsp/1997/8/09/dinheiro/30.html). 
+
+Mas as coisas podem ir além. E podem chegar à escala da intolerância, [como proposta por Gordon Allport](https://pt.wikipedia.org/wiki/Escala_de_Allport). Ele queria saber por que as atrocidades dos campos de concentração aconteceram. Não foi do dia para a noite, foi como sapo no caldeirão fervente. As pessoas vão se acostumando aos poucos, até virar perseguição.
+
+O que é intrigante é que essa patrulha gramatiqueira não se sustenta no uso, como mostram os resultados da [dissertação de Aline Gomes](https://repositorio.unesp.br/handle/11449/182194), com o corpus do Iboruna, um corpus representativo da fala do interior de São Paulo. 
+
+```{r, echo=FALSE}
+slices <- c(28, 82, 308) 
+lbls <- c("eu", "mim", "zero")
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct) # add percents to labels 
+lbls <- paste(lbls,"%",sep="") # ad % to labels 
+pie(slices,labels = lbls, col=rainbow(length(lbls)),
+   main="Variação pronominal em orações infinitivas iniciadas por para \n (Gomes, 2019)")
+```
+
+Ma,s apesar de, no uso, a realização "*pra mim* prevalecer sobre a realização *pra eu*”*, o prescritivismo tem efeito consciente, como mostram os comentários metalinguísticos induzidos pelo método de coleta do ALIB, no [trabalho desenvolvido por Graziele Santosa e Marcela Paim](http://periodicos.uefs.br/index.php/acordasletras/article/view/1920/pdf), e também identificados no [trabalho de Neusa Philippsen](https://periodicos.ufpa.br/index.php/moara/article/viewFile/8012/5890).
+
+A pergunta: *Alguém pede para você fazer uma tarefa. Mas outra pessoa acha que a tarefa era para ela. Então, você diz: Essa tarefa, na verdade, é para quem fazer?* 
+
+As respostas:
+
+ - *Mim... Isso é pra eu fazê.*
+ - *Mim va... Pra eu varrê.*
+
+O "efeito-índio":
+
+*INF.- Pra mim.*
+
+*INQ.- Pra mim? Então, essa é para você fazer, essa é para você fazer e essa é pra...fazer.*
+
+*INF.- Pra eu fazê.*
+
+*INQ.- Ou pra mim fazer?*
+
+*INF.- Pra eu.*
+
+*INQ.- Qual dos dois você fala?*
+
+*INF.- Pra mim (risos)*
+
+*INQ.- Então, pra mim fazer.*
+
+*INF.- Mas tá errado.*
+
+*INQ.- Não tá não. Pode parar com essa história de “tá errado”.*
+
+*INF.- Para mim... Eu não sou índio (risos).*
+
+A força do prescritivismo pode nos sugerir que a fonte do preconceito é a gramática normativa. Será mesmo? Qual gramática? Sim, a gramática de Evanildo Bechara, prescreve uma forma (mas não condena a outra). Mas a [gramática de José Carlos de Azeredo](https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/_d47e295aa1191ec07434a70f8b0b64d0a6d3efdf.jpg) reconhece ambas as construções. E seja qual for a gramática – entendida aqui como um bom instrumento normativo, e não um comando paragramatical ou difusora de “norma curta”, nos termos de [Faraco (2008)](https://www.parabolaeditorial.com.br/norma-culta-brasileira--desatando-alguns-nos-47556704) – nenhuma julga ou condena a realização como errada ou que é "coisa de índio".
+
+
+[Nem sempre as pessoas falam aquilo que dizem que falam](http://www.roseta.org.br/pt/2018/05/16/nem-sempre-as-pessoas-falam-aquilo-que-dizem-que-falam/). Outros fenômenos também passam por este processo de dissonância. É o caso do uso do [*a gente* na variação na expressão da primeira pessoa do plural](https://doi.org/10.1590/0102-44506992907750337). Quando observamos os dados do uso da forma de expressão da primeira pessoa, constatamos que entre estudantes do ensino médio da capital sergipana, o uso de *a gente* é quase categórico:
+
+```{r, out.width = "70%", echo=FALSE}
+library(knitr)
+include_graphics("https://www.scielo.br/img/revistas/delta/v32n4//1678-460X-delta-32-04-00889-gf3.jpg")
+```
+
+Mas, quando perguntamos para estes mesmos falantes qual a forma de referência à primeira pessoa do plural que eles usam, a resposta muda. 
+Um estudante de ensino médio, com 100% de uso de *a gente* durante a entrevista, quando perguntado se usa mais uma forma ou outra, não tem dúvidas em dizer que é a forma *nós*, e ainda justifica que *a gente* é muito estranho. Esta é uma característia de um **fenômeno variável saliente por força do prescritivismo**: as pessoas não têm ideia do seu uso efetivo, não percebem a variação na sua fala, mas replicam o que ouvem de prescrições.
+
+### O que está acontecendo?
+
+Os efeitos prescritivistas, especialmente da "norma curta", dinamizados por formadores de opinião sem necessariamente ter formação científica ou preparação para a divulgação científica, impulsionam ações extremistas que se valem de traços do sistema linguístico como base para a discriminação, para a intolerância e para o preconceito. Podemos contribuir para desfazer essa realidade oferecendo uma formação sólida: 
+
+- não compartilhar, nem estimular, nem incentivar as práticas de "norma curta"
+
+- trabalhar com a observação e análise dos usos linguísticos
+ter acesso e conhecimento de bons instrumentos normativos (*gramáticas*, no plural)
+
+- saber mobilizar o conhecimento científico produzido para explicar os usos
+
+- considerar dados empíricos, diversificados e sensíveis à realidade sociocultural, com diversidade de gêneros, registros, grupos, e ao mesmo tempo contribuindo para a constituição de acervos da realidade linguística em que as práticas emergem
+
+Com essas ações, podemos desconstruir e desnaturalizar [o uso da língua para a discriminação](http://periodicos.uefs.br/index.php/acordasletras/article/view/5233/pdf) e barrar a alçada à escala do preconceito, cada vez mais crescente e estimulado.
+
+**Não podemos deixar o discurso de ódio, preconceito, discriminação, cancelamento e outras agressões começar na aula de língua portuguesa. A Sociolinguística pode ajudar!**
+
+
+
+

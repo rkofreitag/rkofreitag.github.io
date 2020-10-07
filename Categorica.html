@@ -284,7 +284,7 @@ $(document).ready(function () {
   <a href="cv.html">
     <span class="fa fa-language"></span>
      
-    Melhores Práticas
+    Currículo
   </a>
 </li>
 <li>
@@ -294,12 +294,35 @@ $(document).ready(function () {
     Ciência Aberta
   </a>
 </li>
-<li>
-  <a href="pop.html">
-    <span class="fa fa-smile-o"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-eye"></span>
      
-    Popularização
+    Produtos
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <span class="fa fa-coffee"></span>
+         
+        Difusão da Ciência
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="gramatica.html">Gramática Viva ao Vivo</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="pop.html">
+        <span class="fa fa-smile-o"></span>
+         
+        Popularização da Ciência
+      </a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -589,7 +612,6 @@ assocstats(valor) ### aplicar ao objeto a função
 <p>Podemos transpor as tabelas e os cálculos para o texto do relatório (resumo, artigo, dissertacão, tese). Um dos pontos negativos evocados para o não uso do R é que a apresentação gráfica dos resultados não é boa e que a realização dos testes exige muitos procedimentos. Existe um movimento dos usuários do R chamado <strong>EasyStats</strong>, com pacotes de funções que facilitam a rotina de procedimentos. Vamos usar alguns deles para ver as possibilidades.</p>
 <p>Para produzir tabelas, já com contagens, frequências e resultados de testes inferências, o pacote <code>sjPlot</code> é uma boa opção.</p>
 <pre class="r"><code>library(sjPlot)  ### carregar o pacote
-#&gt; Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!
 sjt.xtab(
   dados$valor, dados$realizacao, ### tabela de contingência
   show.row.prc = TRUE, ### solicitamos que os resultados sejam apresentados em frequências
@@ -1220,7 +1242,7 @@ leitura &lt;- dados %&gt;% #### criar um novo objeto a partir do objeto &quot;da
 <p>O tratamento deste tipo de variável será explorado em <a href="https://rkofreitag.github.io/continuas.html">outro tutorial</a>.</p>
 <p><strong>Como citar:</strong></p>
 <blockquote>
-<p>FREITAG, Raquel M. K. <strong>Variáveis categóricas</strong>. Disponível em: <a href="https://rkofreitag.github.io/Categorica.html/" class="uri">https://rkofreitag.github.io/Categorica.html/</a>. Acesso em: 2020-09-04.</p>
+<p>FREITAG, Raquel M. K. <strong>Variáveis categóricas</strong>. Disponível em: <a href="https://rkofreitag.github.io/Categorica.html/" class="uri">https://rkofreitag.github.io/Categorica.html/</a>. Acesso em: 2020-10-07.</p>
 </blockquote>
 </div>
 

@@ -284,7 +284,7 @@ $(document).ready(function () {
   <a href="cv.html">
     <span class="fa fa-language"></span>
      
-    Melhores Práticas
+    Currículo
   </a>
 </li>
 <li>
@@ -294,12 +294,35 @@ $(document).ready(function () {
     Ciência Aberta
   </a>
 </li>
-<li>
-  <a href="pop.html">
-    <span class="fa fa-smile-o"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-eye"></span>
      
-    Popularização
+    Produtos
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <span class="fa fa-coffee"></span>
+         
+        Difusão da Ciência
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="gramatica.html">Gramática Viva ao Vivo</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="pop.html">
+        <span class="fa fa-smile-o"></span>
+         
+        Popularização da Ciência
+      </a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -568,27 +591,27 @@ print(floresta_contexto) # view results
 #&gt;                      Number of trees: 500
 #&gt; No. of variables tried at each split: 3
 #&gt; 
-#&gt;         OOB estimate of  error rate: 15.16%
+#&gt;         OOB estimate of  error rate: 14.63%
 #&gt; Confusion matrix:
 #&gt;     não num class.error
-#&gt; não 316   6  0.01863354
+#&gt; não 318   4  0.01242236
 #&gt; num  51   3  0.94444444</code></pre>
 <p>Como podemos ver, o resultado da floresta aleatória apresenta uma matriz de confusão com os erros, e a taxa de erro na predição do comportamento do restante dos dados. No modelo em que consideramos a realização fonétiva da realização da negação, a taxa de erro é de 14.1%</p>
 <p>O critério de seleção das variáveis é o valor do algoritmo de entropia ou o índice Gini, que pode ser visualizado em uma lista, ou em um gráfico, como podemos ver abaixo:</p>
 <pre class="r"><code>importance(floresta_contexto) # importance of each predictor
 #&gt;                          MeanDecreaseGini
-#&gt; negacao                         3.2385389
-#&gt; sexo                            5.9071337
-#&gt; material_interveniente          0.9909251
-#&gt; reforco_negativo                1.6998669
-#&gt; marcador_                       3.1038594
-#&gt; tempo_verbal                    3.8755651
-#&gt; pessoa_do_sujeito               3.7564379
-#&gt; localidade                      3.4583994
-#&gt; preenchimento_do_sujeito        2.4775453
-#&gt; estatuto_informacional          1.9398004
-#&gt; ato_de_fala                     2.9444185
-#&gt; tipo_textual                    2.8028865
+#&gt; negacao                         3.2449087
+#&gt; sexo                            5.9749389
+#&gt; material_interveniente          0.9688457
+#&gt; reforco_negativo                1.6547549
+#&gt; marcador_                       3.0679672
+#&gt; tempo_verbal                    3.9239415
+#&gt; pessoa_do_sujeito               3.6333989
+#&gt; localidade                      3.3796640
+#&gt; preenchimento_do_sujeito        2.5214618
+#&gt; estatuto_informacional          1.9315121
+#&gt; ato_de_fala                     3.3094549
+#&gt; tipo_textual                    2.9790912
 varImpPlot(floresta_contexto,type=2, main = &quot;Importância de cada fator para a negação \n em função da realização fonética&quot;)</code></pre>
 <p><img src="reducao_files/figure-html/tree8-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Vamos agora fazer o mesmo com a variável dependente posição da negação:</p>
@@ -842,7 +865,7 @@ pca.self &lt;- PCA(self, graph=TRUE)</code></pre>
 <p>Análise fatorial é um outro procedimento, muito parecido com a análise de componentes principais. Ambas são utilizadas para redução de conjuntos de variáveis. A análise fatorial considera uma matriz de correlação ou de covariância, enquanto a análise de componentes principais considera o conjunto de dados original. A análise de componentes principais tem por objetivo explicar o máximo possível a variância total nas variáveis, enquanto a análise fatorial busca explicar as covariâncias ou correlações entre as variáveis. Por isso, a análise de componentes principais é usada para reduzir os dados a um número menor de componentes, e a análise fatorial ajuda a entender quais construtos são subjacentes aos dados.</p>
 <p><strong>Como citar:</strong></p>
 <blockquote>
-<p>FREITAG, Raquel M. K. <strong>Redução de variáveis e de dados</strong>. Disponível em: <a href="https://rkofreitag.github.io/reducao.html/" class="uri">https://rkofreitag.github.io/reducao.html/</a>. Acesso em: 2020-06-28.</p>
+<p>FREITAG, Raquel M. K. <strong>Redução de variáveis e de dados</strong>. Disponível em: <a href="https://rkofreitag.github.io/reducao.html/" class="uri">https://rkofreitag.github.io/reducao.html/</a>. Acesso em: 2020-10-07.</p>
 </blockquote>
 </div>
 

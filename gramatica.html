@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Gramática Viva ao Vivo</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Raquel Freitag</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Início
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="fa fa-language"></span>
+     
+    Currículo
+  </a>
+</li>
+<li>
+  <a href="aberta.html">
+    <span class="fa fa-recycle"></span>
+     
+    Ciência Aberta
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-eye"></span>
+     
+    Produtos
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <span class="fa fa-coffee"></span>
+         
+        Difusão da Ciência
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="gramatica.html">Gramática Viva ao Vivo</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="pop.html">
+        <span class="fa fa-smile-o"></span>
+         
+        Popularização da Ciência
+      </a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Cursos e tutoriais
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Modelagem de dados</li>
+    <li>
+      <a href="Organizacao.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Organização do conjunto de dados
+      </a>
+    </li>
+    <li>
+      <a href="Software.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        A escolha do software
+      </a>
+    </li>
+    <li>
+      <a href="Pvalor.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Teste de hipóteses
+      </a>
+    </li>
+    <li>
+      <a href="reducao.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Redução de variáveis
+      </a>
+    </li>
+    <li>
+      <a href="Categorica.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Variáveis categóricas
+      </a>
+    </li>
+    <li>
+      <a href="Continuas.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Variáveis contínuas
+      </a>
+    </li>
+    <li>
+      <a href="regressao.html">
+        <span class="fa fa-pie-chart"></span>
+         
+        Introdução à regresão - parte 1
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Tutoriais</li>
+    <li>
+      <a href="meta.html">
+        <span class="fa fa-gear"></span>
+         
+        Como fazer uma meta-análise com estudos sociolinguísticos?
+      </a>
+    </li>
+    <li>
+      <a href="etica.html">
+        <span class="fa fa-gear"></span>
+         
+        Como submeter um projeto na Plataforma Brasil? 
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fa fa-user"></span>
+     
+    Sobre
+  </a>
+</li>
+<li>
+  <a href="mailto:rkofreitag@uol.com.br">
+    <span class="fa fa-envelope-o"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Gramática Viva ao Vivo</h1>
+
+</div>
+
+
+<p><img src="https://portal.uneb.br/profletras/wp-content/uploads/sites/90/2019/09/logo-profletras-780x400.jpg" width="20%" /></p>
+<p>O ciclo de oficinas <strong>Gramática Viva ao Vivo</strong> no Webinário do Profletras foi uma das experiências mais enriquecedoras das quais tive a oportunidade de participar. Foram cinco encontros, dos quais participei do terceiro, o do <a href="https://www.youtube.com/watch?v=NQBnwYR0Ph0">eixo Gramática e variação linguística</a>, e do <a href="https://www.youtube.com/watch?v=RQjlQwqygfQ">quinto</a>, que foi um balanço final com todas as participantes.</p>
+<p>Os vídeos dos encontros estão disponíveis no canal do <a href="https://www.youtube.com/c/PROFLETRASNACIONAL">Profletras Nacional no YouTube</a>.</p>
+<p>Aqui resumo minha exposição no eixo <strong>Gramática e variação linguística</strong>.</p>
+<p>Vivemos tempos de intolerância. Ações extremistas, discriminação, discursos de ódio, cultura do cancelamento. A sociedade está doente. Onde nós erramos? É papel da escola formar para a cidadania. E tudo que está acontecendo é o contrário do que esperamos. Eu quero falar um pouco da nossa responsabilidade em tudo isso. E variação linguística é um bom ponto de partida.</p>
+<p>Falamos muito de variação linguística, mas nem sempre temos clareza sobre ela. Variação linguística na escola muitas vezes se resume a <em>aipim</em>, <em>mandioca</em> e <em>macaxeira</em>. Na sociedade, falamos muito de sotaques. Perceber a variação no nível fonológico é mais fácil do que perceber <a href="https://www.e-publicacoes.uerj.br/index.php/matraga/article/view/27799/19920">nos níveis gramaticais mais altos</a>. Precisamos superar as limitações na abordagem pedagógica da variação linguística, precisamos reconhecer que existe variação além da fonologia, que existe variação na gramática, e que está, inclusive, na gramática normativa). E possibilitar a reflexão sobre a variação e para estimular a sensibilidade aos contextos e aos registros é papel da aula de língua portuguesa.</p>
+<p>Por que intuitivamente é tão difícil perceber que existe variação além da fonologia? Porque no processamento da língua, nem sempre paramos para refletir sobre os pedaços maiores que constituem a nossa fala. O fato é que existe muito mais variação na gramática do que podemos nos dar conta, em função de diferentes níveis de saliência e de avaliação social das formas. Podemos identificar quatro tipos de fenômenos variáveis no nível da gramática:</p>
+<ul>
+<li>fenômenos variáveis a que as pessoas não reagem</li>
+<li>fenômenos variáveis dialetalmente salientes</li>
+<li>fenômenos variáveis socialmente salientes</li>
+<li>fenômenos variáveis salientes por força do prescritivismo</li>
+</ul>
+<p>Por exemplo, nestas frases, retiradas do <a href="https://periodicos.uff.br/cadernosdeletras/article/view/43581/24889">estudo de Josilene Mendonça e Jaqueline Nascimento</a>, você consegue identificar que domínio variável está presente?</p>
+<ul>
+<li><em>Espero que você entenda nosso ponto de vista, esperamos muito que possamos curtir essa viagem juntos.</em></li>
+<li><em>Por isso eu estou pedindo que realize o nosso sonho.</em></li>
+<li><em>Em breve você saberá quem é a pessoa.</em></li>
+</ul>
+<p>Observe o preenchimento do sujeito pronominal:</p>
+<ul>
+<li><strong>( )</strong> Espero que <strong>você</strong> entenda nosso ponto de vista, <strong>( )</strong> esperamos muito que <strong>( )</strong> possamos curtir essa viagem juntos.</li>
+<li>Por isso <strong>eu</strong> estou pedindo que <strong>( )</strong> realize o nosso sonho.</li>
+<li>Em breve <strong>você</strong> saberá quem é a pessoa.</li>
+</ul>
+<blockquote>
+<p>E é variação? Eu nem sabia…</p>
+</blockquote>
+<p>Este é um <strong>fenômeno variável a que as pessoas não reagem</strong>. Havia um tempo que as desinências número-pessoais do português eram suficientes para uma indicação unívoca do sujeito gramatical. Mas com a entrada de novos pronomes, como <em>a gente</em> e <em>você</em>, a relação unívoca é desfeita e não mais basta observar a desinência para saber quem é o sujeito gramatical (o famoso, mas falho, “pergunte ao verbo”). Quando eu digo <em>canta</em>, o falante precisa de mais informações para saber se o sujeito é <em>ele</em>, <em>você</em>, <em>tu</em>, <em>a gente</em>, <em>nós</em>, <em>vocês</em> ou <em>eles</em>, porque ainda temos outra variação encaixada, a expressão das marcas de concordância. Para desfazer a ambiguidade, só preenchendo o sujeito gramatical.</p>
+<p><a href="http://www.roseta.org.br/pt/2018/05/13/e-possivel-saber-a-classe-social-de-uma-pessoa-so-de-ouvi-la/">É possível saber origem social ou dialetal do falante</a> por causa do preenchimento ou não do sujeito pronominal?</p>
+<p>É variação, mas não é socialmente ou dialetalmente indexada. Pode ter relação com registro (fala ou escrita), como mostram alguns estudos, com especial destaque <a href="http://www.revel.inf.br/files/23f8c093cf2be398414c965bf05f8e75.pdf">ao conjunto de trabalhos de Eugenia Duarte</a>, que descreve essa mudança, em especial, <em>A evolução na representação do sujeito pronominal em dois tempos</em>, uma leitura muito esclarecedora da questão.</p>
+<p>Também traços linguísticos no nível gramatical que evocam imediatamente uma presunção de origem, como é o caso da variação na expressão da segunda pessoa do singular. Em certas regiões, se usa <strong>tu</strong>, em outras <strong>você</strong>, algumas mais <strong>tu</strong> do que <strong>você</strong>, outras mais <strong>você</strong> do que <strong>tu</strong>. Marta Scherre tem organizado quadros comparativos da distribuição dessa variação no português brasileiro, como o apresentado no livro <a href="https://www.editoracontexto.com.br/produto/mapeamento-sociolinguistico-do-portugues-brasileiro/1496695">Mapeamento sociolinguístico do português brasileiro</a>. Este é um exemplo de <strong>fenômeno variável dialetalmente saliente</strong>. Apesar disso, os materiais didáticos ainda não contemplam essa variação, continuam no <em>aipim</em>, <em>mandioca</em> e <em>macaxeira</em>.</p>
+<p>Nas regiões onde as duas formas coexistem, existem valores de formalidade, contexto e de geração/faixa etária associados, que determinam a escolha de um ou de outro pronome, configurando um <strong>fenômeno variável socialmente saliente</strong>. No escopo do Profletras, Jilcicleide Paes desenvolveu um produto, a <a href="https://ri.ufs.br/handle/riufs/13614">balança das relações sociais</a>, para estimular essa reflexão, já que o livro didático adotado na escola onde ela atuava não contemplava essa abordagem.</p>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCL1Einhw7hg2y-7_TvWzBE9lDPVj0NwJJ0g&usqp=CAU" width="60%" /><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSygpe7T6VmL32YabNyBcm9lZbpqegPu4mSHQ&usqp=CAU" width="60%" /></p>
+<p>E há também os traços linguísticos “pelo em ovo”. Tem pelo em ovo? Aparentemente não. Mas quem procura, acaba achando… É o caso deste exemplo:</p>
+<p><img src="https://i.pinimg.com/originals/28/0a/ba/280aba748c1dbd8eda19b532485cad4e.jpg" width="70%" /></p>
+<p>O que tem de errado? Tem variação? Automaticamente, alguém pode dizer que <em>pra mim</em> é errado. Você nunca falou <em>pra mim</em>? Mesmo? Este é um pelo em ovo: as pessoas só percebem esta variação existe porque são apresentadas a ela por prescrições, é um <strong>fenômeno variável saliente por força do prescritivismo</strong>. E, por se amparar nas prescrições, se sentem no direito de corrigir os outros, embora sequer percebam na sua fala ou na sua escrita.</p>
+<p>Aqui é importante destacar que tipo de prescrições são essas. Não são as prescrições encontradas em bons instrumentos normativos, como gramáticas. São prescritivismos: comandos paragramaticais, com foco totalmente no erro e na correção, e regras deste tipo fazem com que as pessoas saiam à caça de erros:</p>
+<p><img src="https://3.bp.blogspot.com/-yB8f3qGKh7Y/VG2PG22sf8I/AAAAAAAAAR0/1jU7Kmo4D5o/s1600/Para%2BEU%2BFazer.jpg" width="40%" /><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS5kkIWAprQc6G3cdvn2V3gWToaaCKFKrkLwQ&usqp=CAU" width="40%" /></p>
+<p>Este fenômeno variável tem funcionamento regular e estável no português brasileiro, e pode ser explicado por diferentes abordagens:</p>
+<ul>
+<li>Marcação excepcional de caso <a href="https://www.editoracontexto.com.br/produto/novo-manual-de-sintaxe/1496734">(Mioto; Figueiredo; Lopes, 1990)</a></li>
+<li>Contexto de dativo com infinitivo <a href="https://www.ufjf.br/revistaveredas/files/2009/12/artigo71.pdf">(Torrent, 2008)</a></li>
+<li>Estudos de abordagem sociolinguística <a href="https://repositorio.unesp.br/handle/11449/182194">(Gomes, 2019)</a></li>
+</ul>
+<p>Apesar da ampla descrição e explicação linguística, as pessoas não só se sentem no direito de corrigir, elas usam essa correção como mecanismo de discriminação e de preconceito:</p>
+<p><img src="https://dicionarioegramatica.files.wordpress.com/2016/01/12523091_618154401655645_265751860710933278_n.jpg?w=640" width="60%" /><img src="https://conversadeportugues.com.br//wp-content/uploads/2012/04/indio.jpg" width="60%" /></p>
+<p><em>Mim índio</em> só existe em tradução de desenhos do Pica-Pau. Este tipo de prescritivismo foi inclusive utilizado <a href="https://www1.folha.uol.com.br/fsp/1997/8/09/dinheiro/30.html">em propaganda de McDonalds nos anos 1990</a>.</p>
+<p>Mas as coisas podem ir além. E podem chegar à escala da intolerância, <a href="https://pt.wikipedia.org/wiki/Escala_de_Allport">como proposta por Gordon Allport</a>. Ele queria saber por que as atrocidades dos campos de concentração aconteceram. Não foi do dia para a noite, foi como sapo no caldeirão fervente. As pessoas vão se acostumando aos poucos, até virar perseguição.</p>
+<p>O que é intrigante é que essa patrulha gramatiqueira não se sustenta no uso, como mostram os resultados da <a href="https://repositorio.unesp.br/handle/11449/182194">dissertação de Aline Gomes</a>, com o corpus do Iboruna, um corpus representativo da fala do interior de São Paulo.</p>
+<p><img src="gramatica_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Ma,s apesar de, no uso, a realização “<em>pra mim</em> prevalecer sobre a realização <em>pra eu</em>”*, o prescritivismo tem efeito consciente, como mostram os comentários metalinguísticos induzidos pelo método de coleta do ALIB, no <a href="http://periodicos.uefs.br/index.php/acordasletras/article/view/1920/pdf">trabalho desenvolvido por Graziele Santosa e Marcela Paim</a>, e também identificados no <a href="https://periodicos.ufpa.br/index.php/moara/article/viewFile/8012/5890">trabalho de Neusa Philippsen</a>.</p>
+<p>A pergunta: <em>Alguém pede para você fazer uma tarefa. Mas outra pessoa acha que a tarefa era para ela. Então, você diz: Essa tarefa, na verdade, é para quem fazer?</em></p>
+<p>As respostas:</p>
+<ul>
+<li><em>Mim… Isso é pra eu fazê.</em></li>
+<li><em>Mim va… Pra eu varrê.</em></li>
+</ul>
+<p>O “efeito-índio”:</p>
+<p><em>INF.- Pra mim.</em></p>
+<p><em>INQ.- Pra mim? Então, essa é para você fazer, essa é para você fazer e essa é pra…fazer.</em></p>
+<p><em>INF.- Pra eu fazê.</em></p>
+<p><em>INQ.- Ou pra mim fazer?</em></p>
+<p><em>INF.- Pra eu.</em></p>
+<p><em>INQ.- Qual dos dois você fala?</em></p>
+<p><em>INF.- Pra mim (risos)</em></p>
+<p><em>INQ.- Então, pra mim fazer.</em></p>
+<p><em>INF.- Mas tá errado.</em></p>
+<p><em>INQ.- Não tá não. Pode parar com essa história de “tá errado”.</em></p>
+<p><em>INF.- Para mim… Eu não sou índio (risos).</em></p>
+<p>A força do prescritivismo pode nos sugerir que a fonte do preconceito é a gramática normativa. Será mesmo? Qual gramática? Sim, a gramática de Evanildo Bechara, prescreve uma forma (mas não condena a outra). Mas a <a href="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/_d47e295aa1191ec07434a70f8b0b64d0a6d3efdf.jpg">gramática de José Carlos de Azeredo</a> reconhece ambas as construções. E seja qual for a gramática – entendida aqui como um bom instrumento normativo, e não um comando paragramatical ou difusora de “norma curta”, nos termos de <a href="https://www.parabolaeditorial.com.br/norma-culta-brasileira--desatando-alguns-nos-47556704">Faraco (2008)</a> – nenhuma julga ou condena a realização como errada ou que é “coisa de índio”.</p>
+<p><a href="http://www.roseta.org.br/pt/2018/05/16/nem-sempre-as-pessoas-falam-aquilo-que-dizem-que-falam/">Nem sempre as pessoas falam aquilo que dizem que falam</a>. Outros fenômenos também passam por este processo de dissonância. É o caso do uso do <a href="https://doi.org/10.1590/0102-44506992907750337"><em>a gente</em> na variação na expressão da primeira pessoa do plural</a>. Quando observamos os dados do uso da forma de expressão da primeira pessoa, constatamos que entre estudantes do ensino médio da capital sergipana, o uso de <em>a gente</em> é quase categórico:</p>
+<p><img src="https://www.scielo.br/img/revistas/delta/v32n4//1678-460X-delta-32-04-00889-gf3.jpg" width="70%" /></p>
+<p>Mas, quando perguntamos para estes mesmos falantes qual a forma de referência à primeira pessoa do plural que eles usam, a resposta muda. Um estudante de ensino médio, com 100% de uso de <em>a gente</em> durante a entrevista, quando perguntado se usa mais uma forma ou outra, não tem dúvidas em dizer que é a forma <em>nós</em>, e ainda justifica que <em>a gente</em> é muito estranho. Esta é uma característia de um <strong>fenômeno variável saliente por força do prescritivismo</strong>: as pessoas não têm ideia do seu uso efetivo, não percebem a variação na sua fala, mas replicam o que ouvem de prescrições.</p>
+<div id="o-que-está-acontecendo" class="section level3">
+<h3>O que está acontecendo?</h3>
+<p>Os efeitos prescritivistas, especialmente da “norma curta”, dinamizados por formadores de opinião sem necessariamente ter formação científica ou preparação para a divulgação científica, impulsionam ações extremistas que se valem de traços do sistema linguístico como base para a discriminação, para a intolerância e para o preconceito. Podemos contribuir para desfazer essa realidade oferecendo uma formação sólida:</p>
+<ul>
+<li><p>não compartilhar, nem estimular, nem incentivar as práticas de “norma curta”</p></li>
+<li><p>trabalhar com a observação e análise dos usos linguísticos ter acesso e conhecimento de bons instrumentos normativos (<em>gramáticas</em>, no plural)</p></li>
+<li><p>saber mobilizar o conhecimento científico produzido para explicar os usos</p></li>
+<li><p>considerar dados empíricos, diversificados e sensíveis à realidade sociocultural, com diversidade de gêneros, registros, grupos, e ao mesmo tempo contribuindo para a constituição de acervos da realidade linguística em que as práticas emergem</p></li>
+</ul>
+<p>Com essas ações, podemos desconstruir e desnaturalizar <a href="http://periodicos.uefs.br/index.php/acordasletras/article/view/5233/pdf">o uso da língua para a discriminação</a> e barrar a alçada à escala do preconceito, cada vez mais crescente e estimulado.</p>
+<p><strong>Não podemos deixar o discurso de ódio, preconceito, discriminação, cancelamento e outras agressões começar na aula de língua portuguesa. A Sociolinguística pode ajudar!</strong></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
