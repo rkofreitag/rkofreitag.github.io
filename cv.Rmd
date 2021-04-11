@@ -4,6 +4,19 @@ title: "Melhores práticas"
 
 Está é minha <a href="CV.pdf#" class="download" title="Download CV as PDF">Súmula curricular</a>. Mas como nem tudo cabe no [Lattes](http://lattes.cnpq.br/2582841591375626), eu relato a seguir minhas melhores práticas que contribuem para o desenvolvimento científico, tecnológico e educacional e que me permitiram seguir um caminho por uma **sociolinguística socialmente sensível**. 
 
+## **Pistas do processamento da variação linguística**
+
+Campo emergente e interdisciplinar, com interface com a Psicolinguística e as Ciências Cognitivas, os estudos de processamento da variação linguística visam desvelar o custo cognitivo do processamento de um dado traço linguístico, considerando os padrões de recorrência da produção e os padrões de julgamento da percepção. 
+
+O esforço cognitivo associado ao processamento de uma variante pode ser medido de maneira direta, com o tempo de resposta, ou indireta, com os reparos e correções do falante. Os resultados destas medidas podem ser obtidos por diferentes desenhos experimentais, cujas tarefas permitem o controle do contexto para minimizar efeitos de outras variáveis intervenientes, assim como possibilitam a aferição dos efeitos de diferentes situações para um mesmo alvo. A conjugação de tarefas com medidas implícitas e explícitas, assim como resultados obtidos por métodos observacionais pode apontar para a atuação de forças cognitivas implícitas, como a consciência sociolinguística, e explícitas, como o prescritivismo, ou, ainda, pela conjunção das duas. 
+
+- O processamento da variação linguística é controlado ou automático? 
+- Qual a relação entre estereótipos, marcadores e indicadores com o tipo de processamento cognitivo? 
+- O estudo do processamento da variação linguística pode dar respostas a estas questões 
+
+Essa é a minha agenda dos próximos 4 anos!
+
+
 ## **Saliência, percepção e atitudes sociolinguísticas**
 
 O que seria do vermelho se todo mundo só gostasse do amarelo? Por que uns gostam de vermelho e outros de amarelo? Transpondo para a língua, por que certos traços linguísticos são bem apreciados e avaliados, e outros são o contrário? Este é o tema do meu projeto de Produtividade em Pesquisa atual. 
