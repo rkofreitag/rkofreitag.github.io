@@ -81,6 +81,9 @@ Por fim, o que queremos dizer é que esses recursos têm regras, não só no pro
 As questões que ficam é: Como precisamos conceber língua e gramática para incorporar os recursos corporificados?  Onde entram estes recursos corporificados na gramática? Como estudá-los integrados na composição dos sentidos? Temos muitos desafios pela frente pra responder à pergunta de Márcia.
 
 
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Corpo na gramática**.  Disponível em: <https://rkofreitag.github.io/corpo.html/>. Atualizado em: `r Sys.Date()`.
 
 
 
