@@ -4,10 +4,10 @@ title: "Gramática Viva ao Vivo"
 
 ```{r, out.width = "20%", echo=FALSE}
 library(knitr)
-include_graphics("https://portal.uneb.br/profletras/wp-content/uploads/sites/90/2019/09/logo-profletras-780x400.jpg")
+include_graphics("http://www.ufopa.edu.br/media/file/site/ufopa/imagens/2020/cbbb8665b876ea3162eda442881eab2e_540x360.png")
 ```
 
-O ciclo de oficinas **Gramática Viva ao Vivo** no Webinário do Profletras foi uma das experiências mais enriquecedoras das quais tive a oportunidade de participar. Foram cinco encontros, dos quais participei do terceiro, o do [eixo Gramática e variação linguística](https://www.youtube.com/watch?v=NQBnwYR0Ph0), e do [quinto](https://www.youtube.com/watch?v=RQjlQwqygfQ), que foi um balanço final com todas as participantes.
+O ciclo de oficinas **Gramática Viva ao Vivo** no Webinário do Profletras foi uma das experiências mais enriquecedoras das quais tive a oportunidade de participar. Foram cinco encontros, dos quais participei do terceiro, o do [eixo Gramática e variação linguística](https://www.youtube.com/watch?v=NQBnwYR0Ph0), e do [quinto encontro](https://www.youtube.com/watch?v=RQjlQwqygfQ), que foi um balanço final com todas as participantes.
 
 Os vídeos dos encontros estão disponíveis no canal do [Profletras Nacional no YouTube](https://www.youtube.com/c/PROFLETRASNACIONAL). 
 
@@ -167,5 +167,8 @@ Com essas ações, podemos desconstruir e desnaturalizar [o uso da língua para 
 **Não podemos deixar o discurso de ódio, preconceito, discriminação, cancelamento e outras agressões começar na aula de língua portuguesa. A Sociolinguística pode ajudar!**
 
 
+**Como citar:**
+
+>FREITAG, Raquel M. K. **Gramática Viva ao Vivo**.  Disponível em: <https://rkofreitag.github.io/gramatica.html/>. Atualizado em: `r Sys.Date()`.
 
 

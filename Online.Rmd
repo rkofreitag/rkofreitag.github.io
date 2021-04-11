@@ -1,0 +1,41 @@
+---
+title: "Cursos e conferências online"
+---
+## Corpo na gramática
+
+```{r, out.width = "15%", echo=FALSE, fig.align = "center"}
+library(knitr)
+include_graphics("https://aovivo.abralin.org/wp/wp-content/uploads/2020/06/og-image-abralin-ao-vivo.jpg")
+```
+
+<https://www.youtube.com/watch?v=xXgjh1CDAGU>
+
+
+## A consciência sociolinguística
+
+Nesta conferência, trato da consciência sociolinguística e como ela molda nossos padrões de produção e percepção linguística.
+
+```{r, out.width = "18%", echo=FALSE}
+library(knitr)
+include_graphics("https://lh3.googleusercontent.com/proxy/CGRppYckvthAjuIzniGsK_XoVqKDVRT5vsvDoG28I6t7HxYMUe1f84Q0oN7oo35XwzP3UY3Kj7GGnsvopzURSdBG3tUoucHq6HoIMlwzCw75jqmLj6b9ysXz")
+```
+
+<https://www.youtube.com/watch?v=CzSNVqlxhL4>
+
+## Processamento da variação linguística
+
+Curso de dois encontros
+
+```{r, out.width = "20%", out.height= "50%", echo=FALSE}
+library(knitr)
+include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9WgD09lXeBvV2M3p7Ty_ouZqhfu_MBOV8cQ&usqp=CAU")
+```
+
+## Gramática viva
+
+```{r, out.width = "20%", echo=FALSE}
+library(knitr)
+include_graphics("https://portal.uneb.br/profletras/wp-content/uploads/sites/90/2019/09/logo-profletras-780x400.jpg")
+```
+
+

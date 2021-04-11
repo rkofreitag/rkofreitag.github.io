@@ -94,7 +94,7 @@ Podemos ver que há uma diferença de distribuição entre os níveis da variáv
 chisq.test(dadosP6)
 ```
 
-O efeito da dependência é estatisticamente significativo. Podemos descobrir o quanto cada nível contribui para essa associação. Para isso, precisamos investigar os *resíduos*, ou seja, a diferença entre a frequência observada e a frequência esperada em cada célula. 
+O efeito da dependência é estatisticamente significativo.  Podemos descobrir o quanto cada nível contribui para essa associação. Para isso, precisamos investigar os *resíduos*, ou seja, a diferença entre a frequência observada e a frequência esperada em cada célula. 
 
 ```{r matriz4}
 resultadoP6 <- chisq.test(dadosP6)
@@ -201,7 +201,7 @@ Os procedimentos para a análise univariada podem ser reproduzíveis mesmo sem s
 
 ### Como comparar estudos com conjuntos de dados distintos?
 
-A direção do fenômento de variação na concordância verbal na terceira pessoa é a mesma em comunidades de fala distintas? Podemos responder a esta questão a partir de resultados apresentados em estudos anteriores, seguindo os procedimentos explicados anteriormente, e depois podemos proceder a uma meta-análise.
+A direção do fenômento de variação na concordância verbal na terceira pessoa é a mesma em comunidades de fala distintas?  Podemos responder a esta questão a partir de resultados apresentados em estudos anteriores, seguindo os procedimentos explicados anteriormente, e depois podemos proceder a uma meta-análise.
 
 #### Concordância verbal na fala de Salvador e de Feira de Santana
 
@@ -479,6 +479,9 @@ O problema de considerar apenas os percentuais é que a distribuição pode não
 
 > + Confira sempre os números! Um erro e todo o resultado é modificado.
 
+Este tutorial foi útil para subsidiar estudos que produziram argumentos baseados em meta-análise, como [Análise contrastiva da estrutura do sintagma nominal possessivizado no português brasileiro](https://www.e-publicacoes.uerj.br/index.php/matraga/article/view/53146/36882) e [A variável sexo/gênero no português falado no sertão alagoano](https://www.seer.ufal.br/index.php/revistaleitura/article/view/9614). Se você também usou em seu trabalho, compartilhe comigo!
+
+
 **Como citar:**
 
->FREITAG, Raquel M. K. **Como fazer meta-análise com dados sociolinguísticos?**.  Disponível em: <https://rkofreitag.github.io/meta.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Como fazer meta-análise com dados sociolinguísticos?**.  Disponível em: <https://rkofreitag.github.io/meta.html/>. Atualizado em: `r Sys.Date()`.

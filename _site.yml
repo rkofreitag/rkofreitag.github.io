@@ -21,6 +21,8 @@ navbar:
           menu:
             - text: "Gramática Viva ao Vivo"
               href: gramatica.html
+            - text: "O corpo na Gramática"
+              href: corpo.html
         - text: "Popularização da Ciência"
           icon: fa-smile-o
           href: pop.html

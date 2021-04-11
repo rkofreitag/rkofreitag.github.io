@@ -1,0 +1,88 @@
+---
+title: "Corpo na gramática"
+---
+
+Como parte do *Abralin ao Vivo - Linguists Online*, projeto da *Abralin - Associação Brasileira de Linguística*, com a colaboração de várias associações de linguística, participei da  mesa-redonda [**O corpo na gramática: gestos na construção dos sentidos**](https://www.youtube.com/watch?v=xXgjh1CDAGU), junto com Regina Cruz, professora da Universidade Federal do Pará, e Thiago Nascimento, pos-doutorando no centro de pesquisa Intercultural Communication in Multimodal Interactions da Universidade Federal de Minas Gerais.
+⠀
+Os avanços tecnológicos no campo dos estudos linguísticos têm possibilitado dois tipos de investigação cada vez mais crescentes: 
+
+- a exploração maior da relação entre os níveis linguísticos
+
+- a incorporação de aspectos outrora considerados marginais à descrição 
+linguística, em particular os elementos não-verbais e visual-corporais
+
+E foi sob essa perspectiva que a nossa discussão se estruturou. Eu peguei o gancho com uma pergunta de Márcia Machado no *chat* da conferência de [Ev Fedorenko](https://www.youtube.com/watch?v=hqrsHmhcrSQ) também no Abralin ao Vivo: *Which is the role of linguistic and non-linguistic signals/codes in the communication, to the exchanging of thought?* 
+Estudamos, estudamos, e estudamos, e ainda temos muitas lacunas a responder. Por exemplo: como o falante entende o que o ouvinte quis dizer?
+
+Nosso modelo de análise considera uma cadeia em que a ideia começa na mente do falante, o aparelho vocal a transforma em ondas sonoras, que são transmitidas até o ouvinte, que as recebe e transforma a mensagem, que é interpretada na mente do ouvinte (Denes & Pinson, 1993).
+
+```{r, echo=FALSE}
+library(knitr)
+include_graphics("https://zhanglab.wdfiles.com/local--files/summer/speech_chain.gif")
+```
+
+Para fins de análise, apagamos o que há entre falante e ouvinte na interação; nos interessa o mente-a-mente, que precisa de uma materialidade linguística. É uma decisão metodológica e é, em grande parte, decorrência dos recursos tecnológicos disponíveis.
+
+Ao apagar o contexto, podemos gerar ambiguidade. 
+
+Mas essas ambiguidades não parecem ser um problema para nós, de alguma forma elas são resolvidas.
+
+Por exemplo, o problema de ambiguidade em uma frase como *O policial viu o turista com o binóculo*, ou *A babá explicou para a criança que estava sem sono que a mamãe iria chegar à noite*, é resolvido pelo princípio da Aposição Mínima [(Maia, Alcantara, Buarque e Faria, 2003)](https://periodicos.ufsc.br/index.php/forum/article/view/7244/6683). 
+
+Mas as ambiguidades que são resultados de processos de mudança via gramaticalização, por exemplo, que geram estágios ou camadas ambíguas, em que não há claramente uma distinção de significado, são um problema, mas só para uma pessoa, o analista. 
+
+Temos que reconhecer que a polissemia, ou multifuncionalidade, é um epifenômeno, ou seja, há muitos outros processos acontecendo ao mesmo tempo. E, de novo, via de regra, isso só se torna um problema para o analista. Mas quem é o analista?
+
+Na interação, quando há ambiguidade que interfere no processo comunicativo, ocorre algum procedimento para a correção/confirmação do sentido. Pedimos para repetir, perguntamos. E o próprio falante, quando percebe que não foi claro ou que o uso pode dar margem a um outro sentido, realiza procedimentos de reparo. O pacto da interação não é pela ambiguidade. A ambiguidade é resultado de um recorte de análise.
+
+Na interação, temos falante e ouvinte partilhando contexto. E as coisas parecem funcionar bem lá, eles estão se entendendo (o mente a mente da cadeia da fala funciona).
+
+De repente chega um analista, que está de fora deste processo. Ele não é participante, ele não é interactante, ele é uma terceira pessoa, distanciada, ele é o analista e o analista somos nós, os linguistas. O analista tem tempo para ir e voltar na interação, coisa que falante e ouvinte não podem fazer.
+
+O analista tem um material para analisar, um corte da interação, que é muito mais do que o linguístico.
+
+Mas por restrições metodológicas, o analista só fica com o que convencionamos chamar de linguístico. E aí surgem as ambiguidades.
+
+Por que falante e ouvinte não tem o mesmo problema que o analista? Porque existem outras pistas para desambiguizar sentidos. A primeira delas é a prosódia. E existem muitos estudos de prosódia já mostrando isso. Não não é não, depende da entonação. Mas há outros recursos, que são o nosso foco aqui nessa discussão. Alguns autores chamam de pistas paralinguísticas, nas quais incluem gestos faciais, que estão bem no campo visual do falante-ouvinte na interação. Mas aqui nós ampliamos ainda mais o escopo, para o que estamos chamando de recursos corporificados, que envolvem não só gestos faciais, mas o olhar (direção, duração), o riso e os gestos manuais (ilustradores e emblemáticos). Recursos corporificados não são objetos de manipulação consciente, no sentido de não comporem o conjunto de regras prescritivas da língua, são tratados como marginais, como acessórios. Mas nós defendemos que esses recursos têm regras, que são aprendidas na comunidade (por exemplo, levantar dedo médio). 
+
+O cenário que temos hoje é um cenário dicotômico que separa o linguístico do não linguístico, o verbal do não verbal, e até mesmo a prosódia, que tem papel significativo na expressão do significado, assim como regras sistemáticas, fica fora da gramática.
+
+Temos, sim, estudos de prosódia, de gramática e de recursos corporificados, mas são em níveis independentes, autônomos, e hierarquizados. Ainda estamos muito presos a um modelo de cadeia de fala que prioriza o mente a mente, que seria o linguístico, e relega ao segundo plano o fisiológico (onde entram recursos corporificados e prosódia). Na verdade, a construção do sentido é epifenômeno, que não pode ser atribuído a um único nível.
+
+Nós defendemos que o processamento envolve não só a pista linguística, mas também o nível fisiológico, de forma integrada, não hierarquizada.
+
+Uma proposta de abordagem deste tipo demanda mudanças nos procedimentos metodológicos: o corpus de análise precisa contem informação corporalizada do falante e do ouvinte para que o analista se aproxime mais das pistas que levam à não ambiguidade inerente para quem não tem acesso a todas essas informações. Isso requer documentação em áudio e em vídeo, um sistema de anotação com mais de uma trilha para cada participante, e outras demandas. 
+
+Na realidade, a opção por uma hierarquização e priorização de um nível é consequência de limitações metodológicas, que fazem com que se perca a natureza epifenomenológica da produção linguística. Ou seja, ou estudamos pistas linguísticas, ou prosódicas, ou corporais, porque tudo junto fica muito difícil.
+
+Pra superar as limitações precisamos de dados autênticos, com áudio e vídeo. E em termos de análise, precisamos de modelos que considerem mais variáveis e que considerem os efeitos individuais.
+
+Vamos ver três exemplos, todos de trabalhos em andamento, alguns mais avançados, outros ainda em fase de coleta, mas que ilustram a epifenomenalidade da construção do sentido.
+
+No português, resfriadinho poder ser muitas coisas. Por que sabemos que não foi um resfriado pequeno? Podemos dizer que existe todo um contexto. OK, mas em outras situações não tão marcadas politicamente, esta ambiguidade existe, é registrada inclusive nas gramáticas, mas as pistas de desambiguização são subjetivas, cada caso é um caso. Mas na vida cotidiana, sabemos se uma blusinha é afetivo ou pejorativo. Se o sentido pretendido pelo falante foi diferente do sentido interpretado pelo ouvinte, vai haver negociação na interação. E quase nunca isso acontece. Há aspectos morfológicos (mas muito pouco sistemáticos, como gripezinha vs. gripinha, ou projetinho vs. projetozinho). Mas, muito mais, há aspectos prosódicos (duração, F0) e, nossa hipótese, expressões faciais. Este é o projeto em andamento de Bruno Pinheiro, que investiga a desambiguização dos diminutivos para o analista (porque para os falantes ouvintes, não houve nenhum sinal de que havia ambiguidade).  
+
+Esta é uma situação diferente de marcadores de modalidade, que podem ter uma carga de certeza ou incerteza, funcionando como marcadores de opinião, com mais certeza, ou marcadores de dúvida, com menos certeza. As construções deste tipo são resultado da gramaticalização de oração principal de verbos de cognição, ocorrem em diversas línguas, como o inglês e o francês, e também no português. Eu estudei no mestrado as construções do português com acho que e parece que, e como analista eu decidia, com pistas do contexto, se era dúvida ou opinião, mas eu tinha uma caixinha dos ambíguos. No caso de de acho que, muitas vezes o falante reformulava ou corrigia sua fala, como faz Carmem Lúcia nessa entrevista. 
+
+Em tempos de pandemia, pistas do grau de confiança na informação estabelecidas por estes marcadores não ficam claras. Neste fenômeno, a ambiguidade é mais recorrente, e é mais saliente, tanto para o falante como para o ouvinte. Nossa hipótese é de que neste caso há menos pistas corporalizadas, e é a pesquisa de Paloma Cardoso, que investiga como as pistas prosódicas e expressões faciais desambiguizam para o analista (e também pro falante e ouvinte) o sentido de acho que, já que só controlando outros modalizadores, tipos de assunto e tipo textual, que eu controlei 15 anos atrás, não é suficiente para explicar a diferença entre marcadores de opinião e dúvida. Neste caso, nosso parâmetro é separar as ocorrências de reparo das que não tiveram reparo. 
+
+Até agora eu falei de recursos corporificados para desambiguizar sentidos para o analista. Agora vou mostrar resultados de como esses recursos nos ajudam a entender o que o falante pensa sobre a língua, seus julgamentos. Uma das formas mais sutis de preconceito e discriminação é a que se baseia em traços linguísticos. Podemos fazer piada, até engraçada e inocente, com um traço linguístico, como o do rotacismo. Mas, mesmo quando este traço é usado deliberadamente para discriminar, como fez o ministro da educação, fica difícil provar que foi essa a intenção. A gente sente que foi discriminação, mas não tem provas materiais disso.
+
+Nossa hipótese é que sim, temos como provar. E esse insight veio da observação dos participantes em coleta de dados, durante a aplicação de testes de julgamento linguístico da palatalização, num estudo sobre o monitor sociolinguístico (Freitag, 2020). O objetivo do teste era que os participantes julgassem uma candidata a locutora de rádio, a partir de seus treinos linguísticos. Durante a coleta, observamos que os participantes frequentemente emitiam comentários (um disse: como pode querer ser jornalista falando desse jeitcho – e palatalização progressiva era o traço alvo), mas, com muito mais frequência, faziam caras e bocas, mais especificamente um riso de canto de boca que reconhecemos como desdém ou deboche. Isso nos levou a sugerir que traços sociolinguísticos estigmatizados geram respostas emocionais, e as expressões faciais dão pistas da avaliação que é feita. Ou seja, mesmo que eu não diga nada que seja preconceituoso, minha expressão facial revela que meu julgamento não é positivo.
+
+Pra isso, nós desenvolvemos um novo instrumento de coleta, dessa vez com o rotacismo, que é bem marcado socialmente, um estereótipo negativo, e resolvemos gravar o áudio e o vídeo do participante enquanto realizava a tarefa. Passamos os dados do vídeo por um script que marca os pontos da face e cotejamos os frames com um banco de dados de expressões faciais. O resultado foi esse: a cada frame há uma probabilidade de emoção.
+
+Os resultados do teste, no nível consciente, mostram que, como esperado, a presença do rotacismo afeta o julgamento.
+
+Mas também deram evidências, ainda incipientes e sutis, de que existem respostas emocionais, particularmente o que o algoritmos reconheceu como Alegria.
+
+Esse estudo tem muitas limitações. A primeira delas é que usamos um banco de emoções com faces europeias, conhecido como Banco Holandês. Embora existam hipóteses da universalidade das respostas emocionais e expressões faciais, alguns domínios são altamente sensíveis ao contexto sociocultural, como é o caso do desdém e do deboche. Por isso, os projetos de Bruno e de Paloma, junto com outros colegas, da Psicologia, no Brasil e na Colômbia, estão alinhados a um projeto maior que é constituir um banco de expressões faciais voltados para a nossa realidade sociocultural e com as especificidades que precisamos para os estudos de preconceito e discriminação. Este banco está em fase de validação e em breve vamos começar a testar com dados. Nem vou falar do quanto é demorado e custoso fazer isso... O outro problema é a epifenomenalidade. Foi muito difícil construir estímulos para os testes, tanto do rotacismo, quanto o da palatalização, barrando o efeito de outros fenômenos. E isso porque estamos apenas no nível fonológico. Se ampliarmos para além da fonologia, fica praticamente inviável separar um único traço/fenômeno para estudo. Nós precisamos ampliar o poder explanatório de base estatística para considerar esses efeitos, como efeitos aleatórios. Este é outro desafio para uma abordagem da construção do sentido como um epifenômeno.
+
+Por fim, o que queremos dizer é que esses recursos têm regras, não só no processo falante ouvinte, mas que também podem ser captadas na observação pelo analista, desde que mude os seus procedimentos. Se tem regras, estão na gramática, certo? 
+As questões que ficam é: Como precisamos conceber língua e gramática para incorporar os recursos corporificados?  Onde entram estes recursos corporificados na gramática? Como estudá-los integrados na composição dos sentidos? Temos muitos desafios pela frente pra responder à pergunta de Márcia.
+
+
+
+
+
+
+
