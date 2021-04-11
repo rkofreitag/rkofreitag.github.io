@@ -182,4 +182,4 @@ A outra saída é ter clareza do que se quer, ter um plano de registro de pré-a
 
 **Como citar:**
 
->FREITAG, Raquel M. K. **Organização do conjunto de dados**. Disponível em: <https://rkofreitag.github.io/Organizacao.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Organização do conjunto de dados**. Disponível em: <https://rkofreitag.github.io/Organizacao.html/>. Atualizado em: `r Sys.Date()`.

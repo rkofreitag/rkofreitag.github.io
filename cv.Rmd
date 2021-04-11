@@ -25,6 +25,8 @@ Em termos metodológicos, para identificar a que significados sociais uma varian
 <details>
   <summary markdown="span"> *Clique aqui se quiser conhecer detalhes do desenvolvimento deste projeto e seus produtos* </summary>
 
+- Os achados do desenvolvimento deste projeto foram sistematizados para a leitura, no artigo [**A sociolinguística da leitura**](https://revistaseletronicas.pucrs.br/index.php/letronica/article/view/37508/26431), em linguagem clara e acessível, com possibilidade de transladação didática para a aula de Língua Portuguesa. 
+
 - No artigo [**Saliência estrutural, distribucional e sociocognitiva**](https://doi.org/10.4025/actascilangcult.v40i2.41173), discuti os diferentes tipos de saliência que atuam no processamento da variação linguística, tanto na produção quanto na percepção. 
 
 - Na produção, observamos, eu, [Bruno Pinheiro](http://lattes.cnpq.br/0308930203332747) e [Paloma Cardoso](http://lattes.cnpq.br/5477985767644106), a [**Saliência na conservação de /d/ no segmento /ndo/: efeitos sociais e estilísticos**](http://dx.doi.org/10.22409/gragoata.2018n46a1123). 
@@ -39,7 +41,7 @@ Em termos metodológicos, para identificar a que significados sociais uma varian
 
 - Em busca de diversidade metodológica para desvelar os efeitos da saliência no processamento, observei pistas indiretas, como [**Reparos na leitura em voz alta como pistas de consciência sociolinguística**](https://www.researchgate.net/publication/342346890_Reparos_na_leitura_em_voz_alta_como_pistas_de_consciencia_sociolinguistica), que apontam para padrões de apreciação social para além de indicadores, marcadores e estereótipos. 
   
-- Outros domínios da língua também são sensíveis ao nível de consciência, como eu e [Bruno Pinheiro](http://lattes.cnpq.br/0308930203332747) mostramos no artigo [**Estereótipos na concordância de gênero em profissões: efeitos de frequência e saliência**](), com efeitos inclusive no tempo de leitura, como em [**Leitura de palavras-tabu e efeitos de gênero**]()
+- Outros domínios da língua também são sensíveis ao nível de consciência, como eu e [Bruno Pinheiro](http://lattes.cnpq.br/0308930203332747) mostramos no artigo [**Estereótipos na concordância de gênero em profissões: efeitos de frequência e saliência**](https://revistas.ufrj.br/index.php/rl/article/view/31637/20599), com efeitos inclusive no tempo de leitura, como em [**Leitura de palavras-tabu e efeitos de gênero**](https://openaccess.blucher.com.br/article-details/12-22195)
 </details>
 <p>&nbsp;</p>
 
@@ -60,7 +62,7 @@ A partir da identificação de valores, práticas e produções culturais no ent
 
 - Capítulo [**Processos fonológicos que passam da fala para a leitura**](http://www.livraria.ufs.br/produto/leitura-escrita-e-literatura-intersecoes-e-convergencias/), do livro organizado por [Isabel Azevedo](http://lattes.cnpq.br/0314316437786531) e [Alberto Roiphe](http://lattes.cnpq.br/1857856300373125) publicado pela Editora da Universidade Federal de Sergipe e disponível gratuitamente para *download*, em que são analisados processos fonológicos variáveis na fala e na leitura dos estudantes das escolas envolvidas no projeto que participaram da ação de documentação linguística. Estes resultados subsidiaram a proposta de controle de fluência em leitura e diagnóstico de perfil de leitor.
 
-- Artigo [**Pistas dos processos de decodificação que levam à compreensão da leitura**](), publicado na revisa Letras de Hoje, em coautoria com minha orientanda de doutorado [Alessandra Pereira Gomes Machado](http://lattes.cnpq.br/2820872438732446), em que apresentamos uma proposta de diagnóstico de perfil de leitor, considerando as pistas de processos de automaticidade na decodificação que levam à compreensão da leitura, com a participação de estudantes da educação básica das escolas envolvidas no projeto.
+- Artigo [**Pistas dos processos de decodificação que levam à compreensão da leitura**](https://revistaseletronicas.pucrs.br/ojs/index.php/fale/article/view/32509), publicado na revisa Letras de Hoje, em coautoria com minha orientanda de doutorado [Alessandra Pereira Gomes Machado](http://lattes.cnpq.br/2820872438732446), em que apresentamos uma proposta de diagnóstico de perfil de leitor, considerando as pistas de processos de automaticidade na decodificação que levam à compreensão da leitura, com a participação de estudantes da educação básica das escolas envolvidas no projeto.
 
 - Artigo [**Enem: motivações e expectativas de estudantes da rede pública estadual de Sergipe**](https://www.scientiaplena.org.br/sp/article/view/3466), resultado de um trabalho selecionado para apresentação no Encontro Nacional Ciência e Habilidades Socioemocionais (CHA-SE),em 2016, e posteriormente publicado na revista Scientia Plena, e que foi desenvolvido junto com os bolsistas de Iniciação Científica vinculados ao projeto em duas das escolas, Colégio Estadual Atheneu Sergipense e Colégio Estadual Ministro Petrônio Portela, avaliando expectativas prévias e posteriores à realização do Enem. Os resultados evidenciam as diferenças entre as escolas.
 

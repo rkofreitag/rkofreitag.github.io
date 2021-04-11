@@ -98,5 +98,5 @@ Alguns cursos gratuitos e em português:
 
 **Como citar:**
 
->FREITAG, Raquel M. K. **Modelagem de dados**.  Disponível em: <https://rkofreitag.github.io/Software.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Modelagem de dados**.  Disponível em: <https://rkofreitag.github.io/Software.html/>. Atualizado em: `r Sys.Date()`.
 
