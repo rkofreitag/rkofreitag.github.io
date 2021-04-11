@@ -390,4 +390,4 @@ O tratamento deste tipo de variável será explorado em [outro tutorial](https:/
 
 **Como citar:**
 
->FREITAG, Raquel M. K. **Variáveis categóricas**.  Disponível em: <https://rkofreitag.github.io/Categorica.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Variáveis categóricas**.  Disponível em: <https://rkofreitag.github.io/Categorica.html/>. Atualizado em: `r Sys.Date()`.
