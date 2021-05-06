@@ -645,6 +645,7 @@ ggstatsplot::ggcoefstats(x = modP6, exclude.intercept = FALSE, output = &quot;pl
 <p><img src="meta_files/figure-html/grafico-1.png" width="576" style="display: block; margin: auto;" /> Nesta visualização, os resultados estão em log-odds (de −∞ a ∞).</p>
 <p>Outra forma de visualização em gráfico pode ser produzida com o pacote <code>sjPlot</code>. Vejamos como ficam os resultados em razão de chances (odds):</p>
 <pre class="r"><code>library(sjPlot)
+#&gt; Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!
 plot_model(modP6)</code></pre>
 <p><img src="meta_files/figure-html/grafico2-1.png" width="576" style="display: block; margin: auto;" /> Embora “digam a mesma coisa”, os resultados em log-odds permitem observar a magnitude do efeito, daí por ser a forma preferível de reportar o resultado de um modelo de regressão generalizado.</p>
 <p>Podemos também dispor os resultados em uma tabela formatável, com o pacote <code>sjlabelled</code>.</p>

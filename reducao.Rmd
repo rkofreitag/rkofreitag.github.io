@@ -301,4 +301,4 @@ Por isso, a análise de componentes principais é usada para reduzir os dados a 
 
 **Como citar:**
 
->FREITAG, Raquel M. K. **Redução de variáveis e de dados**.  Disponível em: <https://rkofreitag.github.io/reducao.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Redução de variáveis e de dados**.  Disponível em: <https://rkofreitag.github.io/reducao.html/>. Atualizado em: `r Sys.Date()`.

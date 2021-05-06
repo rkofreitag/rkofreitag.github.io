@@ -382,4 +382,4 @@ Uma das limitações dos modelos de regressão generalizados é a exigência de 
 
 **Como citar:**
 
->FREITAG, Raquel M. K. **Introdução à regressão**.  Disponível em: <https://rkofreitag.github.io/regressao.html/>. Acesso em: `r Sys.Date()`.
+>FREITAG, Raquel M. K. **Introdução à regressão**.  Disponível em: <https://rkofreitag.github.io/regressao.html/>. Atualizado em: `r Sys.Date()`.
