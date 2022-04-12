@@ -56,9 +56,12 @@ navbar:
         - text: "Como fazer uma meta-análise com estudos sociolinguísticos?"
           icon: fa-gear
           href: meta.html
-        - text: "Como submeter um projeto na Plataforma Brasil? "
+        - text: "Como submeter um projeto na Plataforma Brasil?"
           icon: fa-gear
           href: etica.html
+        - text: "Como elaborar um plano de gestão de dados?"
+          icon: fa-gear
+          href: dados.html
   right:
     - text: "Sobre"
       icon: fa-user
