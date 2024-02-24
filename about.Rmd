@@ -16,7 +16,7 @@ title: "Sobre mim"
 
 <div class="col2">
 
-<img src="raquel3.jpg" width="200"> 
+<img src="raquel3.jpg" width="300"> 
 
 [<i class="fa fa-twitter" aria-hidden="true"></i>](https://twitter.com/rkofreitag) 
 [<i class="fa fa-facebook" aria-hidden="true"></i>](https://www.facebook.com/raquel.freitag)
