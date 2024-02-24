@@ -11,7 +11,7 @@ O ciclo de oficinas **Gramática Viva ao Vivo** no Webinário do Profletras foi 
 
 Os vídeos dos encontros estão disponíveis no canal do [Profletras Nacional no YouTube](https://www.youtube.com/c/PROFLETRASNACIONAL). 
 
-Aqui resumo minha exposição no eixo **Gramática e variação linguística**.
+Aqui resumo minha exposição no eixo **Gramática e variação linguística**. O detalhamento desta discussão aparece no capítulo [O tratamento da variação linguística na escola para o combate à discriminação e ao preconceito](https://www.researchgate.net/publication/373438573_O_tratamento_da_variacao_linguistica_na_escola_para_o_combate_a_discriminacao_e_ao_preconceito), publicado no livro *Linguística na educação básica*.
 
 Vivemos tempos de intolerância. Ações extremistas, discriminação, discursos de ódio, cultura do cancelamento. A sociedade está doente. Onde nós erramos? É papel da escola formar para a cidadania. E tudo que está acontecendo é o contrário do que esperamos. Eu quero falar um pouco da nossa responsabilidade em tudo isso. E variação linguística é um bom ponto de partida.
 
@@ -103,7 +103,7 @@ pie(slices,labels = lbls, col=rainbow(length(lbls)),
    main="Variação pronominal em orações infinitivas iniciadas por para \n (Gomes, 2019)")
 ```
 
-Ma,s apesar de, no uso, a realização "*pra mim* prevalecer sobre a realização *pra eu*”*, o prescritivismo tem efeito consciente, como mostram os comentários metalinguísticos induzidos pelo método de coleta do ALIB, no [trabalho desenvolvido por Graziele Santosa e Marcela Paim](http://periodicos.uefs.br/index.php/acordasletras/article/view/1920/pdf), e também identificados no [trabalho de Neusa Philippsen](https://periodicos.ufpa.br/index.php/moara/article/viewFile/8012/5890).
+Mas, apesar de, no uso, a realização *pra mim* prevalecer sobre a realização *pra eu*, o prescritivismo tem efeito consciente, como mostram os comentários metalinguísticos induzidos pelo método de coleta do ALIB, no [trabalho desenvolvido por Graziele Santosa e Marcela Paim](http://periodicos.uefs.br/index.php/acordasletras/article/view/1920/pdf), e também identificados no [trabalho de Neusa Philippsen](https://periodicos.ufpa.br/index.php/moara/article/viewFile/8012/5890).
 
 A pergunta: *Alguém pede para você fazer uma tarefa. Mas outra pessoa acha que a tarefa era para ela. Então, você diz: Essa tarefa, na verdade, é para quem fazer?* 
 
@@ -143,7 +143,7 @@ A força do prescritivismo pode nos sugerir que a fonte do preconceito é a gram
 
 ```{r, out.width = "70%", echo=FALSE}
 library(knitr)
-include_graphics("https://www.scielo.br/img/revistas/delta/v32n4//1678-460X-delta-32-04-00889-gf3.jpg")
+include_graphics("https://minio.scielo.br/documentstore/1678-460X/NkPrppB9TTHzLzv56ys97SB/27c574de3bd4fb11dc96f8c23ebbd1c6cfae4b1f.jpg")
 ```
 
 Mas, quando perguntamos para estes mesmos falantes qual a forma de referência à primeira pessoa do plural que eles usam, a resposta muda. 
