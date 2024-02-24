@@ -20,10 +20,10 @@ Precisamos superar as limitações na abordagem pedagógica da variação lingu�
 
 Por que intuitivamente é tão difícil perceber que existe variação além da fonologia? Porque no processamento da língua, nem sempre paramos para refletir sobre os pedaços maiores que constituem a nossa fala. O fato é que existe muito mais variação na gramática do que podemos nos dar conta, em função de diferentes níveis de saliência e de avaliação social das formas. Podemos identificar quatro tipos de fenômenos variáveis no nível da gramática:
 
-  - fenômenos variáveis a que as pessoas não reagem
-  - fenômenos variáveis dialetalmente salientes
-  - fenômenos variáveis socialmente salientes
-  - fenômenos variáveis salientes por força do prescritivismo
+  - **fenômenos variáveis a que as pessoas não reagem**
+  - **fenômenos variáveis dialetalmente salientes**
+  - **fenômenos variáveis socialmente salientes**
+  - **fenômenos variáveis salientes por força do prescritivismo**
  
 Por exemplo, nestas frases, retiradas do [estudo de Josilene Mendonça e Jaqueline Nascimento](https://periodicos.uff.br/cadernosdeletras/article/view/43581/24889), você consegue identificar que domínio variável está presente?
 
