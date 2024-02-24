@@ -12,7 +12,9 @@ Uma **sociolinguística socialmente sensível** pode parecer redundante, tanto q
 <details>
   <summary markdown="span"> **Clique aqui se quiser saber mais** </summary>
   
- - Para entender melhor a questão da inserção da Sociolinguística no Brasil, convido à leitura do artigo [**Sociolinguística no/do Brasil**](https://doi.org/10.20396/cel.v58i3.8647170), publicado no dossiê da revista Cadernos de Estudos Linguísticos *50 Anos de Social Stratification of English in New York City*, organizado por [Livia Oushiro](https://oushiro.github.io/pt/), pesquisadora brasileira que também tem uma postura sociolinguística socialmente engajada e dedicada à questão dos métodos.
+- [**A quarta onda: ativismo sociolinguístico no Brasil**](https://periodicos.ufsc.br/index.php/forum/article/view/92913/54464) relata uma trajetória de ações que permitem uma nova agenda de estudos da Sociolinguística no Brasil. [Aqui em inglês](https://periodicos.ufsc.br/index.php/forum/article/view/92913/54469)
+ 
+ - Para entender melhor a questão da inserção da Sociolinguística no Brasil, convido à leitura do artigo [**Sociolinguística no/do Brasil**](https://doi.org/10.20396/cel.v58i3.8647170), publicado no dossiê da revista *Cadernos de Estudos Linguísticos* com o tema *50 Anos de Social Stratification of English in New York City*, organizado por [Livia Oushiro](https://oushiro.github.io/pt/), pesquisadora brasileira que também tem uma postura sociolinguística socialmente engajada e dedicada à questão dos métodos.
 
  - E para a questão metodológica, convido à leitura do artigo [**A dadidade (ou dadidão) do dado**](https://www.linguisticario.letras.ufrj.br/uploads/7/0/5/2/7052840/lr31_freitag.pdf), publicado em um dossiê dedicado à *formação do linguista* na revista Linguistica Rio, em que trato da entidade “dado linguístico”, já apontando para a organização de conjuntos de dados e suas implicações metodológicas.
 

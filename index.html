@@ -13,24 +13,38 @@
 
 <title>Questões de método: para uma Sociolinguística socialmente sensível</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 
 
@@ -78,10 +68,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -98,40 +84,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -159,7 +121,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -171,7 +133,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -181,11 +143,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -197,13 +176,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -211,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -264,7 +235,7 @@ $(document).ready(function () {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -295,7 +266,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-eye"></span>
      
     Produtos
@@ -304,7 +275,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="fa fa-coffee"></span>
          
         Difusão da Ciência
@@ -328,7 +299,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-gear"></span>
      
     Cursos e tutoriais
@@ -399,7 +370,14 @@ $(document).ready(function () {
       <a href="etica.html">
         <span class="fa fa-gear"></span>
          
-        Como submeter um projeto na Plataforma Brasil? 
+        Como submeter um projeto na Plataforma Brasil?
+      </a>
+    </li>
+    <li>
+      <a href="dados.html">
+        <span class="fa fa-gear"></span>
+         
+        Como elaborar um plano de gestão de dados?
       </a>
     </li>
   </ul>
@@ -424,24 +402,84 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
-<h1 class="title toc-ignore">Questões de método: para uma Sociolinguística socialmente sensível</h1>
+<h1 class="title toc-ignore">Questões de método: para uma
+Sociolinguística socialmente sensível</h1>
 
 </div>
 
 
-<p>Sistematicamente tenho oferecido cursos e treinamentos voltados ao compartilhamento de métodos de trabalho, de documentação linguística, tratamento de dados e até escrita científica. Embora a oferta seja sistemática, o compatilhamento dos tutoriais era assistemático. Por isso decidi reuni-los neste repositório, com o objetivo de facilitar o acesso e ampliar o escopo de público.</p>
-<p>Sigo a linha da Ciência Aberta, com o compartilhamento de instrumentos, colaboração em materiais e reuso de dados. Como nem tudo cabe no Lattes, eu narro a minha visão sobre aquilo que considero minhas melhores práticas, que não necessariamente são os produtos científicos mais importantes no Lattes, mas os que me permitiram refletir sobre minha carreira e o impacto da ciência.</p>
-<p>A necessidade de tantos tutoriais e instruções explícitas é inerente a mim: sou bagunceira e acumuladora, e gosto de trabalho em grandes grupos (nunca tive menos de 10 orientandos, a média é 20). Para manter a ordem, organização é essencial. E o desenvolvimento de todas essas ações só é possível pela estrutura do <a href="http://apoia.ufs.br/pagina/21072-condominio-de-laboratorios-multiusuarios-de-informatica-e-documentacao-lamid">Condomínio de Laboratórios Mulitusuário de Informática e Documentação Linguística</a>, sob minha coordenação, na Universidade Federal de Sergipe, que é fomentado por recursos advindos de projetos de pesquisa financiados pelas agências estaduais e federais.</p>
-<p>Uma <strong>sociolinguística socialmente sensível</strong> pode parecer redundante, tanto quanto <em>parto humanizado</em>. Afinal, tem coisa mais humana do que parir? tem coisa mais social do que língua? Mas, pelo menos no Brasil, existe um abismo entre a ciência e a realidade. A pesquisa sociolinguística brasileira ainda é modelada por limitações de método, com células sociais estratificadas homogeneamente e variáveis binárias por conta das especifidades de um modelo estatístico, reforçada especialmente pela replicação de práticas já automatizadas, como se fossem caixas e categorias pré-definidas onde os dados precisam ser acomodados. O resultado é a pouca expressividade e a pouca inserção social da sociolinguística nos programas de ensino e nos debates na sociedade brasileira. Em defesa de uma sociolinguística socialmente sensível, fui conferencista na 70<sup>a</sup> edição da Reunião Anual da SBPC, em 2018, quando, a convite da Abralin, tratei do <a href="https://ufal.br/ufal/noticias/2018/7/debate-sobe-ativismo-sociolinguistico-exalta-a-importancia-da-pesquisa-cientifica-na-educacao-basica"><strong>Ativismo sociolinguístico e suas contribuições para a construção de uma identidade linguística brasileira</strong></a>.</p>
+<p>Sistematicamente tenho oferecido cursos e treinamentos voltados ao
+compartilhamento de métodos de trabalho, de documentação linguística,
+tratamento de dados e até escrita científica. Embora a oferta seja
+sistemática, o compatilhamento dos tutoriais era assistemático. Por isso
+decidi reuni-los neste repositório, com o objetivo de facilitar o acesso
+e ampliar o escopo de público.</p>
+<p>Sigo a linha da Ciência Aberta, com o compartilhamento de
+instrumentos, colaboração em materiais e reuso de dados. Como nem tudo
+cabe no Lattes, eu narro a minha visão sobre aquilo que considero minhas
+melhores práticas, que não necessariamente são os produtos científicos
+mais importantes no Lattes, mas os que me permitiram refletir sobre
+minha carreira e o impacto da ciência.</p>
+<p>A necessidade de tantos tutoriais e instruções explícitas é inerente
+a mim: sou bagunceira e acumuladora, e gosto de trabalho em grandes
+grupos (nunca tive menos de 10 orientandos, a média é 20). Para manter a
+ordem, organização é essencial. E o desenvolvimento de todas essas ações
+só é possível pela estrutura do <a
+href="http://apoia.ufs.br/pagina/21072-condominio-de-laboratorios-multiusuarios-de-informatica-e-documentacao-lamid">Condomínio
+de Laboratórios Mulitusuário de Informática e Documentação
+Linguística</a>, sob minha coordenação, na Universidade Federal de
+Sergipe, que é fomentado por recursos advindos de projetos de pesquisa
+financiados pelas agências estaduais e federais.</p>
+<p>Uma <strong>sociolinguística socialmente sensível</strong> pode
+parecer redundante, tanto quanto <em>parto humanizado</em>. Afinal, tem
+coisa mais humana do que parir? tem coisa mais social do que língua?
+Mas, pelo menos no Brasil, existe um abismo entre a ciência e a
+realidade. A pesquisa sociolinguística brasileira ainda é modelada por
+limitações de método, com células sociais estratificadas homogeneamente
+e variáveis binárias por conta das especifidades de um modelo
+estatístico, reforçada especialmente pela replicação de práticas já
+automatizadas, como se fossem caixas e categorias pré-definidas onde os
+dados precisam ser acomodados. O resultado é a pouca expressividade e a
+pouca inserção social da sociolinguística nos programas de ensino e nos
+debates na sociedade brasileira. Em defesa de uma sociolinguística
+socialmente sensível, fui conferencista na 70<sup>a</sup> edição da
+Reunião Anual da SBPC, em 2018, quando, a convite da Abralin, tratei do
+<a
+href="https://ufal.br/ufal/noticias/2018/7/debate-sobe-ativismo-sociolinguistico-exalta-a-importancia-da-pesquisa-cientifica-na-educacao-basica"><strong>Ativismo
+sociolinguístico e suas contribuições para a construção de uma
+identidade linguística brasileira</strong></a>.</p>
 <details>
-<p><summary markdown="span"> <strong>Clique aqui se quiser saber mais</strong> </summary></p>
+<summary>
+<strong>Clique aqui se quiser saber mais</strong>
+</summary>
 <ul>
-<li><p>Para entender melhor a questão da inserção da Sociolinguística no Brasil, convido à leitura do artigo <a href="https://doi.org/10.20396/cel.v58i3.8647170"><strong>Sociolinguística no/do Brasil</strong></a>, publicado no dossiê da revista Cadernos de Estudos Linguísticos <em>50 Anos de Social Stratification of English in New York City</em>, organizado por <a href="https://oushiro.github.io/pt/">Livia Oushiro</a>, pesquisadora brasileira que também tem uma postura sociolinguística socialmente engajada e dedicada à questão dos métodos.</p></li>
-<li><p>E para a questão metodológica, convido à leitura do artigo <a href="https://www.linguisticario.letras.ufrj.br/uploads/7/0/5/2/7052840/lr31_freitag.pdf"><strong>A dadidade (ou dadidão) do dado</strong></a>, publicado em um dossiê dedicado à <em>formação do linguista</em> na revista Linguistica Rio, em que trato da entidade “dado linguístico”, já apontando para a organização de conjuntos de dados e suas implicações metodológicas.</p></li>
+<li><p><a
+href="https://periodicos.ufsc.br/index.php/forum/article/view/92913/54464"><strong>A
+quarta onda: ativismo sociolinguístico no Brasil</strong></a> relata uma
+trajetória de ações que permitem uma nova agenda de estudos da
+Sociolinguística no Brasil. <a
+href="https://periodicos.ufsc.br/index.php/forum/article/view/92913/54469">Aqui
+em inglês</a></p></li>
+<li><p>Para entender melhor a questão da inserção da Sociolinguística no
+Brasil, convido à leitura do artigo <a
+href="https://doi.org/10.20396/cel.v58i3.8647170"><strong>Sociolinguística
+no/do Brasil</strong></a>, publicado no dossiê da revista <em>Cadernos
+de Estudos Linguísticos</em> com o tema <em>50 Anos de Social
+Stratification of English in New York City</em>, organizado por <a
+href="https://oushiro.github.io/pt/">Livia Oushiro</a>, pesquisadora
+brasileira que também tem uma postura sociolinguística socialmente
+engajada e dedicada à questão dos métodos.</p></li>
+<li><p>E para a questão metodológica, convido à leitura do artigo <a
+href="https://www.linguisticario.letras.ufrj.br/uploads/7/0/5/2/7052840/lr31_freitag.pdf"><strong>A
+dadidade (ou dadidão) do dado</strong></a>, publicado em um dossiê
+dedicado à <em>formação do linguista</em> na revista Linguistica Rio, em
+que trato da entidade “dado linguístico”, já apontando para a
+organização de conjuntos de dados e suas implicações
+metodológicas.</p></li>
 </ul>
 </details>
 
@@ -454,7 +492,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -472,7 +510,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
