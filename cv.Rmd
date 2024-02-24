@@ -2,7 +2,7 @@
 title: "Melhores práticas"
 ---
 
-Está é minha <a href="CV.pdf#" class="download" title="Download CV as PDF">Súmula curricular</a>. Mas como nem tudo cabe no [Lattes](http://lattes.cnpq.br/2582841591375626), eu relato a seguir minhas melhores práticas que contribuem para o desenvolvimento científico, tecnológico e educacional e que me permitiram seguir um caminho por uma **sociolinguística socialmente sensível**. 
+Está é minha <a href="CV.pdf#" class="download" title="Download CV as PDF">Súmula curricular</a>. Mas como nem tudo cabe no [Lattes](http://lattes.cnpq.br/2582841591375626), eu relato a seguir minhas melhores práticas que contribuem para o desenvolvimento científico, tecnológico e educacional e que me permitiram seguir um caminho por uma **sociolinguística socialmente sensível** e alinhada às práticas de [Ciência Aberta](https://rkofreitag.github.io/aberta.html)
 
 ## **Pistas do processamento da variação linguística**
 
@@ -14,7 +14,14 @@ O esforço cognitivo associado ao processamento de uma variante pode ser medido 
 - Qual a relação entre estereótipos, marcadores e indicadores com o tipo de processamento cognitivo? 
 - O estudo do processamento da variação linguística pode dar respostas a estas questões 
 
-Essa é a minha agenda dos próximos 4 anos!
+<details>
+  <summary markdown="span"> *Clique aqui se quiser conhecer detalhes do desenvolvimento deste projeto e seus produtos* </summary>
+
+- Com Marije Soto, organizei um dossiê para a Revista de *Estudos da Linguagem* intitulado [**Processamento da variação linguística**](http://www.periodicos.letras.ufmg.br/index.php/relin/issue/view/808/showToc), que reúne 14 artigos tratando do tema.
+  
+- Um deles é [**Processamento da variação linguística: desafios para integrar aquisição, diversidade e compreensão em um modelo de língua**](http://www.periodicos.letras.ufmg.br/index.php/relin/article/view/40123/pdf), em que discutimos os desafios de conciliar o controle exigido em pesquisa experimental com o paradoxo do observador da sociolinguística, além das limitações decorrentes da tecnologia disponível para o estudo, assim como da construção de um modelo de língua que envolva diversidade e estrutura.
+</details>
+<p>&nbsp;</p>
 
 
 ## **Saliência, percepção e atitudes sociolinguísticas**
