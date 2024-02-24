@@ -22,7 +22,7 @@ title: "Sobre mim"
 [<i class="fa fa-facebook" aria-hidden="true"></i>](https://www.facebook.com/raquel.freitag)
 [<i class="fa fa-instagram" aria-hidden="true"></i>](https://www.instagram.com/raquel_freitag/)
 
-Sou graduada, mestre e doutora em Linguística, pela Universidade Federal de Santa Catarina. Desde 2007, sou professora da Universidade Federal de Sergipe. Sou professora titular do Departamento de Letras Vernáculas, atuo nos programas de pós-graduação de Letras (profissional e acadêmico) e Psicologia.
+Sou graduada, mestre e doutora em Linguística, pela Universidade Federal de Santa Catarina. Desde 2007, sou professora da Universidade Federal de Sergipe, titular do Departamento de Letras Vernáculas, atuo nos programas de pós-graduação de Letras (profissional e acadêmico) e Psicologia.
 
 Coordeno o Laboratório Multiusuário de Informática e Documentação Linguística - LAMID.
 
