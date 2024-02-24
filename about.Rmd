@@ -16,15 +16,17 @@ title: "Sobre mim"
 
 <div class="col2">
 
-<img src="raquel.jpg" width="200"> 
+<img src="raquel3.jpg" width="200"> 
 
 [<i class="fa fa-twitter" aria-hidden="true"></i>](https://twitter.com/rkofreitag) 
 [<i class="fa fa-facebook" aria-hidden="true"></i>](https://www.facebook.com/raquel.freitag)
 [<i class="fa fa-instagram" aria-hidden="true"></i>](https://www.instagram.com/raquel_freitag/)
 
-Sou graduada, mestre e doutora em Linguística, pela Universidade Federal de Santa Catarina, tudo com a mesma orientadora. Desde 2007, sou professora da Universidade Federal de Sergipe. Embora lotada no Departamento de Letras Vernáculas, atuo nos programas de pós-graduação não só de Letras (profissional e acadêmico), mas também de Psicologia e Educação.
+Sou graduada, mestre e doutora em Linguística, pela Universidade Federal de Santa Catarina. Desde 2007, sou professora da Universidade Federal de Sergipe. Sou professora titular do Departamento de Letras Vernáculas, atuo nos programas de pós-graduação de Letras (profissional e acadêmico) e Psicologia.
 
-Já fui secretária da Associação Sergipana de Ciência, e agora sou, ao mesmo tempo, vice-presidente do Grupo de Estudos Linguísticos do Nordeste e da Associação Brasileira de Linguística.
+Coordeno o Laboratório Multiusuário de Informática e Documentação Linguística - LAMID.
+
+Já fui secretária da Associação Sergipana de Ciência, vice-presidente do Grupo de Estudos Linguísticos do Nordeste e da Associação Brasileira de Linguística. Hoje sou coordenadora do Comitê de Assessoramento de Letras e Linguística no CNPq.
 
 Gosto de plantas, coleciono conchas e sou mãe de Gabriel.
 
